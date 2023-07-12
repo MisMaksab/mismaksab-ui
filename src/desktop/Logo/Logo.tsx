@@ -5,11 +5,12 @@ import styles from './Logo.scss';
 interface Props {
     title: string;
     subtitle: string;
+    href?: string;
 }
 
-export function Logo({ title, subtitle }: Props) {
+export function Logo({ title, subtitle, href = "/" }: Props) {
   return (
-    <a href='/' className={styles.logo}>
+    <a href={href} className={styles.logo}>
         <img src={logoSvg} alt='logo'/>
         <div className={styles.logoText}>
             <h1 className={styles.title}>{title}</h1>

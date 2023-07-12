@@ -10,19 +10,20 @@ interface Props {
   myListButton: React.ReactElement;
 }
 
-export function Header({ info, logo, searchBar, myListButton, languages }: Props) {
+export function Header({ logo, searchBar, languages }: Props) {
   return (
     <nav className={styles.navBar}>
       <div className={styles.navBarContent}>
-        {logo}
-        
+        <div className={styles.navBarLogo}>
+          {logo}
+        </div>
         <div className={styles.navBarControls}>
-          {searchBar}
-          {myListButton}
-          <div className={styles.info}>
-            {info}
+          <div className={styles.navBarSearchBar}>
+            {searchBar}
           </div>
-          {languages}
+          <div className={styles.navBarLangDropdown}>
+            {languages}
+          </div>
         </div>
       </div>
     </nav>

@@ -6,9 +6,20 @@ interface CssExports {
   'languageAllLang': string;
   'languageCurrent': string;
   'languageCurrentLang': string;
+  'primaryColorDark': string;
+  'primaryColorLight': string;
+  'primaryColorMain': string;
+  'quaternaryColorDark': string;
+  'quaternaryColorMain': string;
   'rotate': string;
+  'secondaryColorDark': string;
+  'secondaryColorLight': string;
+  'secondaryColorMain': string;
   'shown': string;
   'svg': string;
+  'tertiaryColorDark': string;
+  'tertiaryColorLight': string;
+  'tertiaryColorMain': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

@@ -31,13 +31,25 @@ export function SearchBar({ placeHolderText, onChange }: Props) {
   );
 
   return (
-    <div
+    <form
       className={cn(styles.search, {
         // TODO возможно стоит переименовать название класса
         [styles.shown]: shown,
       })}
     >
-      <div className={styles.searchInput}>
+      <input
+        type="text"
+        placeholder={placeHolderText}
+        value={value}
+        onFocus={() => setShown(true)}
+        onBlur={() => setShown(false)}
+        onChange={onChangeCb}
+        className={styles.searchInput}
+      />
+      <div className={styles.searchSvgContainer}>
+        <img className={styles.searchSvg} src={searchSvg} />
+      </div>
+      {/* <div className={styles.searchInput}>
         <div className={styles.searchSvgContainer}>
           <img className={styles.searchSvg} src={searchSvg} />
         </div>
@@ -51,7 +63,7 @@ export function SearchBar({ placeHolderText, onChange }: Props) {
           onChange={onChangeCb}
           className={styles.searchInput}
         />
-      </div>
-    </div>
+      </div> */}
+    </form>
   );
 }

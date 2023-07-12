@@ -6,6 +6,12 @@ interface CssExports {
   'navBar': string;
   'navBarContent': string;
   'navBarControls': string;
+  'navBarSearchBar': string;
+  'primaryColorDark': string;
+  'primaryColorLight': string;
+  'primaryColorMain': string;
+  'quaternaryColorDark': string;
+  'quaternaryColorMain': string;
   'rotate': string;
   'search': string;
   'searchError': string;
@@ -14,7 +20,13 @@ interface CssExports {
   'searchResultsItem': string;
   'searchResultsWrapper': string;
   'searchSvg': string;
+  'secondaryColorDark': string;
+  'secondaryColorLight': string;
+  'secondaryColorMain': string;
   'shown': string;
+  'tertiaryColorDark': string;
+  'tertiaryColorLight': string;
+  'tertiaryColorMain': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

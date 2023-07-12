@@ -2,23 +2,19 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
-import scss from "rollup-plugin-scss";
+import styles from "rollup-plugin-styles";
 import svgr from "@svgr/rollup";
-
-const packageJson = require("./package.json");
+import url from "@rollup/plugin-url";
 
 export default {
   input: "src/index.tsx",
   output: [
     {
-      file: packageJson.main,
-      format: "cjs",
-      sourcemap: true
-    },
-    {
-      file: packageJson.module,
       format: "esm",
-      sourcemap: true
+      sourcemap: true,
+      dir: 'lib',
+      preserveModules: true,
+      preserveModulesRoot: 'src'
     }
   ],
   plugins: [
@@ -26,7 +22,8 @@ export default {
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
-    scss({ output: false }),
+    styles({modules: true}),
+    url(),
     svgr(),
   ]
 };

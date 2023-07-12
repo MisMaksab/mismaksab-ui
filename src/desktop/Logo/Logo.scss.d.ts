@@ -3,7 +3,18 @@
 interface CssExports {
   'logo': string;
   'logoText': string;
+  'primaryColorDark': string;
+  'primaryColorLight': string;
+  'primaryColorMain': string;
+  'quaternaryColorDark': string;
+  'quaternaryColorMain': string;
+  'secondaryColorDark': string;
+  'secondaryColorLight': string;
+  'secondaryColorMain': string;
   'subTitle': string;
+  'tertiaryColorDark': string;
+  'tertiaryColorLight': string;
+  'tertiaryColorMain': string;
   'title': string;
 }
 export const cssExports: CssExports;

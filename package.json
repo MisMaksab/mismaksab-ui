@@ -1,7 +1,7 @@
 {
   "name": "mismaksab-ui",
   "description": "Common ui library for MisMaksab project",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "type": "module",
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
     "@babel/preset-typescript": "^7.21.5",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-url": "^8.0.1",
     "@storybook/addon-essentials": "^7.0.7",
     "@storybook/addon-interactions": "^7.0.7",
     "@storybook/addon-links": "^7.0.7",
@@ -64,7 +65,7 @@
     "react-dom": "^18.2.0",
     "rollup": "^3.23.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-scss": "3",
+    "rollup-plugin-styles": "^4.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",

@@ -6,7 +6,10 @@
     .languageCurrent {
         cursor: pointer;
         color: $greyColor;
-        font-size: 1.1em;
+        background-color: $secondaryColorLight;
+        border-radius: 50px;
+        padding: 0 10px 0 16px;
+        height: 42px;
         text-transform: uppercase;
         display: flex;
         align-items: center;
@@ -19,10 +22,11 @@
             display: flex;
             align-items: center;
             transition: .3s;
+            padding: 0 6px;
         }
 
         .rotate {
-            transform:rotate(180deg);
+            transform: rotate(180deg);
         }
     }
 
@@ -30,7 +34,8 @@
     .languageAll {
         position: absolute;
         right: 0;
-        left:0;
+        max-width: 270px;
+        min-width: 195px;
         top: calc(100% + 5px);
         background: white;
         border: 1px solid $borderColor;
@@ -44,7 +49,7 @@
         transition: .3s;
 
         // shown
-        .shown {
+        &.shown {
             opacity: 1;
             transform: translateY(0);
             pointer-events: auto
