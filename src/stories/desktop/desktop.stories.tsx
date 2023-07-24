@@ -1,4 +1,5 @@
 export { HeaderStory } from "./Header/Header.story";
+export { GoodCardStory } from "./GoodCard/GoodCard.story";
 
 export default {
     title: "Desktop",

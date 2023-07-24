@@ -42,6 +42,10 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            },
+            {
                 test: /\.pcss$/,
                 use: [
                     { loader: "style-loader" },
