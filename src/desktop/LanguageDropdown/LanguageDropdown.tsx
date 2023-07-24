@@ -32,9 +32,3 @@ export function LanguageDropdown({ selectedLanguage, languages }: Props) {
     </div>
   );
 }
-
-interface ActiveLanguageProps {
-  selectedLanguage: string;
-  languagesPopupVisible: boolean;
-  onClick: () => void;
-}
