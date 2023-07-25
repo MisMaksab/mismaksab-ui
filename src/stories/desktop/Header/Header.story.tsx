@@ -6,7 +6,7 @@ import { LanguageDropdown } from '../../../desktop/LanguageDropdown/LanguageDrop
 import { MyListButton } from '../../../desktop/MyListButton/MyListButton';
 import { SearchBar } from '../../../desktop/SearchBar/SearchBar';
 
-const LANGUAGES_ARR = ["est", "eng", "rus"];
+const LANGUAGES_ARR = [{short:'rus',long:'russian'},{short:'eng',long:'english'},{short:'est',long:'estonian'}]
 
 export const HeaderStory = () => (
   <Header

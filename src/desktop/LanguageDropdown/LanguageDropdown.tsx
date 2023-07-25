@@ -6,10 +6,10 @@ import styles from "./LanguageDropdown.scss";
 
 interface Props {
   selectedLanguage: string;
-  languages: string[];
+  // languages: string[]; как сделать обьект?
 }
 
-export function LanguageDropdown({ selectedLanguage, languages }: Props) {
+export function LanguageDropdown({ selectedLanguage, languages}: Props) {
   const [activeSelection, setActiveSelection] = useState(false);
 
   return (
@@ -25,9 +25,16 @@ export function LanguageDropdown({ selectedLanguage, languages }: Props) {
         </div>
       </div>
       <ul className={cn(styles.languageAll, activeSelection && styles.shown)}>
-        <li><a href="#">Sub-1</a></li>
-        <li><a href="#">Sub-2</a></li>
-        <li><a href="#">Sub-3</a></li>
+        {languages.map(lang => 
+          <a href="/">
+            <li className={cn(styles.languageLang, {
+              [styles.active]: selectedLanguage === lang.short
+            })}>
+              <span className={styles.shortText}>{lang.short}</span>
+              <span className={styles.longText}>{lang.long}</span>
+            </li>
+          </a>
+        )}
       </ul>
     </div>
   );
