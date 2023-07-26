@@ -6,15 +6,12 @@ interface CssExports {
   'navBar': string;
   'navBarContent': string;
   'navBarControls': string;
-  'navBarLangDropdown': string;
-  'navBarLogo': string;
   'navBarSearchBar': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;
   'quaternaryColorDark': string;
   'quaternaryColorMain': string;
-  'rotate': string;
   'search': string;
   'searchError': string;
   'searchInput': string;

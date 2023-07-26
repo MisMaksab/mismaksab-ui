@@ -12,7 +12,7 @@ export function Logo({ title, subtitle, href = "/" }: Props) {
   return (
     <a href={href} className={styles.logo}>
         <img src={logoSvg} alt='logo'/>
-        <div className={styles.logoText}>
+        <div>
             <h1 className={styles.title}>{title}</h1>
             <h6 className={styles.subTitle}>{subtitle}</h6>
         </div>

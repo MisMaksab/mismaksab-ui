@@ -1,26 +1,4 @@
-// TODO положить шрифты отдельно в папку assets
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap');
 @import "../../scss/variables.scss";
-
-* {
-    box-sizing: border-box;
-    font-family: 'Jost', sans-serif;
-}
-
-a {
-    text-decoration: none;
-}
-
-input {
-    width: 100%;
-    height: 100%;
-    outline:none;
-    border:none;
-}
-
-.rotate {
-    transform:rotate(180deg);
-}
 
 /* navbar css */
 .navBar {
@@ -63,7 +41,7 @@ input {
     height: 42px;
 
     // search error
-    &Error {
+    .searchError {
         font-weight: 600;
         text-align: center;
         padding: 20px;
@@ -75,12 +53,12 @@ input {
     }
     
     // svg
-    &Svg {
+    .searchSvg {
         padding: 17px 11px 12px 27px;
         cursor: pointer;
     }
 
-    &Input {
+    .searchInput {
         display: flex;
         align-items: center;
         overflow: hidden;
@@ -92,7 +70,7 @@ input {
     }
 
     // search results
-    &Results {
+    .searchResults {
         width: 100%;
         position: absolute;
         left: 0px;
@@ -133,7 +111,7 @@ input {
 .info {
     padding: 0 20px;
 
-    &Text {
+    .infoText {
         border-radius:50%;
         border: 1px solid $fontColorLight;
         color:$fontColorDark;
@@ -145,12 +123,3 @@ input {
         align-self:flex-start;
     }
 }
-
-.navBarLogo {
-    /**/
-}
-
-.navBarLangDropdown {
-    /**/
-}
-

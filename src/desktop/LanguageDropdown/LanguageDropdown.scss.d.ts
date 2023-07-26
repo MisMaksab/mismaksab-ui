@@ -7,7 +7,9 @@ interface CssExports {
   'languageCurrent': string;
   'languageCurrentLang': string;
   'languageLang': string;
+  'languageLink': string;
   'longText': string;
+  'mark': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;
