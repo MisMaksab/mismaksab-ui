@@ -1,9 +1,7 @@
 export { HeaderStory } from "./Header/Header.story";
-export { GoodCardStory } from "./GoodCard/GoodCard.story";
-export {FooterStory} from "./Footer/Footer.story";
 
 export default {
-    title: "Desktop",
+    title: "Mobile",
     parameters: {
         backgrounds: {
             default: "white",

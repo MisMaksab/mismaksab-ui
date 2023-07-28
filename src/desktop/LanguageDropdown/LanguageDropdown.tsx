@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import cn from "classnames";
 import arrow from "../../assets/icons/arrow.svg";
 import mark from "../../assets/icons/languageDropdownIcon.svg";
-// import useOutsideClick from "../../hooks/useOutsideClick";
 import styles from "./LanguageDropdown.scss";
 
 interface Props {
   selectedLanguage: string;
   languages: Array<{short: string, long: string}>;
+  isMobile?: boolean;
 }
 
-export function LanguageDropdown({ selectedLanguage, languages}: Props) {
+export function LanguageDropdown({ selectedLanguage, languages, isMobile=false}: Props) {
   const [activeSelection, setActiveSelection] = useState(false);
 
   return (
-    <div className={styles.language}>
+    <div className={cn(styles.language, {
+      [styles.mobile]: isMobile
+    })}>
       <div className={styles.languageCurrent} onClick={() => setActiveSelection(!activeSelection)}>
         <span className={styles.languageCurrentLang}>{selectedLanguage}</span>
         <div

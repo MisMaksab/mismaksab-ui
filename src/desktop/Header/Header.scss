@@ -26,82 +26,13 @@
     .navBarSearchBar {
         width: 100%;
     }
-}
 
-/* search */
-.search {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 2;
-    position: relative;
-    border: 2px solid $fontColorLight;
-    margin: 0 40px;
-    border-radius: 10px;
-    transition: .2s;
-    height: 42px;
-
-    // search error
-    .searchError {
-        font-weight: 600;
-        text-align: center;
-        padding: 20px;
-    }
-
-    // active class
-    &.shown {
-        box-shadow: 0px 0px 4px 5px rgba(0,0,0,.04);
+    .navBarLogo {
+        /**/
     }
     
-    // svg
-    .searchSvg {
-        padding: 17px 11px 12px 27px;
-        cursor: pointer;
-    }
-
-    .searchInput {
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        border-radius: 10px;
-        
-        input {
-            font-size: 1.4em;
-        }
-    }
-
-    // search results
-    .searchResults {
-        width: 100%;
-        position: absolute;
-        left: 0px;
-        right: 0px;
-        top: calc(100% + 5px);
-        border: 2px solid $fontColorLight;
-        border-radius: 10px;
-        background: white;
-        box-shadow: 0px 0px 4px 5px rgba(0,0,0,.04);
-        display: flex;
-        flex-direction: column;
-
-        &Wrapper:last-child {
-            border-top:2px solid $fontColorLight;
-            color:black;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        /* search results item */
-        &Item {
-            flex-grow: 3;
-            line-height: 50px;
-            padding: 0 15px;
-            transition: .3s;
-            color:$fontColorDark;
-
-            &:hover {
-                background:$fontColorLight;
-            }
-        }
+    .navBarLangDropdown {
+        /**/
     }
 }
 

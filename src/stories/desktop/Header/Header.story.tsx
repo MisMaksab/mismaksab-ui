@@ -4,7 +4,7 @@ import { Logo } from "../../../desktop/Logo/Logo";
 import { Header } from '../../../desktop/Header/Header';
 import { LanguageDropdown } from '../../../desktop/LanguageDropdown/LanguageDropdown';
 import { MyListButton } from '../../../desktop/MyListButton/MyListButton';
-import { SearchBar } from '../../../desktop/SearchBar/SearchBar';
+import { SearchBar } from '../../../common/SearchBar/SearchBar';
 
 const LANGUAGES_ARR = [{short:'rus',long:'russian'},{short:'eng',long:'english'},{short:'est',long:'estonian'}]
 

@@ -3,6 +3,30 @@
 .language {
     position: relative;
 
+    // mobile version
+    &.mobile {
+        .languageCurrent {
+            display: inline-flex;
+            padding: 6.5px 8.667px;
+            align-items: center;
+            border-radius: 15px;
+            height: 27px;
+            box-sizing: border-box;
+
+            .languageCurrentLang {
+                font-size: 14px;
+            }
+
+            .svg {
+                padding: 0;
+                
+                img {
+                    width: 8px;
+                }
+            }
+        }
+    }
+
     .languageCurrent {
         cursor: pointer;
         color: $fontColorDark;
@@ -18,7 +42,9 @@
             padding-right: 5px;
         }
 
+
         .svg {
+            padding-top: 2px;
             display: flex;
             align-items: center;
             transition: .3s;
