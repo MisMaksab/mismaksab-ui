@@ -2,25 +2,22 @@
 
 /* navbar css */
 .navBar {
+    padding: 5px 10px;
     display: flex;
     justify-content: center;
-    padding: 26px 42px 36px;
-    box-shadow: 0px 4px 4px 0px rgba(0,0,0,.03);
+    box-shadow: 0px 0px 4px 0px grey;
 
     // navbar content
     .navBarContent {
         width: 100%;
-        max-width: 1500px;
+        max-width: 768px;
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
     }
 
-    //navbar controls
-    .navBarControls {
-        display: flex;
-        align-items: center;
-        flex-grow: 2;
+    .navBarBurger {
+        /**/
     }
 
     .navBarSearchBar {

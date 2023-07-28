@@ -1,0 +1,17 @@
+@import "../../scss/variables.scss";
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: $fontColorDark;
+    padding-left: 15px;
+    text-decoration: none;
+
+    .title {
+        margin: 0;
+        text-align: center;
+        color: $fontColorDark;
+        font-size: 25px;
+        font-weight: 500;
+    }
+}
