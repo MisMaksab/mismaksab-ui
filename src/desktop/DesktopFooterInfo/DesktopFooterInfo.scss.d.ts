@@ -3,7 +3,6 @@
 interface CssExports {
   'copyright': string;
   'footerInfo': string;
-  'footerSocialMediaItemSize': string;
   'mail': string;
   'primaryColorDark': string;
   'primaryColorLight': string;

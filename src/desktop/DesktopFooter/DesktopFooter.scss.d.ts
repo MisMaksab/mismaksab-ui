@@ -5,7 +5,6 @@ interface CssExports {
   'footerContent': string;
   'footerInfo': string;
   'footerLinks': string;
-  'footerSocialMediaItemSize': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;

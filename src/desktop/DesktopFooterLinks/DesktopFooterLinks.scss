@@ -12,8 +12,8 @@
     padding-bottom: 20px;
     
     .socialMediaItem {
-      width: $footerSocialMediaItemSize;
-      height: $footerSocialMediaItemSize;
+      width: 47px;
+      height: 47px;
       transition: .3s;
       border-radius: 50%;
 
@@ -40,7 +40,7 @@
     }
     
     .usefulLinksLink {
-      font-size: 1.4rem;
+      font-size: 20px;
       line-height: 100%; /* 20px */
       color: $fontColorMain;
       text-decoration: none;

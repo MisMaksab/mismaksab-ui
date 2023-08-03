@@ -2,16 +2,17 @@ import React from 'react'
 import styles from './DesktopFooterInfo.scss';
 
 interface DesktopFooterInfoProps {
-  // mail: {}link:string,title:string; как сделать обьект?
+  mailLink: string;
+  mailText: string;
   copyright: string;
 }
 
-export function DesktopFooterInfo({mail, copyright}: DesktopFooterInfoProps) {
-  const link = `mailto:${mail.link}`;
+export function DesktopFooterInfo({mailLink, mailText, copyright}: DesktopFooterInfoProps) {
+  const link = `mailto:${mailLink}`;
 
   return (
     <div className={styles.footerInfo}>
-      <a className={styles.mail} href={link}>{mail.title}</a>
+      <a className={styles.mail} href={link}>{mailText}</a>
       <span className={styles.copyright}>{copyright}</span>
     </div>
   )

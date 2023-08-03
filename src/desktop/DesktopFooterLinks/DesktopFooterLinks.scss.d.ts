@@ -2,7 +2,6 @@
 // Please do not change this file!
 interface CssExports {
   'footerLinks': string;
-  'footerSocialMediaItemSize': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;

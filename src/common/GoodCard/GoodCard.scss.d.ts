@@ -3,7 +3,6 @@
 interface CssExports {
   'added': string;
   'disabled': string;
-  'footerSocialMediaItemSize': string;
   'goodCard': string;
   'goodCardAdd': string;
   'goodCardDiscountUntil': string;
