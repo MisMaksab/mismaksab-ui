@@ -17,7 +17,7 @@ const sideBarData = [
         link: "/"
       },
       {
-        title: "фирамир",
+        title: "морковка",
         link: "/"
       }
     ]
