@@ -3,7 +3,6 @@
 interface CssExports {
   'burger': string;
   'burgerItem': string;
-  'footerSocialMediaItemSize': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;

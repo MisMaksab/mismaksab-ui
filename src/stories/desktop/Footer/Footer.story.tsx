@@ -13,7 +13,8 @@ export const FooterStory = () => (
     />}
     footerInfo={<DesktopFooterInfo
       copyright="© MisMaksab, 2023"
-      mail={{mail:"info@mismaksab.ee",title:"info@mismaksab.ee"}}
+      mailLink="info@mismaksab.ee"
+      mailText="info@mismaksab.ee"
     />}
   />
 );
