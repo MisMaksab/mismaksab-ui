@@ -4,11 +4,12 @@ import searchSvg from "../../assets/icons/search.svg";
 import styles from "./SearchBar.scss";
 
 interface Props {
+  sideBarOpen: boolean;
   placeHolderText?: string;
   onChange: (value: string) => void;
 }
 
-export function SearchBar({ placeHolderText, onChange }: Props) {
+export function SearchBar({sideBarOpen, placeHolderText, onChange }: Props) {
   const [value, setValue] = React.useState("");
 
   // animation if input is clicked
@@ -33,6 +34,7 @@ export function SearchBar({ placeHolderText, onChange }: Props) {
       className={cn(styles.search, {
         // TODO возможно стоит переименовать название класса
         [styles.shown]: shown,
+        [styles.sideBarOpen]: sideBarOpen
       })}
     >
       <input

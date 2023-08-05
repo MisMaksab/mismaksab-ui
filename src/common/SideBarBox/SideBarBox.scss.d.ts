@@ -10,7 +10,7 @@ interface CssExports {
   'secondaryColorDark': string;
   'secondaryColorLight': string;
   'secondaryColorMain': string;
-  'sideBar': string;
+  'sideBarBox': string;
   'tertiaryColorDark': string;
   'tertiaryColorLight': string;
   'tertiaryColorMain': string;

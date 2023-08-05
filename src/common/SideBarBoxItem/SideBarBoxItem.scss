@@ -1,0 +1,101 @@
+@import "../../scss/variables.scss";
+
+.sideBarBoxItem {
+  &.mobile {
+    .sideBarBoxItemBtn {
+      .logoSvg {
+        width: 19px;
+        height: 19px;
+      }
+
+      .title {
+        padding: 6px 14px 6px 8px;
+        font-size: 16px;
+
+        .arrowSvg {
+          width: 10px;
+          height: 8px;
+        }
+      }
+    }
+
+    .sideBarBoxItemDropdown {
+      .sideBarBoxItemDropdownItem {
+        padding: 3px 14px 3px 50px;
+
+        .link {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .sideBarBoxItemBtn {
+    display: flex;
+    align-items: center;
+
+    .logoSvg {
+      width: 27px;
+      height: 27px;
+    }
+    .title {
+      text-decoration: none;
+      cursor: pointer;
+      padding: 10px 20px 10px 12px;
+      color: $fontColorDark;
+      text-transform: capitalize;
+      font-size: 23px;
+      font-weight: 500;
+      line-height: 140%; /* 32.2px */
+      transition: color .3s;
+      position: relative;
+      margin: 0;
+
+      .arrowSvg {
+        margin-left: 3px;
+        width: 14px;
+        height: 11px;
+      }
+
+      &.active, &:hover{
+        color: $tertiaryColorMain;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .sideBarBoxItemDropdown {
+    overflow: hidden;
+    transition: max-height .5s ease;
+    position: relative;
+
+      &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 15px;
+        background: linear-gradient(to top, white, transparent);
+      }
+
+    .sideBarBoxItemDropdownContainer {
+      padding-bottom: 10px;
+    }
+
+    .sideBarBoxItemDropdownItem {
+      padding:10px 20px 10px 65px;
+
+      .link {
+        text-transform: capitalize;
+        color: $fontColorDark;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 140%; /* 22.4px */
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

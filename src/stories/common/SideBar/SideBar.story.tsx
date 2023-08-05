@@ -2,28 +2,39 @@ import React from "react";
 import { SideBar } from "../../../common/SideBar/SideBar";
 
 import VegetablesAndFruitsSvg from '../../../assets/sideBarIcons/vegetablesAndFruits.svg';
+import SideBarItemArrow from '../../../assets/sideBarIcons/sideBarItemArrow.svg';
+
 
 const sideBarData = [
   {
     title: "овощи",
     svg: VegetablesAndFruitsSvg,
+    subSvg: SideBarItemArrow,
+    link: '/',
+    dropdownItems: [
+      
+    ]
+  },
+  {
+    title: "фрукты",
+    svg: VegetablesAndFruitsSvg,
     dropdownItems: [
       {
-        title: "картошка",
+        title: "сливы",
         link: "/"
       },
       {
-        title: "помидор",
+        title: "яблоко",
         link: "/"
       },
       {
-        title: "фирамир",
+        title: "груша",
         link: "/"
       }
     ]
   },
   {
-    title: "фрукты",
+    title: "мясо",
     svg: VegetablesAndFruitsSvg,
     dropdownItems: [
       {
@@ -44,6 +55,7 @@ const sideBarData = [
 
 export const SideBarStory = () => (
   <SideBar
+    mobile={true}
     data={sideBarData}
     title="категории"
   />
