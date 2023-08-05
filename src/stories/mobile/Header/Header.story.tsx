@@ -12,7 +12,7 @@ export const HeaderStory = () => (
     logo={<MobileHeaderLogo title="MisMaksab"/>}
     burger={<MobileHeaderBurger/>}
     searchBar={<SearchBar onChange={(val: string) => null} placeHolderText="Найти товар" />}
-    languages={<LanguageDropdown selectedLanguage="est" languages={LANGUAGES_ARR} isMobile={true} />}
+    languages={<LanguageDropdown selectedLanguage="est" languages={LANGUAGES_ARR} mobile={true} />}
   />
 );
 

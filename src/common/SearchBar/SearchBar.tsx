@@ -4,12 +4,12 @@ import searchSvg from "../../assets/icons/search.svg";
 import styles from "./SearchBar.scss";
 
 interface Props {
-  sideBarOpen: boolean;
+  sideBarOpen?: boolean;
   placeHolderText?: string;
   onChange: (value: string) => void;
 }
 
-export function SearchBar({sideBarOpen, placeHolderText, onChange }: Props) {
+export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props) {
   const [value, setValue] = React.useState("");
 
   // animation if input is clicked
