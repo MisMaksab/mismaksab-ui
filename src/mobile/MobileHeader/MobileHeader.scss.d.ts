@@ -2,10 +2,7 @@
 // Please do not change this file!
 interface CssExports {
   'navBar': string;
-  'navBarBurger': string;
   'navBarContent': string;
-  'navBarLangDropdown': string;
-  'navBarLogo': string;
   'navBarSearchBar': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
