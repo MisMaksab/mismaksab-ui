@@ -7,7 +7,9 @@ interface CssExports {
   'goodCardAdd': string;
   'goodCardDiscountUntil': string;
   'goodCardImage': string;
+  'goodCardInfo': string;
   'goodCardPricePerKilo': string;
+  'goodCardPrices': string;
   'goodCardTextWrapper': string;
   'goodCardTitle': string;
   'info': string;

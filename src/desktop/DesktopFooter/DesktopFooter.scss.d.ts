@@ -4,6 +4,7 @@ interface CssExports {
   'footer': string;
   'footerContent': string;
   'footerInfo': string;
+  'footerLinks': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;
