@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styles from './SideBar.scss';
 import cn from 'classnames';
 
@@ -7,16 +7,16 @@ import { SideBarBox } from '../SideBarBox/SideBarBox';
 import { MobileSideBarControls } from '../../mobile/MobileSideBarControls/MobileSideBarControls';
 
 interface SideBarProps {
-  mobile: boolean;
+  layout: 'mobile'|'desktop';
   title: string;
   data: [];
 }
 
-export function SideBar({title, mobile, data}: SideBarProps) {
+export function SideBar({title, layout, data}: SideBarProps) {
   const [expandedIdArr, setExpadedIdArr] = useState([]);
   const changeExpandedIdArrCb = useCallback((id:number) => {
     if (expandedIdArr.includes(id)) {
-      setExpadedIdArr([...expandedIdArr].filter(oldId => oldId != id));
+      setExpadedIdArr(expandedIdArr.filter(oldId => oldId != id));
     } else {
       setExpadedIdArr([...expandedIdArr, id]);
     }
@@ -27,11 +27,11 @@ export function SideBar({title, mobile, data}: SideBarProps) {
 
   return (
     <div className={cn(styles.sideBar, {
-      [styles.mobile]: mobile
+      [styles.mobile]: layout === 'mobile'
     })}>
-      {mobile && <MobileSideBarControls/>}
-      <SideBarHeader mobile={mobile} title={title} onHide={clearExpandedIdArrCb}/>
-      <SideBarBox mobile={mobile} data={data} expandedIdArr={expandedIdArr} onChange={changeExpandedIdArrCb}/>
+      {layout === 'mobile' && <MobileSideBarControls/>}
+      <SideBarHeader layout={layout} title={title} onHide={clearExpandedIdArrCb}/>
+      <SideBarBox layout={layout} data={data} expandedIdArr={expandedIdArr} onChange={changeExpandedIdArrCb}/>
     </div>
   )
 }

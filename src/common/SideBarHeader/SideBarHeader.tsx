@@ -4,15 +4,15 @@ import SideBarHideSvg from '../../assets/icons/sideBarHide.svg';
 import cn from 'classnames';
 
 interface SideBarHeaderProps {
-  mobile: boolean;
+  layout: 'mobile'|'desktop';
   title: string;
   onHide: () => void;
 }
 
-export function SideBarHeader({mobile, title, onHide}: SideBarHeaderProps) {
+export function SideBarHeader({layout, title, onHide}: SideBarHeaderProps) {
   return (
     <div className={cn(styles.sideBarHeader, {
-      [styles.mobile]: mobile
+      [styles.mobile]: layout === 'mobile'
     })}>
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.hide} onClick={onHide}>

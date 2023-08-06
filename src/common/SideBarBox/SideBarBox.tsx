@@ -4,19 +4,19 @@ import { SideBarBoxItem } from '../SideBarBoxItem/SideBarBoxItem';
 import cn from 'classnames';
 
 interface SideBarBoxInterFace {
-  mobile: boolean;
+  layout: 'mobile'|'desktop';
   data: [];
   expandedIdArr: [];
   onChange: (id: number) => void;
 }
 
-export function SideBarBox({mobile, data, expandedIdArr, onChange}: SideBarBoxInterFace) {
+export function SideBarBox({layout, data, expandedIdArr, onChange}: SideBarBoxInterFace) {
   return (
     <div className={cn(styles.sideBarBox, {
-      [styles.mobile]: mobile
+      [styles.mobile]: layout === 'mobile'
     })}>
         {data.map((item:[], i:number) =>
-          <SideBarBoxItem mobile={mobile} key={i} id={i} expandedIdArr={expandedIdArr} data={item} onChange={onChange}/>
+          <SideBarBoxItem layout={layout} key={i} id={i} expandedIdArr={expandedIdArr} data={item} onChange={onChange}/>
         )}
       </div>
   )
