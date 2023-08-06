@@ -1,16 +1,14 @@
 import React from 'react';
 
-import styles from './Header.scss';
+import styles from './DesktopHeader.scss';
 
-interface Props {
-  info: React.ReactElement;
+interface DesktopHeaderProps {
   logo: React.ReactElement;
   searchBar: React.ReactElement;
   languages: React.ReactElement;
-  myListButton: React.ReactElement;
 }
 
-export function Header({ logo, searchBar, languages }: Props) {
+export function DesktopHeader({ logo, searchBar, languages }: DesktopHeaderProps) {
   return (
     <nav className={styles.navBar}>
       <div className={styles.navBarContent}>

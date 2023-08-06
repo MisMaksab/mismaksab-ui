@@ -3,6 +3,30 @@
 .language {
     position: relative;
 
+    // mobile version
+    &.mobile {
+        .languageCurrent {
+            display: inline-flex;
+            padding: 0.4rem 0.7rem;
+            align-items: center;
+            border-radius: 15px;
+            height: 27px;
+            box-sizing: border-box;
+
+            .languageCurrentLang {
+                font-size: 14px;
+            }
+
+            .svg {
+                padding: 0;
+                
+                &Img {
+                    width: 8px;
+                }
+            }
+        }
+    }
+
     .languageCurrent {
         cursor: pointer;
         color: $fontColorDark;
@@ -18,7 +42,9 @@
             padding-right: 5px;
         }
 
+
         .svg {
+            padding-top: 2px;
             display: flex;
             align-items: center;
             transition: .3s;
@@ -69,6 +95,7 @@
             align-items: center;
             transition: .3s;
             font-weight: 400;
+            font-size: 16px;
 
             .mark {
                 position: absolute;
