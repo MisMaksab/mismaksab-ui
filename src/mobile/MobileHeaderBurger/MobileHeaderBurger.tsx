@@ -1,9 +1,13 @@
 import React from 'react'
 import styles from './MobileHeaderBurger.scss';
 
-export function MobileHeaderBurger() {
+interface MobileHeaderBurgerProps {
+  onClick?: () => void;
+}
+
+export function MobileHeaderBurger({ onClick }: MobileHeaderBurgerProps) {
   return (
-    <div className={styles.burger}>
+    <div onClick={onClick} className={styles.burger}>
       <span className={styles.burgerItem}></span>
       <span className={styles.burgerItem}></span>
       <span className={styles.burgerItem}></span>
