@@ -1,11 +1,10 @@
 import React, { useCallback, useState } from 'react'
-import classnames from 'classnames';
-import selverPng from './../../assets/icons/selver.svg'; // как отображать другие
-import addedToListSvg from './../../assets/icons/cardAdded.svg';
+import cn from 'classnames';
 
 import styles from './GoodCard.scss';
 
 interface Props {
+    layout: 'mobile'|'desktop';
     productId: string;
     productImageURL: string;
     discount: number;
@@ -23,6 +22,7 @@ interface Props {
 }
 
 export function GoodCard({
+    layout,
     productId,
     productImageURL,
     discount,
@@ -43,41 +43,34 @@ export function GoodCard({
   }, []);
 
   return (
-    <div className={classnames(
+    <div className={cn(
         styles.goodCard,{
-            [styles.disabled]: isDisabled
+            [styles.disabled]: isDisabled,
+            [styles.mobile]: layout === 'mobile',
         }
     )}>
-        {/* <div className={classnames(styles.goodCardAdd, {
-            [styles.added]: addedToList
-        })} onClick={onAddToList}>
-            {
-                addedToList
-                ? <img src={addedToListSvg}/>
-                : <span>+</span>
-            }
-        </div> */}
-
         <div className={styles.goodCardImage}>
-            <img src={productImageURL}/>
+            <img className={styles.retailerImg} src={productImageURL}/>
 
-            <div className={classnames(styles.goodCardInfo, styles.info)}>
+            <div className={cn(styles.goodCardInfo, styles.info)}>
                 <div className={styles.infoDiscount}>{discount} %</div>
                 <img src={retailerImageURL} className={styles.infoMarket} />
             </div>
         </div>
 
         <div className={styles.goodCardTextWrapper}>
-            <div className={classnames(styles.goodCardPrices, styles.prices)}>
-                <span className={styles.pricesCurrent}>{price}€</span>
-                <span className={styles.pricesOld}>{oldPrice}€</span>
+            <div className={cn(styles.goodCardPrices, styles.goodCardPrices)}>
+                <span className={styles.current}>{price}€</span>
+                <span className={styles.old}>{oldPrice}€</span>
             </div>
 
-            <a href='/' className={styles.goodCardTitle}>{productTitle}</a>
+            <a href='/' className={styles.title}>{productTitle}</a>
 
-            <h4 className={styles.goodCardPricePerKilo}>{unitPrice}€/{unitType}</h4>
+            {layout === 'desktop' &&
+                <h4 className={styles.pricePerKilo}>{unitPrice}€/{unitType}</h4>
+            }
 
-            <h4 className={styles.goodCardDiscountUntil}>{expireDateStr}</h4>
+            <h4 className={styles.discountUntil}>{expireDateStr}</h4>
         </div>
     </div>
   )

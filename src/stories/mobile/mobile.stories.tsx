@@ -1,4 +1,5 @@
 export { HeaderStory } from "./Header/Header.story";
+export {SliderStory} from "./Slider/Slider.story";
 
 export default {
     title: "Mobile",

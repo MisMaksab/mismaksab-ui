@@ -32,7 +32,6 @@ export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props
   return (
     <form
       className={cn(styles.search, {
-        // TODO возможно стоит переименовать название класса
         [styles.shown]: shown,
         [styles.sideBarOpen]: sideBarOpen
       })}

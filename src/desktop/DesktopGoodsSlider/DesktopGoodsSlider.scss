@@ -1,0 +1,38 @@
+@import "../../scss/variables.scss";
+
+.slider {
+    max-width: 920px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    box-sizing: content-box;
+    
+    .sliderBox {
+        overflow: hidden;
+    }
+
+    .sliderSlides {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        transition: .3s;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .slider {
+        max-width: 736px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .slider {
+        max-width: 552px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slider {
+        max-width: 368px;
+    }
+}
