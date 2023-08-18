@@ -1,0 +1,9 @@
+@import "../../scss/variables.scss";
+
+.sideBarBox {
+  padding-top: 42px;
+
+  &.mobile {
+    padding-top: 20px;
+  }
+}

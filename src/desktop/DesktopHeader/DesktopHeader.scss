@@ -35,30 +35,3 @@
         /**/
     }
 }
-
-
-
-/* info button */
-.info {
-    padding: 0 20px;
-
-    .infoText {
-        border-radius:50%;
-        border: 1px solid $fontColorLight;
-        color:$fontColorDark;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 20px;
-        height: 20px;
-        align-self:flex-start;
-    }
-}
-
-.navBarLogo {
-    /**/
-}
-
-.navBarLangDropdown {
-    /**/
-}

@@ -5,6 +5,7 @@ export { Button } from "./common/Button/Button";
 export { LanguageDropdown } from "./common/LanguageDropdown/LanguageDropdown";
 export { SearchBar } from "./common/SearchBar/SearchBar";
 // Desktop
+export { LanguageDropdown } from "./common/LanguageDropdown/LanguageDropdown";
 export { DesktopHeader } from "./desktop/DesktopHeader/DesktopHeader";
 export { DesktopFooter } from "./desktop/DesktopFooter/DesktopFooter";
 export { DesktopFooterLinks } from "./desktop/DesktopFooterLinks/DesktopFooterLinks";

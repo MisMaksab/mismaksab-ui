@@ -1,0 +1,38 @@
+@import "../../scss/variables.scss";
+
+.sideBarHeader {
+  &.mobile {
+    padding-top: 35px;
+
+    .title {
+      font-size: 22px;
+    }
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .title {
+    text-transform: capitalize;
+    color: $fontColorDark;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 32px */
+    margin: 0;
+  }
+
+  .hide {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+
+    .svg {
+      width: 27px;
+      height: 27px;
+      cursor: pointer;
+    }
+  }
+}
