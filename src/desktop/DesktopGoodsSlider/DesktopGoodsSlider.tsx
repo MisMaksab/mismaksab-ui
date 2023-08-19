@@ -3,7 +3,7 @@ import styles from './DesktopGoodsSlider.scss';
 
 // fetch hook
 import { DesktopSlider } from '../DesktopSlider/DesktopSlider';
-import { _AllGoodsSlides } from '../../common/_AllGoodsSlides/_AllGoodsSlides';
+import { AllGoodsSlides } from '../../common/AllGoodsSlides/AllGoodsSlides';
 
 interface DesktopGoodsSliderProps {
   slidesData: [];
@@ -12,7 +12,9 @@ interface DesktopGoodsSliderProps {
 export function DesktopGoodsSlider({slidesData}: DesktopGoodsSliderProps) {
   return (
     <div className={styles.goodsSlider}>
-      <DesktopSlider slides={<_AllGoodsSlides slidesData={slidesData}/>}/>
+      <DesktopSlider>
+        <AllGoodsSlides slidesData={slidesData}/>
+      </DesktopSlider>
     </div>
   )
 }

@@ -11,9 +11,7 @@ interface SideBarHeaderProps {
 
 export function SideBarHeader({layout, title, onHide}: SideBarHeaderProps) {
   return (
-    <div className={cn(styles.sideBarHeader, {
-      [styles.mobile]: layout === 'mobile'
-    })}>
+    <div className={cn(styles.sideBarHeader, styles[layout])}>
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.hide} onClick={onHide}>
         <img className={styles.svg} src={SideBarHideSvg} />

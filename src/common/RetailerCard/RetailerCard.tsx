@@ -22,8 +22,7 @@ export function RetailerCard({
   isDisabled,
 }: RetailerCardProps) {
   return (
-    <a href={retailerLink} className={cn(styles.retailerCard, {
-      [styles.mobile]: layout === 'mobile',
+    <a href={retailerLink} className={cn(styles.retailerCard, styles[layout], {
       [styles.disabled]: isDisabled
     })}>
       <div className={styles.retailerCardHeader}>

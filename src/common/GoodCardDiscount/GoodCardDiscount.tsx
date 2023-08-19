@@ -11,10 +11,9 @@ interface GoodCardDiscountProps {
 
 export function GoodCardDiscount({discount, image, expanded, layout}: GoodCardDiscountProps) {
   return (
-    <div className={cn(styles.discount, {
+    <div className={cn(styles.discount, styles[layout], {
       [styles.expanded]: expanded,
       [styles.small]: !expanded,
-      [styles.mobile]: layout === 'mobile'
     })}>
         <div className={styles.discountPercentage}>{discount}%</div>
 

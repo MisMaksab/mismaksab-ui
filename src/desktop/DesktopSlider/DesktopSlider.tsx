@@ -4,10 +4,10 @@ import styles from './DesktopSlider.scss';
 import {DesktopArrowButton} from '../DesktopArrowButton/DesktopArrowButton';
 
 interface DesktopSliderProps {
-  slides: React.ReactElement;
+  children: React.ReactElement;
 }
 
-export function DesktopSlider({slides}: DesktopSliderProps) {
+export function DesktopSlider({children}: DesktopSliderProps) {
   const [offset, setOffset] = useState(0);
   const [isPrevBtnShown, setIsPrevBtnShown] = useState(false);
   const [isNextBtnShown, setIsNextBtnShown] = useState(false);
@@ -67,7 +67,7 @@ export function DesktopSlider({slides}: DesktopSliderProps) {
           className={styles.sliderSlides}
           style={{transform: `translateX(${offset}px)`}}
         >
-          {slides}
+          {children}
         </div>
       </div>
       <DesktopArrowButton type='next' isShown={isNextBtnShown} onClick={handleNextSlide}/>

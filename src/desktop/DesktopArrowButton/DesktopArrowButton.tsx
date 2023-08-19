@@ -14,10 +14,8 @@ interface DesktopArrowButtonProps {
 export function DesktopArrowButton({type, isShown, onClick}: DesktopArrowButtonProps) {
   return (
     <div className={cn(
-      styles.arrowButton, {
+      styles.arrowButton, styles[type], {
         [styles.shown]: isShown,
-        [styles.prev]: type === 'prev',
-        [styles.next]: type === 'next'
       })} 
     onClick={onClick}
     >

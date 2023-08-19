@@ -14,9 +14,7 @@ export function SideBarBoxItem({layout, data, id, expandedIdArr, onChange}: Side
   const isExpanded = expandedIdArr.includes(id);
 
   return (
-    <div className={cn(styles.sideBarBoxItem, {
-      [styles.mobile]: layout === 'mobile'
-    })}>
+    <div className={cn(styles.sideBarBoxItem, styles[layout])}>
       <div className={styles.sideBarBoxItemBtn}>
         <img className={styles.logoSvg} src={data.svg}/>
         <a href={data.link} onClick={() => {onChange(id)}} className={cn(styles.title, {

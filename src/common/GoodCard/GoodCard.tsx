@@ -28,9 +28,8 @@ export function GoodCard({
   }, []);
   return (
     <div className={cn(
-        styles.goodCard,{
+        styles.goodCard, styles[layout], {
             [styles.disabled]: isDisabled,
-            [styles.mobile]: layout === 'mobile',
         }
     )}>
         {header}

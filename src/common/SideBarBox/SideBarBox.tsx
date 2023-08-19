@@ -12,9 +12,7 @@ interface SideBarBoxInterFace {
 
 export function SideBarBox({layout, data, expandedIdArr, onChange}: SideBarBoxInterFace) {
   return (
-    <div className={cn(styles.sideBarBox, {
-      [styles.mobile]: layout === 'mobile'
-    })}>
+    <div className={cn(styles.sideBarBox, styles[layout])}>
         {data.map((item:[], i:number) =>
           <SideBarBoxItem layout={layout} key={i} id={i} expandedIdArr={expandedIdArr} data={item} onChange={onChange}/>
         )}

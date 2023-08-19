@@ -1,11 +1,12 @@
 import React from "react"
 import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard"
 
-export function _AllGoodsSlides({slidesData}) {
+export function AllGoodsSlides({slidesData}) {
   return (
     <>
       {slidesData.map(slide =>
         <GoodCard
+          key={slide.productId}
           header={
             <GoodCardHeader
                 productImageURL={slide.productImageURL}

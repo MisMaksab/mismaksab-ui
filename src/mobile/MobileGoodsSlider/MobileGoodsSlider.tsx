@@ -1,6 +1,6 @@
 import React from 'react'
 import { MobileSlider } from '../MobileSlider/MobileSlider';
-import { _AllGoodsSlides } from '../../common/_AllGoodsSlides/_AllGoodsSlides';
+import { _AllGoodsSlides } from '../../common/AllGoodsSlides/AllGoodsSlides';
 
 interface MobileGoodsSliderProps {
   slidesData: [];

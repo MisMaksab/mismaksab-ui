@@ -27,9 +27,7 @@ export function ExpandedGoodCard({
 {
   return (
     <div className={cn(
-      styles.expandedGoodCard,{
-        [styles.mobile]: layout === 'mobile',
-      }
+      styles.expandedGoodCard, styles[layout]
     )}>
       {header}
       {footer}

@@ -14,9 +14,7 @@ interface BannerProps {
 
 export function Banner({layout, mode, title, text, searchText, searchLink, img}: BannerProps) {
   return (
-    <div className={cn(styles.banner, styles[mode], {
-      [styles.mobile]: layout === 'mobile'
-    })}>
+    <div className={cn(styles.banner, styles[mode], styles[layout])}>
       <div className={styles.bannerText}>
         <span className={styles.title}>
           {title}

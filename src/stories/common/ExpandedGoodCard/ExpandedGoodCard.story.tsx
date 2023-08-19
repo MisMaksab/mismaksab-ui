@@ -76,7 +76,7 @@ ExpadnedGoodCardStory.args = {
     goToRetailerLink: '/',
     discountConditionsText: 'Скидка при предъявлении карты магазина',
     retailerCardImage: 'rimi',
-    layout: 'desktop'
+    layout: 'mobile'
 }
 
 ExpadnedGoodCardStory.storyName = "ExpandedGoodCard";

@@ -1,11 +1,12 @@
 import React from "react"
 import { RetailerCard } from "../RetailerCard/RetailerCard"
 
-export function _AllRetailersSlides({slidesData}) {
+export function AllRetailersSlides({slidesData}) {
   return (
     <>
       {slidesData.map(slide =>
         <RetailerCard
+          key={slide.productId}
           retailerLink={slide.retailerLink}
           retailerImageURL={slide.retailerImageURL}
           discountText={slide.discountText}
