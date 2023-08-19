@@ -1,25 +1,25 @@
 @import "../../scss/variables.scss";
 
-.goodsSlider {
+.retailersSlider {
     width: $retailersSliderWidth;
     margin: 0 auto;
 }
 
 
 @media screen and (max-width: 1200px) {
-    .goodsSlider {
-        width: 736px;
+    .retailersSlider {
+        width: 690px;
     }
 }
 
 @media screen and (max-width: 950px) {
-    .goodsSlider {
-        width: 552px;
+    .retailersSlider {
+        width: 460px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .goodsSlider {
-        width: 368px;
+    .retailersSlider {
+        width: 230px;
     }
 }

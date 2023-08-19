@@ -2,57 +2,69 @@ import React from 'react'
 import styles from './ExpandedGoodCard.scss';
 import cn from 'classnames';
 import { DesktopHeaderLogo } from '../../desktop/DesktopHeaderLogo/DesktopHeaderLogo';
+import { GoodCardDiscount } from '../GoodCardDiscount/GoodCardDiscount';
 
 
 interface ExpandedGoodCardProps {
   layout: 'mobile'|'desktop';
   productId: string;
-  productImageURL: string;
-  discount: number;
-  price: number;
-  oldPrice: number;
-  productTitle: string;
-  unitPrice: number;
-  unitType: string;
   discountUntil: number;
   addedToList: boolean;
-  retailerImageURL: string;
-  expireDateStr: string;
-  goToRetailerText: string;
-  goToRetailerLink: string;
-  discountConditionsText: string;
-  retailerCardImage: string|null;
   addToList: (productId: string) => void;
+  header: React.ReactElement;
+  footer: React.ReactElement;
 }
 
 export function ExpandedGoodCard({
   layout,
   productId,
-  productImageURL,
-  discount,
-  price,
-  oldPrice,
-  productTitle,
-  unitPrice,
-  unitType,
   discountUntil,
   addedToList,
-  retailerImageURL,
-  expireDateStr,
-  goToRetailerText,
-  goToRetailerLink,
-  discountConditionsText,
-  retailerCardImage,
   addToList,
+  header,
+  footer,
 }: ExpandedGoodCardProps)
 {
   return (
     <div className={cn(
       styles.expandedGoodCard,{
-          [styles.mobile]: layout === 'mobile',
+        [styles.mobile]: layout === 'mobile',
       }
     )}>
-      <div className={styles.expandedGoodCardMainInfo}>
+      {header}
+      {footer}
+      {layout === 'desktop' &&
+        <div className={styles.expandedGoodCardLogo}>
+          <DesktopHeaderLogo title='MisMaksab' subtitle='скидки в магазинах Эстонии' href='/' />
+        </div>
+      }
+  </div>
+  )
+}
+
+
+
+interface ExpandedGoodCardHeaderProps {
+  productImageURL: string;
+  price: number;
+  oldPrice: number;
+  productTitle: string;
+  unitPrice: number;
+  unitType: string;
+  expireDateStr: string;
+}
+
+export function ExpandedGoodCardHeader({
+  productImageURL,
+  expireDateStr,
+  price, 
+  oldPrice,
+  unitPrice,
+  unitType,
+  productTitle
+}: ExpandedGoodCardHeaderProps) {
+  return (
+    <div className={styles.expandedGoodCardMainInfo}>
         <div className={styles.productImage}>
           <img className={styles.img} src={productImageURL}/>
         </div>
@@ -67,8 +79,31 @@ export function ExpandedGoodCard({
           <a href='/' className={styles.title}>{productTitle}</a>
         </div>
       </div>
+  )
+}
 
-      <div className={styles.expandedGoodCardSecondaryInfo}>
+
+interface ExpandedGoodCardFooterProps {
+  layout: 'mobile'|'desktop';
+  discount: number;
+  retailerImageURL: string;
+  goToRetailerText: string;
+  goToRetailerLink: string;
+  discountConditionsText: string;
+  retailerCardImage: string|null;
+}
+
+export function ExpandedGoodCardFooter({
+  retailerImageURL,
+  goToRetailerLink,
+  goToRetailerText,
+  layout,
+  retailerCardImage,
+  discount,
+  discountConditionsText
+}: ExpandedGoodCardFooterProps) {
+  return (
+    <div className={styles.expandedGoodCardSecondaryInfo}>
         <div className={styles.retailer}>
           <div className={styles.retailerImage}>
             <img src={retailerImageURL} className={styles.img} />
@@ -77,23 +112,9 @@ export function ExpandedGoodCard({
         </div>
 
         <div className={styles.discount}>
-          <div className={styles.discountConditions}>
-            <div className={styles.discountPercentage}>{discount} %</div>
-            {retailerCardImage &&
-              <div className={styles.discountCardRequired}>
-                <img src={retailerCardImage} className={styles.img} />
-              </div>
-            }
-          </div>
+          <GoodCardDiscount layout={layout} expanded={true} image={retailerCardImage} discount={discount}/>
           <span className={styles.discountText}>{discountConditionsText}</span>
         </div>
       </div>
-
-      {layout === 'desktop' &&
-        <div className={styles.expandedGoodCardLogo}>
-          <DesktopHeaderLogo title='MisMaksab' subtitle='скидки в магазинах Эстонии' href='/' />
-        </div>
-      }
-  </div>
   )
 }

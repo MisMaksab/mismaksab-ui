@@ -77,25 +77,6 @@
       .discount {
         padding-top: 10px;
 
-        .discountConditions {
-          width: 42px;
-          border-radius: 5px;
-
-          .discountPercentage {
-            padding:0;
-            font-size: 14px;
-            font-weight: 600;
-          }
-
-          .discountCardRequired {
-            padding: 3px 0 6px;
-
-            .img {
-              max-width: 24px;
-            }
-          }
-        }
-
         .discountText {
           padding: 5px 7px 5px 12px;
           font-size: 14px;
@@ -213,39 +194,6 @@
       padding-top: 20px;
       display: flex;
       align-items: center;
-      
-      .discountConditions {
-        width: 110px;
-        border-radius: 15px;
-        border: 1px solid $primaryColorMain;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        min-width: 30px;
-
-        .discountPercentage {
-            font-size: 29px;
-            text-align: center;
-            font-weight: 700;
-            background: $primaryColorMain;
-            color:white;
-            padding: 0 5px;
-        }
-
-        .discountCardRequired {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 2;
-            display: flex;
-            padding: 10px 0 15px;
-
-            .img {
-              max-width: 65px;
-            }
-        }
-      }
 
       .discountText {
         padding: 0 20px;

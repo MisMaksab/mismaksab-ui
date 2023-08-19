@@ -1,0 +1,17 @@
+
+.slider {
+  max-width: 768px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    box-sizing: content-box;
+
+  .sliderBox {
+    overflow: auto;
+
+    .sliderSlides {
+      display: inline-flex;
+      flex-wrap: nowrap;
+    }
+  }
+}

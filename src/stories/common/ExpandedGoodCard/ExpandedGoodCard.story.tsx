@@ -6,8 +6,7 @@ import prismaSvg from "../../../assets/retailer/prisma.svg";
 import maximaSvg from "../../../assets/retailer/maxima.svg";
 
 import rimiCardPng from '../../../assets/retailer/rimiCart.png';
-
-import { ExpandedGoodCard } from "../../../common/ExpadedGoodCard/ExpandedGoodCard";
+import { ExpandedGoodCard, ExpandedGoodCardFooter, ExpandedGoodCardHeader } from "../../../common/ExpadedGoodCard/ExpandedGoodCard";
 
 const RETAILER_IMG_URL: Record<string, string> = {
     'selver': selverSvg,
@@ -22,30 +21,39 @@ const RETAILER_CARD_IMG_URL: Record<string, string> = {
 }
 
 export const ExpadnedGoodCardStory = (props: any) => {
-    const {layout, imageURL, discount, retailer, price, oldPrice, title, pricePerKilo, discountUntil, disabled, expireDateStr, unitType, goToRetailerText, goToRetailerLink, discountConditionsText, retailerCardImage } = props;
+    const {layout, imageURL, discount, retailer, price, oldPrice, title, pricePerKilo, discountUntil, disabled, expireDateStr, unitType, goToRetailerText, goToRetailerLink, discountConditionsText} = props;
 
     return (
         <>
         <ExpandedGoodCard
             productId="1"
-            productImageURL={imageURL}
-            discount={discount}
-            price={price}
-            oldPrice={oldPrice}
-            productTitle={title}
-            unitPrice={pricePerKilo}
-            unitType={unitType}
-            discountUntil={discountUntil}
             isDisabled={disabled}
-            retailerImageURL={RETAILER_IMG_URL[retailer]}
             addedToList={false}
-            expireDateStr={expireDateStr}
             addToList={() => null}
             layout={layout}
-            goToRetailerText={goToRetailerText}
-            goToRetailerLink={goToRetailerLink}
-            discountConditionsText={discountConditionsText}
-            retailerCardImage={RETAILER_CARD_IMG_URL[retailerCardImage]}
+
+            header={
+                <ExpandedGoodCardHeader
+                    productImageURL={imageURL}
+                    price={price}
+                    oldPrice={oldPrice}
+                    productTitle={title}
+                    unitPrice={pricePerKilo}
+                    unitType={unitType}
+                    expireDateStr={expireDateStr}
+                />
+            }
+            footer={
+                <ExpandedGoodCardFooter
+                    retailerImageURL={RETAILER_IMG_URL[retailer]}
+                    goToRetailerLink={goToRetailerLink}
+                    goToRetailerText={goToRetailerText}
+                    layout={layout}
+                    retailerCardImage={RETAILER_CARD_IMG_URL[retailer]}
+                    discount={discount}
+                    discountConditionsText={discountConditionsText}
+                />
+            }
         />
         </>
         
