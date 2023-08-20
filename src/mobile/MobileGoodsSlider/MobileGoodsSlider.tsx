@@ -8,6 +8,8 @@ interface MobileGoodsSliderProps {
 
 export function MobileGoodsSlider({slidesData}: MobileGoodsSliderProps) {
   return (
-    <MobileSlider slidesData={<AllGoodsSlides slidesData={slidesData}/>}/>
+    <MobileSlider>
+      <AllGoodsSlides slidesData={slidesData}/>
+    </MobileSlider>
   )
 }
