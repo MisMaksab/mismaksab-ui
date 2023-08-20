@@ -1,6 +1,6 @@
 import React from 'react'
 import { MobileSlider } from '../MobileSlider/MobileSlider';
-import { _AllRetailersSlides } from '../../common/AllRetailersSlides/AllRetailersSlides';
+import { AllRetailersSlides } from '../../common/AllRetailersSlides/AllRetailersSlides';
 
 interface MobileRetailersSliderProps {
   slidesData: [];
@@ -8,6 +8,6 @@ interface MobileRetailersSliderProps {
 
 export function MobileRetailersSlider({slidesData}: MobileRetailersSliderProps) {
   return (
-    <MobileSlider slidesData={<_AllRetailersSlides slidesData={slidesData}/>}/>
+    <MobileSlider slidesData={<AllRetailersSlides slidesData={slidesData}/>}/>
   )
 }
