@@ -3,10 +3,10 @@ import styles from './ExpandedGoodCard.scss';
 import cn from 'classnames';
 import { DesktopHeaderLogo } from '../../desktop/DesktopHeaderLogo/DesktopHeaderLogo';
 import { GoodCardDiscount } from '../GoodCardDiscount/GoodCardDiscount';
+import { LayoutProp } from '../LayoutProp';
 
 
-interface ExpandedGoodCardProps {
-  layout: 'mobile'|'desktop';
+interface ExpandedGoodCardProps extends LayoutProp{
   productId: string;
   discountUntil: number;
   addedToList: boolean;
@@ -81,8 +81,7 @@ export function ExpandedGoodCardHeader({
 }
 
 
-interface ExpandedGoodCardFooterProps {
-  layout: 'mobile'|'desktop';
+interface ExpandedGoodCardFooterProps extends LayoutProp{
   discount: number;
   retailerImageURL: string;
   goToRetailerText: string;

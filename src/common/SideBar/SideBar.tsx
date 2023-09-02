@@ -5,9 +5,9 @@ import cn from 'classnames';
 import { SideBarHeader } from "../../common/SideBarHeader/SideBarHeader";
 import { SideBarBox } from '../SideBarBox/SideBarBox';
 import { MobileSideBarControls } from '../../mobile/MobileSideBarControls/MobileSideBarControls';
+import { LayoutProp } from '../LayoutProp';
 
-interface SideBarProps {
-  layout: 'mobile'|'desktop';
+interface SideBarProps extends LayoutProp{
   title: string;
   data: [];
 }

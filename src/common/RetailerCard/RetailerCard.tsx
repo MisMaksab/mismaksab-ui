@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from './ReatailerCard.scss'
 import cn from 'classnames';
+import { LayoutProp } from '../LayoutProp';
 
-interface RetailerCardProps {
+interface RetailerCardProps extends LayoutProp{
   retailerLink: string;
   retailerImageURL: string;
   discountText: string;
   retailer: string;
   offersText: string;
-  layout: 'mobile'|'desktop';
   isDisabled: boolean;
 }
 

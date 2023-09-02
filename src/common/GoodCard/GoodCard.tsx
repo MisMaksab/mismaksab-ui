@@ -2,10 +2,10 @@ import React, { useCallback, useState } from 'react'
 import cn from 'classnames';
 
 import styles from './GoodCard.scss';
+import { LayoutProp } from '../LayoutProp';
 import { GoodCardDiscount } from '../GoodCardDiscount/GoodCardDiscount';
 
-interface GoodCardProps {
-    layout: 'mobile'|'desktop';
+interface GoodCardProps extends LayoutProp{
     productId: string;
     addedToList: boolean;
     isDisabled?: boolean;
@@ -39,11 +39,10 @@ export function GoodCard({
 }
 
 
-interface GoodCardHeaderProps {
+interface GoodCardHeaderProps extends LayoutProp{
     productImageURL: string;
     discount: number;
     retailerImageURL: string;
-    layout: 'mobile'|'desktop';
 }
 
 export function GoodCardHeader({
@@ -61,9 +60,7 @@ export function GoodCardHeader({
 }
 
 
-interface GoodCardFooterProps {
-    layout: 'mobile'|'desktop';
-    discount: number;
+interface GoodCardFooterProps extends LayoutProp{
     price: number;
     oldPrice: number;
     productTitle: string;

@@ -2,9 +2,9 @@ import React from 'react'
 import styles from './SideBarBox.scss';
 import { SideBarBoxItem } from '../SideBarBoxItem/SideBarBoxItem';
 import cn from 'classnames';
+import { LayoutProp } from '../LayoutProp';
 
-interface SideBarBoxInterFace {
-  layout: 'mobile'|'desktop';
+interface SideBarBoxInterFace extends LayoutProp{
   data: [];
   expandedIdArr: [];
   onChange: (id: number) => void;

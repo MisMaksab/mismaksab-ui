@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './SideBarHeader.scss';
 import SideBarHideSvg from '../../assets/icons/sideBarHide.svg';
 import cn from 'classnames';
+import { LayoutProp } from '../LayoutProp';
 
-interface SideBarHeaderProps {
-  layout: 'mobile'|'desktop';
+interface SideBarHeaderProps extends LayoutProp{
   title: string;
   onHide: () => void;
 }

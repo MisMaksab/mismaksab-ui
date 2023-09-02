@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Banner.scss';
 import cn from 'classnames';
+import { LayoutProp } from '../LayoutProp';
 
-interface BannerProps {
-  layout: 'mobile'|'desktop';
+interface BannerProps extends LayoutProp{
   mode: 'blue'|'yellow'|'green';
   title: string;
   text: string;
