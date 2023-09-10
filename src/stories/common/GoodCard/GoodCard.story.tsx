@@ -64,7 +64,7 @@ GoodCardStory.args = {
     disabled: false,
     expireDateStr: "Скидка до 18.07",
     unitType: "kg",
-    layout:'mobile'
+    layout:'desktop'
 }
 
 GoodCardStory.storyName = "GoodCard";
