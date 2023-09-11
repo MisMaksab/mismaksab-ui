@@ -92,11 +92,14 @@
 
     .sideBarBoxItemDropdownContainer {
       min-height: 0;
-      padding-bottom: 10px;
     }
 
     .sideBarBoxItemDropdownItem {
       padding:10px 20px 10px 65px;
+
+      &:last-child {
+        padding-bottom: 10px;
+      }
 
       .link {
         text-transform: capitalize;
