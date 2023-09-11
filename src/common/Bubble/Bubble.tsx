@@ -5,7 +5,7 @@ import cn from 'classnames';
 import BubbleArrowSvg from '../../assets/icons/bubble_arrow.svg'
 
 interface BubbleProps extends LayoutProp{
-  mode: 'blue'|'green'|'lightgreen'|'lightblue'|'lightorange';
+  mode: 'blue'|'green'|'lightgreen'|'lightblue'|'orange'|'lightorange'|'disabled';
   text: string;
   link?: string;
   dropdown?: React.ReactElement | null;

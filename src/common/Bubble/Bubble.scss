@@ -1,35 +1,11 @@
 @import "../../scss/variables.scss";
+@import "../../scss/modes.scss";
 
 .bubble {
   &.mobile {
     padding: 6px 12px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 20px;
-  }
-
-  &.blue {
-    background: $tertiaryColorMain;
-    color: $fontColorDark;
-  }
-
-  &.green {
-    background: $primaryColorMain;
-    color: white;
-  }
-
-  &.lightgreen {
-    background: $primaryColorLight;
-    color: $primaryColorDark; 
-  }
-
-  &.lightblue {
-    background: $tertiaryColorLight;
-    color: $quaternaryColorDark;
-  }
-
-  &.lightorange {
-    background: $secondaryColorLight;
-    color: $secondaryColorDark;
   }
 
   &.desktop {
@@ -43,6 +19,7 @@
   font-weight: 400;
   line-height: 100%; /* 20px */
   cursor: pointer;
+  display: inline-block;
   
   .bubbleArrow {
     vertical-align: middle;
