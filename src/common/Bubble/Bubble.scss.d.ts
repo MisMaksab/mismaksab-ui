@@ -5,11 +5,13 @@ interface CssExports {
   'bubble': string;
   'bubbleArrow': string;
   'desktop': string;
+  'disabled': string;
   'green': string;
   'lightblue': string;
   'lightgreen': string;
   'lightorange': string;
   'mobile': string;
+  'orange': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;
