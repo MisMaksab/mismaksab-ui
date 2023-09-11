@@ -1,0 +1,59 @@
+@import "../../scss/variables.scss";
+
+.bubble {
+  &.mobile {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+
+  &.blue {
+    background: $tertiaryColorMain;
+    color: $fontColorDark;
+  }
+
+  &.green {
+    background: $primaryColorMain;
+    color: white;
+  }
+
+  &.lightgreen {
+    background: $primaryColorLight;
+    color: $primaryColorDark; 
+  }
+
+  &.lightblue {
+    background: $tertiaryColorLight;
+    color: $quaternaryColorDark;
+  }
+
+  &.lightorange {
+    background: $secondaryColorLight;
+    color: $secondaryColorDark;
+  }
+
+  &.desktop {
+    padding: 12px 16px;
+    border-radius: 50px;
+  }
+
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 100%; /* 20px */
+  cursor: pointer;
+  
+  .bubbleArrow {
+    vertical-align: middle;
+    width: 9px;
+    height: 5px;
+    margin-left: 6px;
+    transition: .3s;
+    transform-origin: center center;
+
+    &.rotate {
+      transform: rotate(180deg);
+    }
+  }
+}
