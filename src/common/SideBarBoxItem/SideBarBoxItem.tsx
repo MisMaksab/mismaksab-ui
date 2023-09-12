@@ -28,17 +28,19 @@ export function SideBarBoxItem({layout, data, id, expandedIdArr, onChange}: Side
         </a>
       </div>
 
-      <div className={cn(styles.sideBarBoxItemDropdown, {
-        [styles.expanded]: isExpanded
-      })}>
-        <div className={styles.sideBarBoxItemDropdownContainer}>
-          {data.dropdownItems.map(item =>
-            <div className={styles.sideBarBoxItemDropdownItem}>
-              <a className={styles.link} href={item.link}>{item.title}</a>
-            </div>
-          )}
+      {!data.subSvg &&
+        <div className={cn(styles.sideBarBoxItemDropdown, {
+          [styles.expanded]: isExpanded
+        })}>
+          <div className={styles.sideBarBoxItemDropdownContainer}>
+            {data.dropdownItems.map(item =>
+              <div className={styles.sideBarBoxItemDropdownItem}>
+                <a className={styles.link} href={item.link}>{item.title}</a>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      }
     </div>
   )
 }
