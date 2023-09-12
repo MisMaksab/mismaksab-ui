@@ -4,9 +4,9 @@ export * as variables from "./scss/variables.scss";
 export { Button } from "./common/Button/Button";
 export { LanguageDropdown } from "./common/LanguageDropdown/LanguageDropdown";
 export { SearchBar } from "./common/SearchBar/SearchBar";
+export { SideBar } from "./common/SideBar/SideBar";
 // Desktop
 export { Info } from "./desktop/Info/Info";
-export { LanguageDropdown } from "./common/LanguageDropdown/LanguageDropdown";
 export { DesktopHeader } from "./desktop/DesktopHeader/DesktopHeader";
 export { DesktopFooter } from "./desktop/DesktopFooter/DesktopFooter";
 export { DesktopFooterLinks } from "./desktop/DesktopFooterLinks/DesktopFooterLinks";

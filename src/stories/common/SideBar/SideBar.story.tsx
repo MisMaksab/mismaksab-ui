@@ -1,19 +1,17 @@
 import React from "react";
-import { SideBar } from "../../../common/SideBar/SideBar";
+import { DropdownItem, SideBar } from "../../../common/SideBar/SideBar";
 
 import VegetablesAndFruitsSvg from '../../../assets/sideBarIcons/vegetablesAndFruits.svg';
 import SideBarItemArrow from '../../../assets/sideBarIcons/sideBarItemArrow.svg';
 
 
-const sideBarData = [
+const sideBarData: DropdownItem[] = [
   {
     title: "овощи",
     svg: VegetablesAndFruitsSvg,
     subSvg: SideBarItemArrow,
     link: '/',
-    dropdownItems: [
-      
-    ]
+    dropdownItems: []
   },
   {
     title: "фрукты",

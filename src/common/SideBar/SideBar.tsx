@@ -9,12 +9,25 @@ import { LayoutProp } from '../LayoutProp';
 
 interface SideBarProps extends LayoutProp{
   title: string;
-  data: [];
+  data: DropdownItem[];
+}
+
+export type DropdownItem = {
+  title: string,
+  svg?: string,
+  subSvg?: string,
+  link?: string,
+  dropdownItems: dropdownItem[]
+}
+
+type dropdownItem = {
+  title: string;
+  link: string;
 }
 
 export function SideBar({title, layout, data}: SideBarProps) {
-  const [expandedIdArr, setExpadedIdArr] = useState([]);
-  const changeExpandedIdArrCb = useCallback((id:number) => {
+  const [expandedIdArr, setExpadedIdArr] = useState<number[]>([]);
+  const changeExpandedIdArrCb = useCallback((id: number) => {
     if (expandedIdArr.includes(id)) {
       setExpadedIdArr(expandedIdArr.filter(oldId => oldId != id));
     } else {

@@ -2,11 +2,12 @@ import React from "react";
 import cn from 'classnames';
 import styles from './SideBarBoxItem.scss';
 import {LayoutProp}  from "../LayoutProp";
+import { DropdownItem } from "../SideBar/SideBar";
 
 interface SideBarBoxItemProps extends LayoutProp{
-  data: [];
+  data: DropdownItem;
   id: number;
-  expandedIdArr: [];
+  expandedIdArr: number[];
   onChange: (id: number) => void;
 }
 
