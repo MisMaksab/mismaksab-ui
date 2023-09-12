@@ -16,13 +16,13 @@ export function DesktopSlider({children}: DesktopSliderProps) {
     allSlides: 0
   });
   
-  const sliderBox = useRef(null); //slides wrapper
+  const sliderBox = useRef<HTMLDivElement | null>(null); //slides wrapper
 
   // set widths function
   function setWidths() {
     setOffsetWidth({
-      sliderBox: sliderBox.current.offsetWidth,
-      allSlides: sliderBox.current.children[0].offsetWidth
+      sliderBox: sliderBox?.current?.offsetWidth || 0,
+      allSlides: (sliderBox?.current?.children[0] as any)?.offsetWidth || 0,
     });
   }
 

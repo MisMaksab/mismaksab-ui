@@ -1,6 +1,6 @@
 import React from "react";
 import { Banner } from "../../../common/Banner/Banner";
-import plumsImg from './../../../assets/banner/plums.jpg';
+import plumsImg from '../../../assets/banner/plums.svg';
 
 export const BannerStory = () => (
   <>

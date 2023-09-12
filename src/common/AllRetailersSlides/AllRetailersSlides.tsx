@@ -1,10 +1,10 @@
 import React from "react"
 import { RetailerCard } from "../RetailerCard/RetailerCard"
-
-export function AllRetailersSlides({slidesData}) {
+// TODO use normal slides instead any
+export function AllRetailersSlides({slidesData}: any) {
   return (
     <>
-      {slidesData.map(slide =>
+      {slidesData.map((slide: any) =>
         <RetailerCard
           key={slide.productId}
           retailerLink={slide.retailerLink}

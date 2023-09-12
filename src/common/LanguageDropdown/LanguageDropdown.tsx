@@ -7,7 +7,7 @@ import styles from "./LanguageDropdown.scss";
 interface LanguageDropdownProps {
   selectedLanguage: string;
   languages: Array<{short: string, long: string}>;
-  layout?: 'mobile'|'desktop';
+  layout: 'mobile'|'desktop';
 }
 
 export function LanguageDropdown({ selectedLanguage, languages, layout}: LanguageDropdownProps) {

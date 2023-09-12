@@ -3,6 +3,7 @@
 interface CssExports {
   'added': string;
   'current': string;
+  'desktop': string;
   'disabled': string;
   'discountUntil': string;
   'goodCard': string;

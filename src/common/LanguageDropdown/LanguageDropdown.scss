@@ -3,6 +3,10 @@
 .language {
     position: relative;
 
+    &.desktop {
+        /**/
+    }
+
     // mobile version
     &.mobile {
         .languageCurrent {

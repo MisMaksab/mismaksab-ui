@@ -9,6 +9,10 @@
   max-width: 910px;
   box-sizing: border-box;
 
+  &.desktop {
+    /**/
+  }
+
   &.mobile {
     border-radius: 10px;
     max-width: 340px;

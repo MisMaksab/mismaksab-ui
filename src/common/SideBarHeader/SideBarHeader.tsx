@@ -7,6 +7,7 @@ import { LayoutProp } from '../LayoutProp';
 interface SideBarHeaderProps extends LayoutProp{
   title: string;
   onHide: () => void;
+  layout: 'mobile' | 'desktop';
 }
 
 export function SideBarHeader({layout, title, onHide}: SideBarHeaderProps) {

@@ -6,7 +6,7 @@ import { DesktopSlider } from '../DesktopSlider/DesktopSlider';
 import { AllGoodsSlides } from '../../common/AllGoodsSlides/AllGoodsSlides';
 
 interface DesktopGoodsSliderProps {
-  slidesData: [];
+  slidesData: number[];
 }
 
 export function DesktopGoodsSlider({slidesData}: DesktopGoodsSliderProps) {
