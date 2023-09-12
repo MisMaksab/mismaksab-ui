@@ -13,12 +13,10 @@ interface BubbleProps extends LayoutProp{
 
 export  function Bubble({mode, text, link, layout, dropdown=null}: BubbleProps) {
   const [isDropdownExpanded, setIsDropdownExpanded] = useState(false);
-  const bubbleClickCb = useCallback(() => {
-    setIsDropdownExpanded(!isDropdownExpanded);
-  }, [isDropdownExpanded]);
+  const handleBubbleClick = () => setIsDropdownExpanded(oldValue => !oldValue);
 
   return (
-    <a onClick={bubbleClickCb} href={link} className={cn(styles.bubble, styles[mode], styles[layout])}>
+    <a onClick={handleBubbleClick} href={link} className={cn(styles.bubble, styles[mode], styles[layout])}>
       {text}
 
       {dropdown &&
