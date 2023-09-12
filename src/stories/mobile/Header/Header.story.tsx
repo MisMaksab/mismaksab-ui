@@ -10,7 +10,7 @@ export const HeaderStory = () => (
   <DesktopHeader
     logo={<DesktopHeaderLogo title="MisMaksab" subtitle="Скидки в магазинах эстонии" />}
     searchBar={<SearchBar onChange={(val: string) => null} placeHolderText="Найти товар" />}
-    languages={<LanguageDropdown selectedLanguage="est" languages={LANGUAGES_ARR} />}
+    languages={<LanguageDropdown selectedLanguage="est" languages={LANGUAGES_ARR} layout="mobile" />}
   />
 );
 

@@ -4,7 +4,7 @@ import rimiSvg from "../../../assets/retailer/rimi.svg";
 import lidlSvg from "../../../assets/retailer/lidl.svg";
 import prismaSvg from "../../../assets/retailer/prisma.svg";
 import maximaSvg from "../../../assets/retailer/maxima.svg";
-import { GoodCard } from '../../../common/GoodCard/GoodCard';
+import { GoodCard, GoodCardFooter, GoodCardHeader } from '../../../common/GoodCard/GoodCard';
 
 const RETAILER_IMG_URL: Record<string, string> = {
     'selver': selverSvg,
@@ -20,42 +20,33 @@ export const GoodCardStory = (props: any) => {
     return (
         <>
         <GoodCard
+            header={
+                <GoodCardHeader
+                    productImageURL={imageURL}
+                    retailerImageURL={RETAILER_IMG_URL[retailer]}
+                    discount={discount}
+                    layout={layout}
+                    />
+                }
+            footer={
+                <GoodCardFooter
+                    price={price}
+                    oldPrice={oldPrice}
+                    productTitle={title}
+                    unitPrice={pricePerKilo}
+                    unitType={unitType}
+                    layout={layout}
+                    expireDateStr={expireDateStr}
+                />
+            }
+            
             productId="1"
-            productImageURL={imageURL}
-            discount={discount}
-            price={price}
-            oldPrice={oldPrice}
-            productTitle={title}
-            unitPrice={pricePerKilo}
-            unitType={unitType}
-            discountUntil={discountUntil}
             isDisabled={disabled}
-            retailerImageURL={RETAILER_IMG_URL[retailer]}
             addedToList={false}
-            expireDateStr={expireDateStr}
             addToList={() => null}
             layout={layout}
         />
         <br/>
-
-<GoodCard
-            productId="2"
-            productImageURL={imageURL}
-            discount={discount}
-            price={price}
-            oldPrice={oldPrice}
-            productTitle={title}
-            unitPrice={pricePerKilo}
-            unitType={unitType}
-            discountUntil={discountUntil}
-            retailerImageURL={RETAILER_IMG_URL[retailer]}
-            addedToList={false}
-            expireDateStr={expireDateStr}
-            addToList={() => null}
-            layout='mobile'
-            isDisabled={true}
-        />
-
         </>
         
     );

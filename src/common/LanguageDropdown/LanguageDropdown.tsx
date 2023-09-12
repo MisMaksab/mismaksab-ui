@@ -7,16 +7,14 @@ import styles from "./LanguageDropdown.scss";
 interface LanguageDropdownProps {
   selectedLanguage: string;
   languages: Array<{short: string, long: string}>;
-  mobile?: boolean;
+  layout?: 'mobile'|'desktop';
 }
 
-export function LanguageDropdown({ selectedLanguage, languages, mobile=false}: LanguageDropdownProps) {
+export function LanguageDropdown({ selectedLanguage, languages, layout}: LanguageDropdownProps) {
   const [activeSelection, setActiveSelection] = useState(false);
 
   return (
-    <div className={cn(styles.language, {
-      [styles.mobile]: mobile
-    })}>
+    <div className={cn(styles.language, styles[layout])}>
       <div className={styles.languageCurrent} onClick={() => setActiveSelection(!activeSelection)}>
         <span className={styles.languageCurrentLang}>{selectedLanguage}</span>
         <div

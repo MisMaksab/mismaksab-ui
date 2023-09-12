@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Banner.scss';
 import cn from 'classnames';
+import { LayoutProp } from '../LayoutProp';
 
-interface BannerProps {
-  layout: 'mobile'|'desktop';
+interface BannerProps extends LayoutProp{
   mode: 'blue'|'yellow'|'green';
   title: string;
   text: string;
@@ -14,9 +14,7 @@ interface BannerProps {
 
 export function Banner({layout, mode, title, text, searchText, searchLink, img}: BannerProps) {
   return (
-    <div className={cn(styles.banner, styles[mode], {
-      [styles.mobile]: layout === 'mobile'
-    })}>
+    <div className={cn(styles.banner, styles[mode], styles[layout])}>
       <div className={styles.bannerText}>
         <span className={styles.title}>
           {title}

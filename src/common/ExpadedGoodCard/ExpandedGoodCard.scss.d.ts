@@ -3,9 +3,6 @@
 interface CssExports {
   'current': string;
   'discount': string;
-  'discountCardRequired': string;
-  'discountConditions': string;
-  'discountPercentage': string;
   'discountText': string;
   'discountUntil': string;
   'expandedGoodCard': string;

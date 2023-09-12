@@ -2,76 +2,93 @@ import React, { useCallback, useState } from 'react'
 import cn from 'classnames';
 
 import styles from './GoodCard.scss';
+import { LayoutProp } from '../LayoutProp';
+import { GoodCardDiscount } from '../GoodCardDiscount/GoodCardDiscount';
 
-interface Props {
-    layout: 'mobile'|'desktop';
+interface GoodCardProps extends LayoutProp{
     productId: string;
-    productImageURL: string;
-    discount: number;
-    price: number;
-    oldPrice: number;
-    productTitle: string;
-    unitPrice: number;
-    unitType: string;
-    discountUntil: number;
     addedToList: boolean;
-    retailerImageURL: string;
-    expireDateStr: string;
     isDisabled?: boolean;
+    header: React.ReactElement;
+    footer: React.ReactElement;
     addToList: (productId: string) => void;
 }
 
 export function GoodCard({
     layout,
     productId,
+    addedToList,
+    isDisabled = false,
+    addToList,
+    header,
+    footer
+}: GoodCardProps) {
+  const onAddToList = useCallback(() => {
+    addToList(productId);
+  }, []);
+  return (
+    <div className={cn(
+        styles.goodCard, styles[layout], {
+            [styles.disabled]: isDisabled,
+        }
+    )}>
+        {header}
+        {footer}
+    </div>
+  )
+}
+
+
+interface GoodCardHeaderProps extends LayoutProp{
+    productImageURL: string;
+    discount: number;
+    retailerImageURL: string;
+}
+
+export function GoodCardHeader({
     productImageURL,
+    retailerImageURL,
     discount,
+    layout
+}: GoodCardHeaderProps) {
+    return (
+        <div className={styles.goodCardImage}>
+            <img className={styles.retailerImg} src={productImageURL}/>
+            <GoodCardDiscount layout={layout} expanded={false} image={retailerImageURL} discount={discount}/>
+        </div>
+    )
+}
+
+
+interface GoodCardFooterProps extends LayoutProp{
+    price: number;
+    oldPrice: number;
+    productTitle: string;
+    unitPrice: number;
+    unitType: string;
+    expireDateStr: string;
+}
+
+export function GoodCardFooter({
     price,
     oldPrice,
     productTitle,
     unitPrice,
     unitType,
-    discountUntil,
-    addedToList,
-    retailerImageURL,
-    expireDateStr,
-    isDisabled = false,
-    addToList,
-}: Props) {
-  const onAddToList = useCallback(() => {
-    addToList(productId);
-  }, []);
-
-  return (
-    <div className={cn(
-        styles.goodCard,{
-            [styles.disabled]: isDisabled,
-            [styles.mobile]: layout === 'mobile',
-        }
-    )}>
-        <div className={styles.goodCardImage}>
-            <img className={styles.retailerImg} src={productImageURL}/>
-
-            <div className={cn(styles.goodCardInfo, styles.info)}>
-                <div className={styles.infoDiscount}>{discount} %</div>
-                <img src={retailerImageURL} className={styles.infoMarket} />
-            </div>
-        </div>
-
+    layout,
+    expireDateStr
+}: GoodCardFooterProps) {
+    return (
         <div className={styles.goodCardTextWrapper}>
             <div className={cn(styles.goodCardPrices, styles.goodCardPrices)}>
                 <span className={styles.current}>{price}€</span>
                 <span className={styles.old}>{oldPrice}€</span>
             </div>
-
             <a href='/' className={styles.title}>{productTitle}</a>
-
             {layout === 'desktop' &&
                 <h4 className={styles.pricePerKilo}>{unitPrice}€/{unitType}</h4>
             }
-
             <h4 className={styles.discountUntil}>{expireDateStr}</h4>
         </div>
-    </div>
-  )
+    )
 }
