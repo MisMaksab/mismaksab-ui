@@ -27,7 +27,6 @@ export function SideBar({title, layout, data}: SideBarProps) {
 
   return (
     <div className={cn(styles.sideBar, styles[layout])}>
-      {layout === 'mobile' && <MobileSideBarControls/>}
       <SideBarHeader layout={layout} title={title} onHide={clearExpandedIdArrCb}/>
       <SideBarBox layout={layout} data={data} expandedIdArr={expandedIdArr} onChange={changeExpandedIdArrCb}/>
     </div>

@@ -3,6 +3,8 @@ import cn from 'classnames';
 import styles from './SideBarBoxItem.scss';
 import {LayoutProp}  from "../LayoutProp";
 
+import mobileSideBarArrow from '../../assets/icons/mobileSidebarArrow.svg';
+
 interface SideBarBoxItemProps extends LayoutProp{
   data: [];
   id: number;
@@ -15,16 +17,21 @@ export function SideBarBoxItem({layout, data, id, expandedIdArr, onChange}: Side
 
   return (
     <div className={cn(styles.sideBarBoxItem, styles[layout])}>
-      <div className={styles.sideBarBoxItemBtn}>
-        <img className={styles.logoSvg} src={data.svg}/>
-        <a href={data.link} onClick={() => {onChange(id)}} className={cn(styles.title, {
+      <div className={cn(styles.sideBarBoxItemBtn,{
           [styles.active]: isExpanded
-        })}>
+        })}
+        onClick={() => {onChange(id)}}
+      >
+        <img className={styles.logoSvg} src={data.svg}/>
+        <a href={data.link} className={styles.title}>
           {data.title}
-          {data.subSvg && 
-            <img className={styles.arrowSvg} src={data.subSvg} />
-          }
+          {data.subSvg && <img className={styles.arrowSvg} src={data.subSvg} />}
         </a>
+        {layout === 'mobile' && 
+          <div className={styles.mobileSideBarArrow}>
+            <img className={styles.svg} src={mobileSideBarArrow}/>
+          </div>
+        }
       </div>
 
       {!data.subSvg &&

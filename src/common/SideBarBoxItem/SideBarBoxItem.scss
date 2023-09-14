@@ -2,6 +2,15 @@
 
 .sideBarBoxItem {
   &.mobile {
+    border-bottom: 1px solid $secondaryColorLight;
+
+    .mobileSideBarArrow {
+      .svg {
+        height: 7px;
+        width: 13px;
+      }
+    }
+
     .sideBarBoxItemBtn {
       .logoSvg {
         width: 19px;
@@ -9,7 +18,7 @@
       }
 
       .title {
-        padding: 6px 14px 6px 8px;
+        padding: 8px 16px 8px 9px;
         font-size: 16px;
 
         .arrowSvg {
@@ -31,6 +40,7 @@
   }
 
   .sideBarBoxItemBtn {
+    cursor: pointer;
     display: flex;
     align-items: center;
 
@@ -38,7 +48,14 @@
       width: 27px;
       height: 27px;
     }
+
+    &.active > .title, .title:hover{
+      color: $tertiaryColorMain;
+      text-decoration: underline;
+    }
+
     .title {
+      flex-grow: 2;
       text-decoration: none;
       cursor: pointer;
       padding: 10px 20px 10px 12px;
@@ -55,11 +72,6 @@
         margin-left: 3px;
         width: 14px;
         height: 11px;
-      }
-
-      &.active, &:hover{
-        color: $tertiaryColorMain;
-        text-decoration: underline;
       }
     }
   }

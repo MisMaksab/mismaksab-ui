@@ -1,11 +1,35 @@
 @import "../../scss/variables.scss";
+body {
+  height: 10000px;
+  padding: 0 !important;
+}
+
+.fixedBlock {
+  position: fixed;
+  left: 0;
+  right:0;
+  top:0;
+  z-index: 1;
+  background: white;
+  padding: $mobileSideBarVerticalPadding $mobileSideBarHorizontalPadding;
+}
 
 .sideBarHeader {
-  &.mobile {
-    padding-top: 35px;
+  position: relative;
 
+  &.mobile {
     .title {
-      font-size: 22px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 500;
+      order:2;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hide {
+      order:1;
     }
   }
 
@@ -33,6 +57,24 @@
       width: 27px;
       height: 27px;
       cursor: pointer;
+    }
+  }
+
+  .searchBar {
+    width: calc(100% - 40px);
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &.mobile .title, .searchBar {
+    opacity: 0;
+    transition: .3s;
+    pointer-events: none;
+    
+    &.active {
+      opacity: 1;
+      pointer-events: all;
     }
   }
 }
