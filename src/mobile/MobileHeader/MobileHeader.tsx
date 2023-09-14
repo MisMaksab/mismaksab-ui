@@ -25,10 +25,3 @@ export function MobileHeader({ logo, languages, burger }: MobileHeaderProps) {
     </nav>
   )
 }
-
-<App>
-  <Header>
-    <BurgerIcon/>
-  </Header>
-  <SideBar/>
-</App>
