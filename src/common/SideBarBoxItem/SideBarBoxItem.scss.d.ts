@@ -8,6 +8,7 @@ interface CssExports {
   'link': string;
   'logoSvg': string;
   'mobile': string;
+  'mobileSideBarArrow': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;
@@ -21,6 +22,7 @@ interface CssExports {
   'sideBarBoxItemDropdown': string;
   'sideBarBoxItemDropdownContainer': string;
   'sideBarBoxItemDropdownItem': string;
+  'svg': string;
   'tertiaryColorDark': string;
   'tertiaryColorLight': string;
   'tertiaryColorMain': string;

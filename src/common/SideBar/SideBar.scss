@@ -9,7 +9,7 @@
 
   &.mobile {
     max-width: 100%;
-    padding: 21px 25px 26px;
+    padding: $mobileSideBarVerticalPadding $mobileSideBarHorizontalPadding;
   }
 
   &.desktop {

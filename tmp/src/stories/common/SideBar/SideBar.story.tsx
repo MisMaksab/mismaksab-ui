@@ -53,7 +53,7 @@ const sideBarData: DropdownItem[] = [
 
 export const SideBarStory = () => (
   <SideBar
-    layout='desktop'
+    layout='mobile'
     data={sideBarData}
     title="категории"
   />
