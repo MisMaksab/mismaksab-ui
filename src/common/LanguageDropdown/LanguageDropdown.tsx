@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import cn from "classnames";
 import arrow from "../../assets/icons/arrow.svg";
-import mark from "../../assets/icons/languageDropdownIcon.svg";
 import styles from "./LanguageDropdown.scss";
+import { MobilePopup } from "../../mobile/MobilePopup/MobilePopup";
+import DesktopLanguages from "../../desktop/DesktopLanguages/DesktopLanguages";
 
 interface LanguageDropdownProps {
   selectedLanguage: string;
-  languages: Array<{short: string, long: string}>;
   layout?: 'mobile'|'desktop';
+  data: [];
 }
 
-export function LanguageDropdown({ selectedLanguage, languages, layout}: LanguageDropdownProps) {
+export function LanguageDropdown({ selectedLanguage, layout, data}: LanguageDropdownProps) {
   const [activeSelection, setActiveSelection] = useState(false);
+  const hidePopupCb = useCallback(() => setActiveSelection(false), []);
 
   return (
+    <>
     <div className={cn(styles.language, styles[layout])}>
       <div className={styles.languageCurrent} onClick={() => setActiveSelection(!activeSelection)}>
         <span className={styles.languageCurrentLang}>{selectedLanguage}</span>
@@ -25,21 +28,25 @@ export function LanguageDropdown({ selectedLanguage, languages, layout}: Languag
           <img className={styles.svgImg} src={arrow} alt="language svg" />
         </div>
       </div>
-      <ul className={cn(styles.languageAll, activeSelection && styles.shown)}>
-        {languages.map(lang => 
-          <a href="/" className={styles.languageLink}>
-            <li className={cn(styles.languageLang, {
-              [styles.active]: selectedLanguage === lang.short
-            })}>
-              <span className={styles.shortText}>{lang.short}</span>
-              <span className={styles.longText}>{lang.long}</span>
-              {selectedLanguage === lang.short &&
-                <img className={styles.mark} src={mark}/>
-              }
-            </li>
-          </a>
-        )}
-      </ul>
+      {layout === 'desktop' &&
+        <DesktopLanguages
+          data={data} 
+          activeSelection={activeSelection}
+          selectedLanguage={selectedLanguage}
+        />
+      }
     </div>
+
+    {layout === 'mobile' &&
+      <MobilePopup
+        title='Магазины' 
+        type="radio"
+        data={data} 
+        active={activeSelection}
+        hidePopupCb={hidePopupCb}
+        selectedItems={[selectedLanguage]}
+      />
+    }
+    </>
   );
 }

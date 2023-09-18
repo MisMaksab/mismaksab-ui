@@ -1,39 +1,44 @@
 
 .blue {
   background: $tertiaryColorMain;
-  color: $fontColorDark;
+  &.applyTextMode {color: $fontColorDark;}
+}
+
+.black {
+  background: $fontColorDark;
+  &.applyTextMode {color:$fontColorLight;}
 }
 
 .green {
   background: $primaryColorMain;
-  color: white;
+  &.applyTextMode {color: white;}
 }
 
 .lightgreen {
   background: $primaryColorLight;
-  color: $fontColorDark; 
+  &.applyTextMode {color: $fontColorDark; }
 }
 
 .lightblue {
   background: $tertiaryColorLight;
-  color: $fontColorDark;
+  &.applyTextMode {color: $fontColorDark;}
 }
 
 .orange {
   background: $secondaryColorDark;
-  color: $fontColorDark;
+  &.applyTextMode {color: $fontColorDark;}
 }
 
 .lightorange {
   background: $secondaryColorLight;
-  color: $fontColorDark;
+  &.applyTextMode {color: $fontColorDark;}
 }
 
 .disabled {
   pointer-events: none;
-  color: white;
   background: $fontColorLight;
   user-select: none;
+  &.applyTextMode {color: white;}
 
   .bubbleArrow {
     -webkit-filter: invert(1); /* safari 6.0 - 9.0 */
