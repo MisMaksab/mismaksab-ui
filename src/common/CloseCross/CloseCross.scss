@@ -1,0 +1,33 @@
+@import "../../scss/variables.scss";
+@import "../../scss/modes.scss";
+
+
+.cross {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  position: relative;
+ transform:rotate(45deg);
+-ms-transform:rotate(45deg); /* IE 9 */
+-webkit-transform:rotate(45deg); /* Safari and Chrome */
+}
+
+.crossBar, .crossBar {
+ content: "";
+ position: absolute;
+ z-index: -1;
+}
+
+.crossBar.one {
+ left: 50%;
+ width: 10%;
+ margin-left: -5%;
+ height: 100%;
+}
+
+.crossBar.two {
+ top: 50%;
+ height: 10%;
+ margin-top: -5%;
+ width: 100%;
+}

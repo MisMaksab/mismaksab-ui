@@ -1,17 +1,28 @@
 import React from "react";
 import { LanguageDropdown } from '../../../common/LanguageDropdown/LanguageDropdown';
-import { SearchBar } from '../../../common/SearchBar/SearchBar';
 import { MobileHeader } from "../../../mobile/MobileHeader/MobileHeader";
 import { MobileHeaderLogo } from "../../../mobile/MobileHeaderLogo/MobileHeaderLogo";
 import { MobileHeaderBurger } from "../../../mobile/MobileHeaderBurger/MobileHeaderBurger";
+import { MobilePopup } from "../../../mobile/MobilePopup/MobilePopup";
 
-const LANGUAGES_ARR = [{short:'rus',long:'russian'},{short:'eng',long:'english'},{short:'est',long:'estonian'}]
+
+const LANGUAGES_ARR = [
+  {text: 'Estonian', id: 'est', link: '/'},
+  {text: 'Russian', id: 'rus', link: '/'},
+  {text: 'English', id: 'eng', link: '/'},
+]
 
 export const HeaderStory = () => (
   <MobileHeader
     burger={<MobileHeaderBurger/>}
     logo={<MobileHeaderLogo title="MisMaksab" subtitle="Скидки в магазинах эстонии" />}
-    languages={<LanguageDropdown selectedLanguage="est" languages={LANGUAGES_ARR} layout="mobile" />}
+    languages={
+      <LanguageDropdown
+        selectedLanguage="est" 
+        layout="mobile"
+        data={LANGUAGES_ARR}
+      />
+    }
   />
 );
 

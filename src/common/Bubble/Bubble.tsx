@@ -16,7 +16,7 @@ export  function Bubble({mode, text, link, layout, dropdown=null}: BubbleProps) 
   const handleBubbleClick = () => setIsDropdownExpanded(oldValue => !oldValue);
 
   return (
-    <a onClick={handleBubbleClick} href={link} className={cn(styles.bubble, styles[mode], styles[layout])}>
+    <a onClick={handleBubbleClick} href={link} className={cn(styles.bubble, styles[mode], styles.applyTextMode, styles[layout])}>
       {text}
 
       {dropdown &&
