@@ -13,8 +13,8 @@ input[type="checkbox"] {
   color: currentColor;
   width: 24px;
   height: 24px;
-  border: 0.15em solid currentColor;
-  border-radius: 0.15em;
+  border: 1px solid currentColor;
+  border-radius: 5px;
 
   display: grid;
   place-content: center;

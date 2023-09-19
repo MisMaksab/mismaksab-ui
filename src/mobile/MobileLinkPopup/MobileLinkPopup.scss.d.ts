@@ -28,7 +28,7 @@ interface CssExports {
   'popupGreen': string;
   'popupOption': string;
   'popupOptionCheckbox': string;
-  'popupOptions': string;
+  'popupOptionsWrapper': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;

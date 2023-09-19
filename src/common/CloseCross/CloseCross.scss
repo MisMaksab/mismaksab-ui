@@ -13,20 +13,19 @@
 }
 
 .crossBar, .crossBar {
- content: "";
  position: absolute;
  z-index: -1;
  border-radius: 5px;
 }
 
-.crossBar.one {
+.one {
  left: 50%;
  width: 20%;
  margin-left: -10%;
  height: 100%;
 }
 
-.crossBar.two {
+.two {
  top: 50%;
  height: 20%;
  margin-top: -10%;
