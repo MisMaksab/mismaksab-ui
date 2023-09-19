@@ -24,7 +24,7 @@ export function MobileLinkPopup({mode, active, hidePopupCb, data, title, selecte
         </div>
 
         <h1 className={cn(styles.title, styles[mode], styles.color)}>{title}</h1>
-        <div className={styles.popupOptions}>
+        <div className={styles.popupOptionsWrapper}>
           <CalculateRadioBlock
             selectedItem={selectedItem}
             data={data}

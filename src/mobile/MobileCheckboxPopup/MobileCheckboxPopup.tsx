@@ -33,7 +33,7 @@ export function MobileCheckboxPopup({mode, active, hidePopupCb, type, data, titl
         </div>
 
         <h1 className={cn(styles.title, styles[mode], styles.color)}>{title}</h1>
-        <div className={styles.popupOptions}>
+        <div className={styles.popupOptionsWrapper}>
           <CalculateCheckboxBlock
             mode={mode}
             selectedItems={selectedItems}
