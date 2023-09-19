@@ -16,18 +16,19 @@
  content: "";
  position: absolute;
  z-index: -1;
+ border-radius: 5px;
 }
 
 .crossBar.one {
  left: 50%;
- width: 10%;
- margin-left: -5%;
+ width: 20%;
+ margin-left: -10%;
  height: 100%;
 }
 
 .crossBar.two {
  top: 50%;
- height: 10%;
- margin-top: -5%;
+ height: 20%;
+ margin-top: -10%;
  width: 100%;
 }

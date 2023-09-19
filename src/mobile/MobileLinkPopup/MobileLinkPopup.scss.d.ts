@@ -2,11 +2,32 @@
 // Please do not change this file!
 interface CssExports {
   'active': string;
+  'applyTextMode': string;
+  'bg': string;
+  'border': string;
+  'bubbleArrow': string;
+  'bubbleBlack': string;
+  'bubbleBlue': string;
+  'bubbleDisabled': string;
+  'bubbleGreen': string;
+  'bubbleLightblue': string;
+  'bubbleLightgreen': string;
+  'bubbleMobile': string;
+  'bubbleMobileActive': string;
+  'bubbleOrange': string;
+  'bubblelightOrange': string;
+  'color': string;
+  'hidden': string;
   'mark': string;
+  'popugYellow': string;
   'popup': string;
+  'popupBlue': string;
   'popupCloseCross': string;
   'popupContent': string;
+  'popupDefault': string;
+  'popupGreen': string;
   'popupOption': string;
+  'popupOptionCheckbox': string;
   'popupOptions': string;
   'primaryColorDark': string;
   'primaryColorLight': string;

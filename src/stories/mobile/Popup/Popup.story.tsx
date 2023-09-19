@@ -1,17 +1,18 @@
 import React from "react";
-import { MobilePopup } from "../../../mobile/MobilePopup/MobilePopup";
+import { MobileLinkPopup } from "../../../mobile/MobileLinkPopup/MobileLinkPopup";
+import { MobileCheckboxPopup } from "../../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
 
 const data = [
-  {text: 'Estonian', link: '/'},
-  {text: 'Russian', link: '/'},
-  {text: 'English', link: '/'},
+  {text: 'Estonian', id: 'est', link: '/'},
+  {text: 'Russian', id: 'rus', link: '/'},
+  {text: 'English', id: 'eng', link: '/'},
 ]
 
 
 export const PopupStory = () => (
   <>
-  <a href="/">sdf</a>
-<MobilePopup title='Магазины' data={data} active={true} type="radio"/>
+{/* <MobileCheckboxPopup selectedItem={'est'} mode="popupBlue" hidePopupCb={()=>{}} title='Магазины' data={data} active={true}*/}
+<MobileCheckboxPopup selectedItems={['est']} mode="popupBlue" hidePopupCb={()=>{}} title='Магазины' data={data} active={true} type="multiple"/>
   </>
 );
 

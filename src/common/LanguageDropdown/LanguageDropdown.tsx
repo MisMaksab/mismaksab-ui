@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import cn from "classnames";
 import arrow from "../../assets/icons/arrow.svg";
 import styles from "./LanguageDropdown.scss";
-import { MobilePopup } from "../../mobile/MobilePopup/MobilePopup";
+import { MobileLinkPopup } from "../../mobile/MobileLinkPopup/MobileLinkPopup";
 import DesktopLanguages from "../../desktop/DesktopLanguages/DesktopLanguages";
 
 interface LanguageDropdownProps {
@@ -38,13 +38,13 @@ export function LanguageDropdown({ selectedLanguage, layout, data}: LanguageDrop
     </div>
 
     {layout === 'mobile' &&
-      <MobilePopup
+      <MobileLinkPopup
+        mode="popupDefault"
         title='Магазины' 
-        type="radio"
         data={data} 
         active={activeSelection}
         hidePopupCb={hidePopupCb}
-        selectedItems={[selectedLanguage]}
+        selectedItem={selectedLanguage}
       />
     }
     </>

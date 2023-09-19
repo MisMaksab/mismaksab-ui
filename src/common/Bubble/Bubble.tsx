@@ -5,13 +5,13 @@ import cn from 'classnames';
 import BubbleArrowSvg from '../../assets/icons/bubble_arrow.svg'
 
 interface BubbleProps extends LayoutProp{
-  mode: 'blue'|'green'|'lightgreen'|'lightblue'|'orange'|'lightorange'|'disabled';
+  mode: 'bubbleBlue'|'bubbleGreen'|'bubbleLightgreen'|'bubbleLightblue'|'bubbleOrange'|'bubbleLightorange'|'isabled';
   text: string;
   link?: string;
-  dropdown?: React.ReactElement | null;
+  dropdown: React.ReactElement;
 }
 
-export  function Bubble({mode, text, link, layout, dropdown=null}: BubbleProps) {
+export  function Bubble({mode, text, link, layout, dropdown}: BubbleProps) {
   const [isDropdownExpanded, setIsDropdownExpanded] = useState(false);
   const handleBubbleClick = () => setIsDropdownExpanded(oldValue => !oldValue);
 
