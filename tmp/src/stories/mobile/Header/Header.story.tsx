@@ -3,7 +3,7 @@ import { LanguageDropdown } from '../../../common/LanguageDropdown/LanguageDropd
 import { MobileHeader } from "../../../mobile/MobileHeader/MobileHeader";
 import { MobileHeaderLogo } from "../../../mobile/MobileHeaderLogo/MobileHeaderLogo";
 import { MobileHeaderBurger } from "../../../mobile/MobileHeaderBurger/MobileHeaderBurger";
-import { MobilePopup } from "../../../mobile/MobilePopup/MobilePopup";
+import { MobilePopup } from "../../../mobile/MobileLinkPopup/MobileLinkPopup";
 
 
 const LANGUAGES_ARR = [

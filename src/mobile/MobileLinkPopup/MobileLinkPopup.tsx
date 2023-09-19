@@ -1,45 +1,37 @@
 import React, { useCallback, useState } from 'react'
-import styles from './MobilePopup.scss'
+import styles from './MobileLinkPopup.scss'
 import cn from 'classnames'
 import mark from "../../assets/icons/languageDropdownIcon.svg"
 import { CloseCross } from '../../common/CloseCross/CloseCross'
 
-interface MobilePopupProps {
+interface MobileLinkPopupProps{
+  mode: 'popupGreen'|'popupYellow'|'popupBlue'|'popupDefault';
   active: boolean;
-  type: 'checkbox'|'radio';
   data: Array<{id: string, text: string, link: string}>;
   title: string;
-  selectedItems: [];
+  selectedItem: number|string;
   hidePopupCb: ()=>void;
 }
 
-export function MobilePopup({active, hidePopupCb, type, data, title, selectedItems}: MobilePopupProps) {
+export function MobileLinkPopup({mode, active, hidePopupCb, data, title, selectedItem}: MobileLinkPopupProps) {
   return (
     <div className={cn(styles.popup, {
       [styles.active]: active
     })}>
       <div className={styles.popupContent}>
         <div className={styles.popupCloseCross}>
-          <CloseCross onClick={hidePopupCb} mode='black'/>
+          <CloseCross onClick={hidePopupCb} mode={mode}/>
         </div>
 
-        <h1 className={styles.title}>{title}</h1>
+        <h1 className={cn(styles.title, styles[mode], styles.color)}>{title}</h1>
         <div className={styles.popupOptions}>
-          {type === 'checkbox'
-            ? <CalculateCheckboxBlock selectedItems={selectedItems} data={data}/>
-            : <CalculateRadioBlock selectedItem={selectedItems} data={data}/>
-          }
+          <CalculateRadioBlock
+            selectedItem={selectedItem}
+            data={data}
+          />
         </div>
       </div>
     </div>
-  )
-}
-
-function CalculateCheckboxBlock({selectedItems, data}) {
-  return (
-    <>
-      
-    </>
   )
 }
 
@@ -47,9 +39,11 @@ function CalculateRadioBlock({selectedItem, data}) {
   return (
     <>
       {data.map((option) =>
-        <a key={option.id} href={option.link} className={styles.popupOption}>
+        <a key={option.id} href={option.link} className={cn(styles.popupOption, {
+          [styles.active]: selectedItem === option.id
+        })}>
           {option.text}
-          {selectedItem[0] === option.id &&
+          {selectedItem === option.id &&
             <img className={styles.mark} src={mark}/>
           }
         </a>

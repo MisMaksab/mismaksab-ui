@@ -1,4 +1,6 @@
 @import "../../scss/variables.scss";
+@import "../../scss/modes.scss";
+@import "../../scss/customInput.scss";
 
 .popup {
   position: absolute;
@@ -66,7 +68,11 @@
         justify-content: space-between;
         text-transform: capitalize;
 
-        &:hover {
+        .popupOptionCheckbox {
+          /**/
+        }
+
+        &:hover, &.active {
           background: $secondaryColorLight;
         }
 
