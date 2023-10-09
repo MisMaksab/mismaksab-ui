@@ -18,17 +18,18 @@
   .burgerMenu {
     background: white;
     position: absolute;
-    left: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    left: -100%;
     right: 0;
     top: 0;
     bottom: 0;
     z-index: 10;
     padding: 37px 19px 37px 29px;
     transition: .3s;
-    transform: translateX(-100%);
 
     &.open {
-      transform: translateX(0);
+      left:0;
     }
 
     .burgerMenuControls {
