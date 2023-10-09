@@ -1,0 +1,11 @@
+.hide {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+
+  .svg {
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+  }
+}

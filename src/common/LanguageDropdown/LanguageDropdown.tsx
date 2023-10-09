@@ -40,7 +40,7 @@ export function LanguageDropdown({ selectedLanguage, layout, data}: LanguageDrop
     {layout === 'mobile' &&
       <MobileLinkPopup
         mode="popupDefault"
-        title='Магазины' 
+        title='Язык' 
         data={data} 
         active={activeSelection}
         hidePopupCb={hidePopupCb}

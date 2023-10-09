@@ -4,13 +4,15 @@ import SideBarHideSvg from '../../assets/icons/sideBarHide.svg';
 import cn from 'classnames';
 import { LayoutProp } from '../LayoutProp';
 import { SearchBar } from '../SearchBar/SearchBar';
+import { ShrinkButton } from '../ShrinkButton/ShrinkButton';
 
 interface SideBarHeaderProps extends LayoutProp{
   title: string;
-  onHide: () => void;
+  isOpen: boolean;
+  handleCategoryCb: ()=>void;
 }
 
-export function SideBarHeader({layout, title, onHide}: SideBarHeaderProps) {
+export function SideBarHeader({layout, title, isOpen, handleCategoryCb}: SideBarHeaderProps) {
   const [showSearchBar, setShowSearchBar] = useState(true);
 
   useEffect(() => {
@@ -23,14 +25,15 @@ export function SideBarHeader({layout, title, onHide}: SideBarHeaderProps) {
   }, []);
 
   return (
-    <div className={styles.fixedBlock}>
+    <div className={cn({
+      [styles.fixedBlock]: layout === 'mobile',
+      [styles.open]: isOpen
+    })}>
       <div className={cn(styles.sideBarHeader, styles[layout])}>
         <h1 className={cn(styles.title, {
           [styles.active]: !showSearchBar
         })}>{title}</h1>
-        <div className={styles.hide} onClick={onHide}>
-          <img className={styles.svg} src={SideBarHideSvg} />
-        </div>
+        <ShrinkButton onHide={handleCategoryCb} />
 
         {layout === 'mobile' &&
           <div className={cn(styles.searchBar, {
