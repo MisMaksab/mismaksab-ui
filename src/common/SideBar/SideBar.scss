@@ -1,9 +1,10 @@
 @import "../../scss/variables.scss";
 
 .sideBar {
-  z-index: 100;
   position: absolute;
-  left: 0;
+  left: -100%;
+  width: 100vw;
+  z-index: 100;
   background: white;
   max-width: 350px;
   display: flex;
@@ -11,10 +12,9 @@
   box-sizing: border-box;
   padding: 48px 14px 34px 38px;
   transition: .3s;
-  transform: translateX(-100%);
 
   &.open {
-    transform: translateX(0);
+    left: 0;
   }
 
   &.mobile {

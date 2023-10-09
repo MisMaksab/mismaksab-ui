@@ -27,7 +27,7 @@ export function SideBarHeader({layout, title, isOpen, handleCategoryCb}: SideBar
   return (
     <div className={cn({
       [styles.fixedBlock]: layout === 'mobile',
-      [styles.open]: isOpen
+        [styles.open]: isOpen,
     })}>
       <div className={cn(styles.sideBarHeader, styles[layout])}>
         <h1 className={cn(styles.title, {

@@ -4,6 +4,7 @@ body {
 }
 
 .fixedBlock {
+  width:100vw;
   position: fixed;
   left: 0;
   right:0;
@@ -13,11 +14,11 @@ body {
   padding: $mobileSideBarVerticalPadding $mobileSideBarHorizontalPadding;
   box-sizing: border-box;
   transition: .3s;
-  transform: translateX(-100%);
-}
+  left: -100%;
 
-.open {
-  transform: translateX(0);
+  &.open {
+    left:0;
+  }
 }
 
 .sideBarHeader {
