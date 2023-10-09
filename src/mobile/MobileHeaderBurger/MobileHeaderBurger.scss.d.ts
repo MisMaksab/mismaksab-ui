@@ -2,7 +2,11 @@
 // Please do not change this file!
 interface CssExports {
   'burger': string;
+  'burgerIcon': string;
   'burgerItem': string;
+  'burgerMenu': string;
+  'burgerMenuControls': string;
+  'open': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;

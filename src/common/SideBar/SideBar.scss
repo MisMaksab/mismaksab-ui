@@ -1,13 +1,26 @@
 @import "../../scss/variables.scss";
 
 .sideBar {
+  z-index: 100;
+  position: absolute;
+  left: 0;
+  background: white;
   max-width: 350px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   padding: 48px 14px 34px 38px;
+  transition: .3s;
+  transform: translateX(-100%);
+
+  &.open {
+    transform: translateX(0);
+  }
 
   &.mobile {
+    top: 0;
+    bottom: 0;
+    right: 0;
     max-width: 100%;
     padding: $mobileSideBarVerticalPadding $mobileSideBarHorizontalPadding;
   }

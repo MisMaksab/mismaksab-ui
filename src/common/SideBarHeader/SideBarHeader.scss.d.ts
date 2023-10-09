@@ -3,8 +3,8 @@
 interface CssExports {
   'active': string;
   'fixedBlock': string;
-  'hide': string;
   'mobile': string;
+  'open': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;
@@ -15,7 +15,6 @@ interface CssExports {
   'secondaryColorLight': string;
   'secondaryColorMain': string;
   'sideBarHeader': string;
-  'svg': string;
   'tertiaryColorDark': string;
   'tertiaryColorLight': string;
   'tertiaryColorMain': string;

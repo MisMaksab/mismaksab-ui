@@ -4,30 +4,18 @@ import cn from 'classnames';
 
 import { SideBarHeader } from "../../common/SideBarHeader/SideBarHeader";
 import { SideBarBox } from '../SideBarBox/SideBarBox';
-import { MobileSideBarControls } from '../../mobile/MobileSideBarControls/MobileSideBarControls';
 import { LayoutProp } from '../LayoutProp';
 
 interface SideBarProps extends LayoutProp{
   title: string;
-  data: DropdownItem[];
+  data: [];
+  isOpen: boolean;
+  handleCategoryCb: ()=>void;
 }
 
-export type DropdownItem = {
-  title: string,
-  svg?: string,
-  subSvg?: string,
-  link?: string,
-  dropdownItems: dropdownItem[]
-}
-
-type dropdownItem = {
-  title: string;
-  link: string;
-}
-
-export function SideBar({title, layout, data}: SideBarProps) {
-  const [expandedIdArr, setExpadedIdArr] = useState<number[]>([]);
-  const changeExpandedIdArrCb = useCallback((id: number) => {
+export function SideBar({title, layout, data, isOpen, handleCategoryCb}: SideBarProps) {
+  const [expandedIdArr, setExpadedIdArr] = useState([]);
+  const changeExpandedIdArrCb = useCallback((id:number) => {
     if (expandedIdArr.includes(id)) {
       setExpadedIdArr(expandedIdArr.filter(oldId => oldId != id));
     } else {
@@ -39,8 +27,10 @@ export function SideBar({title, layout, data}: SideBarProps) {
   }, [])
 
   return (
-    <div className={cn(styles.sideBar, styles[layout])}>
-      <SideBarHeader layout={layout} title={title} onHide={clearExpandedIdArrCb}/>
+    <div className={cn(styles.sideBar, styles[layout], {
+      [styles.open]: isOpen
+    })}>
+      <SideBarHeader layout={layout} title={title} handleCategoryCb={handleCategoryCb} isOpen={isOpen}/>
       <SideBarBox layout={layout} data={data} expandedIdArr={expandedIdArr} onChange={changeExpandedIdArrCb}/>
     </div>
   )

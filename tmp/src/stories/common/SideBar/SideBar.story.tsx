@@ -56,6 +56,8 @@ export const SideBarStory = () => (
     layout='mobile'
     data={sideBarData}
     title="категории"
+    isOpen={true}
+    handleCategoryCb={()=>{}}
   />
 );
 
