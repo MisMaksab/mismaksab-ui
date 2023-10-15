@@ -63,51 +63,70 @@ const sideBarData = [
 
 export function MobileHeaderBurger() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const handleMenuCb = useCallback(() => {
+  const onShrinkClick = useCallback(() => {
     setIsMenuOpen(val => !val);
   }, [isMenuOpen]);
 
   return (
     <div className={styles.burger}>
-      <div className={styles.burgerIcon} onClick={handleMenuCb}>
+      <div className={styles.burgerIcon} onClick={onShrinkClick}>
         <span className={styles.burgerItem}></span>
         <span className={styles.burgerItem}></span>
         <span className={styles.burgerItem}></span>
       </div>
 
-      <BurgerMenu isMenuOpen={isMenuOpen} handleBurgerMenu={handleMenuCb}/>
+      <BurgerMenu isMenuOpen={isMenuOpen} onShrinkClick={onShrinkClick}/>
     </div>
   )
 }
 
 interface BurgerMenuProps{
   isMenuOpen: boolean;
-  handleBurgerMenu: ()=>void;
+  onShrinkClick: ()=>void;
 }
 
-function BurgerMenu({isMenuOpen, handleBurgerMenu}: BurgerMenuProps) {
+function BurgerMenu({isMenuOpen, onShrinkClick}: BurgerMenuProps) {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
-  const handleCategoryCb = useCallback(() => {
+  const onCategoryClick = useCallback(() => {
     setIsCategoryOpen(val => !val);
   }, [isCategoryOpen])
 
   return (
     <>
+    <div className={cn(styles.burgerMenuWrapper, {
+        [styles.open]: isMenuOpen
+      })}></div>
     <div className={cn(styles.burgerMenu, {
       [styles.open]: isMenuOpen
     })}>
       <div className={styles.burgerMenuControls}>
         <LanguageDropdown layout='mobile' selectedLanguage="est" data={LANGUAGES_ARR}/>
-        <ShrinkButton onHide={handleBurgerMenu}/>
+        <ShrinkButton onClick={onShrinkClick}/>
       </div>
-      <div className={styles.burgerMenuContent}>
-        <div className={styles.burgerMenuItem} onClick={handleCategoryCb}>
+      <ul className={styles.burgerMenuContent}>
+        <li className={styles.burgerMenuItem}>
+          <a className={styles.burgerMenuLink} href="/">лучшие предложения</a>
+        </li>
+        <li className={styles.burgerMenuItem}>
+          <a className={styles.burgerMenuLink} href="/">магазины</a>
+        </li>
+        <li className={styles.burgerMenuItem} onClick={onCategoryClick}>
           категории
-        </div>
-      </div>
+        </li>
+        <div className={styles.burgerMenuBar}></div>
+        <li className={styles.burgerMenuItem}>
+          <a className={styles.burgerMenuLink} href="/">контакты</a>
+        </li>
+        <li className={styles.burgerMenuItem}>
+          <a className={styles.burgerMenuLink} href="/">о нас</a>
+        </li>
+        <li className={styles.burgerMenuItem}>
+          <a className={styles.burgerMenuLink} href="/">политика<br/>конфиденциальности</a>
+        </li>
+      </ul>
     </div>
 
-    <SideBar title='Категории' layout='mobile' data={sideBarData} isOpen={isCategoryOpen} handleCategoryCb={handleCategoryCb}/>
+    <SideBar title='Категории' layout='mobile' data={sideBarData} isOpen={isCategoryOpen} onCategoryClick={onCategoryClick}/>
     </>
   )
 }

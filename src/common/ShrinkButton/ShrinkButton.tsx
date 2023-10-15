@@ -3,12 +3,12 @@ import styles from './ShrinkButton.scss'
 import SideBarHideSvg from '../../assets/icons/sideBarHide.svg';
 
 interface ShrinkButtonProps {
-  onHide: ()=>void;
+  onClick: ()=>void;
 }
 
-export function ShrinkButton({onHide}: ShrinkButtonProps) {
+export function ShrinkButton({onClick}: ShrinkButtonProps) {
   return (
-    <div className={styles.hide} onClick={onHide}>
+    <div className={styles.hide} onClick={onClick}>
       <img className={styles.svg} src={SideBarHideSvg} />
     </div>
   )

@@ -12,6 +12,11 @@
       .svg {
         height: 7px;
         width: 13px;
+        transition: .3s;
+
+        &.rotate {
+          transform: rotate(180deg);
+        }
       }
     }
 

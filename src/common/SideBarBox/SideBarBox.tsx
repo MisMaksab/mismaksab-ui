@@ -6,18 +6,16 @@ import { LayoutProp } from '../LayoutProp';
 import { DropdownItem } from '../SideBar/SideBar';
 
 interface SideBarBoxInterFace extends LayoutProp{
-  data: DropdownItem[];
-  expandedIdArr: number[];
-  onChange: (id: number) => void;
+  data: [];
+  expandedId: number | null;
+  onClick: (id: number) => void;
 }
 
-export function SideBarBox({layout, data, expandedIdArr, onChange}: SideBarBoxInterFace) {
+export function SideBarBox({layout, data, expandedId, onClick}: SideBarBoxInterFace) {
   return (
     <div className={cn(styles.sideBarBox, styles[layout])}>
-        {data.map((item, i) =>
-          {
-            return <SideBarBoxItem layout={layout} key={i} id={i} expandedIdArr={expandedIdArr} data={item} onChange={onChange} />;
-          }
+        {data.map((item:[], i:number) =>
+          <SideBarBoxItem layout={layout} key={i} id={i} expandedId={expandedId} data={item} onClick={onClick}/>
         )}
       </div>
   )

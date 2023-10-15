@@ -3,12 +3,13 @@
 @import "../../scss/customInput.scss";
 
 .popup {
+  width: 100vw;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: $backgoundLayer;
   display: flex;
   justify-content: center;
   align-items: flex-end;
