@@ -9,10 +9,10 @@ import { ShrinkButton } from '../ShrinkButton/ShrinkButton';
 interface SideBarHeaderProps extends LayoutProp{
   title: string;
   isOpen: boolean;
-  handleCategoryCb: ()=>void;
+  onCategoryClick: ()=>void;
 }
 
-export function SideBarHeader({layout, title, isOpen, handleCategoryCb}: SideBarHeaderProps) {
+export function SideBarHeader({layout, title, isOpen, onCategoryClick}: SideBarHeaderProps) {
   const [showSearchBar, setShowSearchBar] = useState(true);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export function SideBarHeader({layout, title, isOpen, handleCategoryCb}: SideBar
         <h1 className={cn(styles.title, {
           [styles.active]: !showSearchBar
         })}>{title}</h1>
-        <ShrinkButton onHide={handleCategoryCb} />
+        <ShrinkButton onClick={onCategoryClick} />
 
         {layout === 'mobile' &&
           <div className={cn(styles.searchBar, {

@@ -55,7 +55,7 @@ const sideBarData = [
 
 export const SideBarStory = () => (
   <SideBar
-    layout='mobile'
+    layout='desktop'
     data={sideBarData}
     title="категории"
     isOpen={true}

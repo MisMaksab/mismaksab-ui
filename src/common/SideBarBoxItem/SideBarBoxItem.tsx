@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import cn from 'classnames';
 import styles from './SideBarBoxItem.scss';
 import {LayoutProp}  from "../LayoutProp";
@@ -8,28 +8,29 @@ import mobileSideBarArrow from '../../assets/icons/mobileSidebarArrow.svg';
 interface SideBarBoxItemProps extends LayoutProp{
   data: [];
   id: number;
-  expandedIdArr: [];
-  onChange: (id: number) => void;
+  expandedId: number | null;
+  onClick: (id: number) => void;
 }
 
-export function SideBarBoxItem({layout, data, id, expandedIdArr, onChange}: SideBarBoxItemProps) {
-  const isExpanded = expandedIdArr.includes(id);
+export function SideBarBoxItem({layout, data, id, expandedId, onClick}: SideBarBoxItemProps) {
+  const [expandedArrow, setExpandedArrow] = useState(false);
+  const isExpanded = expandedId === id;
 
   return (
     <div className={cn(styles.sideBarBoxItem, styles[layout])}>
       <div className={cn(styles.sideBarBoxItemBtn,{
           [styles.active]: isExpanded
         })}
-        onClick={() => {onChange(id)}}
+        onClick={() => {onClick(id)}}
       >
         <img className={styles.logoSvg} src={data.svg}/>
         <a href={data.link} className={styles.title}>
           {data.title}
           {data.subSvg && <img className={styles.arrowSvg} src={data.subSvg} />}
         </a>
-        {layout === 'mobile' && 
-          <div className={styles.mobileSideBarArrow}>
-            <img className={styles.svg} src={mobileSideBarArrow}/>
+        {layout === 'mobile' && !data.subSvg && 
+          <div className={styles.mobileSideBarArrow} onClick={() => setExpandedArrow(val => !val)}>
+            <img className={cn(styles.svg, {[styles.rotate]: isExpanded})} src={mobileSideBarArrow}/>
           </div>
         }
       </div>

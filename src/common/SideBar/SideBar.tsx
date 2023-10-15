@@ -10,28 +10,25 @@ interface SideBarProps extends LayoutProp{
   title: string;
   data: [];
   isOpen: boolean;
-  handleCategoryCb: ()=>void;
+  onCategoryClick: ()=>void;
 }
 
-export function SideBar({title, layout, data, isOpen, handleCategoryCb}: SideBarProps) {
-  const [expandedIdArr, setExpadedIdArr] = useState([]);
-  const changeExpandedIdArrCb = useCallback((id:number) => {
-    if (expandedIdArr.includes(id)) {
-      setExpadedIdArr(expandedIdArr.filter(oldId => oldId != id));
+export function SideBar({title, layout, data, isOpen, onCategoryClick}: SideBarProps) {
+  const [expandedId, setExpadedId] = useState(null);
+  const changeExpandedIdCb = useCallback((id:number) => {
+    if (id === expandedId) {
+      setExpadedId(null);
     } else {
-      setExpadedIdArr([...expandedIdArr, id]);
+      setExpadedId(id)
     }
-  }, [expandedIdArr]);
-  const clearExpandedIdArrCb = useCallback(() => {
-    setExpadedIdArr([]);
-  }, [])
+  }, [expandedId]);
 
   return (
     <div className={cn(styles.sideBar, styles[layout], {
       [styles.open]: isOpen
     })}>
-      <SideBarHeader layout={layout} title={title} handleCategoryCb={handleCategoryCb} isOpen={isOpen}/>
-      <SideBarBox layout={layout} data={data} expandedIdArr={expandedIdArr} onChange={changeExpandedIdArrCb}/>
+      <SideBarHeader layout={layout} title={title} onCategoryClick={onCategoryClick} isOpen={isOpen}/>
+      <SideBarBox layout={layout} data={data} expandedId={expandedId} onClick={changeExpandedIdCb}/>
     </div>
   )
 }

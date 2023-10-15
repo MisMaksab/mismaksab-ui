@@ -6,15 +6,15 @@ import { LayoutProp } from '../LayoutProp';
 
 interface SideBarBoxInterFace extends LayoutProp{
   data: [];
-  expandedIdArr: [];
-  onChange: (id: number) => void;
+  expandedId: number | null;
+  onClick: (id: number) => void;
 }
 
-export function SideBarBox({layout, data, expandedIdArr, onChange}: SideBarBoxInterFace) {
+export function SideBarBox({layout, data, expandedId, onClick}: SideBarBoxInterFace) {
   return (
     <div className={cn(styles.sideBarBox, styles[layout])}>
         {data.map((item:[], i:number) =>
-          <SideBarBoxItem layout={layout} key={i} id={i} expandedIdArr={expandedIdArr} data={item} onChange={onChange}/>
+          <SideBarBoxItem layout={layout} key={i} id={i} expandedId={expandedId} data={item} onClick={onClick}/>
         )}
       </div>
   )
