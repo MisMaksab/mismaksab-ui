@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './Bubble.scss'
 import { LayoutProp } from '../LayoutProp';
 import cn from 'classnames';
 import BubbleArrowSvg from '../../assets/icons/bubble_arrow.svg'
 
 interface BubbleProps extends LayoutProp{
-  mode: 'bubbleBlue'|'bubbleGreen'|'bubbleLightgreen'|'bubbleLightblue'|'bubbleOrange'|'bubbleLightorange'|'isabled';
+  mode: 'bubbleBlue'|'bubbleGreen'|'bubbleLightgreen'|'bubbleLightblue'|'bubbleOrange'|'bubbleLightorange'|'bubbleDisabled';
   text: string;
   link?: string;
   dropdown: React.ReactElement;

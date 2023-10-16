@@ -4,10 +4,10 @@ import { LanguageDropdown } from '../../common/LanguageDropdown/LanguageDropdown
 import { ShrinkButton } from '../../common/ShrinkButton/ShrinkButton';
 import { SideBar } from '../../common/SideBar/SideBar';
 import cn from 'classnames';
-
-
 import VegetablesAndFruitsSvg from '../../assets/sideBarIcons/vegetablesAndFruits.svg';
 import SideBarItemArrow from '../../assets/sideBarIcons/sideBarItemArrow.svg';
+
+
 const LANGUAGES_ARR = [
   {text: 'Estonian', id: 'est', link: '/'},
   {text: 'Russian', id: 'rus', link: '/'},
@@ -61,7 +61,12 @@ const sideBarData = [
   }
 ]
 
-export function MobileHeaderBurger() {
+
+interface MobileHeaderBurgerProps {
+  title: string;
+}
+
+export function MobileHeaderBurger({title}: MobileHeaderBurgerProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const onShrinkClick = useCallback(() => {
     setIsMenuOpen(val => !val);
@@ -75,7 +80,7 @@ export function MobileHeaderBurger() {
         <span className={styles.burgerItem}></span>
       </div>
 
-      <BurgerMenu isMenuOpen={isMenuOpen} onShrinkClick={onShrinkClick}/>
+      <BurgerMenu title={title} isMenuOpen={isMenuOpen} onShrinkClick={onShrinkClick}/>
     </div>
   )
 }
@@ -85,7 +90,7 @@ interface BurgerMenuProps{
   onShrinkClick: ()=>void;
 }
 
-function BurgerMenu({isMenuOpen, onShrinkClick}: BurgerMenuProps) {
+function BurgerMenu({title, isMenuOpen, onShrinkClick}: BurgerMenuProps) {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const onCategoryClick = useCallback(() => {
     setIsCategoryOpen(val => !val);
@@ -126,7 +131,7 @@ function BurgerMenu({isMenuOpen, onShrinkClick}: BurgerMenuProps) {
       </ul>
     </div>
 
-    <SideBar title='Категории' layout='mobile' data={sideBarData} isOpen={isCategoryOpen} onCategoryClick={onCategoryClick}/>
+    <SideBar title={title} layout='mobile' data={sideBarData} isOpen={isCategoryOpen} onCategoryClick={onCategoryClick}/>
     </>
   )
 }

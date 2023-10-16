@@ -60,7 +60,7 @@ body {
 
   &.mobile .title, .searchBar {
     opacity: 0;
-    transition: .3s;
+    transition: opacity .3s;
     pointer-events: none;
     
     &.active {

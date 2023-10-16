@@ -5,7 +5,7 @@ import { LayoutProp } from '../LayoutProp'
 
 interface ServiceBlockProps extends LayoutProp {
   title: 'string';
-  paragraphs: [string];
+  paragraphs: string[];
 }
 
 export function ServiceBlock({layout, title, paragraphs}: ServiceBlockProps) {
@@ -16,7 +16,7 @@ export function ServiceBlock({layout, title, paragraphs}: ServiceBlockProps) {
       </h2>
       <div className={styles.serviceBlockContent}>
         {paragraphs.map(text =>
-          <p className={styles.serviceBlockParagraph}>
+          <p key={text} className={styles.serviceBlockParagraph}>
             {text}
           </p>
         )}

@@ -15,14 +15,6 @@ interface MobileCheckboxPopupProps{
 }
 
 export function MobileCheckboxPopup({mode, active, hidePopupCb, type, data, title, selectedItems, setSelectedItemsCb}: MobileCheckboxPopupProps) {
-  // const changeSelectedItems = useCallback((id:number|string) => {
-  //   if (selectedItems.includes(id)) {
-  //     setSelectedItemsCb(selectedItems.filter(oldId => oldId != id));
-  //   } else {
-  //     setSelectedItemsCb([...selectedItems, id]);
-  //   }
-  // }, [selectedItems]);
-
   return (
     <div className={cn(styles.popup, {
       [styles.active]: active
@@ -39,7 +31,7 @@ export function MobileCheckboxPopup({mode, active, hidePopupCb, type, data, titl
             selectedItems={selectedItems}
             data={data}
             type={type}
-            // changeSelectedItemsCb={changeSelectedItemsCb}
+            changeSelectedItemsCb={()=>{}}
           />
         </div>
       </div>

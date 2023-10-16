@@ -1,0 +1,11 @@
+@import "../../scss/variables.scss";
+
+.sideBarWrapper {
+  border-radius: 0px 10px 10px 0px;
+  border: 1px solid $fontColorLight;
+  width: 100px;
+
+  &.open {
+    width: auto;
+  }
+}

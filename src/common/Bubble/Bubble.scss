@@ -26,7 +26,7 @@
     width: 9px;
     height: 5px;
     margin-left: 6px;
-    transition: .3s;
+    popupOptionsWrapper: transform .3s;
     transform-origin: center center;
 
     &.rotate {

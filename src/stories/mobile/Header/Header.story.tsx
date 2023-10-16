@@ -14,7 +14,7 @@ const LANGUAGES_ARR = [
 
 export const HeaderStory = () => (
   <MobileHeader
-    burger={<MobileHeaderBurger/>}
+    burger={<MobileHeaderBurger title={"Катего"}/>}
     logo={<MobileHeaderLogo title="MisMaksab" subtitle="Скидки в магазинах эстонии" />}
     languages={
       <LanguageDropdown
