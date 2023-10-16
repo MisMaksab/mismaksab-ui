@@ -17,8 +17,7 @@ export function SideBarHeader({layout, title, isOpen, onCategoryClick}: SideBarH
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) setShowSearchBar(false);
-      else setShowSearchBar(true);
+      setShowSearchBar(window.scrollY <= 10);
     }
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

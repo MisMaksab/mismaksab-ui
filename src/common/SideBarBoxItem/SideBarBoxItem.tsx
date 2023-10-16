@@ -42,7 +42,7 @@ export function SideBarBoxItem({layout, data, id, expandedId, onClick}: SideBarB
         })}>
           <div className={styles.sideBarBoxItemDropdownContainer}>
             {data.dropdownItems.map(item =>
-              <div className={styles.sideBarBoxItemDropdownItem}>
+              <div key={item.title} className={styles.sideBarBoxItemDropdownItem}>
                 <a className={styles.link} href={item.link}>{item.title}</a>
               </div>
             )}
