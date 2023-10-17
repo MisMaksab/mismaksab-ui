@@ -7,7 +7,7 @@ import DesktopLanguages from "../../desktop/DesktopLanguages/DesktopLanguages";
 
 interface LanguageDropdownProps {
   selectedLanguage: string;
-  layout?: 'mobile'|'desktop';
+  layout: 'mobile'|'desktop';
   data: [];
 }
 
