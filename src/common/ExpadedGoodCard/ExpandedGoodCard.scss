@@ -1,14 +1,17 @@
 @import "../../scss/variables.scss";
 
 .expandedGoodCard {
-  max-width: 990px;
   width: 100%;
   border-radius: 10px;
   margin: 10px 7px;
   border: 1px solid $fontColorLight;
   box-sizing: border-box;
-  padding: 70px 50px 25px 20px;
   position: relative;
+  
+  &.desktop {
+    padding: 70px 50px 25px 20px;
+    max-width: 990px;
+  }
 
   &.desktop {
     /**/

@@ -2,8 +2,6 @@
 
 .goodCard {
     position: relative;
-    min-height: 340px;
-    width: 170px;
     border-radius: 10px;
     margin: 7px;
     border: 1px solid $fontColorLight;
@@ -18,7 +16,8 @@
     }
 
     &.desktop {
-        /**/
+        min-height: 340px;
+        width: 170px;
     }
 
     &.mobile {

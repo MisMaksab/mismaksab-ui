@@ -24,6 +24,10 @@ body {
 .sideBarHeader {
   position: relative;
 
+  &.desktop {
+    /**/
+  }
+
   &.mobile {
     .title {
       text-align: center;

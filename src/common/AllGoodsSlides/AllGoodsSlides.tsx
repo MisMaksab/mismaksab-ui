@@ -1,6 +1,5 @@
 import React from "react"
 import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard"
-// TODO use normal types instead any
 export function AllGoodsSlides({slidesData}: any) {
   return (
     <>

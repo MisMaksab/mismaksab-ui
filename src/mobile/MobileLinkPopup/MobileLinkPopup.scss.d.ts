@@ -10,16 +10,15 @@ interface CssExports {
   'bubbleBlue': string;
   'bubbleDisabled': string;
   'bubbleGreen': string;
+  'bubbleLightOrange': string;
   'bubbleLightblue': string;
   'bubbleLightgreen': string;
   'bubbleMobile': string;
   'bubbleMobileActive': string;
   'bubbleOrange': string;
-  'bubblelightOrange': string;
   'color': string;
   'hidden': string;
   'mark': string;
-  'popugYellow': string;
   'popup': string;
   'popupBlue': string;
   'popupCloseCross': string;
@@ -29,6 +28,7 @@ interface CssExports {
   'popupOption': string;
   'popupOptionCheckbox': string;
   'popupOptionsWrapper': string;
+  'popupYellow': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;

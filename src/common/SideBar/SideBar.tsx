@@ -8,13 +8,16 @@ import { LayoutProp } from '../LayoutProp';
 
 interface SideBarProps extends LayoutProp{
   title: string;
-  data: [];
+  data: (
+    { title: string; svg: any; subSvg: any; link: string; dropdownItems: never[]; } |
+    { title: string; svg: any; dropdownItems: { title: string; link: string; }[]; subSvg?: undefined; link?: undefined; }
+  )[];
   isOpen: boolean;
   onCategoryClick: ()=>void;
 }
 
 export function SideBar({title, layout, data, isOpen, onCategoryClick}: SideBarProps) {
-  const [expandedId, setExpadedId] = useState(null);
+  const [expandedId, setExpadedId] = useState<number|null>(null);
   const changeExpandedIdCb = useCallback((id:number) => {
     if (id === expandedId) {
       setExpadedId(null);

@@ -4,12 +4,16 @@ import cn from 'classnames'
 import mark from "../../assets/icons/languageDropdownIcon.svg"
 import { CloseCross } from '../../common/CloseCross/CloseCross'
 
-interface MobileLinkPopupProps{
+
+interface CalculateRadioBlockProps {
+  selectedItem: number|string;
+  data: Array<{id: string, text: string, link: string}>;
+}
+
+interface MobileLinkPopupProps extends CalculateRadioBlockProps{
   mode: 'popupGreen'|'popupYellow'|'popupBlue'|'popupDefault';
   active: boolean;
-  data: Array<{id: string, text: string, link: string}>;
   title: string;
-  selectedItem: number|string;
   hidePopupCb: ()=>void;
 }
 
@@ -35,7 +39,7 @@ export function MobileLinkPopup({mode, active, hidePopupCb, data, title, selecte
   )
 }
 
-function CalculateRadioBlock({selectedItem, data}) {
+function CalculateRadioBlock({selectedItem, data}: CalculateRadioBlockProps) {
   return (
     <>
       {data.map((option) =>

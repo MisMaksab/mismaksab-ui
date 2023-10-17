@@ -7,6 +7,7 @@ interface GoodCardDiscountProps extends LayoutProp {
   discount: number;
   image: string|null;
   expanded?: boolean;
+  layout: 'mobile'|'desktop';
 }
 
 export function GoodCardDiscount({discount, image, expanded, layout}: GoodCardDiscountProps) {

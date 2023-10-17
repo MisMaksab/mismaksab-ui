@@ -6,14 +6,16 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  width: 45px;
   box-sizing: border-box;
+  
+  &.desktop {
+    width: 45px;
+  }
 
   &.small {
     position: absolute;
     left: 0;
     bottom: 0;
-    margin: 0 10px;
 
     .discountPercentage {
       font-size: 14px;
