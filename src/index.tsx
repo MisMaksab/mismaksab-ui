@@ -7,8 +7,8 @@
 // export { SideBar } from "./common/SideBar/SideBar";
 export { Styled } from "./common/Styled/Styled";
 // Desktop
-// export { Info } from "./desktop/Info/Info";
-// export { DesktopHeader } from "./desktop/DesktopHeader/DesktopHeader";
+export { Info } from "./desktop/Info/Info";
+export { DesktopHeader } from "./desktop/DesktopHeader/DesktopHeader";
 export { DesktopFooter } from "./desktop/DesktopFooter/DesktopFooter";
 // export { DesktopFooterLinks } from "./desktop/DesktopFooterLinks/DesktopFooterLinks";
 // export { DesktopFooterInfo } from "./desktop/DesktopFooterInfo/DesktopFooterInfo";
