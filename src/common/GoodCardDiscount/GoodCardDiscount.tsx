@@ -6,7 +6,7 @@ interface GoodCardDiscountProps {
   discount: number;
   image: string|null;
   expanded?: boolean;
-  layout?: 'mobile'|'desktop';
+  layout: 'mobile'|'desktop';
 }
 
 export function GoodCardDiscount({discount, image, expanded, layout}: GoodCardDiscountProps) {

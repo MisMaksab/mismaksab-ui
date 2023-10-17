@@ -5,6 +5,7 @@ interface CssExports {
   'bannerImg': string;
   'bannerText': string;
   'blue': string;
+  'desktop': string;
   'green': string;
   'img': string;
   'link': string;

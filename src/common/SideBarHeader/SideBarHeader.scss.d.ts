@@ -2,6 +2,7 @@
 // Please do not change this file!
 interface CssExports {
   'active': string;
+  'desktop': string;
   'fixedBlock': string;
   'mobile': string;
   'open': string;

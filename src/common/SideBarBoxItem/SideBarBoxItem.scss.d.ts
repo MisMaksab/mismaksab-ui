@@ -3,6 +3,7 @@
 interface CssExports {
   'active': string;
   'arrowSvg': string;
+  'desktop': string;
   'expanded': string;
   'link': string;
   'logoSvg': string;

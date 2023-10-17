@@ -33,6 +33,10 @@ $retailerCardHeader: 106px;
     }
   }
 
+  &.desktop {
+    /**/
+  }
+
   &.mobile {
     width: $mobileCardDimensions;
     min-height: $mobileCardDimensions;

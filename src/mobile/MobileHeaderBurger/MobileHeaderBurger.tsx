@@ -88,6 +88,7 @@ export function MobileHeaderBurger({title}: MobileHeaderBurgerProps) {
 interface BurgerMenuProps{
   isMenuOpen: boolean;
   onShrinkClick: ()=>void;
+  title: string;
 }
 
 function BurgerMenu({title, isMenuOpen, onShrinkClick}: BurgerMenuProps) {
