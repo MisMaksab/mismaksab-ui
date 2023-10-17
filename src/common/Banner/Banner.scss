@@ -5,11 +5,12 @@
   justify-content: space-between;
   color: $fontColorDark;
   box-sizing: border-box;
+  max-width: 910px;
+  border-radius: 16px;
+  padding: 20px 20px 20px 45px;
   
   &.desktop {
-    max-width: 910px;
-    border-radius: 16px;
-    padding: 20px 20px 20px 45px;
+    /**/
   }
 
   &.desktop {
