@@ -2,6 +2,9 @@
 @import "../../scss/modes.scss";
 
 .bubble {
+  padding: 12px 16px;
+  border-radius: 50px;
+
   &.mobile {
     padding: 5px 11px;
     font-size: 16px;
@@ -9,8 +12,7 @@
   }
 
   &.desktop {
-    padding: 12px 16px;
-    border-radius: 50px;
+    /**/
   }
 
   text-transform: capitalize;
