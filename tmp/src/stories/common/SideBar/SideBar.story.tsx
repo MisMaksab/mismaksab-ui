@@ -57,7 +57,7 @@ export const SideBarStory = () => (
     data={sideBarData}
     title="категории"
     isOpen={true}
-    handleCategoryCb={()=>{}}
+    onCategoryClick={()=>{}}
   />
 );
 

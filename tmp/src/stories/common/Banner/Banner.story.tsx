@@ -1,6 +1,5 @@
 import React from "react";
 import { Banner } from "../../../common/Banner/Banner";
-import plumsImg from '../../../assets/banner/plums.svg';
 
 export const BannerStory = () => (
   <>
@@ -11,7 +10,7 @@ export const BannerStory = () => (
     text="Выгодные предложения в категории Фрукты"
     searchLink="/"
     searchText="Искать"
-    img={plumsImg}
+    img={'https://healthyfamilyproject.com/wp-content/uploads/2020/05/Plums-background.jpg'}
   />
   <br/>
   <Banner
@@ -21,7 +20,7 @@ export const BannerStory = () => (
     text="Выгодные предложения в категории Фрукты"
     searchLink="/"
     searchText="Искать"
-    img={plumsImg}
+    img={'https://healthyfamilyproject.com/wp-content/uploads/2020/05/Plums-background.jpg'}
   /></>
 );
 

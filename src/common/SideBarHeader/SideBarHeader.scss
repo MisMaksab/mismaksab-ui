@@ -23,9 +23,26 @@ body {
 
 .sideBarHeader {
   position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 
   &.desktop {
-    /**/
+    justify-content: flex-end;
+
+    .title {
+      left: 0;
+      transition: .3s;
+      pointer-events: none;
+      transform: scale(0);
+      opacity: 0;
+
+      &.active {
+        transform: scale(1) translateY(-15px);
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
   }
 
   &.mobile {
@@ -34,18 +51,13 @@ body {
       font-size: 24px;
       font-weight: 500;
       order:2;
-      position: absolute;
       left: 50%;
       transform: translateX(-50%);
     }
   }
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-
   .title {
+    position: absolute;
     text-transform: capitalize;
     color: $fontColorDark;
     font-size: 32px;

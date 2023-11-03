@@ -1,9 +1,8 @@
 import React, { useCallback, useState } from "react";
-import cn from "classnames";
-import arrow from "../../assets/icons/arrow.svg";
 import styles from "./LanguageDropdown.scss";
 import { MobileLinkPopup } from "../../mobile/MobileLinkPopup/MobileLinkPopup";
-import DesktopLanguages from "../../desktop/DesktopLanguages/DesktopLanguages";
+import {DesktopLanguages} from "../../desktop/DesktopLanguages/DesktopLanguages";
+import YellowButton from "../YellowButton/YellowButton";
 
 interface LanguageDropdownProps {
   selectedLanguage: string;
@@ -14,20 +13,17 @@ interface LanguageDropdownProps {
 export function LanguageDropdown({ selectedLanguage, layout, data}: LanguageDropdownProps) {
   const [activeSelection, setActiveSelection] = useState(false);
   const hidePopupCb = useCallback(() => setActiveSelection(false), []);
+  const changePopupVisibilityCb = useCallback(() => setActiveSelection(val => !val), []);
 
   return (
     <>
-    <div className={cn(styles.language, styles[layout])}>
-      <div className={styles.languageCurrent} onClick={() => setActiveSelection(!activeSelection)}>
-        <span className={styles.languageCurrentLang}>{selectedLanguage}</span>
-        <div
-          className={cn(styles.svg, {
-            [styles.rotate]: activeSelection,
-          })}
-        >
-          <img className={styles.svgImg} src={arrow} alt="language svg" />
-        </div>
-      </div>
+    <div className={styles.language}>
+      <YellowButton
+        layout={layout}
+        text='RUS'
+        onClick={changePopupVisibilityCb}
+        isActive={activeSelection}
+      />
       {layout === 'desktop' &&
         <DesktopLanguages
           data={data} 

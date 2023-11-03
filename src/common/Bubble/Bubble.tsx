@@ -8,25 +8,20 @@ interface BubbleProps extends LayoutProp{
   mode: 'bubbleBlue'|'bubbleGreen'|'bubbleLightgreen'|'bubbleLightblue'|'bubbleOrange'|'bubbleLightOrange'|'bubbleDisabled';
   text: string;
   link?: string;
-  dropdown: React.ReactElement;
+  onClick?: ()=>void;
+  isDropdown?: boolean;
+  isDropdownExpanded?: boolean;
 }
 
-export  function Bubble({mode, text, link, layout, dropdown}: BubbleProps) {
-  const [isDropdownExpanded, setIsDropdownExpanded] = useState(false);
-  const handleBubbleClick = () => setIsDropdownExpanded(oldValue => !oldValue);
-
+export  function Bubble({mode, text, link, layout, onClick, isDropdown = false, isDropdownExpanded = false}: BubbleProps) {
   return (
-    <a onClick={handleBubbleClick} href={link} className={cn(styles.bubble, styles[mode], styles.applyTextMode, styles[layout])}>
+    <a onClick={onClick} href={link} className={cn(styles.bubble, styles[mode], styles.applyTextMode, styles[layout])}>
       {text}
 
-      {dropdown &&
+      {isDropdown &&
         <img className={cn(styles.bubbleArrow, {
           [styles.rotate]: isDropdownExpanded
         })} src={BubbleArrowSvg} />
-      }
-
-      {isDropdownExpanded &&
-        dropdown
       }
     </a>
   )

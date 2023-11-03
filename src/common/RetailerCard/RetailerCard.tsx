@@ -10,6 +10,8 @@ interface RetailerCardProps extends LayoutProp{
   retailer: string;
   offersText: string;
   isDisabled: boolean;
+  goToRetailerLink?: string;
+  goToRetailerText?: string;
 }
 
 export function RetailerCard({
@@ -20,19 +22,29 @@ export function RetailerCard({
   offersText,
   layout,
   isDisabled,
+  goToRetailerLink,
+  goToRetailerText
 }: RetailerCardProps) {
   return (
-    <a href={retailerLink} className={cn(styles.retailerCard, styles[layout], {
-      [styles.disabled]: isDisabled
-    })}>
-      <div className={styles.retailerCardHeader}>
-        <img className={styles.retailerImage} src={retailerImageURL} />
-        <span className={styles.discountText}>{discountText}</span>
-      </div>
-      <div className={styles.retailerCardFooter}>
-        <span className={styles.retailer}>{retailer}</span>
-        <span className={styles.offers}>{offersText}</span>
-      </div>
-    </a>
+    <div className={styles.retailerCardWrapper}>
+      <a href={retailerLink} className={cn(styles.retailerCard, styles[layout], {
+        [styles.disabled]: isDisabled
+      })}>
+        <div className={styles.retailerCardHeader}>
+          <img className={styles.retailerImage} src={retailerImageURL} />
+          <span className={styles.discountText}>{discountText}</span>
+        </div>
+        <div className={styles.retailerCardFooter}>
+          <span className={styles.retailer}>{retailer}</span>
+          <span className={styles.offers}>{offersText}</span>
+        </div>
+      </a>
+
+      {goToRetailerLink && goToRetailerText &&
+        <a href={goToRetailerLink} className={styles.retailerCardShopLink}>
+          {goToRetailerText}
+        </a>
+      }
+    </div>
   )
 }

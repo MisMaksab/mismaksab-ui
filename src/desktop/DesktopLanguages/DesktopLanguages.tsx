@@ -9,7 +9,7 @@ interface DesktopLanguagesProps {
   selectedLanguage: string;
 }
 
-export default function DesktopLanguages({data, activeSelection, selectedLanguage}: DesktopLanguagesProps) {
+export function DesktopLanguages({data, activeSelection, selectedLanguage}: DesktopLanguagesProps) {
   return (
     <ul className={cn(styles.languageAll, activeSelection && styles.shown)}>
         {data.map(lang =>

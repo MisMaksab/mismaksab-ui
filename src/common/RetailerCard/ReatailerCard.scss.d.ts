@@ -5,6 +5,7 @@ interface CssExports {
   'disabled': string;
   'discountText': string;
   'mobile': string;
+  'mobileWrapper': string;
   'offers': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
@@ -15,6 +16,8 @@ interface CssExports {
   'retailerCard': string;
   'retailerCardFooter': string;
   'retailerCardHeader': string;
+  'retailerCardShopLink': string;
+  'retailerCardWrapper': string;
   'retailerImage': string;
   'secondaryColorDark': string;
   'secondaryColorLight': string;

@@ -26,6 +26,7 @@ export const ExpadnedGoodCardStory = (props: any) => {
     return (
         <>
         <ExpandedGoodCard
+            discountUntil={discountUntil}
             productId="1"
             // isDisabled={disabled}
             discountUntil={1}

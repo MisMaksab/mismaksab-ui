@@ -3,8 +3,6 @@ import { LanguageDropdown } from '../../../common/LanguageDropdown/LanguageDropd
 import { MobileHeader } from "../../../mobile/MobileHeader/MobileHeader";
 import { MobileHeaderLogo } from "../../../mobile/MobileHeaderLogo/MobileHeaderLogo";
 import { MobileHeaderBurger } from "../../../mobile/MobileHeaderBurger/MobileHeaderBurger";
-import { MobilePopup } from "../../../mobile/MobileLinkPopup/MobileLinkPopup";
-
 
 const LANGUAGES_ARR = [
   {text: 'Estonian', id: 'est', link: '/'},
@@ -15,7 +13,7 @@ const LANGUAGES_ARR = [
 export const HeaderStory = () => (
   <MobileHeader
     burger={<MobileHeaderBurger title={"Катего"}/>}
-    logo={<MobileHeaderLogo title="MisMaksab" subtitle="Скидки в магазинах эстонии" />}
+    logo={<MobileHeaderLogo title="MisMaksab" />}
     languages={
       <LanguageDropdown
         selectedLanguage="est" 

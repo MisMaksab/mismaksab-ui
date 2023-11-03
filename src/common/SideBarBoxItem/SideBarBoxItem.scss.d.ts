@@ -18,16 +18,16 @@ interface CssExports {
   'secondaryColorDark': string;
   'secondaryColorLight': string;
   'secondaryColorMain': string;
+  'shown': string;
   'sideBarBoxItem': string;
   'sideBarBoxItemBtn': string;
+  'sideBarBoxItemBtnText': string;
   'sideBarBoxItemDropdown': string;
   'sideBarBoxItemDropdownContainer': string;
   'sideBarBoxItemDropdownItem': string;
-  'svg': string;
   'tertiaryColorDark': string;
   'tertiaryColorLight': string;
   'tertiaryColorMain': string;
-  'title': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

@@ -6,8 +6,8 @@ import { ServiceBlock } from "../../../common/ServiceBlock/ServiceBlock";
 export const ServiceStory = () => (
   <ServiceBlock
     layout='desktop'
-    title='about us'
-    paragraphs={['paragraph 1', 'paragraph 2', 'paragraph 3']}
+    paragraphs={['Если вы хотите, чтобы ваш магазин появился на нашем сайте – напишите нам на почту info@mismaksab.ee ']}
+    centered={true}
   />
 );
 

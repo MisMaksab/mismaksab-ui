@@ -14,7 +14,7 @@ export function MobileSideBarControls() {
   return (
     <div className={styles.sideBarMobileControls}>
       <SearchBar sideBarOpen={true} onChange={(val: string) => null} placeHolderText="Найти в MisMaksab" />
-      <LanguageDropdown layout='mobile' selectedLanguage="est" languages={LANGUAGES_ARR}/>
+      <LanguageDropdown layout='mobile' selectedLanguage="est" data={LANGUAGES_ARR}/>
     </div>
   )
 }

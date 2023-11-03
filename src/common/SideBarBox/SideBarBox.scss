@@ -1,5 +1,10 @@
 @import "../../scss/variables.scss";
 
 .sideBarBox {
-  padding-top: 45px - $mobileSideBarVerticalPadding;
+  &.desktop {
+    padding-top: 10px;
+  }
+  &.mobile {
+    padding-top: 45px - $mobileSideBarVerticalPadding;
+  }
 }
