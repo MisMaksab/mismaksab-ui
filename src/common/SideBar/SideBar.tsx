@@ -18,7 +18,7 @@ interface SideBarProps extends LayoutProp{
 
 export function SideBar({title, layout, data, isOpen, onCategoryClick}: SideBarProps) {
   const [expandedId, setExpadedId] = useState<number|null>(null);
-  const changeExpandedIdCb = useCallback((id:number) => {
+  const changeExpandedIdCb = useCallback((id:number|null) => {
     if (id === expandedId) {
       setExpadedId(null);
     } else {
@@ -30,8 +30,8 @@ export function SideBar({title, layout, data, isOpen, onCategoryClick}: SideBarP
     <div className={cn(styles.sideBar, styles[layout], {
       [styles.open]: isOpen
     })}>
-      <SideBarHeader layout={layout} title={title} onCategoryClick={onCategoryClick} isOpen={isOpen}/>
-      <SideBarBox layout={layout} data={data} expandedId={expandedId} onClick={changeExpandedIdCb}/>
+      <SideBarHeader layout={layout} title={title} onCategoryClick={onCategoryClick} isOpen={isOpen} changeExpandedIdCb={changeExpandedIdCb}/>
+      <SideBarBox layout={layout} data={data} expandedId={expandedId} onClick={changeExpandedIdCb} isOpen={isOpen} onCategoryClick={onCategoryClick}/>
     </div>
   )
 }

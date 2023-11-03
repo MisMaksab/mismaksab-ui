@@ -4,7 +4,7 @@ import styles from './DesktopSideBarWrapper.scss';
 import cn from 'classnames';
 
 interface DesktopSideBarWrapperProps {
-  data: [];
+  data: any[];
   title: string;
 }
 
@@ -12,6 +12,7 @@ export function DesktopSideBarWrapper({data, title}: DesktopSideBarWrapperProps)
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const onCategoryClick = useCallback(() => {
     setIsCategoryOpen(val => !val);
+    
   }, [isCategoryOpen])
 
   return (

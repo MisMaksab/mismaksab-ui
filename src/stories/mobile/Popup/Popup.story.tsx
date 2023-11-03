@@ -10,7 +10,7 @@ const LANGUAGES_ARR = [
 
 
 export const PopupStory = () => (
-  <MobileCheckboxPopup selectedItems={['est']} mode="popupBlue" hidePopupCb={()=>{}} title='Магазины' data={LANGUAGES_ARR} active={true} type="multiple"/>
+  <MobileCheckboxPopup setSelectedItemsCb={()=>{}} selectedItems={['est']} mode="popupBlue" hidePopupCb={()=>{}} title='Магазины' data={LANGUAGES_ARR} active={true} type="multiple"/>
 );
 
 PopupStory.storyName = "Header";

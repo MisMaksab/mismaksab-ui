@@ -3,9 +3,12 @@
 .sideBarWrapper {
   border-radius: 0px 10px 10px 0px;
   border: 1px solid $fontColorLight;
-  width: 100px;
+  width: 116px;
+  transition: .3s;
+  overflow: hidden;
 
   &.open {
-    width: auto;
+    width: 100%;
+    border-color: transparent;
   }
 }

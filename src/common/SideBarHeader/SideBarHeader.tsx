@@ -10,14 +10,21 @@ interface SideBarHeaderProps extends LayoutProp{
   title: string;
   isOpen: boolean;
   onCategoryClick: ()=>void;
+  changeExpandedIdCb?: (id: number | null) => void;
 }
 
-export function SideBarHeader({layout, title, isOpen, onCategoryClick}: SideBarHeaderProps) {
+export function SideBarHeader({layout, title, isOpen, onCategoryClick, changeExpandedIdCb}: SideBarHeaderProps) {
   const [showSearchBar, setShowSearchBar] = useState(true);
 
+  function handleShrinkButtonClick() {
+    onCategoryClick()
+    if (typeof changeExpandedIdCb !== 'undefined') changeExpandedIdCb(null)
+  }
+
   useEffect(() => {
+
     const handleScroll = () => {
-      setShowSearchBar(window.scrollY <= 10);
+      if (isOpen && layout === 'mobile') setShowSearchBar(window.scrollY <= 10);
     }
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -30,9 +37,9 @@ export function SideBarHeader({layout, title, isOpen, onCategoryClick}: SideBarH
     })}>
       <div className={cn(styles.sideBarHeader, styles[layout])}>
         <h1 className={cn(styles.title, {
-          [styles.active]: !showSearchBar
+          [styles.active]: !showSearchBar || isOpen
         })}>{title}</h1>
-        <ShrinkButton onClick={onCategoryClick} />
+        <ShrinkButton onClick={handleShrinkButtonClick} />
 
         {layout === 'mobile' &&
           <div className={cn(styles.searchBar, {

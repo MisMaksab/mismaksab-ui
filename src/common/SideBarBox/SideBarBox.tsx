@@ -11,13 +11,15 @@ interface SideBarBoxInterFace extends LayoutProp{
   )[];
   expandedId: number | null;
   onClick: (id: number) => void;
+  isOpen?: boolean;
+  onCategoryClick?: ()=>void;
 }
 
-export function SideBarBox({layout, data, expandedId, onClick}: SideBarBoxInterFace) {
+export function SideBarBox({layout, data, expandedId, onClick, isOpen, onCategoryClick}: SideBarBoxInterFace) {
   return (
-    <div className={styles.sideBarBox}>
+    <div className={cn(styles.sideBarBox, styles[layout])}>
         {data.map((item:any, i:number) =>
-          <SideBarBoxItem layout={layout} key={i} id={i} expandedId={expandedId} data={item} onClick={onClick}/>
+          <SideBarBoxItem layout={layout} key={i} id={i} expandedId={expandedId} data={item} onClick={onClick} isOpen={isOpen} onCategoryClick={onCategoryClick}/>
         )}
       </div>
   )

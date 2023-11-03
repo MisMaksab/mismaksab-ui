@@ -3,7 +3,7 @@ import { MobileSlider } from '../MobileSlider/MobileSlider';
 import { AllRetailersSlides } from '../../common/AllRetailersSlides/AllRetailersSlides';
 
 interface MobileRetailersSliderProps {
-  slidesData: [];
+  slidesData: any[];
 }
 
 export function MobileRetailersSlider({slidesData}: MobileRetailersSliderProps) {

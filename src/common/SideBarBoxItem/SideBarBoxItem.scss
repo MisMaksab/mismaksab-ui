@@ -2,38 +2,66 @@
 
 .sideBarBoxItem {
   &.desktop {
-    /**/
+    .sideBarBoxItemBtnText {
+      cursor: auto;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-10px);
+      transition: .3s;
+
+      &.shown {
+        cursor: pointer;
+        opacity: 1;
+        pointer-events: all;
+        transform: translateX(0);
+      }
+    }
   }
   
   &.mobile {
     border-bottom: 1px solid $secondaryColorLight;
 
-    .mobileSideBarArrow {
-      .svg {
-        height: 7px;
-        width: 13px;
-        transition: transform .3s;
-
-        &.rotate {
-          transform: rotate(180deg);
-        }
+    &:first-child {
+      .sideBarBoxItemBtn .sideBarBoxItemBtnText{
+        justify-content: start;
       }
     }
 
     .sideBarBoxItemBtn {
+      display: flex;
+
+      .sideBarBoxItemBtnText {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+      }
+    }
+
+    .mobileSideBarArrow {
+      height: 7px;
+      width: 13px;
+      transition: transform .3s;
+      margin-left: 10px;
+
+      &.rotate {
+        transform: rotate(180deg);
+      }
+    }
+
+    .sideBarBoxItemBtn {
+      padding: 8px 16px 8px 9px;
+      font-size: 16px;
+
       .logoSvg {
         width: 19px;
         height: 19px;
       }
-
-      .title {
-        padding: 8px 16px 8px 9px;
-        font-size: 16px;
-
-        .arrowSvg {
-          width: 10px;
-          height: 8px;
-        }
+      .arrowSvg {
+        width: 10px;
+        height: 8px;
       }
     }
 
@@ -49,39 +77,40 @@
   }
 
   .sideBarBoxItemBtn {
-    cursor: pointer;
-    display: flex;
+    cursor: auto;
+    display: inline-flex;
     align-items: center;
+    flex-grow: 2;
+    text-decoration: none;
+    padding: 10px 0px;
+    color: $fontColorDark;
+    text-transform: capitalize;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 140%; /* 32.2px */
+    transition: color .3s;
+    position: relative;
+    margin: 0;
+
+    .sideBarBoxItemBtnText {
+      padding-left: 12px;
+
+      &.active, &:hover{
+        color: $tertiaryColorMain;
+        text-decoration: underline;
+      }
+    }
 
     .logoSvg {
       width: 27px;
       height: 27px;
-    }
-
-    &.active > .title, .title:hover{
-      color: $tertiaryColorMain;
-      text-decoration: underline;
-    }
-
-    .title {
-      flex-grow: 2;
-      text-decoration: none;
       cursor: pointer;
-      padding: 10px 20px 10px 12px;
-      color: $fontColorDark;
-      text-transform: capitalize;
-      font-size: 23px;
-      font-weight: 500;
-      line-height: 140%; /* 32.2px */
-      transition: color .3s;
-      position: relative;
-      margin: 0;
+    }
 
-      .arrowSvg {
-        margin-left: 3px;
-        width: 14px;
-        height: 11px;
-      }
+    .arrowSvg {
+      margin-left: 3px;
+      width: 14px;
+      height: 11px;
     }
   }
 

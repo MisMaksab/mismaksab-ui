@@ -1,0 +1,59 @@
+@import "../../scss/variables.scss";
+
+.blockHeader {
+  .title {
+    color: $fontColorDark;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 100%; /* 32px */
+    margin: 0;
+
+    &.thin {
+      font-weight: 400;
+    }
+  }
+
+  .blockHeaderGoBackBtn {
+    position: absolute;
+    left: 0;
+
+  }
+
+  .subTitle {
+    color: $fontColorDark;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 100%; /* 20px */
+    padding-top: 24px;
+    display: inline-block;
+    width: 100%;
+  }
+
+  &.removePaddingTop {
+    padding-top: 0;
+  }
+
+  &.justifyCenter {
+    justify-content: center;
+  }
+
+  padding: 65px 5px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+
+  &.mobile {
+    padding: 23px 5px 16px;
+
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+
+  &.desktop {
+    /**/
+  }
+}

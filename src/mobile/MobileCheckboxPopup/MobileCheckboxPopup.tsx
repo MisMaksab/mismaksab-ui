@@ -3,15 +3,18 @@ import styles from '../MobileLinkPopup/MobileLinkPopup.scss'
 import cn from 'classnames'
 import { CloseCross } from '../../common/CloseCross/CloseCross'
 
-interface MobileCheckboxPopupProps{
-  mode: 'popupGreen'|'popupYellow'|'popupBlue'|'popupDefault';
+interface MobileCheckboxPopupProps extends CalculateCheckboxBlockProps{
   active: boolean;
-  data: Array<{id: string, text: string, link: string}>;
   title: string;
-  selectedItems: [];
   hidePopupCb: ()=>void;
-  setSelectedItemsCb: ()=>void;
+}
+
+interface CalculateCheckboxBlockProps {
   type: 'single'|'multiple';
+  setSelectedItemsCb: ()=>void;
+  data: Array<{id: string, text: string, link: string}>;
+  selectedItems: any[];
+  mode: 'popupGreen'|'popupYellow'|'popupBlue'|'popupDefault';
 }
 
 export function MobileCheckboxPopup({mode, active, hidePopupCb, type, data, title, selectedItems, setSelectedItemsCb}: MobileCheckboxPopupProps) {
@@ -31,7 +34,7 @@ export function MobileCheckboxPopup({mode, active, hidePopupCb, type, data, titl
             selectedItems={selectedItems}
             data={data}
             type={type}
-            changeSelectedItemsCb={()=>{}}
+            setSelectedItemsCb={()=>{}}
           />
         </div>
       </div>
@@ -40,18 +43,17 @@ export function MobileCheckboxPopup({mode, active, hidePopupCb, type, data, titl
 }
 
 
-function CalculateCheckboxBlock({mode, selectedItems, data, changeSelectedItemsCb, type}) {
+function CalculateCheckboxBlock({mode, selectedItems, data, setSelectedItemsCb, type}: CalculateCheckboxBlockProps) {
   return (
     <>
-      {data.map((option) =>
+      {data.map((option: any) =>
         <label htmlFor={option.id} key={option.id} className={cn(styles.popupOption, {
-          [styles.active]: selectedItems.includes(option.id)
+          // [styles.active]: selectedItems.includes(option.id) !!!!!
         })}>
           {option.text}
 
           <input className={
             cn(
-              styles.customInputCheckbox,
               styles.popupOptionCheckbox,
               styles.border,
               styles[mode],
@@ -60,8 +62,8 @@ function CalculateCheckboxBlock({mode, selectedItems, data, changeSelectedItemsC
             type="checkbox"
             id={option.id}
             name={option.id}
-            checked={selectedItems.includes(option.id)}
-            onChange={changeSelectedItemsCb}
+            // checked={selectedItems.includes(option.id)} !!!!!
+            onChange={setSelectedItemsCb}
           />
         </label>
       )}
