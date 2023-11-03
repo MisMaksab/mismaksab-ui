@@ -33,6 +33,16 @@ module.exports = {
                         },
                     },
                     {
+                        loader: "@linaria/webpack-loader",
+                        options: {
+                            // sourceMap: process.env.NODE_ENV !== "production",
+                            sourceMap: false,
+                            babelOptions: {
+                                presets: ["@babel/preset-typescript", "@babel/preset-react", "@linaria/babel-preset"],
+                            },
+                        },
+                    },
+                    {
                         loader: "ts-loader",
                         options: {
                             transpileOnly: true,
@@ -42,30 +52,20 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.svg$/,
-                loader: 'svg-inline-loader'
-            },
-            {
-                test: /\.pcss$/,
+                test: /\.css$/,
                 use: [
-                    { loader: "style-loader" },
-                    { loader: "css-modules-typescript-loader" },
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
                     {
                         loader: "css-loader",
                         options: {
-                            modules: {
-                                compileType: "module",
-                                exportGlobals: true,
-                                localIdentName: "[name]__[local]--[hash:base64:5]",
-                            },
-                            sourceMap: true,
-                            importLoaders: 1,
+                            // sourceMap: process.env.NODE_ENV !== "production",
+                            sourceMap: false,
                         },
                     },
-                    { loader: "postcss-loader", options: { sourceMap: true } },
                 ],
             },
-            { test: /\.css$/i, use: ["style-loader", "css-loader"] },
         ],
     },
     resolve: {

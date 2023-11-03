@@ -1,0 +1,17 @@
+@import "../../scss/variables.scss";
+
+.footerInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 21px;
+  line-height: 100%; /* 21px */
+
+  .copyright {
+    color: $primaryColorMain;
+  }
+
+  .mail {
+    text-decoration: none;
+    color: $fontColorMain;
+  }
+}

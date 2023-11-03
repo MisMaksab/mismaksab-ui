@@ -1,0 +1,18 @@
+@import "../../scss/variables.scss";
+
+.sideBar {
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 48px 14px 34px 38px;
+
+  &.mobile {
+    max-width: 100%;
+    padding: 21px 25px 26px;
+  }
+
+  &.desktop {
+    /**/
+  }
+}
