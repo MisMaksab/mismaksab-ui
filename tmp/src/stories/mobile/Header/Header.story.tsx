@@ -1,16 +1,26 @@
 import React from "react";
-import { DesktopHeaderLogo } from "../../../desktop/DesktopHeaderLogo/DesktopHeaderLogo";
-import { DesktopHeader } from '../../../desktop/DesktopHeader/DesktopHeader';
 import { LanguageDropdown } from '../../../common/LanguageDropdown/LanguageDropdown';
-import { SearchBar } from '../../../common/SearchBar/SearchBar';
+import { MobileHeader } from "../../../mobile/MobileHeader/MobileHeader";
+import { MobileHeaderLogo } from "../../../mobile/MobileHeaderLogo/MobileHeaderLogo";
+import { MobileHeaderBurger } from "../../../mobile/MobileHeaderBurger/MobileHeaderBurger";
 
-const LANGUAGES_ARR = [{short:'rus',long:'russian'},{short:'eng',long:'english'},{short:'est',long:'estonian'}]
+const LANGUAGES_ARR = [
+  {text: 'Estonian', id: 'est', link: '/'},
+  {text: 'Russian', id: 'rus', link: '/'},
+  {text: 'English', id: 'eng', link: '/'},
+]
 
 export const HeaderStory = () => (
-  <DesktopHeader
-    logo={<DesktopHeaderLogo title="MisMaksab" subtitle="Скидки в магазинах эстонии" />}
-    searchBar={<SearchBar onChange={(val: string) => null} placeHolderText="Найти товар" />}
-    languages={<LanguageDropdown selectedLanguage="est" languages={LANGUAGES_ARR} layout="mobile" />}
+  <MobileHeader
+    burger={<MobileHeaderBurger title={"Катего"}/>}
+    logo={<MobileHeaderLogo title="MisMaksab" />}
+    languages={
+      <LanguageDropdown
+        selectedLanguage="est" 
+        layout="mobile"
+        data={LANGUAGES_ARR}
+      />
+    }
   />
 );
 

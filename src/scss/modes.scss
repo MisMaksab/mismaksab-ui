@@ -1,0 +1,80 @@
+
+.bubbleBlue {
+  background: $tertiaryColorMain;
+  &.applyTextMode {color: $fontColorDark;}
+}
+
+.bubbleBlack {
+  background: $fontColorDark;
+  &.applyTextMode {color:$fontColorLight;}
+}
+
+.bubbleGreen {
+  background: $primaryColorMain;
+  &.applyTextMode {color: white;}
+}
+
+.bubbleLightgreen {
+  background: $primaryColorLight;
+  &.applyTextMode {color: $fontColorDark; }
+}
+
+.bubbleLightblue {
+  background: $tertiaryColorLight;
+  &.applyTextMode {color: $fontColorDark;}
+}
+
+.bubbleOrange {
+  background: $secondaryColorDark;
+  &.applyTextMode {color: $fontColorDark;}
+}
+
+.bubbleLightOrange {
+  background: $secondaryColorLight;
+  &.applyTextMode {color: $fontColorDark;}
+}
+
+.bubbleDisabled {
+  pointer-events: none;
+  background: $fontColorLight;
+  user-select: none;
+  &.applyTextMode {color: white;}
+
+  .bubbleArrow {
+    filter: invert(1);
+  }
+}
+
+.bubbleMobile {
+  border-color: transparent;
+  color: $fontColorDark;
+}
+
+.bubbleMobileActive {
+  border: 1px solid $primaryColorMain;
+  color: $fontColorDark;
+}
+
+.popupGreen {
+  &.color {color: $primaryColorDark;}
+  &.border {border-color: $primaryColorDark;}
+  &.bg {background: $primaryColorDark;}
+}
+
+.popupYellow {
+  &.color {color: $secondaryColorDark;}
+  &.border {border-color: $secondaryColorDark;}
+  &.bg {background: $secondaryColorDark;}
+}
+
+.popupBlue {
+  &.color {color: $quaternaryColorMain;}
+  &.border {border-color: $quaternaryColorMain;}
+  &.bg {background: $quaternaryColorMain;}
+}
+
+.popupDefault {
+  &.color {color: $fontColorDark;}
+  &.border {border-color: $fontColorDark;}
+  &.bg {background: $fontColorDark;}
+}

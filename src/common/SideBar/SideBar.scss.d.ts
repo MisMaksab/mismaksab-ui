@@ -3,6 +3,7 @@
 interface CssExports {
   'desktop': string;
   'mobile': string;
+  'open': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;

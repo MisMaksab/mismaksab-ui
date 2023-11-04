@@ -4,7 +4,7 @@ import { AllGoodsSlides } from '../../common/AllGoodsSlides/AllGoodsSlides';
 
 // TODO here should be normal type instead number
 interface MobileGoodsSliderProps {
-  slidesData: number[];
+  slidesData: any[];
 }
 
 export function MobileGoodsSlider({slidesData}: MobileGoodsSliderProps) {

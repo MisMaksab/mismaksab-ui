@@ -4,12 +4,11 @@ import styles from './MobileHeader.scss';
 
 interface MobileHeaderProps {
   logo: React.ReactElement;
-  searchBar: React.ReactElement;
   languages: React.ReactElement;
   burger: React.ReactElement;
 }
 
-export function MobileHeader({ logo, searchBar, languages, burger }: MobileHeaderProps) {
+export function MobileHeader({ logo, languages, burger }: MobileHeaderProps) {
   return (
     <nav className={styles.navBar}>
       <div className={styles.navBarContent}>

@@ -4,45 +4,34 @@ import cn from 'classnames';
 
 import { SideBarHeader } from "../../common/SideBarHeader/SideBarHeader";
 import { SideBarBox } from '../SideBarBox/SideBarBox';
-import { MobileSideBarControls } from '../../mobile/MobileSideBarControls/MobileSideBarControls';
 import { LayoutProp } from '../LayoutProp';
 
 interface SideBarProps extends LayoutProp{
   title: string;
-  data: DropdownItem[];
+  data: (
+    { title: string; svg: any; subSvg: any; link: string; dropdownItems: never[]; } |
+    { title: string; svg: any; dropdownItems: { title: string; link: string; }[]; subSvg?: undefined; link?: undefined; }
+  )[];
+  isOpen: boolean;
+  onCategoryClick: ()=>void;
 }
 
-export type DropdownItem = {
-  title: string,
-  svg?: string,
-  subSvg?: string,
-  link?: string,
-  dropdownItems: dropdownItem[]
-}
-
-type dropdownItem = {
-  title: string;
-  link: string;
-}
-
-export function SideBar({title, layout, data}: SideBarProps) {
-  const [expandedIdArr, setExpadedIdArr] = useState<number[]>([]);
-  const changeExpandedIdArrCb = useCallback((id: number) => {
-    if (expandedIdArr.includes(id)) {
-      setExpadedIdArr(expandedIdArr.filter(oldId => oldId != id));
+export function SideBar({title, layout, data, isOpen, onCategoryClick}: SideBarProps) {
+  const [expandedId, setExpadedId] = useState<number|null>(null);
+  const changeExpandedIdCb = useCallback((id:number|null) => {
+    if (id === expandedId) {
+      setExpadedId(null);
     } else {
-      setExpadedIdArr([...expandedIdArr, id]);
+      setExpadedId(id)
     }
-  }, [expandedIdArr]);
-  const clearExpandedIdArrCb = useCallback(() => {
-    setExpadedIdArr([]);
-  }, [])
+  }, [expandedId]);
 
   return (
-    <div className={cn(styles.sideBar, styles[layout])}>
-      {layout === 'mobile' && <MobileSideBarControls/>}
-      <SideBarHeader layout={layout} title={title} onHide={clearExpandedIdArrCb}/>
-      <SideBarBox layout={layout} data={data} expandedIdArr={expandedIdArr} onChange={changeExpandedIdArrCb}/>
+    <div className={cn(styles.sideBar, styles[layout], {
+      [styles.open]: isOpen
+    })}>
+      <SideBarHeader layout={layout} title={title} onCategoryClick={onCategoryClick} isOpen={isOpen} changeExpandedIdCb={changeExpandedIdCb}/>
+      <SideBarBox layout={layout} data={data} expandedId={expandedId} onClick={changeExpandedIdCb} isOpen={isOpen} onCategoryClick={onCategoryClick}/>
     </div>
   )
 }

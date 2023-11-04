@@ -53,9 +53,11 @@ const sideBarData: DropdownItem[] = [
 
 export const SideBarStory = () => (
   <SideBar
-    layout={'mobile'}
+    layout='desktop'
     data={sideBarData}
     title="категории"
+    isOpen={true}
+    onCategoryClick={()=>{}}
   />
 );
 

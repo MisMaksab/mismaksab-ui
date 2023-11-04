@@ -1,6 +1,5 @@
 import React from "react"
 import { RetailerCard } from "../RetailerCard/RetailerCard"
-// TODO use normal slides instead any
 export function AllRetailersSlides({slidesData}: any) {
   return (
     <>

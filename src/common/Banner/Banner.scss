@@ -1,13 +1,17 @@
 @import "../../scss/variables.scss";
 
 .banner {
-  padding: 20px 20px 20px 45px;
   display: flex;
   justify-content: space-between;
-  border-radius: 16px;
   color: $fontColorDark;
-  max-width: 910px;
   box-sizing: border-box;
+  max-width: 910px;
+  border-radius: 16px;
+  padding: 20px 20px 20px 45px;
+  
+  &.desktop {
+    /**/
+  }
 
   &.desktop {
     /**/

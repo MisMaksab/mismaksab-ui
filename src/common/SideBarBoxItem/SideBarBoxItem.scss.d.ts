@@ -8,23 +8,26 @@ interface CssExports {
   'link': string;
   'logoSvg': string;
   'mobile': string;
+  'mobileSideBarArrow': string;
   'primaryColorDark': string;
   'primaryColorLight': string;
   'primaryColorMain': string;
   'quaternaryColorDark': string;
   'quaternaryColorMain': string;
+  'rotate': string;
   'secondaryColorDark': string;
   'secondaryColorLight': string;
   'secondaryColorMain': string;
+  'shown': string;
   'sideBarBoxItem': string;
   'sideBarBoxItemBtn': string;
+  'sideBarBoxItemBtnText': string;
   'sideBarBoxItemDropdown': string;
   'sideBarBoxItemDropdownContainer': string;
   'sideBarBoxItemDropdownItem': string;
   'tertiaryColorDark': string;
   'tertiaryColorLight': string;
   'tertiaryColorMain': string;
-  'title': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

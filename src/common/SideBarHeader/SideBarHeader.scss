@@ -1,24 +1,63 @@
 @import "../../scss/variables.scss";
+body {
+  padding: 0 !important;
+}
+
+.fixedBlock {
+  width:100vw;
+  position: fixed;
+  left: 0;
+  right:0;
+  top:0;
+  z-index: 1;
+  background: white;
+  padding: $mobileSideBarVerticalPadding $mobileSideBarHorizontalPadding;
+  box-sizing: border-box;
+  transition: .3s;
+  left: -100%;
+
+  &.open {
+    left:0;
+  }
+}
 
 .sideBarHeader {
-  &.desktop {
-    /**/
-  }
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 
-  &.mobile {
-    padding-top: 35px;
+  &.desktop {
+    justify-content: flex-end;
 
     .title {
-      font-size: 22px;
+      left: 0;
+      transition: .3s;
+      pointer-events: none;
+      transform: scale(0);
+      opacity: 0;
+
+      &.active {
+        transform: scale(1) translateY(-15px);
+        opacity: 1;
+        pointer-events: all;
+      }
     }
   }
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  &.mobile {
+    .title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 500;
+      order:2;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 
   .title {
+    position: absolute;
     text-transform: capitalize;
     color: $fontColorDark;
     font-size: 32px;
@@ -28,15 +67,21 @@
     margin: 0;
   }
 
-  .hide {
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
+  .searchBar {
+    width: calc(100% - 40px);
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 
-    .svg {
-      width: 27px;
-      height: 27px;
-      cursor: pointer;
+  &.mobile .title, .searchBar {
+    opacity: 0;
+    transition: opacity .3s;
+    pointer-events: none;
+    
+    &.active {
+      opacity: 1;
+      pointer-events: all;
     }
   }
 }

@@ -7,6 +7,7 @@ import { LayoutProp } from '../LayoutProp';
 
 
 interface ExpandedGoodCardProps extends LayoutProp{
+  isDisabled: boolean;
   productId: string;
   discountUntil: number;
   addedToList: boolean;
@@ -16,6 +17,7 @@ interface ExpandedGoodCardProps extends LayoutProp{
 }
 
 export function ExpandedGoodCard({
+  isDisabled,
   layout,
   productId,
   discountUntil,

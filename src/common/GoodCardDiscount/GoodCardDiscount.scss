@@ -6,8 +6,12 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  width: 45px;
   box-sizing: border-box;
+  width: 45px;
+  
+  &.desktop {
+    /**/
+  }
 
   &.small {
     position: absolute;

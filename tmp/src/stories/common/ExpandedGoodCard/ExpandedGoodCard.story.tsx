@@ -26,6 +26,7 @@ export const ExpadnedGoodCardStory = (props: any) => {
     return (
         <>
         <ExpandedGoodCard
+            discountUntil={discountUntil}
             productId="1"
             // isDisabled={disabled}
             discountUntil={1}
@@ -77,7 +78,7 @@ ExpadnedGoodCardStory.args = {
     goToRetailerLink: '/',
     discountConditionsText: 'Скидка при предъявлении карты магазина',
     retailerCardImage: 'rimi',
-    layout: 'mobile'
+    layout: 'desktop'
 }
 
 ExpadnedGoodCardStory.storyName = "ExpandedGoodCard";
