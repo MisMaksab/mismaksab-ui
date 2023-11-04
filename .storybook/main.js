@@ -8,6 +8,12 @@ module.exports = {
     ],
     staticDirs: ["../src"],
     webpackFinal: (config) => {
+        config.module.rules.push({
+            test: /\.mjs$/,
+            include: /node_modules/,
+            type: "javascript/auto",
+        });
+        config.resolve.extensions.push(".mjs");
         config.module.rules[0].use.push({
             loader: "@linaria/webpack-loader",
             options: {

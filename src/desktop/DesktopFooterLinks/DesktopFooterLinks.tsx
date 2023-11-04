@@ -3,6 +3,7 @@ import styles from './DesktopFooterLinks.scss';
 
 import instIcon from '../../assets/icons/footerInst.svg';
 import fbIcon from '../../assets/icons/footerFb.svg';
+import { FooterLinksSC } from './styles';
 
 interface DesktopFooterLinksProps {
   instLink: string;
@@ -12,15 +13,15 @@ interface DesktopFooterLinksProps {
 
 export function DesktopFooterLinks({instLink, fbLink, usefulLinksArr}: DesktopFooterLinksProps) {
   return (
-    <div className={styles.footerLinks}>
-      <div className={styles.socialMedia}>
-        <a href={instLink} className={styles.socialMediaItem}>
-          <img className={styles.socialMediaItemImg} src={instIcon}/>
-        </a>
-        <a href={fbLink} className={styles.socialMediaItem}>
-          <img className={styles.socialMediaItemImg} src={fbIcon}/>
-        </a>
-      </div>
+    <FooterLinksSC>
+      <SocialMediaSC>
+        <SocialMediaItemSC href={instLink}>
+          <SocialMediaItemImgSC src={instIcon}/>
+        </SocialMediaItemSC>
+        <SocialMediaItemSC href={fbLink}>
+          <SocialMediaItemImgSC src={fbIcon}/>
+        </SocialMediaItemSC>
+      </SocialMediaSC>
 
       <div className={styles.usefulLinks}>
         {usefulLinksArr.map(el =>
@@ -29,6 +30,6 @@ export function DesktopFooterLinks({instLink, fbLink, usefulLinksArr}: DesktopFo
           </div>
         )}
       </div>
-    </div>
+    </FooterLinksSC>
   )
 }

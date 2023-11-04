@@ -1,8 +1,10 @@
 import { styled } from "@linaria/react";
 
+import { primaryColorLight } from "../../styles";
+
 export const FooterSC = styled.footer`
   padding: 48px 67px 24px;
-  background: red;
+  background: ${primaryColorLight};
 `;
 
 export const FooterContent = styled.div`
