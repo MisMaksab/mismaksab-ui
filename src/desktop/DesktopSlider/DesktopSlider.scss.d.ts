@@ -4,6 +4,7 @@ interface CssExports {
   'slider': string;
   'sliderBox': string;
   'sliderSlides': string;
+  'sliderWrapper': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

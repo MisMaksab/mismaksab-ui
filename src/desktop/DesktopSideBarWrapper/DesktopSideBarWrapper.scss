@@ -6,6 +6,9 @@
   width: 116px;
   transition: .3s;
   overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 192px;
 
   &.open {
     width: 100%;
