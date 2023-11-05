@@ -1,9 +1,9 @@
-import React from 'react'
-import styles from './ReatailerCard.scss'
-import cn from 'classnames';
-import { LayoutProp } from '../LayoutProp';
+import React from "react";
+import styles from "./ReatailerCard.scss";
+import cn from "classnames";
+import { LayoutProp } from "../LayoutProp";
 
-interface RetailerCardProps extends LayoutProp{
+interface RetailerCardProps extends LayoutProp {
   retailerLink: string;
   retailerImageURL: string;
   discountText: string;
@@ -23,13 +23,16 @@ export function RetailerCard({
   layout,
   isDisabled,
   goToRetailerLink,
-  goToRetailerText
+  goToRetailerText,
 }: RetailerCardProps) {
   return (
-    <div className={styles.retailerCardWrapper}>
-      <a href={retailerLink} className={cn(styles.retailerCard, styles[layout], {
-        [styles.disabled]: isDisabled
-      })}>
+    <div className={cn(styles.retailerCardWrapper, styles[layout])}>
+      <a
+        href={retailerLink}
+        className={cn(styles.retailerCard, styles[layout], {
+          [styles.disabled]: isDisabled,
+        })}
+      >
         <div className={styles.retailerCardHeader}>
           <img className={styles.retailerImage} src={retailerImageURL} />
           <span className={styles.discountText}>{discountText}</span>
@@ -40,11 +43,11 @@ export function RetailerCard({
         </div>
       </a>
 
-      {goToRetailerLink && goToRetailerText &&
+      {goToRetailerLink && goToRetailerText && (
         <a href={goToRetailerLink} className={styles.retailerCardShopLink}>
           {goToRetailerText}
         </a>
-      }
+      )}
     </div>
-  )
+  );
 }

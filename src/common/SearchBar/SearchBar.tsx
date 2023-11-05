@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
-import searchSvg from "../../assets/icons/search.svg";
 import styles from "./SearchBar.scss";
+import { SearchSvg } from "../SearchSvg/SearchSvg";
 
 interface Props {
   sideBarOpen?: boolean;
@@ -9,7 +9,11 @@ interface Props {
   onChange: (value: string) => void;
 }
 
-export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props) {
+export function SearchBar({
+  sideBarOpen = false,
+  placeHolderText,
+  onChange,
+}: Props) {
   const [value, setValue] = React.useState("");
 
   // animation if input is clicked
@@ -33,7 +37,7 @@ export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props
     <form
       className={cn(styles.search, {
         [styles.shown]: shown,
-        [styles.sideBarOpen]: sideBarOpen
+        [styles.sideBarOpen]: sideBarOpen,
       })}
     >
       <input
@@ -45,9 +49,7 @@ export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props
         onChange={onChangeCb}
         className={styles.searchInput}
       />
-      <div className={styles.searchSvgContainer}>
-        <img className={styles.searchSvg} src={searchSvg} />
-      </div>
+      <SearchSvg />
       {/* <div className={styles.searchInput}>
         <div className={styles.searchSvgContainer}>
           <img className={styles.searchSvg} src={searchSvg} />

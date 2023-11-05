@@ -30,6 +30,15 @@ body {
   &.desktop {
     justify-content: flex-end;
 
+    .title.active ~ .shrinkBtn {
+      padding-right: 30px;
+    }
+
+    .shrinkBtn {
+      padding-right: 0;
+      transition: padding-right .3s;
+    }
+
     .title {
       left: 0;
       transition: .3s;

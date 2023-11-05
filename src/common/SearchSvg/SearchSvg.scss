@@ -1,0 +1,23 @@
+@import "../../scss/variables.scss";
+
+// svg
+.searchSvg {
+  height: 50%;
+}
+
+.searchSvgContainer {
+  background: $secondaryColorLight;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+  padding: 0 17px;
+  border-radius: 50%;
+
+  &.header {
+    padding: 0;
+    width: 29px;
+    height: 29px;
+  }
+}
