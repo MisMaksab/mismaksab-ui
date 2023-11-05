@@ -1,6 +1,6 @@
 import React from 'react';
 import logoSvg from '../../assets/icons/logo.svg';
-import styles from './DesktopHeaderLogo.scss';
+import { img, logo, subTitle } from './styles';
 
 interface DesktopHeaderLogoProps {
     title: string;
@@ -10,11 +10,11 @@ interface DesktopHeaderLogoProps {
 
 export function DesktopHeaderLogo({ title, subtitle, href = "/" }: DesktopHeaderLogoProps) {
   return (
-    <a href={href} className={styles.logo}>
-        <img className={styles.img} src={logoSvg} alt='logo'/>
+    <a href={href} className={logo}>
+        <img className={img} src={logoSvg} alt='logo'/>
         <div>
-            <h1 className={styles.title}>{title}</h1>
-            <h6 className={styles.subTitle}>{subtitle}</h6>
+            <h1 className={title}>{title}</h1>
+            <h6 className={subTitle}>{subtitle}</h6>
         </div>
     </a>
   )

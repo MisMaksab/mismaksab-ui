@@ -1,4 +1,6 @@
-.button {
+import { css } from "@linaria/core";
+
+export const button = css`
     border-radius: 10px;
     padding: 12px 20px;
     border: none;
@@ -12,9 +14,9 @@
     &:hover {
         box-shadow: 0px 0px 4px 5px rgba(0,0,0,.04);
     }
+`;
 
-    &.yellow{
-        background: #EAD700;
-        color: #373F41;
-    }
-}
+export const yellow = css`
+    background: #EAD700;
+    color: #373F41;
+`;

@@ -1,15 +1,21 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './Button.scss';
+
+import { button, yellow } from './styles';
 
 interface Props {
-  mode: "button" | "yellow",
+  mode: "button" | "yellow", // TODO change modes
   children: React.ReactNode,
+}
+
+const stylesMap = {
+  yellow,
+  button
 }
 
 export function Button({mode, children}: Props) {
   return (
-    <button className={cn(styles.button, styles[mode])}>
+    <button className={cn(stylesMap[mode])}>
         {children}
     </button>
   )

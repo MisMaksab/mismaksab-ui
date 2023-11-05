@@ -5,4 +5,4 @@ export const BubbleStory = () => (
   <Bubble mode="bubbleGreen" text="товары" layout="desktop" isDropdown={false}/>
 );
 
-BubbleStory.storyName = "Header";
+BubbleStory.storyName = "Bubbles";
