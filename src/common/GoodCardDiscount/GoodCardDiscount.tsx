@@ -1,7 +1,8 @@
 import React from 'react'
-import styles from './GoodCardDiscount.scss'
 import cn from 'classnames'
 import { LayoutProp } from '../LayoutProp';
+import { discountCN, small, discountPercentage, discountImage, img, expandedCN } from './styles';
+import { MobileCN } from 'styles';
 
 interface GoodCardDiscountProps extends LayoutProp {
   discount: number;
@@ -12,15 +13,16 @@ interface GoodCardDiscountProps extends LayoutProp {
 
 export function GoodCardDiscount({discount, image, expanded, layout}: GoodCardDiscountProps) {
   return (
-    <div className={cn(styles.discount, styles[layout], {
-      [styles.expanded]: expanded,
-      [styles.small]: !expanded,
+    <div className={cn(discountCN, {
+      [MobileCN]: layout === 'mobile',
+      [expandedCN]: expanded,
+      [small]: !expanded,
     })}>
-        <div className={styles.discountPercentage}>{discount}%</div>
+        <div className={discountPercentage}>{discount}%</div>
 
         {image &&
-        <div className={styles.discountImage}>
-          <img src={image} className={styles.img} />
+        <div className={discountImage}>
+          <img src={image} className={img} />
         </div>
       }
     </div>

@@ -1,4 +1,5 @@
-export const MobileCN = "isMobile";
+export const MobileCN = "mobile";
+export const DesktopCN = "desktop";
 
 export const fontColorLight = "#D9D9D9";
 export const fontColorMain = "#6D6D6D";

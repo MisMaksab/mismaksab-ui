@@ -1,9 +1,10 @@
 import React from 'react'
-import styles from './ExpandedGoodCard.scss';
 import cn from 'classnames';
+import { MobileCN } from 'styles';
 import { DesktopHeaderLogo } from '../../desktop/DesktopHeaderLogo/DesktopHeaderLogo';
 import { GoodCardDiscount } from '../GoodCardDiscount/GoodCardDiscount';
 import { LayoutProp } from '../LayoutProp';
+import { expandedGoodCard, expandedGoodCardLogo, expandedGoodCardMainInfo, productImage, img, expandedGoodCardTextWrapper, discountUntil, expandedGoodCardPrices, current, old, pricePerKilo, title, expandedGoodCardSecondaryInfo, retailer, retailerImage, retailerText, discountText, discountCN } from './styles';
 
 
 interface ExpandedGoodCardProps extends LayoutProp{
@@ -29,12 +30,14 @@ export function ExpandedGoodCard({
 {
   return (
     <div className={cn(
-      styles.expandedGoodCard, styles[layout]
+      expandedGoodCard, {
+        [MobileCN]: layout === 'mobile'
+      }
     )}>
       {header}
       {footer}
       {layout === 'desktop' &&
-        <div className={styles.expandedGoodCardLogo}>
+        <div className={expandedGoodCardLogo}>
           <DesktopHeaderLogo title='MisMaksab' subtitle='скидки в магазинах Эстонии' href='/' />
         </div>
       }
@@ -64,19 +67,19 @@ export function ExpandedGoodCardHeader({
   productTitle
 }: ExpandedGoodCardHeaderProps) {
   return (
-    <div className={styles.expandedGoodCardMainInfo}>
-        <div className={styles.productImage}>
-          <img className={styles.img} src={productImageURL}/>
+    <div className={expandedGoodCardMainInfo}>
+        <div className={productImage}>
+          <img className={img} src={productImageURL}/>
         </div>
 
-        <div className={styles.expandedGoodCardTextWrapper}>
-          <h4 className={styles.discountUntil}>{expireDateStr}</h4>
-          <div className={styles.expandedGoodCardPrices}>
-              <span className={styles.current}>{price}€</span>
-              <span className={styles.old}>{oldPrice}€</span>
+        <div className={expandedGoodCardTextWrapper}>
+          <h4 className={discountUntil}>{expireDateStr}</h4>
+          <div className={expandedGoodCardPrices}>
+              <span className={current}>{price}€</span>
+              <span className={old}>{oldPrice}€</span>
           </div>
-          <h4 className={styles.pricePerKilo}>{unitPrice}€/{unitType}</h4>
-          <a href='/' className={styles.title}>{productTitle}</a>
+          <h4 className={pricePerKilo}>{unitPrice}€/{unitType}</h4>
+          <a href='/' className={title}>{productTitle}</a>
         </div>
       </div>
   )
@@ -102,17 +105,17 @@ export function ExpandedGoodCardFooter({
   discountConditionsText
 }: ExpandedGoodCardFooterProps) {
   return (
-    <div className={styles.expandedGoodCardSecondaryInfo}>
-        <div className={styles.retailer}>
-          <div className={styles.retailerImage}>
-            <img src={retailerImageURL} className={styles.img} />
+    <div className={expandedGoodCardSecondaryInfo}>
+        <div className={retailer}>
+          <div className={retailerImage}>
+            <img src={retailerImageURL} className={img} />
           </div>
-          <a href={goToRetailerLink} className={styles.retailerText}>{goToRetailerText}</a>
+          <a href={goToRetailerLink} className={retailerText}>{goToRetailerText}</a>
         </div>
 
-        <div className={styles.discount}>
+        <div className={discountCN}>
           <GoodCardDiscount layout={layout} expanded={true} image={retailerCardImage} discount={discount}/>
-          <span className={styles.discountText}>{discountConditionsText}</span>
+          <span className={discountText}>{discountConditionsText}</span>
         </div>
       </div>
   )

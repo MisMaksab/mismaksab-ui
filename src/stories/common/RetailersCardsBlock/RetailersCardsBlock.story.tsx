@@ -1,8 +1,8 @@
-import React from "react";
-import { RetailersCardsBlock } from "../../../common/RetailersCardsBlock/RetailersCardsBlock";
+// import React from "react";
+// import { RetailersCardsBlock } from "../../../common/RetailersCardsBlock/RetailersCardsBlock";
 
-export const RetailersCardsBlockStory = () => (
-  <RetailersCardsBlock data={[1,2,3,4,5,6]}/>
-);
+// export const RetailersCardsBlockStory = () => (
+//   <RetailersCardsBlock data={[1,2,3,4,5,6]}/>
+// );
 
-RetailersCardsBlockStory.storyName = "Header";
+// RetailersCardsBlockStory.storyName = "Header";

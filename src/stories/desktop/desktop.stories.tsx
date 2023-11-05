@@ -2,8 +2,8 @@
 export {FooterStory} from "./Footer/Footer.story";
 // export {SliderStory} from './Slider/Slider.story';
 // export {RetailersSliderStory} from './RetailerSlider/RetailerSlider.story';
-export {SideBarWrapperStory} from './SideBarWrapper/SideBarWrapper.story';
-export {BubbleBlockStory} from './BubbleBlock/BubbleBlock.story';
+// export {SideBarWrapperStory} from './SideBarWrapper/SideBarWrapper.story';
+// export {BubbleBlockStory} from './BubbleBlock/BubbleBlock.story';
 
 export default {
     title: "Desktop",

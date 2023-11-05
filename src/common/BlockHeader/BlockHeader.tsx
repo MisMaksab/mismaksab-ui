@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './BlockHeader.scss'
+import cn from 'classnames';
 import YellowButton from '../YellowButton/YellowButton';
 import { LayoutProp } from '../LayoutProp';
-import cn from 'classnames';
 import { ShrinkButton } from '../ShrinkButton/ShrinkButton';
+import {blockHeader, blockHeaderGoBackBtn, justifyCenter, removePaddingTop, thin,} from "./styles";
 
 interface BlockHeaderProps extends LayoutProp{
   title: string;
@@ -16,15 +16,15 @@ interface BlockHeaderProps extends LayoutProp{
   shrinkBtnEnabled?: boolean;
 }
 
-export function BlockHeader({title, layout, yellowButtonText, yellowButtonLink, moreBtnEnabled = false, isTitleThin = false, subTitle=null, noPaddingTop = false, shrinkBtnEnabled = false}: BlockHeaderProps) {
+export function BlockHeader({title, layout, yellowButtonText, yellowButtonLink, moreBtnEnabled = true, isTitleThin = false, subTitle=null, noPaddingTop = false, shrinkBtnEnabled = false}: BlockHeaderProps) {
   return (
-    <div className={cn(styles.blockHeader, styles[layout], {
-      [styles.removePaddingTop]: noPaddingTop,
-      [styles.justifyCenter]: layout === 'mobile' && !moreBtnEnabled
+    <div className={cn(blockHeader, {
+      [removePaddingTop]: noPaddingTop,
+      [justifyCenter]: layout === 'mobile' && !moreBtnEnabled
     })}>
-      <h1 className={cn(styles.title, {[styles.thin]: isTitleThin})}>{title}</h1>
+      <h1 className={cn(title, {[thin]: isTitleThin})}>{title}</h1>
       {subTitle &&
-        <p className={styles.subTitle}>{subTitle}</p>
+        <p className={subTitle}>{subTitle}</p>
       }
       {moreBtnEnabled &&
         <YellowButton
@@ -35,7 +35,7 @@ export function BlockHeader({title, layout, yellowButtonText, yellowButtonLink, 
         />
       }
       {shrinkBtnEnabled &&
-        <a className={styles.blockHeaderGoBackBtn}>
+        <a className={blockHeaderGoBackBtn}>
           <ShrinkButton onClick={()=>{}}/>
         </a>
       }

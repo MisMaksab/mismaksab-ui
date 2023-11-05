@@ -1,8 +1,9 @@
 import React from 'react'
-import styles from './YellowButton.scss'
 import cn from "classnames";
+import { MobileCN } from 'styles';
 import arrow from "../../assets/icons/arrow.svg";
 import { LayoutProp } from '../LayoutProp';
+import { active, rotate, svg, title, yellowButton } from "./styles";
 
 interface YellowButtonProps extends LayoutProp {
   text: string | undefined;
@@ -14,12 +15,14 @@ interface YellowButtonProps extends LayoutProp {
 
 export default function YellowButton({layout, text, onClick, isActive = false, isArrowRotated = false, link}: YellowButtonProps) {
   return (
-    <a href={link} className={cn(styles.yellowButton, styles[layout])} onClick={onClick}>
-      <span className={styles.title}>{text}</span>
+    <a href={link} className={cn(yellowButton, {
+      [MobileCN]: layout === 'mobile'
+    })} onClick={onClick}>
+      <span className={title}>{text}</span>
       <img
-        className={cn(styles.svg, {
-          [styles.active]: isActive,
-          [styles.rotate]: isArrowRotated
+        className={cn(svg, {
+          [active]: isActive,
+          [rotate]: isArrowRotated
         })}
         src={arrow} alt="language svg"
       />
