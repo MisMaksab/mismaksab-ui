@@ -1,10 +1,11 @@
 import React, { useCallback, useState } from 'react';
-import styles from './SideBar.scss';
 import cn from 'classnames';
 
 import { SideBarHeader } from "../../common/SideBarHeader/SideBarHeader";
 import { SideBarBox } from '../SideBarBox/SideBarBox';
 import { LayoutProp } from '../LayoutProp';
+import { MobileCN } from 'styles';
+import { sideBar, open } from './styles';
 
 interface SideBarProps extends LayoutProp{
   title: string;
@@ -27,8 +28,9 @@ export function SideBar({title, layout, data, isOpen, onCategoryClick}: SideBarP
   }, [expandedId]);
 
   return (
-    <div className={cn(styles.sideBar, styles[layout], {
-      [styles.open]: isOpen
+    <div className={cn(sideBar, {
+      [MobileCN]: layout === 'mobile',
+      [open]: isOpen
     })}>
       <SideBarHeader layout={layout} title={title} onCategoryClick={onCategoryClick} isOpen={isOpen} changeExpandedIdCb={changeExpandedIdCb}/>
       <SideBarBox layout={layout} data={data} expandedId={expandedId} onClick={changeExpandedIdCb} isOpen={isOpen} onCategoryClick={onCategoryClick}/>

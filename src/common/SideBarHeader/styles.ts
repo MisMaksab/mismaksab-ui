@@ -1,0 +1,84 @@
+import { css } from "@linaria/core";
+import { MobileCN, mobileSideBarHorizontalPadding, mobileSideBarVerticalPadding } from "styles";
+
+export const fixedBlock = css`
+    width:100vw;
+    position: fixed;
+    left: 0;
+    right:0;
+    top:0;
+    z-index: 1;
+    background: white;
+    padding: ${mobileSideBarVerticalPadding} ${mobileSideBarHorizontalPadding};
+    box-sizing: border-box;
+    transition: .3s;
+    left: -100%;
+`;
+
+export const open = css`
+    left: 0;
+`;
+
+export const searchBar = css`
+    width: calc(100% - 40px);
+    position: absolute;
+    right: 0;
+    top: 0;
+`;
+
+export const shrinkBtn = css`
+    padding-right: 0;
+    transition: padding-right .3s;
+`;
+
+export const title = css`
+    position: absolute;
+    left: 0;
+    transition: .3s;
+    pointer-events: none;
+    transform: scale(0);
+    opacity: 0;
+    text-transform: capitalize;
+    color: $fontColorDark;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 32px */
+    margin: 0;
+`;
+
+export const active = css`
+    transform: scale(1) translateY(-15px);
+    opacity: 1;
+    pointer-events: all;
+`;
+
+export const sideBarHeader = css`
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+
+    .${MobileCN} {
+        .${title} {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
+            order:2;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .${title}, .${searchBar} {
+            opacity: 0;
+            transition: opacity .3s;
+            pointer-events: none;
+            
+            &.active {
+              opacity: 1;
+              pointer-events: all;
+            }
+        }
+    }
+`;

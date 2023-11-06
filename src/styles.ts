@@ -21,3 +21,5 @@ export const quaternaryColorMain = "#1C6581";
 export const quaternaryColorDark = "#124052";
 
 export const retailersSliderWidth = "920px";
+export const mobileSideBarHorizontalPadding = "16px";
+export const mobileSideBarVerticalPadding = "9px";

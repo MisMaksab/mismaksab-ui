@@ -1,7 +1,8 @@
 import React from 'react'
-import styles from './ServiceBlock.scss'
-import { LayoutProp } from '../LayoutProp'
 import cn from 'classnames'
+import { MobileCN } from 'styles';
+import { LayoutProp } from '../LayoutProp'
+import { serviceBlock, serviceBlockTitle, serviceBlockContent, serviceBlockParagraph, centeredCN } from './styles';
 
 interface ServiceBlockProps extends LayoutProp {
   title?: string;
@@ -11,16 +12,18 @@ interface ServiceBlockProps extends LayoutProp {
 
 export function ServiceBlock({layout, title, paragraphs, centered}: ServiceBlockProps) {
   return (
-    <div className={cn(styles.serviceBlock, styles[layout])}>
+    <div className={cn(serviceBlock, {
+      [MobileCN]: layout === 'mobile'
+    })}>
       {title &&
-      <h2 className={styles.serviceBlockTitle}>
+      <h2 className={serviceBlockTitle}>
         {title}
       </h2>
       }
-      <div className={styles.serviceBlockContent}>
+      <div className={serviceBlockContent}>
         {paragraphs.map(text =>
-          <p key={text} className={cn(styles.serviceBlockParagraph, {
-            [styles.centered]: centered
+          <p key={text} className={cn(serviceBlockParagraph, {
+            [centeredCN]: centered
           })}>
             {text}
           </p>

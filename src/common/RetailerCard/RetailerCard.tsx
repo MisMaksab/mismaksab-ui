@@ -1,8 +1,8 @@
 import React from "react";
 import cn from "classnames";
+import { MobileCN } from "styles";
 import { LayoutProp } from "../LayoutProp";
 import { retailerCardWrapper, retailerCard, disabled, retailerCardHeader, retailerImage, retailerCardFooter, offers, retailerCardShopLink } from "./styles";
-import { MobileCN } from "styles";
 
 interface RetailerCardProps extends LayoutProp {
   retailerLink: string;
