@@ -1,20 +1,21 @@
-import React from "react"
-import { RetailerCard } from "../RetailerCard/RetailerCard"
-export function AllRetailersSlides({slidesData}: any) {
+import React from "react";
+import { RetailerCard } from "../RetailerCard/RetailerCard";
+
+export function AllRetailersSlides({ layout, slidesData }: any) {
   return (
     <>
-      {slidesData.map((slide: any) =>
+      {slidesData.map((slide: any) => (
         <RetailerCard
+          layout={layout}
           key={slide.productId}
           retailerLink={slide.retailerLink}
           retailerImageURL={slide.retailerImageURL}
           discountText={slide.discountText}
           retailer={slide.retailer}
           offersText={slide.offersText}
-          layout={slide.layout}
           isDisabled={slide.isDisabled}
         />
-      )}
+      ))}
     </>
-  )
+  );
 }

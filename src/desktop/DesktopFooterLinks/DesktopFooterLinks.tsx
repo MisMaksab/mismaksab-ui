@@ -1,17 +1,19 @@
-import React from 'react'
-import styles from './DesktopFooterLinks.scss';
-
+import React from "react";
 import instIcon from '../../assets/icons/footerInst.svg';
 import fbIcon from '../../assets/icons/footerFb.svg';
-import { FooterLinksSC } from './styles';
+import { FooterLinksSC, SocialMediaItemImgSC, SocialMediaItemSC, SocialMediaSC, usefulLinks, usefulLinksItem, usefulLinksLink } from './styles';
 
 interface DesktopFooterLinksProps {
   instLink: string;
   fbLink: string;
-  usefulLinksArr: Array<{title:string, link:string}>;
+  usefulLinksArr: Array<{ title: string; link: string }>;
 }
 
-export function DesktopFooterLinks({instLink, fbLink, usefulLinksArr}: DesktopFooterLinksProps) {
+export function DesktopFooterLinks({
+  instLink,
+  fbLink,
+  usefulLinksArr,
+}: DesktopFooterLinksProps) {
   return (
     <FooterLinksSC>
       <SocialMediaSC>
@@ -23,12 +25,14 @@ export function DesktopFooterLinks({instLink, fbLink, usefulLinksArr}: DesktopFo
         </SocialMediaItemSC>
       </SocialMediaSC>
 
-      <div className={styles.usefulLinks}>
-        {usefulLinksArr.map(el =>
-          <div className={styles.usefulLinksItem}>
-            <a className={styles.usefulLinksLink} href={el.link}>{el.title}</a>
+      <div className={usefulLinks}>
+        {usefulLinksArr.map((el) => (
+          <div key={el.title} className={usefulLinksItem}>
+            <a className={usefulLinksLink} href={el.link}>
+              {el.title}
+            </a>
           </div>
-        )}
+        ))}
       </div>
     </FooterLinksSC>
   )

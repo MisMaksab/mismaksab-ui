@@ -2,9 +2,11 @@
 
 /* navbar css */
 .navBar {
+    padding: 0 65px 0 31px;
     display: flex;
     justify-content: center;
-    padding: 26px 42px 36px;
+    align-items: center;
+    height: 100%;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,.03);
 
     // navbar content

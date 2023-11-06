@@ -1,4 +1,12 @@
 .retailersCardsBlock {
   display: flex;
   flex-wrap: wrap;
+
+  &.desktop {
+    /**/
+  }
+
+  &.mobile {
+    justify-content: center;
+  }
 }

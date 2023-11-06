@@ -8,8 +8,6 @@ interface CssExports {
   'quaternaryColorMain': string;
   'search': string;
   'searchInput': string;
-  'searchSvg': string;
-  'searchSvgContainer': string;
   'secondaryColorDark': string;
   'secondaryColorLight': string;
   'secondaryColorMain': string;
