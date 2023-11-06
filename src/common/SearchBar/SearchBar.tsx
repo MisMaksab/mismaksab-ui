@@ -1,7 +1,13 @@
 import React from "react";
 import cn from "classnames";
 import searchSvg from "../../assets/icons/search.svg";
-import styles from "./SearchBar.scss";
+import {
+  search,
+  searchInput,
+  searchSvgContainer,
+  shownCN,
+  sideBarOpenCN,
+} from "./styles";
 
 interface Props {
   sideBarOpen?: boolean;
@@ -9,7 +15,11 @@ interface Props {
   onChange: (value: string) => void;
 }
 
-export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props) {
+export function SearchBar({
+  sideBarOpen = false,
+  placeHolderText,
+  onChange,
+}: Props) {
   const [value, setValue] = React.useState("");
 
   // animation if input is clicked
@@ -31,9 +41,9 @@ export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props
 
   return (
     <form
-      className={cn(styles.search, {
-        [styles.shown]: shown,
-        [styles.sideBarOpen]: sideBarOpen
+      className={cn(search, {
+        [shownCN]: shown,
+        [sideBarOpenCN]: sideBarOpen,
       })}
     >
       <input
@@ -43,14 +53,14 @@ export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props
         onFocus={() => setShown(true)}
         onBlur={() => setShown(false)}
         onChange={onChangeCb}
-        className={styles.searchInput}
+        className={searchInput}
       />
-      <div className={styles.searchSvgContainer}>
-        <img className={styles.searchSvg} src={searchSvg} />
+      <div className={searchSvgContainer}>
+        <img className={searchSvg} src={searchSvg} />
       </div>
-      {/* <div className={styles.searchInput}>
-        <div className={styles.searchSvgContainer}>
-          <img className={styles.searchSvg} src={searchSvg} />
+      {/* <div className={searchInput}>
+        <div className={searchSvgContainer}>
+          <img className={searchSvg} src={searchSvg} />
         </div>
 
         <input
@@ -60,7 +70,7 @@ export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props
           onFocus={() => setShown(true)}
           onBlur={() => setShown(false)}
           onChange={onChangeCb}
-          className={styles.searchInput}
+          className={searchInput}
         />
       </div> */}
     </form>
