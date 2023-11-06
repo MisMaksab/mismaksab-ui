@@ -1,15 +1,16 @@
 import React from "react";
 import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
-import styles from "./GoodCardsBlock.scss";
 import { LayoutProp } from "../LayoutProp";
+import { goodCardsBlock } from "./styles";
 
+// TODO add proper interface
 interface GoodCardsBlockProps extends LayoutProp {
   data: any[];
 }
 
 export function GoodCardsBlock({ data, layout }: GoodCardsBlockProps) {
   return (
-    <div className={styles.goodCardsBlock}>
+    <div className={goodCardsBlock}>
       {data.map((card) => (
         <GoodCard
           header={
