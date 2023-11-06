@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './SideBarBox.scss';
-import { SideBarBoxItem } from '../SideBarBoxItem/SideBarBoxItem';
 import cn from 'classnames';
+import { MobileCN } from 'styles';
+import { SideBarBoxItem } from '../SideBarBoxItem/SideBarBoxItem';
 import { LayoutProp } from '../LayoutProp';
-import { DropdownItem } from '../SideBar/SideBar';
+import { sideBarBox } from './styles';
 
 interface SideBarBoxInterFace extends LayoutProp{
   data: (
@@ -18,7 +18,9 @@ interface SideBarBoxInterFace extends LayoutProp{
 
 export function SideBarBox({layout, data, expandedId, onClick, isOpen, onCategoryClick}: SideBarBoxInterFace) {
   return (
-    <div className={cn(styles.sideBarBox, styles[layout])}>
+    <div className={cn(sideBarBox, {
+      [MobileCN]: layout === 'mobile'
+    })}>
         {data.map((item:any, i:number) =>
           <SideBarBoxItem layout={layout} key={i} id={i} expandedId={expandedId} data={item} onClick={onClick} isOpen={isOpen} onCategoryClick={onCategoryClick}/>
         )}
