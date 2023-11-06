@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "./ReatailerCard.scss";
 import cn from "classnames";
 import { LayoutProp } from "../LayoutProp";
+import { retailerCardWrapper, retailerCard, disabled, retailerCardHeader, retailerImage, retailerCardFooter, offers, retailerCardShopLink } from "./styles";
+import { MobileCN } from "styles";
 
 interface RetailerCardProps extends LayoutProp {
   retailerLink: string;
@@ -26,25 +27,28 @@ export function RetailerCard({
   goToRetailerText,
 }: RetailerCardProps) {
   return (
-    <div className={cn(styles.retailerCardWrapper, styles[layout])}>
+    <div className={cn(retailerCardWrapper, {
+      [MobileCN]: layout === 'mobile'
+    })}>
       <a
         href={retailerLink}
-        className={cn(styles.retailerCard, styles[layout], {
-          [styles.disabled]: isDisabled,
+        className={cn(retailerCard, {
+          [disabled]: isDisabled,
+          [MobileCN]: layout === 'mobile'
         })}
       >
-        <div className={styles.retailerCardHeader}>
-          <img className={styles.retailerImage} src={retailerImageURL} />
-          <span className={styles.discountText}>{discountText}</span>
+        <div className={retailerCardHeader}>
+          <img className={retailerImage} src={retailerImageURL} />
+          <span className={discountText}>{discountText}</span>
         </div>
-        <div className={styles.retailerCardFooter}>
-          <span className={styles.retailer}>{retailer}</span>
-          <span className={styles.offers}>{offersText}</span>
+        <div className={retailerCardFooter}>
+          <span className={retailer}>{retailer}</span>
+          <span className={offers}>{offersText}</span>
         </div>
       </a>
 
       {goToRetailerLink && goToRetailerText && (
-        <a href={goToRetailerLink} className={styles.retailerCardShopLink}>
+        <a href={goToRetailerLink} className={retailerCardShopLink}>
           {goToRetailerText}
         </a>
       )}
