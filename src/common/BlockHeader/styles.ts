@@ -1,13 +1,13 @@
 import { css } from '@linaria/core';
 
-import {MobileCN, DesktopCN} from "../../styles";
+import {MobileCN, DesktopCN, fontColorDark} from "../../styles";
 
 export const thin = css`
     font-weight: 400;
 `;
 
 export const title = css`
-    color: $fontColorDark;
+    color: ${fontColorDark};
     font-size: 32px;
     font-weight: 500;
     line-height: 100%; /* 32px */
@@ -16,11 +16,11 @@ export const title = css`
 
 export const blockHeaderGoBackBtn = css`
     position: absolute;
-    left: 0;
+    left: 17px;
 `;
 
 export const subTitle = css`
-    color: $fontColorDark;
+    color: ${fontColorDark};
     font-size: 20px;
     font-weight: 400;
     line-height: 100%; /* 20px */
@@ -38,15 +38,16 @@ export const justifyCenter = css`
 `;
 
 export const blockHeader = css`
-    padding: 65px 5px 32px;
+    padding: 79px 0px 51px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    gap:15px;
 
     .${MobileCN} {
-        padding: 23px 5px 16px;
+        padding: 29px 19px 19px;
     }
 
     .${title} {
