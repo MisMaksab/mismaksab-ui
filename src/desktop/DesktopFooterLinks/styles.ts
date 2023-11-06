@@ -1,4 +1,5 @@
 import { styled } from "@linaria/react";
+import { css } from "@linaria/core";
 
 import { tertiaryColorMain } from "../../styles";
 
@@ -44,6 +45,30 @@ export const UsefulLinksItemSC = styled.div`
 `;
 
 export const UsefulLinksLinkSC = styled.a`
+  font-size: 20px;
+  line-height: 100%; /* 20px */
+  color: $fontColorMain;
+  text-decoration: none;
+  font-weight: 400;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const usefulLinks = css`
+  display: flex;
+  flex-grow: 2;
+  flex-wrap: wrap;
+`;
+
+export const usefulLinksItem = css`
+  width: 50%;
+  padding: 12px 0px;
+  box-sizing: border-box;
+`;
+
+export const usefulLinksLink = css`
   font-size: 20px;
   line-height: 100%; /* 20px */
   color: $fontColorMain;

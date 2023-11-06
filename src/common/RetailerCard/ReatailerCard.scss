@@ -25,6 +25,17 @@ $retailerCardHeader: 106px;
     justify-content: center;
     align-items: center;
 
+    &.mobile {
+      max-width: 140px;
+
+      .retailerCardShopLink {
+        font-size: 14px;
+        padding: 5px;
+        margin: 5px 0 35px;
+        text-align: center;
+      }
+    }
+
     .retailerCardShopLink {
       text-decoration: underline;
       color: $tertiaryColorMain;

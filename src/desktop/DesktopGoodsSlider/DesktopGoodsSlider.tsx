@@ -1,20 +1,20 @@
-import React from 'react'
-import styles from './DesktopGoodsSlider.scss';
+import React from "react";
 
 // fetch hook
-import { DesktopSlider } from '../DesktopSlider/DesktopSlider';
-import { AllGoodsSlides } from '../../common/AllGoodsSlides/AllGoodsSlides';
+import { DesktopSlider } from "../DesktopSlider/DesktopSlider";
+import { AllGoodsSlides } from "../../common/AllGoodsSlides/AllGoodsSlides";
+import { goodsSlider } from "./styles";
 
 interface DesktopGoodsSliderProps {
   slidesData: any[];
 }
 
-export function DesktopGoodsSlider({slidesData}: DesktopGoodsSliderProps) {
+export function DesktopGoodsSlider({ slidesData }: DesktopGoodsSliderProps) {
   return (
-    <div className={styles.goodsSlider}>
+    <div className={goodsSlider}>
       <DesktopSlider>
-        <AllGoodsSlides slidesData={slidesData}/>
+        <AllGoodsSlides layout="desktop" slidesData={slidesData} />
       </DesktopSlider>
     </div>
-  )
+  );
 }

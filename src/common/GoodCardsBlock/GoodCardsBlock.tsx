@@ -1,22 +1,24 @@
-import React from 'react'
-import { GoodCard, GoodCardFooter, GoodCardHeader } from '../GoodCard/GoodCard';
-import styles from './GoodCardsBlock.scss'
+import React from "react";
+import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
+import { LayoutProp } from "../LayoutProp";
+import { goodCardsBlock } from "./styles";
 
-interface GoodCardsBlockProps {
+// TODO add proper interface
+interface GoodCardsBlockProps extends LayoutProp {
   data: any[];
 }
 
-export function GoodCardsBlock({data}: GoodCardsBlockProps) {
+export function GoodCardsBlock({ data, layout }: GoodCardsBlockProps) {
   return (
-    <div className={styles.goodCardsBlock}>
-      {data.map(card =>
+    <div className={goodCardsBlock}>
+      {data.map((card) => (
         <GoodCard
           header={
             <GoodCardHeader
               productImageURL={card.productImageURL}
               retailerImageURL={card.retailerImageURL}
               discount={card.discount}
-              layout={card.layout}
+              layout={layout}
             />
           }
           footer={
@@ -26,18 +28,17 @@ export function GoodCardsBlock({data}: GoodCardsBlockProps) {
               productTitle={card.productTitle}
               unitPrice={card.unitPrice}
               unitType={card.unitType}
-              layout={card.layout}
+              layout={layout}
               expireDateStr={card.expireDateStr}
             />
           }
-          
           productId="1"
           isDisabled={card.isDisabled}
           addedToList={false}
           addToList={() => null}
-          layout={card.layout}
+          layout={layout}
         />
-      )}
+      ))}
     </div>
-  )
+  );
 }

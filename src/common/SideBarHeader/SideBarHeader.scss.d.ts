@@ -15,6 +15,7 @@ interface CssExports {
   'secondaryColorDark': string;
   'secondaryColorLight': string;
   'secondaryColorMain': string;
+  'shrinkBtn': string;
   'sideBarHeader': string;
   'tertiaryColorDark': string;
   'tertiaryColorLight': string;

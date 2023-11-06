@@ -1,9 +1,9 @@
 import React from 'react'
 import cn from 'classnames';
-
-import styles from './GoodCard.scss';
+import { MobileCN } from 'styles';
 import { LayoutProp } from '../LayoutProp';
 import { GoodCardDiscount } from '../GoodCardDiscount/GoodCardDiscount';
+import { goodCard, disabled, goodCardImage, retailerImg, goodCardTextWrapper, goodCardPrices, current, old, title, pricePerKilo, discountUntil } from './styles';
 
 interface GoodCardProps extends LayoutProp{
     productId: string;
@@ -28,8 +28,9 @@ export function GoodCard({
 //   }, []);
   return (
     <div className={cn(
-        styles.goodCard, styles[layout], {
-            [styles.disabled]: isDisabled,
+        goodCard, {
+            [MobileCN]: layout === 'mobile',
+            [disabled]: isDisabled,
         }
     )}>
         {header}
@@ -52,8 +53,8 @@ export function GoodCardHeader({
     layout
 }: GoodCardHeaderProps) {
     return (
-        <div className={styles.goodCardImage}>
-            <img className={styles.retailerImg} src={productImageURL}/>
+        <div className={goodCardImage}>
+            <img className={retailerImg} src={productImageURL}/>
             <GoodCardDiscount layout={layout} expanded={false} image={retailerImageURL} discount={discount}/>
         </div>
     )
@@ -79,16 +80,16 @@ export function GoodCardFooter({
     expireDateStr
 }: GoodCardFooterProps) {
     return (
-        <div className={styles.goodCardTextWrapper}>
-            <div className={cn(styles.goodCardPrices, styles.goodCardPrices)}>
-                <span className={styles.current}>{price}€</span>
-                <span className={styles.old}>{oldPrice}€</span>
+        <div className={goodCardTextWrapper}>
+            <div className={cn(goodCardPrices, goodCardPrices)}>
+                <span className={current}>{price}€</span>
+                <span className={old}>{oldPrice}€</span>
             </div>
-            <a href='/' className={styles.title}>{productTitle}</a>
+            <a href='/' className={title}>{productTitle}</a>
             {layout === 'desktop' &&
-                <h4 className={styles.pricePerKilo}>{unitPrice}€/{unitType}</h4>
+                <h4 className={pricePerKilo}>{unitPrice}€/{unitType}</h4>
             }
-            <h4 className={styles.discountUntil}>{expireDateStr}</h4>
+            <h4 className={discountUntil}>{expireDateStr}</h4>
         </div>
     )
 }
