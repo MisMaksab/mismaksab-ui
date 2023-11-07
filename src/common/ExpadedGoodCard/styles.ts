@@ -136,7 +136,7 @@ export const expandedGoodCard = css`
     max-width: 990px;
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.20);
 
-    .${MobileCN} {
+    &.${MobileCN} {
         max-width: 340px;
         padding: 15px 18px 20px 0;
 

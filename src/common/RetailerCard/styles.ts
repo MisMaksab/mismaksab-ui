@@ -86,7 +86,7 @@ export const retailerCard = css`
         box-shadow: 0px 0px 7px 0px rgba(90, 194, 233, 0.80);;
     }
 
-    .${MobileCN} {
+    &.${MobileCN} {
         width: ${mobileCardDimensions};
         min-height: ${mobileCardDimensions};
         border-radius: 5px;
@@ -138,7 +138,7 @@ export const retailerCardWrapper = css`
     justify-content: center;
     align-items: center;
 
-    .${MobileCN} {
+    &.${MobileCN} {
         max-width: 140px;
 
         .${retailerCardShopLink} {

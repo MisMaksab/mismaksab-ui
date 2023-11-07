@@ -1,6 +1,11 @@
 import React from "react";
-
-import styles from "./MobileHeader.scss";
+import {
+  navBar,
+  navBarContent,
+  navBarLeftItem,
+  navBarCenterItem,
+  navBarRightItem,
+} from "./styles";
 
 interface MobileHeaderProps {
   centerItem: React.ReactElement;
@@ -14,11 +19,11 @@ export function MobileHeader({
   rightItem,
 }: MobileHeaderProps) {
   return (
-    <nav className={styles.navBar}>
-      <div className={styles.navBarContent}>
-        <div className={styles.navBarLeftItem}>{leftItem}</div>
-        <div className={styles.navBarCenterItem}>{centerItem}</div>
-        <div className={styles.navBarRightItem}>{rightItem}</div>
+    <nav className={navBar}>
+      <div className={navBarContent}>
+        <div className={navBarLeftItem}>{leftItem}</div>
+        <div className={navBarCenterItem}>{centerItem}</div>
+        <div className={navBarRightItem}>{rightItem}</div>
       </div>
     </nav>
   );

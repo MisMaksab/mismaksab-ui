@@ -35,7 +35,7 @@ export const yellowButton = css`
         background-color: ${tertiaryColorMain};
     }
 
-    .${MobileCN} {
+    &.${MobileCN} {
         display: inline-flex;
         align-items: center;
         border-radius: 15px;

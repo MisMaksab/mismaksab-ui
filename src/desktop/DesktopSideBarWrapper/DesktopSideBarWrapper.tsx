@@ -23,13 +23,13 @@ export function DesktopSideBarWrapper({
         [open]: isCategoryOpen,
       })}
     >
-      {/* <SideBar
+      <SideBar
         data={data}
         title={title}
         isOpen={isCategoryOpen}
         onCategoryClick={onCategoryClick}
         layout="desktop"
-      /> */}
+      />
     </div>
   );
 }

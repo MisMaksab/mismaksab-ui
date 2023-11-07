@@ -25,3 +25,7 @@ export const retailersSliderWidth = "920px";
 export const desktopCardDimensions = "216px";
 export const mobileCardDimensions = "114px";
 export const retailerCardHeader = "106px";
+
+export const mobileSideBarHorizontalPadding = "16px";
+export const mobileSideBarVerticalPadding = "9px";
+export const backgoundLayer = "rgba(0, 0, 0, 0.2)";

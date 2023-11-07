@@ -17,14 +17,20 @@ export const arrowButton = css`
     }
 `
 
+export const arrowButtonArrow = css`
+    width: 60px;
+    height: 60px;
+    position: absolute;
+`
+
 export const prev = css`
-    .arrowButtonArrow {
+    .${arrowButtonArrow} {
         transform: rotate(180deg) translateX(40px);
     }
 `
 
 export const next = css`
-    .arrowButtonArrow {
+    .${arrowButtonArrow} {
         transform: translateX(-20px);
     }
 `
@@ -35,12 +41,6 @@ export const shown = css`
     transform: scale(1);
 `
 
-export const arrowButtonArrow = css`
-    width: 60px;
-    height: 60px;
-    position: absolute;
-`
-// !!!! не работет направление стрелочек!!!!
 // .arrowButton {
 //   display: flex;
 //   align-items: center;

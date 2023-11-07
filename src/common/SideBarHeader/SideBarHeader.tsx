@@ -3,8 +3,16 @@ import cn from "classnames";
 import { LayoutProp } from "../LayoutProp";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { ShrinkButton } from "../ShrinkButton/ShrinkButton";
-import { fixedBlock, sideBarHeader, active, shrinkBtn, searchBar, open } from "./styles";
-import { MobileCN } from "styles";
+import { DesktopCN, MobileCN } from "styles";
+import {
+  fixedBlock,
+  sideBarHeader,
+  titleCN,
+  active,
+  shrinkBtn,
+  searchBar,
+  open,
+} from "./styles";
 
 interface SideBarHeaderProps extends LayoutProp {
   title: string;
@@ -42,11 +50,14 @@ export function SideBarHeader({
         [open]: isOpen,
       })}
     >
-      <div className={cn(sideBarHeader, {
-        [MobileCN]: layout === 'mobile'
-      })}>
+      <div
+        className={cn(sideBarHeader, {
+          [MobileCN]: layout === "mobile",
+          [DesktopCN]: layout === "desktop",
+        })}
+      >
         <h1
-          className={cn(title, {
+          className={cn(titleCN, {
             [active]: !showSearchBar || isOpen,
           })}
         >
