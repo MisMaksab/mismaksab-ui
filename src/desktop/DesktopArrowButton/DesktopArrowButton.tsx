@@ -1,25 +1,31 @@
-import cn from 'classnames'
-import React from 'react'
-import styles from './DesktopArrowButton.scss';
+import cn from "classnames";
+import React from "react";
 
 // arrow svg
-import arrowSvg from './../../assets/icons/slider_arrow.svg';
+import arrowSvg from "./../../assets/icons/slider_arrow.svg";
+import { arrowButton, shown, arrowButtonArrow, next, prev } from "./styles";
 
 interface DesktopArrowButtonProps {
-  type: 'next'|'prev';
+  type: "next" | "prev";
   isShown: boolean;
   onClick: () => void;
 }
 
-export function DesktopArrowButton({type, isShown, onClick}: DesktopArrowButtonProps) {
+export function DesktopArrowButton({
+  type,
+  isShown,
+  onClick,
+}: DesktopArrowButtonProps) {
   return (
-    <div className={cn(
-      styles.arrowButton, styles[type], {
-        [styles.shown]: isShown,
-      })} 
-    onClick={onClick}
+    <div
+      className={cn(arrowButton, {
+        [shown]: isShown,
+        [prev]: type === "prev",
+        [next]: type === "next",
+      })}
+      onClick={onClick}
     >
-      <img className={styles.arrowButtonArrow} src={arrowSvg} alt="" />
+      <img className={arrowButtonArrow} src={arrowSvg} alt="" />
     </div>
-  )
+  );
 }

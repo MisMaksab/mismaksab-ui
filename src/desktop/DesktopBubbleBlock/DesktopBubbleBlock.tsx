@@ -1,15 +1,15 @@
-import React from 'react'
-import styles from './DesktopBubbleBlock.scss'
-import { Bubble } from '../../common/Bubble/Bubble';
+import React from "react";
+import { Bubble } from "../../common/Bubble/Bubble";
+import { bubbleBlock } from "./styles";
 
 interface DesktopBubbleBlockProps {
   data: any[];
 }
 
-export function DesktopBubbleBlock({data}: DesktopBubbleBlockProps) {
+export function DesktopBubbleBlock({ data }: DesktopBubbleBlockProps) {
   return (
-    <div className={styles.bubbleBlock}>
-      {data.map(bubbleData =>
+    <div className={bubbleBlock}>
+      {data.map((bubbleData) => (
         <Bubble
           mode={bubbleData.mode}
           text={bubbleData.text}
@@ -19,7 +19,7 @@ export function DesktopBubbleBlock({data}: DesktopBubbleBlockProps) {
           isDropdown={bubbleData.isDropdown}
           isDropdownExpanded={bubbleData.isDropdownExpanded}
         />
-      )}
+      ))}
     </div>
-  )
+  );
 }

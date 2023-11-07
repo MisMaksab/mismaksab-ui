@@ -21,3 +21,7 @@ export const quaternaryColorMain = "#1C6581";
 export const quaternaryColorDark = "#124052";
 
 export const retailersSliderWidth = "920px";
+
+export const desktopCardDimensions = "216px";
+export const mobileCardDimensions = "114px";
+export const retailerCardHeader = "106px";
