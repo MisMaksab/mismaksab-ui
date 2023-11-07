@@ -4,7 +4,7 @@ import { MobileCN, mobileSideBarVerticalPadding } from "styles";
 export const sideBarBox = css`
     padding-top: 10px;
 
-    .${MobileCN} {
+    &.${MobileCN} {
         padding-top: calc(45px - ${mobileSideBarVerticalPadding});
     }
 `;

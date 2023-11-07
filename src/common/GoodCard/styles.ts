@@ -127,7 +127,7 @@ export const goodCard = css`
         box-shadow: 0px 0px 7px 0px rgba(90, 194, 233, 0.80);
     }
 
-    .${MobileCN} {
+    &.${MobileCN} {
         width: 115px;
         min-height: 230px;
 

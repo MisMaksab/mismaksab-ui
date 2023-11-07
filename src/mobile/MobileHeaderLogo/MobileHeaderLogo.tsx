@@ -1,19 +1,19 @@
-import React from 'react';
-import logoSvg from '../../assets/icons/mobileLogo.svg';
-import styles from './MobileHeaderLogo.scss';
+import React from "react";
+import logoSvg from "../../assets/icons/mobileLogo.svg";
+import { logo, titleCN } from "./styles";
 
 interface MobileHeaderLogoProps {
-    title: string;
-    href?: string;
+  title: string;
+  href?: string;
 }
 
 export function MobileHeaderLogo({ title, href = "/" }: MobileHeaderLogoProps) {
   return (
-    <a href={href} className={styles.logo}>
-        <img src={logoSvg} alt='logo'/>
-        <div>
-            <h1 className={styles.title}>{title}</h1>
-        </div>
+    <a href={href} className={logo}>
+      <img src={logoSvg} alt="logo" />
+      <div>
+        <h1 className={titleCN}>{title}</h1>
+      </div>
     </a>
-  )
+  );
 }

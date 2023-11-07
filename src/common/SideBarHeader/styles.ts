@@ -1,6 +1,7 @@
 import { css } from "@linaria/core";
-import { MobileCN, mobileSideBarHorizontalPadding, mobileSideBarVerticalPadding } from "styles";
+import { DesktopCN, MobileCN, fontColorDark, mobileSideBarHorizontalPadding, mobileSideBarVerticalPadding } from "styles";
 
+export const active = css``;
 export const fixedBlock = css`
     width:100vw;
     position: fixed;
@@ -31,7 +32,7 @@ export const shrinkBtn = css`
     transition: padding-right .3s;
 `;
 
-export const title = css`
+export const titleCN = css`
     position: absolute;
     left: 0;
     transition: .3s;
@@ -39,19 +40,20 @@ export const title = css`
     transform: scale(0);
     opacity: 0;
     text-transform: capitalize;
-    color: $fontColorDark;
+    color: ${fontColorDark};
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
     line-height: 100%; /* 32px */
     margin: 0;
+
+    &.${active} {
+        transform: scale(1) translateY(-15px);
+        opacity: 1;
+        pointer-events: all;
+    }
 `;
 
-export const active = css`
-    transform: scale(1) translateY(-15px);
-    opacity: 1;
-    pointer-events: all;
-`;
 
 export const sideBarHeader = css`
     position: relative;
@@ -60,8 +62,30 @@ export const sideBarHeader = css`
     width: 100%;
     justify-content: flex-end;
 
-    .${MobileCN} {
-        .${title} {
+    &.${DesktopCN} {
+        justify-content: flex-end;
+    
+        .${titleCN}.${active} ~ .${shrinkBtn} {
+          padding-right: 30px;
+        }
+    
+        .${titleCN} {
+          left: 0;
+          transition: .3s;
+          pointer-events: none;
+          transform: scale(0);
+          opacity: 0;
+    
+          &.${active} {
+            transform: scale(1) translateY(-15px);
+            opacity: 1;
+            pointer-events: all;
+          }
+        }
+      }
+
+    &.${MobileCN} {
+        .${titleCN} {
             text-align: center;
             font-size: 24px;
             font-weight: 500;
@@ -69,16 +93,16 @@ export const sideBarHeader = css`
             left: 50%;
             transform: translateX(-50%);
         }
+    }
 
-        .${title}, .${searchBar} {
-            opacity: 0;
-            transition: opacity .3s;
-            pointer-events: none;
-            
-            &.active {
-              opacity: 1;
-              pointer-events: all;
-            }
+    &.${MobileCN} .${titleCN}, .${searchBar} {
+        opacity: 0;
+        transition: opacity .3s;
+        pointer-events: none;
+        
+        &.${active} {
+          opacity: 1;
+          pointer-events: all;
         }
     }
 `;

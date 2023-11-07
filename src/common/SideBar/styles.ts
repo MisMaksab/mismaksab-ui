@@ -13,7 +13,7 @@ export const sideBar = css`
     transition: .3s;
     padding: 18px 14px 34px 38px;
 
-    .${MobileCN} {
+    &.${MobileCN} {
         position: absolute;
         left: -100%;
         width: 100vw;
@@ -23,7 +23,7 @@ export const sideBar = css`
         max-width: 100%;
         padding: ${mobileSideBarVerticalPadding} ${mobileSideBarHorizontalPadding};
 
-        .${open} {
+        &.${open} {
             left: 0;
             box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
         }

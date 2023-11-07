@@ -22,4 +22,4 @@ const bubbleData = [
 
 export const BubbleBlockStory = () => <DesktopBubbleBlock data={bubbleData} />;
 
-BubbleBlockStory.storyName = "Header";
+BubbleBlockStory.storyName = "Bubble block";
