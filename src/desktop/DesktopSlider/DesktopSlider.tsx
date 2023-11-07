@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import styles from "./DesktopSlider.scss";
 
 import { DesktopArrowButton } from "../DesktopArrowButton/DesktopArrowButton";
+import { sliderWrapper, slider, sliderSlides, sliderBoxCN } from "./styles";
 
 interface DesktopSliderProps {
   children: React.ReactElement;
@@ -62,16 +62,16 @@ export function DesktopSlider({ children }: DesktopSliderProps) {
   }, [offset, offsetWidth.sliderBox]);
 
   return (
-    <div className={styles.sliderWrapper}>
-      <div className={styles.slider}>
+    <div className={sliderWrapper}>
+      <div className={slider}>
         <DesktopArrowButton
           type="prev"
           isShown={isPrevBtnShown}
           onClick={handlePrevSlide}
         />
-        <div ref={sliderBox} className={styles.sliderBox}>
+        <div ref={sliderBox} className={sliderBoxCN}>
           <div
-            className={styles.sliderSlides}
+            className={sliderSlides}
             style={{ transform: `translateX(${offset}px)` }}
           >
             {children}

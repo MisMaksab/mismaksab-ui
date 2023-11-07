@@ -4,6 +4,7 @@ import { css } from "@linaria/core";
 export const bubble = css`
   padding: 12px 16px;
   border-radius: 50px;
+  cursor: pointer;
 
   .${MobileCN} {
     padding: 5px 11px;
