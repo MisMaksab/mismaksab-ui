@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styles from "./SideBarHeader.scss";
 import cn from "classnames";
 import { LayoutProp } from "../LayoutProp";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { ShrinkButton } from "../ShrinkButton/ShrinkButton";
+import { fixedBlock, sideBarHeader, active, shrinkBtn, searchBar, open } from "./styles";
+import { MobileCN } from "styles";
 
 interface SideBarHeaderProps extends LayoutProp {
   title: string;
@@ -37,26 +38,28 @@ export function SideBarHeader({
   return (
     <div
       className={cn({
-        [styles.fixedBlock]: layout === "mobile",
-        [styles.open]: isOpen,
+        [fixedBlock]: layout === "mobile",
+        [open]: isOpen,
       })}
     >
-      <div className={cn(styles.sideBarHeader, styles[layout])}>
+      <div className={cn(sideBarHeader, {
+        [MobileCN]: layout === 'mobile'
+      })}>
         <h1
-          className={cn(styles.title, {
-            [styles.active]: !showSearchBar || isOpen,
+          className={cn(title, {
+            [active]: !showSearchBar || isOpen,
           })}
         >
           {title}
         </h1>
-        <div className={styles.shrinkBtn}>
+        <div className={shrinkBtn}>
           <ShrinkButton onClick={handleShrinkButtonClick} />
         </div>
 
         {layout === "mobile" && (
           <div
-            className={cn(styles.searchBar, {
-              [styles.active]: showSearchBar,
+            className={cn(searchBar, {
+              [active]: showSearchBar,
             })}
           >
             <SearchBar
