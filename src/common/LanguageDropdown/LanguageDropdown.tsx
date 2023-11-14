@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from "react";
 import { MobileLinkPopup } from "../../mobile/MobileLinkPopup/MobileLinkPopup";
-import { DesktopLanguages } from "../../desktop/DesktopLanguages/DesktopLanguages";
 import YellowButton from "../YellowButton/YellowButton";
 import { language } from "./styles";
+import { DesktopLanguageDropdownBox } from "desktop/DesktopLangurageDropdownBox/DesktopLanguageDropdownBox";
 
 interface LanguageDropdownProps {
   selectedLanguage: string;
@@ -31,16 +31,16 @@ export function LanguageDropdown({
           onClick={changePopupVisibilityCb}
           isActive={activeSelection}
         />
-        {/* {layout === "desktop" && (
-          <DesktopLanguages
+        {layout === "desktop" && (
+          <DesktopLanguageDropdownBox
             data={data}
             activeSelection={activeSelection}
             selectedLanguage={selectedLanguage}
           />
-        )} */}
+        )}
       </div>
 
-      {/* {layout === "mobile" && (
+      {layout === "mobile" && (
         <MobileLinkPopup
           mode="popupDefault"
           title="Язык"
@@ -49,7 +49,7 @@ export function LanguageDropdown({
           hidePopupCb={hidePopupCb}
           selectedItem={selectedLanguage}
         />
-      )} */}
+      )}
     </>
   );
 }

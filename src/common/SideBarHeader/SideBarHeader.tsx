@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import cn from "classnames";
 import { LayoutProp } from "../LayoutProp";
 import { SearchBar } from "../SearchBar/SearchBar";
-import { ShrinkButton } from "../ShrinkButton/ShrinkButton";
 import { DesktopCN, MobileCN } from "styles";
 import {
   fixedBlock,
@@ -13,12 +12,13 @@ import {
   searchBar,
   open,
 } from "./styles";
+import { ShrinkButton } from "common/ShrinkButton/ShrinkButton";
 
 interface SideBarHeaderProps extends LayoutProp {
   title: string;
   isOpen: boolean;
   onCategoryClick: () => void;
-  changeExpandedIdCb?: (id: number | null) => void;
+  changeExpandedIdCb: (id: number | null) => void;
 }
 
 export function SideBarHeader({
@@ -32,7 +32,7 @@ export function SideBarHeader({
 
   function handleShrinkButtonClick() {
     onCategoryClick();
-    if (typeof changeExpandedIdCb !== "undefined") changeExpandedIdCb(null);
+    if (layout === "desktop") changeExpandedIdCb(null);
   }
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export function SideBarHeader({
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isOpen]);
 
   return (
     <div
@@ -64,7 +64,10 @@ export function SideBarHeader({
           {title}
         </h1>
         <div className={shrinkBtn}>
-          <ShrinkButton onClick={handleShrinkButtonClick} />
+          <ShrinkButton
+            rotate={layout === "desktop" && isOpen}
+            onClick={handleShrinkButtonClick}
+          />
         </div>
 
         {layout === "mobile" && (

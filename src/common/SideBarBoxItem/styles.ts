@@ -86,7 +86,7 @@ export const link = css`
     cursor: pointer;
 `;
 
-export const mobileSideBarArrow = css``;
+export const mobileSideBarArrowCN = css``;
 export const rotate = css``;
 export const shown = css``;
 
@@ -112,13 +112,12 @@ export const sideBarBoxItem = css`
             }
         }
 
-        .${mobileSideBarArrow} {
+        .${mobileSideBarArrowCN} {
             height: 7px;
             width: 13px;
             transition: transform .3s;
             margin-left: 10px;
       
-            // !!!!! не работает поворот
             &.${rotate} {
                 backgound: red;
                 transform: rotate(180deg);
@@ -126,7 +125,7 @@ export const sideBarBoxItem = css`
         }
 
         .${sideBarBoxItemBtn} {
-            padding: 8px 16px 8px 9px;
+            padding: 8px 2px 8px 0px;
             font-size: 16px;
       
             .${logoSvg} {
