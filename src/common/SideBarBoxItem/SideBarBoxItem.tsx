@@ -17,6 +17,7 @@ import {
   sideBarBoxItemDropdownItem,
   link,
   activeCN,
+  mobileSideBarArrowCN,
 } from "./styles";
 import { DesktopCN, MobileCN } from "styles";
 
@@ -89,7 +90,7 @@ export function SideBarBoxItem({
           {data.subSvg && <img className={arrowSvg} src={data.subSvg} />}
           {layout === "mobile" && !data.subSvg && (
             <img
-              className={cn(mobileSideBarArrow, { [rotate]: isExpanded })}
+              className={cn(mobileSideBarArrowCN, { [rotate]: isExpanded })}
               src={mobileSideBarArrow}
             />
           )}

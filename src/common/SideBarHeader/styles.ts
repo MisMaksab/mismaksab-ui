@@ -60,7 +60,6 @@ export const sideBarHeader = css`
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: flex-end;
 
     &.${DesktopCN} {
         justify-content: flex-end;
@@ -85,6 +84,7 @@ export const sideBarHeader = css`
       }
 
     &.${MobileCN} {
+        
         .${titleCN} {
             text-align: center;
             font-size: 24px;

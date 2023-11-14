@@ -19,23 +19,3 @@ export const sliderSlides = css`
   flex-wrap: nowrap;
   transition: .3s;
 `
-
-// .sliderWrapper {
-//   width: 100%;
-// }
-
-// .slider {
-//   position: relative;
-//   display: flex;
-//   box-sizing: content-box;
-  
-//   .sliderBox {
-//       overflow: hidden;
-//   }
-
-//   .sliderSlides {
-//       display: inline-flex;
-//       flex-wrap: nowrap;
-//       transition: .3s;
-//   }
-// }

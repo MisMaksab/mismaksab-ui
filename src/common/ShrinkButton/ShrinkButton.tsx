@@ -1,15 +1,17 @@
-import React from 'react'
-import SideBarHideSvg from '../../assets/icons/sideBarHide.svg';
-import { hide, svg } from './styles';
+import React from "react";
+import SideBarHideSvg from "../../assets/icons/sideBarHide.svg";
+import { hide, rotateCN, svg } from "./styles";
+import cn from "classnames";
 
 interface ShrinkButtonProps {
-  onClick: ()=>void;
+  onClick: () => void;
+  rotate?: boolean;
 }
 
-export function ShrinkButton({onClick}: ShrinkButtonProps) {
+export function ShrinkButton({ onClick, rotate }: ShrinkButtonProps) {
   return (
-    <div className={hide} onClick={onClick}>
+    <div className={cn(hide, { [rotateCN]: rotate })} onClick={onClick}>
       <img className={svg} src={SideBarHideSvg} />
     </div>
-  )
+  );
 }

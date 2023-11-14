@@ -22,30 +22,3 @@ export const retailersSlider = css`
         }
     }
 `;
-
-
-
-// @import "../../scss/variables.scss";
-
-// .retailersSlider {
-//     width: $retailersSliderWidth;
-// }
-
-
-// @media screen and (max-width: 1200px) {
-//     .retailersSlider {
-//         width: 690px;
-//     }
-// }
-
-// @media screen and (max-width: 950px) {
-//     .retailersSlider {
-//         width: 460px;
-//     }
-// }
-
-// @media screen and (max-width: 768px) {
-//     .retailersSlider {
-//         width: 230px;
-//     }
-// }

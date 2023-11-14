@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from "react";
 import { LanguageDropdown } from "../../common/LanguageDropdown/LanguageDropdown";
-import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
 import { SideBar } from "../../common/SideBar/SideBar";
 import cn from "classnames";
 import VegetablesAndFruitsSvg from "../../assets/sideBarIcons/vegetablesAndFruits.svg";
@@ -18,6 +17,7 @@ import {
   burgerMenuBar,
   open,
 } from "./styles";
+import { ShrinkButton } from "common/ShrinkButton/ShrinkButton";
 
 const LANGUAGES_ARR = [
   { text: "Estonian", id: "est", link: "/" },

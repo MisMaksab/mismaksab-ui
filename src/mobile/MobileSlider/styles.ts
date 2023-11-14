@@ -17,21 +17,3 @@ export const sliderSlides = css`
   flex-wrap: nowrap;
   padding-right: 12px;
 `
-
-// .slider {
-//   max-width: 768px;
-//     position: relative;
-//     display: flex;
-//     box-sizing: content-box;
-//     margin: -7px 0px -7px 12px;
-
-//   .sliderBox {
-//     overflow: auto;
-
-//     .sliderSlides {
-//       display: inline-flex;
-//       flex-wrap: nowrap;
-//       padding-right: 12px;
-//     }
-//   }
-// }
