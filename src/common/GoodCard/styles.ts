@@ -1,5 +1,5 @@
 import {css} from "@linaria/core";
-import { MobileCN, fontColorDark, fontColorLight, fontColorMain, tertiaryColorMain } from "styles";
+import { MobileCN, fontColorDark, fontColorLight, fontColorMain, tertiaryColorMain } from "../../styles";
 
 export const goodCardInfo = css``;
 
@@ -113,7 +113,7 @@ export const disabled = css`
 export const goodCard = css`
     position: relative;
     border-radius: 10px;
-    margin: 7px;
+    margin: 0 7px;
     border: 1px solid ${fontColorLight};
     box-sizing: border-box;
     overflow: hidden;

@@ -1,5 +1,5 @@
 import { css } from "@linaria/core";
-import { fontColorDark, primaryColorDark, quaternaryColorMain, secondaryColorDark } from "styles";
+import { fontColorDark, primaryColorDark, quaternaryColorMain, secondaryColorDark } from "../../styles";
 
 export const cross = css`
     cursor: pointer;

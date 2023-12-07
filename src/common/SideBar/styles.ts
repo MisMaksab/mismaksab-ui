@@ -1,5 +1,5 @@
 import { css } from "@linaria/core";
-import { MobileCN, mobileSideBarHorizontalPadding, mobileSideBarVerticalPadding } from "styles";
+import { MobileCN, mobileSideBarHorizontalPadding, mobileSideBarVerticalPadding } from "../../styles";
 
 export const open = css``;
 

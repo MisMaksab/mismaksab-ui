@@ -1,5 +1,5 @@
 import {css} from "@linaria/core";
-import { retailersSliderWidth } from "styles";
+import { retailersSliderWidth } from "../../styles";
 
 export const goodsSlider = css`
     width: ${retailersSliderWidth};

@@ -1,8 +1,26 @@
 import React from "react";
 import { BlockHeader } from "../../../common/BlockHeader/BlockHeader";
+import { DesktopSortDropdown } from "desktop/DesktopSortDropdown/DesktopSortDropdown";
 
 export const BlockHeaderStory = () => (
-  <BlockHeader shrinkBtnEnabled={true} title="Мясо" moreBtnEnabled={false} layout="mobile" yellowButtonText="Еще" yellowButtonLink="/"/>
+  <BlockHeader
+    title="Мясо"
+    layout="desktop"
+    noPaddingTop={true}
+    isTitleThin={false}
+    subTitle="sdfsdf"
+    sortComponent={
+      <DesktopSortDropdown
+        data={[
+          { id: 0, text: "descending" },
+          { id: 1, text: "ascending" },
+          { id: 2, text: "descending3" },
+          { id: 3, text: "desc" },
+        ]}
+        callback={() => {}}
+      />
+    }
+  />
 );
 
-BlockHeaderStory.storyName = "Header";
+BlockHeaderStory.storyName = "block header";

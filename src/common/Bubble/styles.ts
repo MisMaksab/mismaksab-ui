@@ -1,4 +1,4 @@
-import { MobileCN, fontColorDark, fontColorLight, primaryColorLight, primaryColorMain, secondaryColorDark, secondaryColorLight, tertiaryColorLight, tertiaryColorMain } from "styles";
+import { MobileCN, fontColorDark, fontColorLight, primaryColorLight, primaryColorMain, secondaryColorDark, secondaryColorLight, tertiaryColorLight, tertiaryColorMain } from "../../styles";
 import { css } from "@linaria/core";
 
 export const bubble = css`
@@ -8,6 +8,7 @@ export const bubble = css`
   font-size: 20px;
   font-weight: 500;
   line-height: 100%; /* 20px */
+  display: inline-block;
 
   .${MobileCN} {
     padding: 5px 11px;

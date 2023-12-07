@@ -1,5 +1,4 @@
 import React from "react";
-import { MobileLinkPopup } from "../../../mobile/MobileLinkPopup/MobileLinkPopup";
 import { MobileCheckboxPopup } from "../../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
 
 const LANGUAGES_ARR = [

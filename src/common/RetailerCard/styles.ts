@@ -1,6 +1,6 @@
 import {css} from "@linaria/core";
 
-import { MobileCN, fontColorDark, fontColorLight, fontColorMain, tertiaryColorLight, tertiaryColorMain } from "styles";
+import { MobileCN, fontColorDark, fontColorLight, fontColorMain, primaryColorMain, tertiaryColorLight, tertiaryColorMain } from "../../styles";
 
 const desktopCardDimensions = "216px";
 const mobileCardDimensions = "114px";
@@ -23,9 +23,17 @@ export const retailerImage = css`
     max-height: 70px;
 `;
 
-export const discountText = css`
-    max-width: 120px;
-    max-height: 70px;
+export const discountTextCN = css`
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    background: ${primaryColorMain};
+    padding: 4px 13px;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    transform: translateY(45%);
 `;
 
 export const retailerCardFooter = css`
@@ -36,7 +44,7 @@ export const retailerCardFooter = css`
     color: ${fontColorDark};
 `;
 
-export const retailer = css`
+export const retailerCN = css`
     font-size: 14px;
     text-transform: capitalize;
     padding-bottom: 5px;
@@ -51,7 +59,7 @@ export const disabled = css`
     background: ${fontColorLight};
     pointer-events: none;
 
-    .${discountText} {
+    .${discountTextCN} {
         background: ${fontColorMain};
     }
 `;
@@ -73,7 +81,7 @@ export const retailerCard = css`
     min-height: ${desktopCardDimensions};
     width: ${desktopCardDimensions};
     border-radius: 10px;
-    margin: 7px;
+    margin: 0 7px;
     border: 1px solid ${fontColorLight};
     box-sizing: border-box;
     display: flex;
@@ -106,7 +114,7 @@ export const retailerCard = css`
               max-height: 40px;
             }
       
-            .${discountText} {
+            .${discountTextCN} {
               font-size: 9px;
               right: 5px;
               padding: 0 3px;
@@ -117,7 +125,7 @@ export const retailerCard = css`
           .${retailerCardFooter} {
             padding: 0 16px 6px;
       
-            .${retailer} {
+            .${retailerCN} {
               line-height: 140%;
               font-size: 9px;
               padding: 0;

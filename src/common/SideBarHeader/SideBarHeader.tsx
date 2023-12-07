@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import cn from "classnames";
 import { LayoutProp } from "../LayoutProp";
 import { SearchBar } from "../SearchBar/SearchBar";
-import { DesktopCN, MobileCN } from "styles";
+import { DesktopCN, MobileCN } from "../../styles";
 import {
   fixedBlock,
   sideBarHeader,
@@ -12,7 +12,7 @@ import {
   searchBar,
   open,
 } from "./styles";
-import { ShrinkButton } from "common/ShrinkButton/ShrinkButton";
+import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
 
 interface SideBarHeaderProps extends LayoutProp {
   title: string;

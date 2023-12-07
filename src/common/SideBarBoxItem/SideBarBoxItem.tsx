@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import cn from "classnames";
 import { LayoutProp } from "../LayoutProp";
 
-import mobileSideBarArrow from "../../assets/icons/mobileSidebarArrow.svg";
+// import mobileSideBarArrow from "../../assets/icons/mobileSidebarArrow.svg";
 import {
   sideBarBoxItem,
   sideBarBoxItemBtn,
@@ -19,7 +19,7 @@ import {
   activeCN,
   mobileSideBarArrowCN,
 } from "./styles";
-import { DesktopCN, MobileCN } from "styles";
+import { DesktopCN, MobileCN } from "../../styles";
 
 interface SideBarBoxItemDropdownData {
   title: string;
@@ -91,7 +91,7 @@ export function SideBarBoxItem({
           {layout === "mobile" && !data.subSvg && (
             <img
               className={cn(mobileSideBarArrowCN, { [rotate]: isExpanded })}
-              src={mobileSideBarArrow}
+              // src={mobileSideBarArrow}
             />
           )}
         </span>

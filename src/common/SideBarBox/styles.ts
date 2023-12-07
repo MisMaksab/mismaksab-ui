@@ -1,5 +1,5 @@
 import { css } from "@linaria/core";
-import { MobileCN, mobileSideBarVerticalPadding } from "styles";
+import { MobileCN, mobileSideBarVerticalPadding } from "../../styles";
 
 export const sideBarBox = css`
     padding-top: 10px;

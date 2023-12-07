@@ -10,8 +10,10 @@ import {
   retailerCardFooter,
   offers,
   retailerCardShopLink,
+  retailerCN,
+  discountTextCN,
 } from "./styles";
-import { MobileCN } from "styles";
+import { MobileCN } from "../../styles";
 
 interface RetailerCardProps extends LayoutProp {
   retailerLink: string;
@@ -50,10 +52,10 @@ export function RetailerCard({
       >
         <div className={retailerCardHeader}>
           <img className={retailerImage} src={retailerImageURL} />
-          <span className={discountText}>{discountText}</span>
+          <span className={discountTextCN}>{discountText}</span>
         </div>
         <div className={retailerCardFooter}>
-          <span className={retailer}>{retailer}</span>
+          <span className={retailerCN}>{retailer}</span>
           <span className={offers}>{offersText}</span>
         </div>
       </a>

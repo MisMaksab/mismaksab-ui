@@ -1,5 +1,5 @@
 import {css} from "@linaria/core";
-import { fontColorLight } from "styles";
+import { fontColorLight } from "../../styles";
 
 export const sideBarWrapper = css`
   border-radius: 0px 10px 10px 0px;

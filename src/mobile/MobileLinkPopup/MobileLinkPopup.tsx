@@ -1,6 +1,6 @@
 import React from "react";
 import cn from "classnames";
-import mark from "../../assets/icons/languageDropdownIcon.svg";
+// import mark from "../../assets/icons/languageDropdownIcon.svg";
 import { CloseCross } from "../../common/CloseCross/CloseCross";
 import {
   popup,
@@ -15,7 +15,8 @@ import {
   popupBlue,
   popupDefault,
   popupYellow,
-} from "mobile/MobileLinkPopup/styles";
+  markCN,
+} from "../../mobile/MobileLinkPopup/styles";
 
 const stylesMap = {
   popupGreen,
@@ -76,7 +77,12 @@ function CalculateRadioBlock({ selectedItem, data }: CalculateRadioBlockProps) {
           })}
         >
           {option.text}
-          {selectedItem === option.id && <img className={mark} src={mark} />}
+          {selectedItem === option.id && (
+            <img
+              className={markCN}
+              // src={mark}
+            />
+          )}
         </a>
       ))}
     </>

@@ -2,6 +2,8 @@ import { css } from "@linaria/core";
 
 export const sliderWrapper = css`
   width: 100%;
+  padding-top: 50px;
+  margin-left: -7px;
 `
 
 export const slider = css`

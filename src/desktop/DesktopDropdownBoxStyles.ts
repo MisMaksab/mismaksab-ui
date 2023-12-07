@@ -4,7 +4,6 @@ export const dropdown = css`
   padding: 0;
   list-style-type: none;
   position: absolute;
-  right: 0;
   min-width: 195px;
   top: calc(100% + 5px);
   background: white;

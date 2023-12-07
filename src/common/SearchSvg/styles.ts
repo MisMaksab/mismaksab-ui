@@ -1,5 +1,5 @@
 import {css} from "@linaria/core";
-import { secondaryColorLight } from "styles";
+import { secondaryColorLight } from "../../styles";
 
 export const searchSvgCN = css`
     height: 50%;

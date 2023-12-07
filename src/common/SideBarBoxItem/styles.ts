@@ -1,5 +1,5 @@
 import { css } from "@linaria/core";
-import { DesktopCN, MobileCN, fontColorDark, secondaryColorLight, tertiaryColorMain } from "styles";
+import { DesktopCN, MobileCN, fontColorDark, secondaryColorLight, tertiaryColorMain } from "../../styles";
 
 export const logoSvg = css`
     width: 27px;

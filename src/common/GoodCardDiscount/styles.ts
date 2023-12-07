@@ -1,5 +1,5 @@
 import { css } from "@linaria/core";
-import { MobileCN, primaryColorMain } from "styles";
+import { MobileCN, primaryColorMain } from "../../styles";
 
 export const discountPercentage = css`
     font-weight: 700;
@@ -22,7 +22,7 @@ export const expandedCN = css`
     width: 110px;
     border-radius: 15px;
 
-    .${MobileCN} {
+    &.${MobileCN} {
         width: 42px;
         border-radius: 5px;
 
@@ -57,7 +57,7 @@ export const discountCN = css`
         font-size: 14px;
     }
 
-    .${MobileCN} {
+    &.${MobileCN} {
         width: 30px;
         margin: 0 6px;
 

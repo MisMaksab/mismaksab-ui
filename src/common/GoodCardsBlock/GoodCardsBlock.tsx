@@ -13,6 +13,7 @@ export function GoodCardsBlock({ data, layout }: GoodCardsBlockProps) {
     <div className={goodCardsBlock}>
       {data.map((card) => (
         <GoodCard
+          key={card.id}
           header={
             <GoodCardHeader
               productImageURL={card.productImageURL}
