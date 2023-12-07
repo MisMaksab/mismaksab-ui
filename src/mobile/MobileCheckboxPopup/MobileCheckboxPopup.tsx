@@ -18,7 +18,7 @@ import {
   popupYellow,
   customCheckbox,
   hidden,
-} from "mobile/MobileLinkPopup/styles";
+} from "../../mobile/MobileLinkPopup/styles";
 
 const stylesMap = {
   popupGreen,

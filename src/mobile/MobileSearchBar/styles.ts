@@ -36,7 +36,7 @@ export const shownCN = css`
 
 export const sideBarOpenCN = css`
   margin: 0;
-  height: 27px;
+  height: 29px;
 
   &.searchInput {
     padding: 0 0 0 12px;
@@ -44,7 +44,7 @@ export const sideBarOpenCN = css`
   }
 `
 
-export const searchSvg = css`
+export const searchSvgCN = css`
   height: 50%;
 `
 

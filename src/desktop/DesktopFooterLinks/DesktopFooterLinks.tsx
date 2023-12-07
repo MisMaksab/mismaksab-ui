@@ -1,6 +1,6 @@
 import React from "react";
-import instIcon from "../../assets/icons/footerInst.svg";
-import fbIcon from "../../assets/icons/footerFb.svg";
+// import instIcon from "../../assets/icons/footerInst.svg";
+// import fbIcon from "../../assets/icons/footerFb.svg";
 import {
   FooterLinksSC,
   SocialMediaItemImgSC,
@@ -26,16 +26,18 @@ export function DesktopFooterLinks({
     <FooterLinksSC>
       <SocialMediaSC>
         <SocialMediaItemSC href={instLink}>
-          <SocialMediaItemImgSC src={instIcon} />
+          <SocialMediaItemImgSC src="" />
+          {/* src={searchSvg} */}
         </SocialMediaItemSC>
         <SocialMediaItemSC href={fbLink}>
-          <SocialMediaItemImgSC src={fbIcon} />
+          <SocialMediaItemImgSC src="" />
+          {/* src={fbIcon} */}
         </SocialMediaItemSC>
       </SocialMediaSC>
 
       <UsefulLinksSC>
         {usefulLinksArr.map((el) => (
-          <UsefulLinksItemSC>
+          <UsefulLinksItemSC key={el.link}>
             <UsefulLinksLinkSC href={el.link}>{el.title}</UsefulLinksLinkSC>
           </UsefulLinksItemSC>
         ))}

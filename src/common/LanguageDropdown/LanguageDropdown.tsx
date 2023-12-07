@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from "react";
 import { MobileLinkPopup } from "../../mobile/MobileLinkPopup/MobileLinkPopup";
-import YellowButton from "../YellowButton/YellowButton";
+import { YellowButton } from "../YellowButton/YellowButton";
 import { language } from "./styles";
-import { DesktopLanguageDropdownBox } from "desktop/DesktopLangurageDropdownBox/DesktopLanguageDropdownBox";
+import { DesktopLanguageDropdownBox } from "../../desktop/DesktopLangurageDropdownBox/DesktopLanguageDropdownBox";
 
 interface LanguageDropdownProps {
   selectedLanguage: string;

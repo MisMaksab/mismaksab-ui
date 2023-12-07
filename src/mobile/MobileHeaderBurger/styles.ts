@@ -1,5 +1,5 @@
 import { css } from "@linaria/core";
-import { fontColorDark, backgoundLayer, secondaryColorLight } from "styles";
+import { fontColorDark, backgoundLayer, secondaryColorLight } from "../../styles";
 
 export const burger = css``
 export const open = css``

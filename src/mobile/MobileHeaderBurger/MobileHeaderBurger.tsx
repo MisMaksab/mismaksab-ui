@@ -2,8 +2,8 @@ import React, { useCallback, useState } from "react";
 import { LanguageDropdown } from "../../common/LanguageDropdown/LanguageDropdown";
 import { SideBar } from "../../common/SideBar/SideBar";
 import cn from "classnames";
-import VegetablesAndFruitsSvg from "../../assets/sideBarIcons/vegetablesAndFruits.svg";
-import SideBarItemArrow from "../../assets/sideBarIcons/sideBarItemArrow.svg";
+// import VegetablesAndFruitsSvg from "../../assets/sideBarIcons/vegetablesAndFruits.svg";
+// import SideBarItemArrow from "../../assets/sideBarIcons/sideBarItemArrow.svg";
 import {
   burger,
   burgerIcon,
@@ -17,7 +17,7 @@ import {
   burgerMenuBar,
   open,
 } from "./styles";
-import { ShrinkButton } from "common/ShrinkButton/ShrinkButton";
+import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
 
 const LANGUAGES_ARR = [
   { text: "Estonian", id: "est", link: "/" },
@@ -27,14 +27,14 @@ const LANGUAGES_ARR = [
 const sideBarData = [
   {
     title: "овощи",
-    svg: VegetablesAndFruitsSvg,
-    subSvg: SideBarItemArrow,
+    svg: "VegetablesAndFruitsSvg",
+    subSvg: "SideBarItemArrow",
     link: "/",
     dropdownItems: [],
   },
   {
     title: "фрукты",
-    svg: VegetablesAndFruitsSvg,
+    svg: "VegetablesAndFruitsSvg",
     dropdownItems: [
       {
         title: "сливы",
@@ -52,7 +52,7 @@ const sideBarData = [
   },
   {
     title: "мясо",
-    svg: VegetablesAndFruitsSvg,
+    svg: "VegetablesAndFruitsSvg",
     dropdownItems: [
       {
         title: "сливы",

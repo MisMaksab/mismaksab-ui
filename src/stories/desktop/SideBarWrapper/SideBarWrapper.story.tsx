@@ -1,21 +1,20 @@
 import React from "react";
-import { SideBar } from "../../../common/SideBar/SideBar";
 
-import VegetablesAndFruitsSvg from "../../../assets/sideBarIcons/vegetablesAndFruits.svg";
-import SideBarItemArrow from "../../../assets/sideBarIcons/sideBarItemArrow.svg";
+// import VegetablesAndFruitsSvg from "../../../assets/sideBarIcons/vegetablesAndFruits.svg";
+// import SideBarItemArrow from "../../../assets/sideBarIcons/sideBarItemArrow.svg";
 import { DesktopSideBarWrapper } from "../../../desktop/DesktopSideBarWrapper/DesktopSideBarWrapper";
 
 const sideBarData = [
   {
     title: "овощи",
-    svg: VegetablesAndFruitsSvg,
-    subSvg: SideBarItemArrow,
+    svg: "VegetablesAndFruitsSvg",
+    subSvg: "SideBarItemArrow",
     link: "/",
     dropdownItems: [],
   },
   {
     title: "фрукты",
-    svg: VegetablesAndFruitsSvg,
+    svg: "VegetablesAndFruitsSvg",
     dropdownItems: [
       {
         title: "сливы",
@@ -33,7 +32,7 @@ const sideBarData = [
   },
   {
     title: "мясо",
-    svg: VegetablesAndFruitsSvg,
+    svg: "VegetablesAndFruitsSvg",
     dropdownItems: [
       {
         title: "сливы",

@@ -1,9 +1,9 @@
 import React from "react";
-import selverSvg from "../../../assets/retailer/selver.svg";
-import rimiSvg from "../../../assets/retailer/rimi.svg";
-import lidlSvg from "../../../assets/retailer/lidl.svg";
-import prismaSvg from "../../../assets/retailer/prisma.svg";
-import maximaSvg from "../../../assets/retailer/maxima.svg";
+// import selverSvg from "../../../assets/retailer/selver.svg";
+// import rimiSvg from "../../../assets/retailer/rimi.svg";
+// import lidlSvg from "../../../assets/retailer/lidl.svg";
+// import prismaSvg from "../../../assets/retailer/prisma.svg";
+// import maximaSvg from "../../../assets/retailer/maxima.svg";
 
 import rimiCardPng from "../../../assets/retailer/rimiCart.png";
 import {
@@ -13,11 +13,11 @@ import {
 } from "../../../common/ExpadedGoodCard/ExpandedGoodCard";
 
 const RETAILER_IMG_URL: Record<string, string> = {
-  selver: selverSvg,
-  lidl: lidlSvg,
-  maxima: maximaSvg,
-  prisma: prismaSvg,
-  rimi: rimiSvg,
+  selver: "selverSvg",
+  lidl: "lidlSvg",
+  maxima: "maximaSvg",
+  prisma: "prismaSvg",
+  rimi: "rimiSvg",
 };
 
 const RETAILER_CARD_IMG_URL: Record<string, string> = {

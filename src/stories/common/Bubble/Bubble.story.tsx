@@ -3,7 +3,7 @@ import { Bubble } from "../../../common/Bubble/Bubble";
 
 export const BubbleStory = () => (
   <Bubble
-    mode="bubbleDesktopSort"
+    mode="bubbleLightOrange"
     text="товары"
     layout="desktop"
     isDropdown={true}

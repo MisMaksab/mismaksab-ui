@@ -1,5 +1,5 @@
 import {css} from "@linaria/core";
-import { MobileCN, fontColorDark, secondaryColorLight } from "styles";
+import { MobileCN, fontColorDark, secondaryColorLight } from "../../styles";
 
 export const serviceBlockTitle = css`
     margin: 0;

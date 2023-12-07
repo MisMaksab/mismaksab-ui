@@ -1,8 +1,8 @@
 import React from "react";
 
-import { SearchBar } from "../../common/SearchBar/SearchBar";
 import { LanguageDropdown } from "../../common/LanguageDropdown/LanguageDropdown";
 import { sideBarMobileControls } from "./styles";
+import { MobileSearchBar } from "../../mobile/MobileSearchBar/MobileSearchBar";
 
 const LANGUAGES_ARR = [
   { text: "Estonian", id: "est", link: "/" },
@@ -13,10 +13,10 @@ const LANGUAGES_ARR = [
 export function MobileSideBarControls() {
   return (
     <div className={sideBarMobileControls}>
-      <SearchBar
-        sideBarOpen={true}
+      <MobileSearchBar
         onChange={(val: string) => null}
         placeHolderText="Найти в MisMaksab"
+        expandedByDefault={true}
       />
       <LanguageDropdown
         layout="mobile"

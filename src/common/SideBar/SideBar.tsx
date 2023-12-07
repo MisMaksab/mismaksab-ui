@@ -4,7 +4,7 @@ import cn from "classnames";
 import { SideBarHeader } from "../../common/SideBarHeader/SideBarHeader";
 import { SideBarBox } from "../SideBarBox/SideBarBox";
 import { LayoutProp } from "../LayoutProp";
-import { MobileCN } from "styles";
+import { MobileCN } from "../../styles";
 import { sideBar, open } from "./styles";
 
 interface SideBarProps extends LayoutProp {

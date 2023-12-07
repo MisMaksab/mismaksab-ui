@@ -1,5 +1,5 @@
 import { css } from "@linaria/core";
-import { fontColorDark } from "styles";
+import { fontColorDark } from "../../styles";
 
 export const logo = css`
     display: flex;

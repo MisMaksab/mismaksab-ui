@@ -1,5 +1,5 @@
 import { css } from '@linaria/core';
-import { fontColorMain, primaryColorMain } from 'styles';
+import { fontColorMain, primaryColorMain } from "../../styles";
 
 export const footerInfo = css`
   display: flex;

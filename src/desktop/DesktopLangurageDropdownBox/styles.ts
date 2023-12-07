@@ -1,9 +1,10 @@
 import {css} from "@linaria/core";
-import { fontColorDark, fontColorLight, secondaryColorLight } from 'styles';
+import { fontColorDark, fontColorLight, secondaryColorLight } from "../../styles";
 
 export const language = css`
     border: 1px solid ${fontColorLight};
     box-shadow: 0px 0px 8.4px 0px rgba(0, 0, 0, 0.20);
+    right: 0;
 `
 
 export const languageLang = css`

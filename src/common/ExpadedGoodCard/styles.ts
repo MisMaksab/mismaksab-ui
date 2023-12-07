@@ -1,5 +1,5 @@
 import { css } from "@linaria/core";
-import { MobileCN, fontColorDark, fontColorLight, fontColorMain, primaryColorMain, tertiaryColorMain } from "styles";
+import { MobileCN, fontColorDark, fontColorLight, fontColorMain, primaryColorMain, tertiaryColorMain } from "../../styles";
 
 export const expandedGoodCardMainInfo = css`
     display: flex;
@@ -126,19 +126,20 @@ export const expandedGoodCardLogo = css`
 `;
 
 export const expandedGoodCard = css`
-    width: 100%;
     border-radius: 10px;
-    margin: 10px 7px;
     border: 1px solid ${fontColorLight};
     box-sizing: border-box;
     position: relative;
     padding: 70px 50px 25px 20px;
     max-width: 990px;
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.20);
+    margin-top: 50px;
 
     &.${MobileCN} {
+        margin: 10px 7px;
         max-width: 340px;
         padding: 15px 18px 20px 0;
+        margin-top: 40px;
 
         .${expandedGoodCardMainInfo} {
             align-items: flex-end;

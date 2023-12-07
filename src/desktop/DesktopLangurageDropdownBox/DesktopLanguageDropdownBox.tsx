@@ -1,6 +1,6 @@
 import React from "react";
 import cn from "classnames";
-import mark from "../../assets/icons/languageDropdownIcon.svg";
+// import mark from "../../assets/icons/languageDropdownIcon.svg";
 import { dropdown, shown } from "../DesktopDropdownBoxStyles";
 import {
   active,
@@ -35,7 +35,10 @@ export function DesktopLanguageDropdownBox({
             <span className={shortText}>{lang.id}</span>
             <span className={longText}>{lang.text}</span>
             {selectedLanguage === lang.id && (
-              <img className={markCN} src={mark} />
+              <img
+                className={markCN}
+                // src={mark}
+              />
             )}
           </li>
         </a>

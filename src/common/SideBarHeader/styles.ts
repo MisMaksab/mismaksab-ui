@@ -1,5 +1,5 @@
 import { css } from "@linaria/core";
-import { DesktopCN, MobileCN, fontColorDark, mobileSideBarHorizontalPadding, mobileSideBarVerticalPadding } from "styles";
+import { DesktopCN, MobileCN, fontColorDark, mobileSideBarHorizontalPadding, mobileSideBarVerticalPadding } from "../../styles";
 
 export const active = css``;
 export const fixedBlock = css`

@@ -1,5 +1,5 @@
 import React from "react";
-import { MobileCN } from "styles";
+import { MobileCN } from "../../styles";
 import cn from "classnames";
 import { RetailerCard } from "../RetailerCard/RetailerCard";
 import { LayoutProp } from "../LayoutProp";
@@ -14,11 +14,14 @@ export function RetailersCardsBlock({
   layout,
 }: RetailersCardsBlockProps) {
   return (
-    <div className={cn(retailersCardsBlock, {
-      [MobileCN]: layout === 'mobile'
-    })}>
+    <div
+      className={cn(retailersCardsBlock, {
+        [MobileCN]: layout === "mobile",
+      })}
+    >
       {data.map((card) => (
         <RetailerCard
+          key={card.id}
           retailerLink={card.retailerLink}
           retailerImageURL={card.retailerImageURL}
           discountText={card.discountText}

@@ -1,5 +1,5 @@
 import {css} from "@linaria/core";
-import { backgoundLayer, fontColorDark, primaryColorDark, quaternaryColorMain, secondaryColorDark, secondaryColorLight } from 'styles';
+import { backgoundLayer, fontColorDark, primaryColorDark, quaternaryColorMain, secondaryColorDark, secondaryColorLight } from "../../styles";
 
 export const activeCN = css``
 export const popupContent = css`
@@ -78,7 +78,7 @@ export const popupOption = css`
   }
 `
 
-export const mark = css`
+export const markCN = css`
   width: 24px;
   height: 24px;
 `
