@@ -44,6 +44,7 @@ export const expandedCN = css`
     }
 `;
 
+export const smallMobile = css``
 export const discountCN = css`
     border-radius: 7px;
     border: 1px solid ${primaryColorMain};
@@ -60,6 +61,15 @@ export const discountCN = css`
     &.${MobileCN} {
         width: 30px;
         margin: 0 6px;
+
+        &.${smallMobile} {
+            width: 28px
+            margin: 0 4px;
+
+            .${discountPercentage} {
+                font-size: 9px;
+            }
+        }
 
         .${discountPercentage} {
             font-size: 10px;

@@ -20,11 +20,15 @@ export const subTitleCN = css`
     font-size: 20px;
     font-weight: 400;
     line-height: 100%; /* 20px */
-    padding-top: 24px;
-    display: inline-block;
-    width: 100%;
+    padding-top: 0;
     margin: 0;
 `;
+
+export const displayBlock = css`
+    display: inline-block;
+    width: 100%;
+    padding-top: 24px;
+`
 
 export const blockHeader = css`
     padding: 79px 0px 0px;
@@ -36,7 +40,7 @@ export const blockHeader = css`
     
     &.${MobileCN} {
         gap:15px;
-        padding: 29px 19px 19px;
+        padding: 25px 19px 0 19px;
 
         .${titleCN} {
             font-size: 24px;

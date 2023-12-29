@@ -1,6 +1,7 @@
 import {css} from "@linaria/core";
 
 export const dropdown = css`
+  z-index: 10;
   padding: 0;
   list-style-type: none;
   position: absolute;

@@ -4,7 +4,7 @@ import { hide, rotateCN, svg } from "./styles";
 import cn from "classnames";
 
 interface ShrinkButtonProps {
-  onClick: () => void;
+  onClick: (val: any) => void;
   rotate?: boolean;
 }
 

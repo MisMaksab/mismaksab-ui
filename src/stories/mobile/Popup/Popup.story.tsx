@@ -9,7 +9,7 @@ const LANGUAGES_ARR = [
 
 export const PopupStory = () => (
   <MobileCheckboxPopup
-    setSelectedItemsCb={() => {}}
+    handleSelectedItemsCb={() => {}}
     selectedItems={["est"]}
     mode="popupBlue"
     hidePopupCb={() => {}}

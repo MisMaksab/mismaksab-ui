@@ -136,7 +136,7 @@ export const expandedGoodCard = css`
     margin-top: 50px;
 
     &.${MobileCN} {
-        margin: 10px 7px;
+        margin: 40px 15px 0px 15px;
         max-width: 340px;
         padding: 15px 18px 20px 0;
         margin-top: 40px;

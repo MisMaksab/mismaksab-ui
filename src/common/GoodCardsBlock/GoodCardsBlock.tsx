@@ -2,6 +2,8 @@ import React from "react";
 import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
 import { LayoutProp } from "../LayoutProp";
 import { goodCardsBlock } from "./styles";
+import cn from "classnames";
+import { MobileCN } from "../../styles";
 
 // TODO add proper interface
 interface GoodCardsBlockProps extends LayoutProp {
@@ -10,9 +12,14 @@ interface GoodCardsBlockProps extends LayoutProp {
 
 export function GoodCardsBlock({ data, layout }: GoodCardsBlockProps) {
   return (
-    <div className={goodCardsBlock}>
+    <div
+      className={cn(goodCardsBlock, {
+        [MobileCN]: layout === "mobile",
+      })}
+    >
       {data.map((card) => (
         <GoodCard
+          isSmallMobile={layout === "mobile"}
           key={card.id}
           header={
             <GoodCardHeader
@@ -20,6 +27,7 @@ export function GoodCardsBlock({ data, layout }: GoodCardsBlockProps) {
               retailerImageURL={card.retailerImageURL}
               discount={card.discount}
               layout={layout}
+              isSmallMobile={layout === "mobile"}
             />
           }
           footer={

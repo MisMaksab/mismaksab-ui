@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import cn from "classnames";
 // import searchSvg from "../../assets/icons/search.svg";
 import {
@@ -8,8 +8,18 @@ import {
   shownCN,
   sideBarOpenCN,
   searchSvgCN,
+  searchControl,
+  active,
+  searchPanel,
+  searchPanelResults,
+  searchPanelControl,
+  searchPanelInput,
+  expanded,
+  input,
+  searchPanelInputCross,
 } from "./styles";
 import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
+import { CloseCross } from "common/CloseCross/CloseCross";
 
 interface Props {
   placeHolderText?: string;
@@ -31,64 +41,81 @@ export function MobileSearchBar({
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setValue(e.target.value);
       onChange(e.target.value);
-
-      if (e.target.value === "") {
-        setShown(false);
-      } else {
-        setShown(true);
-      }
     },
     [onChange]
   );
 
-  const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
+  const clearInputValueCb = useCallback(() => {
+    setValue("");
+  }, []);
 
-  function handleSearchSvgClick() {
-    setIsSearchBarExpanded((val) => !val);
+  function handleChangeSearchPanelVisibility() {
+    setShown((val) => !val);
   }
 
   return (
     <div>
-      {shown && <ShrinkButton rotate={false} onClick={() => {}} />}
-
       <form
         className={cn(search, sideBarOpenCN, {
           [shownCN]: shown,
         })}
       >
-        {expandedByDefault ||
-          (isSearchBarExpanded && (
+        <div
+          onClick={handleChangeSearchPanelVisibility}
+          className={cn(searchControl, {
+            [expanded]: expandedByDefault,
+            [shownCN]: shown,
+          })}
+        >
+          {expandedByDefault && (
             <input
               type="text"
               placeholder={placeHolderText}
-              value={value}
-              onFocus={() => setShown(true)}
-              onBlur={() => setShown(false)}
-              onChange={onChangeCb}
               className={searchInput}
             />
-          ))}
-        <div className={searchSvgContainer} onClick={handleSearchSvgClick}>
-          <img
-            className={searchSvgCN}
-            // src={searchSvg}
-          />
-        </div>
-        {/* <div className={searchInput}>
-        <div className={searchSvgContainer}>
-          <img className={searchSvg} src={searchSvg} />
+          )}
+          <div className={searchSvgContainer}>
+            {/* <img
+              className={searchSvgCN}
+              // src={searchSvg}
+            /> */}
+            @
+          </div>
         </div>
 
-        <input
-          type="text"
-          placeholder={placeHolderText}
-          value={value}
-          onFocus={() => setShown(true)}
-          onBlur={() => setShown(false)}
-          onChange={onChangeCb}
-          className={searchInput}
-        />
-      </div> */}
+        <div
+          className={cn(searchPanel, {
+            [active]: shown,
+          })}
+        >
+          <div className={searchPanelControl}>
+            <ShrinkButton
+              rotate={false}
+              onClick={handleChangeSearchPanelVisibility}
+            />
+            <div className={searchPanelInput}>
+              <input
+                type="text"
+                placeholder={placeHolderText}
+                value={value}
+                onChange={onChangeCb}
+                className={input}
+              />
+              <div
+                className={cn(searchPanelInputCross, {
+                  [active]: value !== "",
+                })}
+              >
+                <CloseCross
+                  type="searchCross"
+                  mode="searchDefault"
+                  onClick={clearInputValueCb}
+                />
+              </div>
+            </div>
+          </div>
+          <div className={searchPanelResults}></div>
+        </div>
       </form>
     </div>
   );

@@ -112,11 +112,11 @@ export const popupDefault = css`
   &.${bg} {background: ${fontColorDark};}
 `
 
-export const hidden = css`
-  display: none;
-`
+export const hidden = css``
 
 export const customCheckbox = css`
+    &.${hidden} {display: none;}
+
     appearance: none;
     background-color: white;
     margin: 0;

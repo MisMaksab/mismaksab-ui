@@ -15,6 +15,7 @@ import {
   title,
   pricePerKilo,
   discountUntil,
+  smallMobile,
 } from "./styles";
 
 interface GoodCardProps extends LayoutProp {
@@ -24,6 +25,7 @@ interface GoodCardProps extends LayoutProp {
   header: React.ReactElement;
   footer: React.ReactElement;
   addToList: (productId: string) => void;
+  isSmallMobile?: boolean;
 }
 
 export function GoodCard({
@@ -34,6 +36,7 @@ export function GoodCard({
   addToList,
   header,
   footer,
+  isSmallMobile = false,
 }: GoodCardProps) {
   //   const onAddToList = useCallback(() => {
   //     addToList(productId);
@@ -43,6 +46,7 @@ export function GoodCard({
       className={cn(goodCard, {
         [MobileCN]: layout === "mobile",
         [disabled]: isDisabled,
+        [smallMobile]: isSmallMobile,
       })}
     >
       {header}
@@ -55,6 +59,7 @@ interface GoodCardHeaderProps extends LayoutProp {
   productImageURL: string;
   discount: number;
   retailerImageURL: string;
+  isSmallMobile?: boolean;
 }
 
 export function GoodCardHeader({
@@ -62,6 +67,7 @@ export function GoodCardHeader({
   retailerImageURL,
   discount,
   layout,
+  isSmallMobile,
 }: GoodCardHeaderProps) {
   return (
     <div className={goodCardImage}>
@@ -71,6 +77,7 @@ export function GoodCardHeader({
         expanded={false}
         image={retailerImageURL}
         discount={discount}
+        isSmallMobile={isSmallMobile}
       />
     </div>
   );
