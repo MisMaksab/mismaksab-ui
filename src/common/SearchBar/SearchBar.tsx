@@ -1,9 +1,10 @@
 import React from "react";
 import cn from "classnames";
-// import searchSvg from "../../assets/icons/search.svg";
+import searchSvg from "../../assets/icons/search.svg";
 import {
   search,
   searchInput,
+  searchSvgCN,
   searchSvgContainer,
   shownCN,
   sideBarOpenCN,
@@ -56,7 +57,10 @@ export function SearchBar({
         className={searchInput}
       />
       <div className={searchSvgContainer}>
-        {/* <img className={searchSvg} src={searchSvg} /> */}
+        <div
+          className={searchSvgCN}
+          dangerouslySetInnerHTML={{ __html: searchSvg }}
+        />
       </div>
       {/* <div className={searchInput}>
         <div className={searchSvgContainer}>

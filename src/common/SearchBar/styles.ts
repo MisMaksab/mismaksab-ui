@@ -44,7 +44,7 @@ export const sideBarOpenCN = css`
   }
 `
 
-export const searchSvg = css`
+export const searchSvgCN = css`
   height: 50%;
 `
 

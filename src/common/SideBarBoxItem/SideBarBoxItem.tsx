@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import cn from "classnames";
 import { LayoutProp } from "../LayoutProp";
 
-// import mobileSideBarArrow from "../../assets/icons/mobileSidebarArrow.svg";
+import mobileSideBarArrow from "../../assets/icons/mobileSidebarArrow.svg";
 import {
   sideBarBoxItem,
   sideBarBoxItemBtn,
@@ -89,9 +89,9 @@ export function SideBarBoxItem({
           {data.title}
           {data.subSvg && <img className={arrowSvg} src={data.subSvg} />}
           {layout === "mobile" && !data.subSvg && (
-            <img
+            <div
               className={cn(mobileSideBarArrowCN, { [rotate]: isExpanded })}
-              // src={mobileSideBarArrow}
+              dangerouslySetInnerHTML={{ __html: mobileSideBarArrow }}
             />
           )}
         </span>

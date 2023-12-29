@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import cn from "classnames";
 import { dropdown, shown } from "../../desktop/DesktopDropdownBoxStyles";
-// import DesktopSortSvg from "../../assets/icons/desktopSort.svg";
+import DesktopSortSvg from "../../assets/icons/desktopSort.svg";
 import {
   sort,
   sortBtn,
@@ -55,12 +55,12 @@ function DropdownButton({ data, selectedItem }: any) {
     <div className={sortBtn}>
       {data[selectedItem].text}
       <div className={sortBtnSvg}>
-        <img
-          // src={DesktopSortSvg}
+        <div
+          dangerouslySetInnerHTML={{ __html: DesktopSortSvg }}
           className={sortBtnSvgItem}
         />
-        <img
-          // src={DesktopSortSvg}
+        <div
+          dangerouslySetInnerHTML={{ __html: DesktopSortSvg }}
           className={sortBtnSvgItem}
         />
       </div>

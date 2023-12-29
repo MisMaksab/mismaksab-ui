@@ -7,7 +7,7 @@ import {
   pagePathItemWrapper,
 } from "./styles";
 import { DesktopSortDropdown } from "../../desktop/DesktopSortDropdown/DesktopSortDropdown";
-// import PagePathSVG from "../../assets/icons/desktopPagePath.svg";
+import PagePathSVG from "../../assets/icons/desktopPagePath.svg";
 
 const SORT_DATA = [
   { id: 0, text: "descending" },
@@ -59,9 +59,9 @@ function PagePath({ data, onClick }: PagePathProps) {
             {item.text}
           </span>
           {id < data.length - 1 && (
-            <img
+            <div
               className={pagePathItemSVG}
-              // src={PagePathSVG}
+              dangerouslySetInnerHTML={{ __html: PagePathSVG }}
             />
           )}
         </div>

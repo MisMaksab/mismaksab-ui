@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import cn from "classnames";
-// import searchSvg from "../../assets/icons/search.svg";
+import searchSvg from "../../assets/icons/search.svg";
 import {
   search,
   searchInput,
@@ -19,7 +19,7 @@ import {
   searchPanelInputCross,
 } from "./styles";
 import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
-import { CloseCross } from "common/CloseCross/CloseCross";
+import { CloseCross } from "../../common/CloseCross/CloseCross";
 
 interface Props {
   placeHolderText?: string;
@@ -75,11 +75,10 @@ export function MobileSearchBar({
             />
           )}
           <div className={searchSvgContainer}>
-            {/* <img
+            <div
               className={searchSvgCN}
-              // src={searchSvg}
-            /> */}
-            @
+              dangerouslySetInnerHTML={{ __html: searchSvg }}
+            />
           </div>
         </div>
 

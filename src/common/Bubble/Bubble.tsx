@@ -2,7 +2,7 @@ import React from "react";
 import cn from "classnames";
 import { MobileCN } from "../../styles";
 import { LayoutProp } from "../LayoutProp";
-// import BubbleArrowSvg from "../../assets/icons/bubble_arrow.svg";
+import BubbleArrowSvg from "../../assets/icons/bubble_arrow.svg";
 import {
   applyTextMode,
   bubble,
@@ -68,14 +68,12 @@ export function Bubble({
       {text}
 
       {isDropdown && (
-        <span
+        <div
           className={cn(bubbleArrow, {
             [rotate]: isDropdownExpanded,
           })}
-          // src={BubbleArrowSvg}
-        >
-          ?
-        </span>
+          dangerouslySetInnerHTML={{ __html: BubbleArrowSvg }}
+        />
       )}
     </span>
   );

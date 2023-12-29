@@ -26,7 +26,7 @@ export const SocialMediaItemSC = styled.a`
   }
 `;
 
-export const SocialMediaItemImgSC = styled.img`
+export const SocialMediaItemImgSC = styled.div`
   width: 100%;
   height: 100%;
 `;

@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 import { MobileCN } from "../../styles";
-// import arrow from "../../assets/icons/arrow.svg";
+import arrow from "../../assets/icons/arrow.svg";
 import { LayoutProp } from "../LayoutProp";
 import { active, rotate, svg, title, yellowButton } from "./styles";
 
@@ -30,13 +30,12 @@ export function YellowButton({
       onClick={onClick}
     >
       <span className={title}>{text}</span>
-      <img
+      <div
         className={cn(svg, {
           [active]: isActive,
           [rotate]: isArrowRotated,
         })}
-        // src={arrow}
-        alt="language svg"
+        dangerouslySetInnerHTML={{ __html: arrow }}
       />
     </a>
   );

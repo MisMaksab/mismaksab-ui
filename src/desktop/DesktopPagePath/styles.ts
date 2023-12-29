@@ -26,4 +26,6 @@ export const pagePathItem = css`
 
 export const pagePathItemSVG = css`
   padding:0 10px;
+  width: 5px;
+  box-sizing: content-box;
 `;

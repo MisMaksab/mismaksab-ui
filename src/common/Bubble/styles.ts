@@ -8,7 +8,8 @@ export const bubble = css`
   font-size: 20px;
   font-weight: 500;
   line-height: 100%; /* 20px */
-  display: inline-block;
+  display: flex;
+  align-items: center;
   white-space:nowrap;
 
   &.${MobileCN} {
@@ -20,9 +21,8 @@ export const bubble = css`
 `;
 
 export const bubbleArrow = css`
-  vertical-align: middle;
   width: 9px;
-  height: 5px;
+  display: flex;
   margin-left: 6px;
   transition: transform .3s;
   transform-origin: center center;

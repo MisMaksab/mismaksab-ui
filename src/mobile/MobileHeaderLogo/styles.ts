@@ -17,3 +17,8 @@ export const titleCN = css`
     line-height: 140%;
     font-weight: 500;
 `
+
+export const svg = css`
+    width: 25px;
+    height: 25px;
+`
