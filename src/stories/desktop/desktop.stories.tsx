@@ -5,6 +5,8 @@ export { RetailersSliderStory } from "./RetailerSlider/RetailerSlider.story";
 export { SideBarWrapperStory } from "./SideBarWrapper/SideBarWrapper.story";
 export { BubbleBlockStory } from "./BubbleBlock/BubbleBlock.story";
 export { SortStory } from "./Sort/Sort.story";
+export { PagePathStory } from "./PagePath/PagePath.story";
+export { PaginationStory } from "./Pagination/Pagination.story";
 
 export default {
   title: "Desktop",

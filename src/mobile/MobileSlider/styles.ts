@@ -5,7 +5,7 @@ export const slider = css`
   position: relative;
   display: flex;
   box-sizing: content-box;
-  margin: -7px 0px -7px 12px;
+  padding: 13px 8px 0;
 `
 
 export const sliderBox = css`
@@ -15,5 +15,4 @@ export const sliderBox = css`
 export const sliderSlides = css`
   display: inline-flex;
   flex-wrap: nowrap;
-  padding-right: 12px;
 `

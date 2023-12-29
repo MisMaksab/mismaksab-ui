@@ -10,12 +10,14 @@ import {
   bubbleBlue,
   bubbleDisabled,
   bubbleGreen,
-  bubbleLightOrange,
+  bubbleLightorange,
   bubbleLightblue,
   bubbleLightgreen,
   bubbleOrange,
   rotate,
   bubbleDesktopSort,
+  bubbleMobile,
+  bubbleMobileActive,
 } from "./styles";
 
 interface BubbleProps extends LayoutProp {
@@ -25,12 +27,13 @@ interface BubbleProps extends LayoutProp {
     | "bubbleLightgreen"
     | "bubbleLightblue"
     | "bubbleOrange"
-    | "bubbleLightOrange"
+    | "bubbleLightorange"
     | "bubbleDisabled"
+    | "bubbleMobile"
+    | "bubbleMobileActive"
     | "bubbleDesktopSort";
   text: string;
-  link?: string;
-  onClick?: () => void;
+  onClick: (val: any) => void;
   isDropdown?: boolean;
   isDropdownExpanded?: boolean;
 }
@@ -41,24 +44,23 @@ const modeStyle = {
   bubbleLightgreen,
   bubbleLightblue,
   bubbleOrange,
-  bubbleLightOrange,
+  bubbleLightorange,
   bubbleDisabled,
   bubbleDesktopSort,
+  bubbleMobile,
+  bubbleMobileActive,
 };
-
 export function Bubble({
   mode,
   text,
-  link,
   layout,
   onClick,
   isDropdown = false,
   isDropdownExpanded = false,
 }: BubbleProps) {
   return (
-    <a
-      onClick={onClick}
-      href={link}
+    <span
+      onClick={() => onClick(text)}
       className={cn(bubble, modeStyle[mode], applyTextMode, {
         [MobileCN]: layout === "mobile",
       })}
@@ -66,13 +68,15 @@ export function Bubble({
       {text}
 
       {isDropdown && (
-        <img
+        <span
           className={cn(bubbleArrow, {
             [rotate]: isDropdownExpanded,
           })}
           // src={BubbleArrowSvg}
-        />
+        >
+          ?
+        </span>
       )}
-    </a>
+    </span>
   );
 }

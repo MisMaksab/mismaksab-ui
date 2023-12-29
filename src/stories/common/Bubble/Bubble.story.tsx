@@ -3,10 +3,11 @@ import { Bubble } from "../../../common/Bubble/Bubble";
 
 export const BubbleStory = () => (
   <Bubble
-    mode="bubbleLightOrange"
+    mode="bubbleLightorange"
     text="товары"
     layout="desktop"
     isDropdown={true}
+    onClick={() => {}}
   />
 );
 

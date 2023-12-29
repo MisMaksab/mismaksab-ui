@@ -4,7 +4,6 @@ import { DesktopSortDropdown } from "desktop/DesktopSortDropdown/DesktopSortDrop
 
 export const BlockHeaderStory = () => (
   <BlockHeader
-    title="Мясо"
     layout="desktop"
     noPaddingTop={true}
     isTitleThin={false}

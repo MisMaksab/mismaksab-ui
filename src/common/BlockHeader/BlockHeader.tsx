@@ -6,6 +6,7 @@ import { ShrinkButton } from "../ShrinkButton/ShrinkButton";
 import {
   blockHeader,
   blockHeaderGoBackBtn,
+  displayBlock,
   justifyCenter,
   removePaddingTop,
   subTitleCN,
@@ -15,7 +16,7 @@ import {
 import { MobileCN } from "../../styles";
 
 interface BlockHeaderProps extends LayoutProp {
-  title: string;
+  title?: string | null;
   yellowButtonText?: string;
   moreBtnEnabled?: boolean;
   yellowButtonLink?: string;
@@ -27,7 +28,7 @@ interface BlockHeaderProps extends LayoutProp {
 }
 
 export function BlockHeader({
-  title,
+  title = null,
   layout,
   yellowButtonText,
   yellowButtonLink,
@@ -46,11 +47,19 @@ export function BlockHeader({
         [MobileCN]: layout === "mobile",
       })}
     >
-      <h1 className={cn(titleCN, { [thin]: isTitleThin })}>{title}</h1>
+      {title && (
+        <h1 className={cn(titleCN, { [thin]: isTitleThin })}>{title}</h1>
+      )}
 
-      {sortComponent}
+      {title && subTitle && sortComponent}
 
-      {subTitle && <p className={subTitleCN}>{subTitle}</p>}
+      {subTitle && (
+        <span className={cn(subTitleCN, { [displayBlock]: title })}>
+          {subTitle}
+        </span>
+      )}
+
+      {!title && subTitle && sortComponent}
 
       {moreBtnEnabled && (
         <YellowButton

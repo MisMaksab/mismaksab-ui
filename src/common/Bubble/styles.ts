@@ -9,10 +9,11 @@ export const bubble = css`
   font-weight: 500;
   line-height: 100%; /* 20px */
   display: inline-block;
+  white-space:nowrap;
 
-  .${MobileCN} {
-    padding: 5px 11px;
-    font-size: 16px;
+  &.${MobileCN} {
+    padding: 6px 13px;
+    font-size: 20px;
     border-radius: 20px;
     font-weight: 400;
   }
@@ -23,12 +24,13 @@ export const bubbleArrow = css`
   width: 9px;
   height: 5px;
   margin-left: 6px;
-  popupOptionsWrapper: transform .3s;
+  transition: transform .3s;
   transform-origin: center center;
 `;
 
 export const rotate = css`
   transform: rotate(180deg);
+  color:red;
 `;
 
 export const bubbleDesktopSort = css`
@@ -69,7 +71,7 @@ export const bubbleOrange = css` {
     &.${applyTextMode} {color: ${fontColorDark};}
   }
 `;
-export const bubbleLightOrange = css` {
+export const bubbleLightorange = css` {
   background: ${secondaryColorLight};
     &.${applyTextMode} {color: ${fontColorDark};}
   }

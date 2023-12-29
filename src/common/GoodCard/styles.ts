@@ -110,6 +110,10 @@ export const disabled = css`
     }
 `;
 
+
+export const smallMobile = css`
+`
+
 export const goodCard = css`
     position: relative;
     border-radius: 10px;
@@ -130,6 +134,35 @@ export const goodCard = css`
     &.${MobileCN} {
         width: 115px;
         min-height: 230px;
+
+        &.${smallMobile} {
+            width:103px;
+            min-height: 200px;
+
+            .${goodCardImage} {
+                height: 90px;
+            }
+
+            .${goodCardTextWrapper} {
+                .${title} {
+                    font-size: 12px;
+                }
+                
+                .${goodCardPrices} {
+                    .${old} {
+                        font-size: 12px;
+                    }
+    
+                    .${current} {
+                        font-size: 14px;
+                    }
+                }
+
+                .${discountUntil} {
+                    font-size: 10px;
+                }
+            }
+        }
 
         .${goodCardImage} {
             height: 100px;

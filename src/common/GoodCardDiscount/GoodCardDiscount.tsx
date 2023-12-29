@@ -8,6 +8,7 @@ import {
   discountImage,
   img,
   expandedCN,
+  smallMobile,
 } from "./styles";
 import { MobileCN } from "../../styles";
 
@@ -15,7 +16,7 @@ interface GoodCardDiscountProps extends LayoutProp {
   discount: number;
   image: string | null;
   expanded?: boolean;
-  layout: "mobile" | "desktop";
+  isSmallMobile?: boolean;
 }
 
 export function GoodCardDiscount({
@@ -23,6 +24,7 @@ export function GoodCardDiscount({
   image,
   expanded,
   layout,
+  isSmallMobile,
 }: GoodCardDiscountProps) {
   return (
     <div
@@ -30,6 +32,7 @@ export function GoodCardDiscount({
         [MobileCN]: layout === "mobile",
         [expandedCN]: expanded,
         [small]: !expanded,
+        [smallMobile]: isSmallMobile,
       })}
     >
       <div className={discountPercentage}>{discount}%</div>

@@ -35,21 +35,22 @@ interface MobileCheckboxPopupProps extends CalculateCheckboxBlockProps {
 
 interface CalculateCheckboxBlockProps {
   type: "single" | "multiple";
-  setSelectedItemsCb: () => void;
+  handleSelectedItemsCb: (id: string) => void;
   data: Array<{ id: string; text: string; link: string }>;
   selectedItems: any[];
   mode: "popupGreen" | "popupYellow" | "popupBlue" | "popupDefault";
+  hidePopupCb: () => void;
 }
 
 export function MobileCheckboxPopup({
-  mode,
+  mode = "popupDefault",
   active,
   hidePopupCb,
   type,
   data,
   title,
   selectedItems,
-  setSelectedItemsCb,
+  handleSelectedItemsCb,
 }: MobileCheckboxPopupProps) {
   return (
     <div
@@ -65,11 +66,12 @@ export function MobileCheckboxPopup({
         <h1 className={cn(titleCN, stylesMap[mode], color)}>{title}</h1>
         <div className={popupOptionsWrapper}>
           <CalculateCheckboxBlock
+            hidePopupCb={hidePopupCb}
             mode={mode}
             selectedItems={selectedItems}
             data={data}
             type={type}
-            setSelectedItemsCb={() => {}}
+            handleSelectedItemsCb={handleSelectedItemsCb}
           />
         </div>
       </div>
@@ -81,17 +83,23 @@ function CalculateCheckboxBlock({
   mode,
   selectedItems,
   data,
-  setSelectedItemsCb,
+  handleSelectedItemsCb,
   type,
+  hidePopupCb,
 }: CalculateCheckboxBlockProps) {
+  function handleSingleOptionClick() {
+    type === "single" && hidePopupCb();
+  }
+
   return (
     <>
       {data.map((option: any) => (
         <label
+          onClick={handleSingleOptionClick} //!!!!!
           htmlFor={option.id}
           key={option.id}
           className={cn(popupOption, {
-            // [activeCN]: selectedItems.includes(option.id) !!!!!
+            [activeCN]: selectedItems.includes(option.id),
           })}
         >
           {option.text}
@@ -109,8 +117,8 @@ function CalculateCheckboxBlock({
             type="checkbox"
             id={option.id}
             name={option.id}
-            // checked={selectedItems.includes(option.id)} !!!!!
-            onChange={setSelectedItemsCb}
+            checked={selectedItems.includes(option.id)}
+            onChange={() => handleSelectedItemsCb(option.id)}
           />
         </label>
       ))}

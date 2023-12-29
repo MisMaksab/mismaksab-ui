@@ -48,7 +48,8 @@ export { DesktopSlider } from "./desktop/DesktopSlider/DesktopSlider";
 export { DesktopBubbleBlock } from "./desktop/DesktopBubbleBlock/DesktopBubbleBlock";
 export { DesktopLanguageDropdownBox } from "./desktop/DesktopLangurageDropdownBox/DesktopLanguageDropdownBox";
 export { DesktopSortDropdown } from "./desktop/DesktopSortDropdown/DesktopSortDropdown";
-
+export { DesktopPagePath } from "./desktop/DesktopPagePath/DesktopPagePath";
+export { DesktopPagination } from "./desktop/DesktopPagination/DesktopPagination";
 // Mobile
 export { MobileCheckboxPopup } from "./mobile/MobileCheckboxPopup/MobileCheckboxPopup";
 export { MobileGoodsSlider } from "./mobile/MobileGoodsSlider/MobileGoodsSlider";
@@ -60,3 +61,4 @@ export { MobileRetailersSlider } from "./mobile/MobileRetailersSlider/MobileReta
 export { MobileSideBarControls } from "./mobile/MobileSideBarControls/MobileSideBarControls";
 export { MobileSlider } from "./mobile/MobileSlider/MobileSlider";
 export { MobileSearchBar } from "./mobile/MobileSearchBar/MobileSearchBar";
+export { MobileSortBubble } from "./mobile/MobileSortBubble/MobileSortBubble";
