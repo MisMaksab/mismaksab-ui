@@ -31,20 +31,20 @@ export const sortBtn = css`
   display: inline-flex;
   cursor: pointer;
   align-items:center;
-  padding-right:25px;
   position: relative;
   `;
   
 export const sortBtnSvgItem = css`
+  width: inherit;
   position: absolute;
-  top: -5px;
-  right: 0;
 `
 export const sortBtnSvg = css`
   display: flex;
   flex-direction: column;
+  width: 25px;
+  height: 29px;
 
-  .${sortBtnSvgItem}:last-child {transform:rotate(180deg); top:5px;}
+  .${sortBtnSvgItem}:last-child {transform:rotate(180deg);top:4px;}
 `
 
 

@@ -2,7 +2,9 @@ import {css} from "@linaria/core";
 import { secondaryColorLight } from "../../styles";
 
 export const searchSvgCN = css`
+    width: 20px;
     height: 50%;
+    box-sizing: content-box;
 `;
 
 export const searchSvgContainer = css`

@@ -1,6 +1,6 @@
 import React from "react";
 import cn from "classnames";
-// import mark from "../../assets/icons/languageDropdownIcon.svg";
+import mark from "../../assets/icons/languageDropdownIcon.svg";
 import { CloseCross } from "../../common/CloseCross/CloseCross";
 import {
   popup,
@@ -78,9 +78,9 @@ function CalculateRadioBlock({ selectedItem, data }: CalculateRadioBlockProps) {
         >
           {option.text}
           {selectedItem === option.id && (
-            <img
+            <div
               className={markCN}
-              // src={mark}
+              dangerouslySetInnerHTML={{ __html: mark }}
             />
           )}
         </a>

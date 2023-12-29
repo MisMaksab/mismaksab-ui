@@ -1,8 +1,7 @@
 import cn from "classnames";
 import React from "react";
 
-// arrow svg
-// import arrowSvg from "./../../assets/icons/slider_arrow.svg";
+import arrowSvg from "./../../assets/icons/slider_arrow.svg";
 import { arrowButton, shown, arrowButtonArrow, next, prev } from "./styles";
 
 interface DesktopArrowButtonProps {
@@ -25,10 +24,9 @@ export function DesktopArrowButton({
       })}
       onClick={onClick}
     >
-      <img
+      <div
         className={arrowButtonArrow}
-        // src={arrowSvg}
-        alt=""
+        dangerouslySetInnerHTML={{ __html: arrowSvg }}
       />
     </div>
   );

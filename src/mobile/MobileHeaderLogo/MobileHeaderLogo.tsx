@@ -1,6 +1,6 @@
 import React from "react";
-// import logoSvg from "../../assets/icons/mobileLogo.svg";
-import { logo, titleCN } from "./styles";
+import logoSvg from "../../assets/icons/mobileLogo.svg";
+import { logo, titleCN, svg } from "./styles";
 
 interface MobileHeaderLogoProps {
   title: string;
@@ -10,10 +10,7 @@ interface MobileHeaderLogoProps {
 export function MobileHeaderLogo({ title, href = "/" }: MobileHeaderLogoProps) {
   return (
     <a href={href} className={logo}>
-      <img
-        alt="logo"
-        // src={logoSvg}
-      />
+      <div className={svg} dangerouslySetInnerHTML={{ __html: logoSvg }} />
       <div>
         <h1 className={titleCN}>{title}</h1>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import cn from "classnames";
-// import searchSvg from "../../assets/icons/search.svg";
+import searchSvg from "../../assets/icons/search.svg";
 import { searchSvgContainer, header, searchSvgCN } from "./styles";
 
 interface SearchSvgProps {
@@ -14,9 +14,9 @@ export function SearchSvg({ onClick, isHeader = false }: SearchSvgProps) {
       className={cn(searchSvgContainer, { [header]: isHeader })}
       onClick={onClick}
     >
-      <img
+      <div
         className={searchSvgCN}
-        // src={searchSvg}
+        dangerouslySetInnerHTML={{ __html: searchSvg }}
       />
     </div>
   );

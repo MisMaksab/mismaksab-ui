@@ -9,7 +9,7 @@ export const retailersCardsBlock = css`
 
     &.${MobileCN} {
         justify-content: center;
-        padding-top: 40px;
+        padding-top: 20px;
         margin-left: 0;
     }
 `;

@@ -11,8 +11,9 @@ export const title = css`
 export const svg = css`
     transition: transform .3s;
     margin-left: 6px;
-    width: 11px;
     transform-origin: center;
+    width: 11px;
+    height: 6px;
 `;
 
 export const yellowButton = css`
@@ -49,6 +50,7 @@ export const yellowButton = css`
 
         .${svg} {
                 width: 7px;
+                
                 margin-left: 2px;
             }
         }
