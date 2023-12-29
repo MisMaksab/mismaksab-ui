@@ -10,6 +10,8 @@ export const logo = css`
 `;
 
 export const img = css`
+    height: 52px;
+    width: 53px;
     margin-right: 0.7rem;
 `;
 

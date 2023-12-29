@@ -9,8 +9,9 @@
     "typings": "lib/index.d.ts",
     "types": "lib/index.d.ts",
     "scripts": {
-        "build": "npm run copy-dts && tsc --build tsconfig-no-spec.json && npm run build:css && babel lib -d lib",
+        "build": "npm run copy-dts && npm run copy-assets && tsc --build tsconfig-no-spec.json && npm run build:css && babel lib -d lib",
         "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib",
+        "copy-assets": "copyfiles -u 1 \"src/assets/**/*\" lib",
         "build-ts:dts-only": "tsc --declaration --emitDeclarationOnly --project tsconfig-no-spec.json",
         "build:css": "npm run build:css:generate && npm run build:css:clean",
         "build:css:generate": "",
