@@ -37,10 +37,10 @@ export const serviceBlock = css`
     max-width: 1150px;
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 50px 0 80px;
+    padding: 3px 0 32px;
 
-    .${MobileCN} {
-        padding: 30px 0 50px;
+    &.${MobileCN} {
+        padding: 21px;
     
         .${serviceBlockTitle} {
             text-align: center;
