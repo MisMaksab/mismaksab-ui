@@ -33,6 +33,7 @@ export { GoodCardsBlock } from "./common/GoodCardsBlock/GoodCardsBlock";
 export { BlockHeader } from "./common/BlockHeader/BlockHeader";
 export { SearchSvg } from "./common/SearchSvg/SearchSvg";
 export { YellowButton } from "./common/YellowButton/YellowButton";
+export { NotFound } from "./common/NotFound/NotFound";
 
 // Desktop
 export { DesktopArrowButton } from "./desktop/DesktopArrowButton/DesktopArrowButton";

@@ -28,15 +28,18 @@ export function ServiceBlock({
         [MobileCN]: layout === "mobile",
       })}
     >
-      {title && <h2 className={serviceBlockTitle}>{title}</h2>}
+      {title && (
+        <h2
+          className={cn(serviceBlockTitle, {
+            [centeredCN]: centered,
+          })}
+        >
+          {title}
+        </h2>
+      )}
       <div className={serviceBlockContent}>
         {paragraphs.map((text) => (
-          <p
-            key={text}
-            className={cn(serviceBlockParagraph, {
-              [centeredCN]: centered,
-            })}
-          >
+          <p key={text} className={serviceBlockParagraph}>
             {text}
           </p>
         ))}

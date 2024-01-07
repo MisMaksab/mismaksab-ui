@@ -1,7 +1,7 @@
 import { styled } from "@linaria/react";
 import { css } from "@linaria/core";
 
-import { tertiaryColorMain } from "../../styles";
+import { fontColorMain, tertiaryColorMain } from "../../styles";
 
 export const FooterLinksSC = styled.div`
   display: flex;
@@ -47,7 +47,7 @@ export const UsefulLinksItemSC = styled.div`
 export const UsefulLinksLinkSC = styled.a`
   font-size: 20px;
   line-height: 100%; /* 20px */
-  color: $fontColorMain;
+  color: ${fontColorMain};
   text-decoration: none;
   font-weight: 400;
 
