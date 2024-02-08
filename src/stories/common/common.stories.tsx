@@ -5,6 +5,7 @@ export { CloseCrossStory } from "./CloseCross/CloseCross.story";
 export { ExpadnedGoodCardStory } from "./ExpadedGoodCard/ExpadedGoodCard.story";
 export { GoodCardStory } from "./GoodCard/GoodCard.story";
 export { NotFoundStory } from "./404/404.story";
+export { ShrinkButtonStory } from "./ShrinkButton/ShrinkButton.story";
 
 export default {
   title: "Common",

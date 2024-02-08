@@ -12,8 +12,7 @@ export const svg = css`
     transition: transform .3s;
     margin-left: 6px;
     transform-origin: center;
-    width: 11px;
-    height: 6px;
+    width: 12px;
 `;
 
 export const yellowButton = css`

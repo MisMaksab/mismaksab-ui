@@ -125,7 +125,7 @@ function SideBarBoxItemSubItems({
       <div className={sideBarBoxItemDropdownContainer}>
         {data.map((item: any) => (
           <div key={item.title} className={sideBarBoxItemDropdownItem}>
-            <a className={link} href={item.link}>
+            <a className={link} href={`/category/${item.link}`}>
               {item.title}
             </a>
           </div>

@@ -1,6 +1,11 @@
 import {css} from "@linaria/core";
 import { MobileCN, fontColorDark, secondaryColorLight } from "../../styles";
 
+
+export const centeredCN = css`
+    text-align: center;
+`;
+
 export const serviceBlockTitle = css`
     margin: 0;
     color: ${fontColorDark};
@@ -16,10 +21,6 @@ export const serviceBlockContent = css`
     display: flex;
     flex-direction: column;
     gap: 27px;
-`;
-
-export const centeredCN = css`
-    text-align: center;
 `;
 
 export const serviceBlockParagraph = css`
