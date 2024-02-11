@@ -1,3 +1,5 @@
+'use client'
+
 // Css variables
 // export * as variables from "./scss/variables.scss";
 

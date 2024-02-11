@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import logoSvg from "../../assets/icons/mobileLogo.svg";
 import { logo, titleCN, svg } from "./styles";

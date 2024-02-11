@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useCallback, useState } from "react";
 import { LanguageDropdown } from "../../common/LanguageDropdown/LanguageDropdown";
 import { SideBar } from "../../common/SideBar/SideBar";

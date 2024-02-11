@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useCallback, useState } from "react";
 import { Bubble } from "../../common/Bubble/Bubble";
 import { bubbleBlock } from "./styles";

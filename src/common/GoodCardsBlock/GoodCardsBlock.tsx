@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
 import { LayoutProp } from "../LayoutProp";
