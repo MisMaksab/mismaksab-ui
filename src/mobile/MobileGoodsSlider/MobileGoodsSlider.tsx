@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import { MobileSlider } from "../MobileSlider/MobileSlider";
 import { AllGoodsSlides } from "../../common/AllGoodsSlides/AllGoodsSlides";

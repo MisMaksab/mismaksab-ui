@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useCallback, useState } from "react";
 import { SideBar } from "../../common/SideBar/SideBar";
 import cn from "classnames";

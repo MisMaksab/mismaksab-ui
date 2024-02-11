@@ -1,3 +1,5 @@
+'use client'
+
 import { Bubble } from "../../common/Bubble/Bubble";
 import { MobileCheckboxPopup } from "../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
 import React, { useCallback, useState } from "react";

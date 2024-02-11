@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import SideBarHideSvg from "../../assets/icons/sideBarHide.svg";
 import { hide, rotateCN, svg } from "./styles";

@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import { MobileCN } from "../../styles";
 import cn from "classnames";

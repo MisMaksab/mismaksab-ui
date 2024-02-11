@@ -1,5 +1,6 @@
-import React from 'react'
-import styles from './DesktopGoodsSlider.scss';
+'use client'
+
+import React from "react";
 
 // fetch hook
 import { DesktopSlider } from "../DesktopSlider/DesktopSlider";
