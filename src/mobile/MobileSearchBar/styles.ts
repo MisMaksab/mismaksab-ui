@@ -11,15 +11,14 @@ export const search = css`
 `
 
 export const searchInput = css`
-  display: flex;
-  align-items: center;
-  overflow: hidden;
   font-size: 20px;
   background: none;
   width: 100%;
   height: 100%;
   outline:none;
   border:none;
+  cursor:pointer;
+  pointer-events: none;
 `
 
 export const sideBarOpenCN = css`
@@ -90,7 +89,13 @@ export const searchPanelControl = css`
   align-items:center;
 `
 
-export const searchPanelResults = css``
+export const searchPanelResultBubbles = css`
+  padding-top: 20px;
+  display: flex;
+  gap: 12px 14px;
+  flex-wrap: wrap;
+`
+export const searchPanelResultProducts = css``
 export const input = css``
 export const searchPanelInputCross = css``
 export const searchPanelInput = css`

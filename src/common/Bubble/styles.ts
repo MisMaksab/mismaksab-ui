@@ -30,7 +30,6 @@ export const bubbleArrow = css`
 
 export const rotate = css`
   transform: rotate(180deg);
-  color:red;
 `;
 
 export const bubbleDesktopSort = css`

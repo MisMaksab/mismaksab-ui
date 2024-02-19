@@ -19,6 +19,8 @@ export const HeaderStory = () => (
         expandedByDefault={false}
         placeHolderText="Найти товар"
         onChange={() => {}}
+        showMoreText={"more"}
+        showLessText={"less"}
       />
     }
   />

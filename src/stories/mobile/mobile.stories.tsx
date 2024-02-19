@@ -3,6 +3,7 @@ export { SliderStory } from "./Slider/Slider.story";
 export { RetailersSliderStory } from "./RetailersSlider/RetailersSlider.story";
 export { PopupStory } from "./Popup/Popup.story";
 export { SortBubbleStory } from "./SortBubble/SortBubble.story";
+export { SearchBarStory } from "./SearchBar/SearchBar.story";
 
 export default {
   title: "Mobile",

@@ -36,6 +36,7 @@ export { BlockHeader } from "./common/BlockHeader/BlockHeader";
 export { SearchSvg } from "./common/SearchSvg/SearchSvg";
 export { YellowButton } from "./common/YellowButton/YellowButton";
 export { NotFound } from "./common/NotFound/NotFound";
+export { BubbleBlock } from "./common/BubbleBlock/BubbleBlock";
 
 // Desktop
 export { DesktopArrowButton } from "./desktop/DesktopArrowButton/DesktopArrowButton";
@@ -48,7 +49,6 @@ export { DesktopHeaderLogo } from "./desktop/DesktopHeaderLogo/DesktopHeaderLogo
 export { DesktopRetailersSlider } from "./desktop/DesktopRetailersSlider/DesktopRetailersSlider";
 export { DesktopSideBarWrapper } from "./desktop/DesktopSideBarWrapper/DesktopSideBarWrapper";
 export { DesktopSlider } from "./desktop/DesktopSlider/DesktopSlider";
-export { DesktopBubbleBlock } from "./desktop/DesktopBubbleBlock/DesktopBubbleBlock";
 export { DesktopLanguageDropdownBox } from "./desktop/DesktopLangurageDropdownBox/DesktopLanguageDropdownBox";
 export { DesktopSortDropdown } from "./desktop/DesktopSortDropdown/DesktopSortDropdown";
 export { DesktopPagePath } from "./desktop/DesktopPagePath/DesktopPagePath";

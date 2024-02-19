@@ -5,7 +5,7 @@ import cn from "classnames";
 import { MobileCN } from "../../styles";
 import { SideBarBoxItem } from "../SideBarBoxItem/SideBarBoxItem";
 import { LayoutProp } from "../LayoutProp";
-import { sideBarBox } from "./styles";
+import { sideBarBox, smoothOverflow } from "./styles";
 
 interface SideBarBoxInterFace extends LayoutProp {
   data: (
@@ -42,6 +42,7 @@ export function SideBarBox({
     <div
       className={cn(sideBarBox, {
         [MobileCN]: layout === "mobile",
+        [smoothOverflow]: layout === "desktop",
       })}
     >
       {data.map((item: any, i: number) => (
