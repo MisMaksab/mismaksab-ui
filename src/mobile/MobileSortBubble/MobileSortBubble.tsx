@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
+import React, { useCallback, useState } from "react";
 import { Bubble } from "../../common/Bubble/Bubble";
 import { MobileCheckboxPopup } from "../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
-import React, { useCallback, useState } from "react";
 import { sortBubble } from "./styles";
 
 interface MobileSortBubbleProps {

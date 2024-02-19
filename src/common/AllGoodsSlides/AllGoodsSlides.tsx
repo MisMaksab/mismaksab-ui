@@ -1,5 +1,3 @@
-'use client'
-
 import React from "react";
 import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
 
@@ -28,10 +26,7 @@ export function AllGoodsSlides({ layout, slidesData }: any) {
               expireDateStr={slide.expireDateStr}
             />
           }
-          productId={slide.productId}
           isDisabled={slide.isDisabled}
-          addedToList={slide.addedToList}
-          addToList={slide.addToList}
           layout={layout}
         />
       ))}

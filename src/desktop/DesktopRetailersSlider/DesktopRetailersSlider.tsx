@@ -1,5 +1,3 @@
-'use client'
-
 import React from "react";
 import { DesktopSlider } from "../DesktopSlider/DesktopSlider";
 import { AllRetailersSlides } from "../../common/AllRetailersSlides/AllRetailersSlides";

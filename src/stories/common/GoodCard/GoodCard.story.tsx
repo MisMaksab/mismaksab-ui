@@ -58,10 +58,7 @@ export const GoodCardStory = (props: any) => {
             expireDateStr={expireDateStr}
           />
         }
-        productId="1"
         isDisabled={disabled}
-        addedToList={false}
-        addToList={() => null}
         layout={layout}
       />
       <br />

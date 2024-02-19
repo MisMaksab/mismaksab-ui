@@ -1,24 +1,18 @@
-'use client'
+import React from "react";
+import cn from "classnames";
 
-import React from 'react';
-import cn from 'classnames';
-
-import { button, yellow } from './styles';
+import { button, yellow } from "./styles";
 
 interface Props {
-  mode: "button" | "yellow", // TODO change modes
-  children: React.ReactNode,
+  mode: "button" | "yellow"; // TODO change modes
+  children: React.ReactNode;
 }
 
 const stylesMap = {
   yellow,
-  button
-}
+  button,
+};
 
-export function Button({mode, children}: Props) {
-  return (
-    <button className={cn(stylesMap[mode])}>
-        {children}
-    </button>
-  )
+export function Button({ mode, children }: Props) {
+  return <button className={cn(stylesMap[mode])}>{children}</button>;
 }

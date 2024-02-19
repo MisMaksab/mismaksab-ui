@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 import cn from "classnames";
@@ -15,14 +15,9 @@ import {
 interface Props {
   sideBarOpen?: boolean;
   placeHolderText?: string;
-  onChange: (value: string) => void;
 }
 
-export function SearchBar({
-  sideBarOpen = false,
-  placeHolderText,
-  onChange,
-}: Props) {
+export function SearchBar({ sideBarOpen = false, placeHolderText }: Props) {
   const [value, setValue] = React.useState("");
 
   // animation if input is clicked
@@ -31,7 +26,6 @@ export function SearchBar({
   const onChangeCb = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setValue(e.target.value);
-      onChange(e.target.value);
 
       if (e.target.value === "") {
         setShown(false);
@@ -39,7 +33,7 @@ export function SearchBar({
         setShown(true);
       }
     },
-    [onChange]
+    []
   );
 
   return (

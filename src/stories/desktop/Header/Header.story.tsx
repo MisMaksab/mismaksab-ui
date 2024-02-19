@@ -18,12 +18,7 @@ export const HeaderStory = () => (
         subtitle="Скидки в магазинах эстонии"
       />
     }
-    searchBar={
-      <SearchBar
-        onChange={(val: string) => null}
-        placeHolderText="Найти товар"
-      />
-    }
+    searchBar={<SearchBar placeHolderText="Найти товар" />}
     languages={
       <LanguageDropdown
         selectedLanguage="est"

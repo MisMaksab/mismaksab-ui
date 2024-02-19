@@ -1,8 +1,4 @@
-'use client'
-
 import React from "react";
-
-// fetch hook
 import { DesktopSlider } from "../DesktopSlider/DesktopSlider";
 import { AllGoodsSlides } from "../../common/AllGoodsSlides/AllGoodsSlides";
 
