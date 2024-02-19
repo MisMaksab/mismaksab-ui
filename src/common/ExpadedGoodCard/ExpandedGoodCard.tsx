@@ -1,5 +1,3 @@
-'use client'
-
 import React from "react";
 import cn from "classnames";
 import { MobileCN } from "../../styles";
@@ -28,22 +26,12 @@ import {
 } from "./styles";
 
 interface ExpandedGoodCardProps extends LayoutProp {
-  isDisabled: boolean;
-  productId: string;
-  discountUntil: number;
-  addedToList: boolean;
-  addToList: (productId: string) => void;
   header: React.ReactElement;
   footer: React.ReactElement;
 }
 
 export function ExpandedGoodCard({
-  isDisabled,
   layout,
-  productId,
-  discountUntil,
-  addedToList,
-  addToList,
   header,
   footer,
 }: ExpandedGoodCardProps) {

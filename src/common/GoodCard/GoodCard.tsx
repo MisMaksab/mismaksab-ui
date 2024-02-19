@@ -1,5 +1,3 @@
-'use client'
-
 import React from "react";
 import cn from "classnames";
 import { MobileCN } from "../../styles";
@@ -21,28 +19,19 @@ import {
 } from "./styles";
 
 interface GoodCardProps extends LayoutProp {
-  productId: string;
-  addedToList: boolean;
   isDisabled?: boolean;
   header: React.ReactElement;
   footer: React.ReactElement;
-  addToList: (productId: string) => void;
   isSmallMobile?: boolean;
 }
 
 export function GoodCard({
   layout,
-  productId,
-  addedToList,
   isDisabled = false,
-  addToList,
   header,
   footer,
   isSmallMobile = false,
 }: GoodCardProps) {
-  //   const onAddToList = useCallback(() => {
-  //     addToList(productId);
-  //   }, []);
   return (
     <div
       className={cn(goodCard, {

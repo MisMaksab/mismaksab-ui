@@ -1,5 +1,3 @@
-'use client'
-
 import React from "react";
 import instIcon from "../../assets/icons/footerInst.svg";
 import fbIcon from "../../assets/icons/footerFb.svg";

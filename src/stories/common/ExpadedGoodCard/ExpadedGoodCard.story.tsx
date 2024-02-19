@@ -34,8 +34,6 @@ export const ExpadnedGoodCardStory = (props: any) => {
     oldPrice,
     title,
     pricePerKilo,
-    discountUntil,
-    disabled,
     expireDateStr,
     unitType,
     goToRetailerText,
@@ -46,11 +44,6 @@ export const ExpadnedGoodCardStory = (props: any) => {
   return (
     <>
       <ExpandedGoodCard
-        discountUntil={discountUntil}
-        productId="1"
-        isDisabled={disabled}
-        addedToList={false}
-        addToList={() => null}
         layout={layout}
         header={
           <ExpandedGoodCardHeader
@@ -88,7 +81,6 @@ ExpadnedGoodCardStory.args = {
   title: "Корм собачий ORLANDO GOURVE, 3 кг",
   pricePerKilo: 1.43,
   discountUntil: 15.04,
-  disabled: false,
   expireDateStr: "Скидка до 18.07",
   unitType: "kg",
   goToRetailerText: "Перейти на сайт продавца",

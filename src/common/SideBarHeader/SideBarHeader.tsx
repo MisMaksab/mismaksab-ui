@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useEffect, useState } from "react";
 import cn from "classnames";
@@ -78,11 +78,7 @@ export function SideBarHeader({
               [active]: showSearchBar,
             })}
           >
-            <SearchBar
-              sideBarOpen={true}
-              onChange={(val: string) => null}
-              placeHolderText="Найти в MisMaksab"
-            />
+            <SearchBar sideBarOpen={true} placeHolderText="Найти в MisMaksab" />
           </div>
         )}
       </div>

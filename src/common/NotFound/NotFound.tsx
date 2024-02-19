@@ -1,5 +1,3 @@
-'use client'
-
 import React from "react";
 import { description, errorCN, link, name, svg } from "./styles";
 import NotFoundIcon from "../../assets/icons/404.svg";

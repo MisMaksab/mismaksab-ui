@@ -1,5 +1,3 @@
-'use client'
-
 import React from "react";
 import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
 import { LayoutProp } from "../LayoutProp";
@@ -7,7 +5,6 @@ import { goodCardsBlock } from "./styles";
 import cn from "classnames";
 import { MobileCN } from "../../styles";
 
-// TODO add proper interface
 interface GoodCardsBlockProps extends LayoutProp {
   data: any[];
 }
@@ -43,10 +40,7 @@ export function GoodCardsBlock({ data, layout }: GoodCardsBlockProps) {
               expireDateStr={card.expireDateStr}
             />
           }
-          productId="1"
           isDisabled={card.isDisabled}
-          addedToList={false}
-          addToList={() => null}
           layout={layout}
         />
       ))}

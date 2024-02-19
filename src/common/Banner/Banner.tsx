@@ -1,8 +1,25 @@
-'use client'
-
 import React from "react";
-// import cn from "classnames";
+import cn from "classnames";
 import { LayoutProp } from "../LayoutProp";
+import {
+  bannerCN,
+  bannerImg,
+  bannerText,
+  blue,
+  green,
+  imgCN,
+  linkCN,
+  textCN,
+  titleCN,
+  yellow,
+  MobileCN,
+} from "./styles";
+
+const stylesMap = {
+  blue,
+  yellow,
+  green,
+};
 
 interface BannerProps extends LayoutProp {
   mode: "blue" | "yellow" | "green";
@@ -23,19 +40,23 @@ export function Banner({
   img,
 }: BannerProps) {
   return (
-    <></>
-    // <div className={cn(styles.banner, styles[mode], styles[layout])}>
-    //   <div className={styles.bannerText}>
-    //     <span className={styles.title}>{title}</span>
-    //     <span className={styles.text}>{text}</span>
-    //     <a href={searchLink} className={styles.link}>
-    //       {searchText}
-    //     </a>
-    //   </div>
+    <div
+      className={cn(bannerCN, stylesMap[mode], {
+        [MobileCN]: layout === "mobile",
+      })}
+    >
+      <div className={bannerText}>
+        <span className={titleCN}>{title}</span>
+        <span className={textCN}>{text}</span>
+        <a href={searchLink} className={linkCN}>
+          {searchText}
+        </a>
+      </div>
 
-    //   <div className={styles.bannerImg}>
-    //     <img className={styles.img} src={img} />
-    //   </div>
-    // </div>
+      <div className={bannerImg}>
+        <img className={imgCN} src={img} />
+      </div>
+    </div>
   );
 }
+// styles[mode]

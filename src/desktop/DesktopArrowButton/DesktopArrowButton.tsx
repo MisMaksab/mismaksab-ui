@@ -1,8 +1,5 @@
-'use client'
-
 import cn from "classnames";
 import React from "react";
-
 import arrowSvg from "./../../assets/icons/slider_arrow.svg";
 import { arrowButton, shown, arrowButtonArrow, next, prev } from "./styles";
 
