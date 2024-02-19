@@ -19,6 +19,8 @@ export function MobileSideBarControls() {
         onChange={(val: string) => null}
         placeHolderText="Найти в MisMaksab"
         expandedByDefault={true}
+        showMoreText={"more"}
+        showLessText={"less"}
       />
       <LanguageDropdown
         layout="mobile"

@@ -3,7 +3,6 @@ export { FooterStory } from "./Footer/Footer.story";
 export { SliderStory } from "./Slider/Slider.story";
 export { RetailersSliderStory } from "./RetailerSlider/RetailerSlider.story";
 export { SideBarWrapperStory } from "./SideBarWrapper/SideBarWrapper.story";
-export { BubbleBlockStory } from "./BubbleBlock/BubbleBlock.story";
 export { SortStory } from "./Sort/Sort.story";
 export { PagePathStory } from "./PagePath/PagePath.story";
 export { PaginationStory } from "./Pagination/Pagination.story";
