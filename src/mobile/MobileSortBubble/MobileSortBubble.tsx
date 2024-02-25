@@ -1,27 +1,22 @@
 "use client";
 
 import React, { useCallback, useState } from "react";
-import { Bubble } from "../../common/Bubble/Bubble";
-import { MobileCheckboxPopup } from "../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
+import { Bubble, BubbleModeEnum } from "../../common/Bubble/Bubble";
+import {
+  MobileCheckboxPopup,
+  MobileCheckboxPopupTypeEnum,
+} from "../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
 import { sortBubble } from "./styles";
+import { MobilePopupModeEnum } from "mobile/MobilePopupModeEnum";
+import { DropdownItemInterface } from "common/DropdownItemInterface";
 
 interface MobileSortBubbleProps {
   bubbleText: string;
-  bubbleMode:
-    | "bubbleBlue"
-    | "bubbleGreen"
-    | "bubbleLightgreen"
-    | "bubbleLightblue"
-    | "bubbleOrange"
-    | "bubbleLightorange"
-    | "bubbleDisabled"
-    | "bubbleMobile"
-    | "bubbleMobileActive"
-    | "bubbleDesktopSort";
-  popupData: any[];
-  popupType: "single" | "multiple";
-  popupMode: "popupGreen" | "popupYellow" | "popupBlue" | "popupDefault";
-  onPopupChange: (val: any) => void;
+  bubbleMode: BubbleModeEnum;
+  popupData: DropdownItemInterface[];
+  popupType: MobileCheckboxPopupTypeEnum;
+  popupMode: MobilePopupModeEnum;
+  onPopupChange: (val: (null | string)[]) => void;
   popupDefaultOption?: string | null;
 }
 

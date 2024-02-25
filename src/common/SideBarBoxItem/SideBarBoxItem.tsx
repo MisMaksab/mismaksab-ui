@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useRef } from "react";
 import cn from "classnames";
@@ -23,26 +23,26 @@ import {
 } from "./styles";
 import { DesktopCN, MobileCN } from "../../styles";
 
-interface SideBarBoxItemDropdownData {
+export interface SideBarDropdownItem {
   title: string;
   link: string;
 }
 
+export interface SideBarItemDataProps {
+  svg: string;
+  title: string;
+  dropdownItems: SideBarDropdownItem[];
+  subSvg?: string;
+  link?: string;
+}
+
 interface SideBarBoxItemProps extends LayoutProp {
-  data: SideBarItemData;
+  data: SideBarItemDataProps;
   id: number;
   expandedId: number | null;
   onClick: (id: number) => void;
   isOpen?: boolean;
   onCategoryClick?: () => void;
-}
-
-interface SideBarItemData {
-  link: string;
-  svg: string;
-  subSvg: string;
-  title: string;
-  dropdownItems: SideBarBoxItemDropdownData[];
 }
 
 export function SideBarBoxItem({
@@ -55,10 +55,10 @@ export function SideBarBoxItem({
   onCategoryClick,
 }: SideBarBoxItemProps) {
   const isExpanded = expandedId === id;
-  const linkRef = useRef<any>(null);
+  const linkRef = useRef<HTMLAnchorElement | null>(null);
 
   function handleCategoryClick() {
-    if (linkRef.current.href) return false;
+    if (linkRef.current?.href) return false;
 
     if (!isOpen) {
       if (typeof onCategoryClick !== "undefined") {
@@ -110,7 +110,7 @@ export function SideBarBoxItem({
 }
 
 interface SideBarBoxItemSubItemsProps {
-  data: SideBarBoxItemDropdownData[];
+  data: Array<SideBarDropdownItem>;
   isExpanded: boolean;
 }
 
@@ -125,7 +125,7 @@ function SideBarBoxItemSubItems({
       })}
     >
       <div className={sideBarBoxItemDropdownContainer}>
-        {data.map((item: any) => (
+        {data.map((item) => (
           <div key={item.title} className={sideBarBoxItemDropdownItem}>
             <a className={link} href={`/category/${item.link}`}>
               {item.title}

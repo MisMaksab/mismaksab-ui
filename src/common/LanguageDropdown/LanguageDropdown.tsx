@@ -1,15 +1,17 @@
-'use client'
+"use client";
 
 import React, { useCallback, useState } from "react";
 import { MobileLinkPopup } from "../../mobile/MobileLinkPopup/MobileLinkPopup";
 import { YellowButton } from "../YellowButton/YellowButton";
 import { language } from "./styles";
 import { DesktopLanguageDropdownBox } from "../../desktop/DesktopLangurageDropdownBox/DesktopLanguageDropdownBox";
+import { LayoutProp } from "common/LayoutProp";
+import { DropdownItemInterface } from "common/DropdownItemInterface";
+import { MobilePopupModeEnum } from "mobile/MobilePopupModeEnum";
 
-interface LanguageDropdownProps {
+interface LanguageDropdownProps extends LayoutProp {
   selectedLanguage: string;
-  layout: "mobile" | "desktop";
-  data: { text: string; id: string; link: string }[];
+  data: DropdownItemInterface[];
 }
 
 export function LanguageDropdown({
@@ -44,7 +46,7 @@ export function LanguageDropdown({
 
       {layout === "mobile" && (
         <MobileLinkPopup
-          mode="popupDefault"
+          mode={MobilePopupModeEnum.popupDefault}
           title="Язык"
           data={data}
           active={activeSelection}

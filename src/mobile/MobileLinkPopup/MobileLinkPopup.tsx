@@ -16,22 +16,26 @@ import {
   popupDefault,
   popupYellow,
   markCN,
+  searchDefault,
 } from "../../mobile/MobileLinkPopup/styles";
+import { DropdownItemInterface } from "common/DropdownItemInterface";
+import { MobilePopupModeEnum } from "mobile/MobilePopupModeEnum";
 
 const stylesMap = {
   popupGreen,
   popupYellow,
   popupBlue,
   popupDefault,
+  searchDefault,
 };
 
 interface CalculateRadioBlockProps {
   selectedItem: number | string;
-  data: Array<{ id: string; text: string; link: string }>;
+  data: DropdownItemInterface[];
 }
 
 interface MobileLinkPopupProps extends CalculateRadioBlockProps {
-  mode: "popupGreen" | "popupYellow" | "popupBlue" | "popupDefault";
+  mode: MobilePopupModeEnum;
   active: boolean;
   title: string;
   hidePopupCb: () => void;

@@ -18,6 +18,22 @@ import {
   smallMobile,
 } from "./styles";
 
+export interface GoodCardDataProps {
+  id: number;
+  productImageURL: string;
+  retailerImageURL: string;
+  discount: number;
+  layout: string;
+  price: number;
+  oldPrice: number;
+  productTitle: string;
+  unitPrice: number;
+  unitType: string;
+  expireDateStr: string;
+  isDisabled: boolean;
+  isSmallMobile?: boolean;
+}
+
 interface GoodCardProps extends LayoutProp {
   isDisabled?: boolean;
   header: React.ReactElement;

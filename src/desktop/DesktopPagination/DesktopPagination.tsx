@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import cn from "classnames";
 import React, { useCallback, useState } from "react";
@@ -66,7 +66,17 @@ export function DesktopPagination({
   );
 }
 
-function CalculatePages({ currentPage, onClick, lastPageIndex }: any) {
+interface CalculatePagesProps {
+  currentPage: number;
+  onClick: (page: number) => void;
+  lastPageIndex: number;
+}
+
+function CalculatePages({
+  currentPage,
+  onClick,
+  lastPageIndex,
+}: CalculatePagesProps) {
   const pages = [];
   for (let i = 1; i <= lastPageIndex; i++) {
     pages.push(

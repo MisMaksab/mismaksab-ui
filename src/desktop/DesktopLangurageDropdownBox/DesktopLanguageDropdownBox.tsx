@@ -11,9 +11,10 @@ import {
   markCN,
   languageLink,
 } from "./styles";
+import { DropdownItemInterface } from "common/DropdownItemInterface";
 
 interface DesktopLanguageDropdownBoxProps {
-  data: Array<{ id: string; text: string; link: string }>;
+  data: DropdownItemInterface[];
   activeSelection: boolean;
   selectedLanguage: string;
 }

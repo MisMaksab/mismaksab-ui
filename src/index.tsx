@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 // Css variables
 // export * as variables from "./scss/variables.scss";
@@ -65,3 +65,16 @@ export { MobileSideBarControls } from "./mobile/MobileSideBarControls/MobileSide
 export { MobileSlider } from "./mobile/MobileSlider/MobileSlider";
 export { MobileSearchBar } from "./mobile/MobileSearchBar/MobileSearchBar";
 export { MobileSortBubble } from "./mobile/MobileSortBubble/MobileSortBubble";
+
+// common interface
+export { BubbleProps, BubbleModeEnum } from "./common/Bubble/Bubble";
+export { CloseCrossTypeEnum } from "./common/CloseCross/CloseCross";
+export { SideBarItemDataProps } from "./common/SideBarBoxItem/SideBarBoxItem";
+export { RetailerCardProps } from "./common/RetailerCard/RetailerCard";
+export { GoodCardDataProps } from "./common/GoodCard/GoodCard"; //!!!
+// desktop interface
+export { DesktopArrowButtonTypeEnum } from "./desktop/DesktopArrowButton/DesktopArrowButton";
+export { DesktopFooterLinkProps } from "./desktop/DesktopFooterLinks/DesktopFooterLinks";
+export { DesktopPagePathItemProps } from "./desktop/DesktopPagePath/DesktopPagePath";
+// mobile interface
+export { MobileCheckboxPopupTypeEnum } from "./mobile/MobileCheckboxPopup/MobileCheckboxPopup";

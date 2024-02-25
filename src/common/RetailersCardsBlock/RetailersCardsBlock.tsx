@@ -1,12 +1,12 @@
 import React from "react";
 import { MobileCN } from "../../styles";
 import cn from "classnames";
-import { RetailerCard } from "../RetailerCard/RetailerCard";
+import { RetailerCard, RetailerCardProps } from "../RetailerCard/RetailerCard";
 import { LayoutProp } from "../LayoutProp";
 import { retailersCardsBlock } from "./styles";
 
 interface RetailersCardsBlockProps extends LayoutProp {
-  data: any[];
+  data: RetailerCardProps[];
 }
 
 export function RetailersCardsBlock({
@@ -29,8 +29,8 @@ export function RetailersCardsBlock({
           offersText={card.offersText}
           layout={layout}
           isDisabled={card.isDisabled}
-          goToRetailerLink={card.goToRetailerLink || null}
-          goToRetailerText={card.goToRetailerText || null}
+          goToRetailerLink={card.goToRetailerLink}
+          goToRetailerText={card.goToRetailerText}
         />
       ))}
     </div>

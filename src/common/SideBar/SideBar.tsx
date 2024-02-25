@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useCallback, useState } from "react";
 import cn from "classnames";
@@ -8,25 +8,11 @@ import { SideBarBox } from "../SideBarBox/SideBarBox";
 import { LayoutProp } from "../LayoutProp";
 import { MobileCN } from "../../styles";
 import { sideBar, open } from "./styles";
+import { SideBarItemDataProps } from "common/SideBarBoxItem/SideBarBoxItem";
 
 interface SideBarProps extends LayoutProp {
   title: string;
-  data: (
-    | {
-        title: string;
-        svg: any;
-        subSvg: any;
-        link: string;
-        dropdownItems: never[];
-      }
-    | {
-        title: string;
-        svg: any;
-        dropdownItems: { title: string; link: string }[];
-        subSvg?: undefined;
-        link?: undefined;
-      }
-  )[];
+  data: SideBarItemDataProps[];
   isOpen: boolean;
   onCategoryClick: () => void;
 }
@@ -63,6 +49,7 @@ export function SideBar({
         onCategoryClick={onCategoryClick}
         isOpen={isOpen}
         changeExpandedIdCb={changeExpandedIdCb}
+        placeHolderText={"Найти в mismaksab"}
       />
       <SideBarBox
         layout={layout}

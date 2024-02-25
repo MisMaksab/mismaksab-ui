@@ -1,25 +1,15 @@
 "use client";
 
 import React, { useCallback, useState } from "react";
-import { Bubble } from "../Bubble/Bubble";
+import { Bubble, BubbleModeEnum, BubbleProps } from "../Bubble/Bubble";
 import { bubbleBlock, removePaddingTop } from "./styles";
 import { LayoutProp } from "common/LayoutProp";
 import cn from "classnames";
 
 interface BubbleBlockProps extends LayoutProp {
-  data: any[];
+  data: BubbleProps[];
   onClick: (id: string) => void;
-  activeBubbleMode:
-    | "bubbleBlue"
-    | "bubbleGreen"
-    | "bubbleLightgreen"
-    | "bubbleLightblue"
-    | "bubbleOrange"
-    | "bubbleLightorange"
-    | "bubbleDisabled"
-    | "bubbleMobile"
-    | "bubbleMobileActive"
-    | "bubbleDesktopSort";
+  activeBubbleMode: BubbleModeEnum;
   defaultSelectedBubble: string;
   noPaddingTop?: boolean;
 }
