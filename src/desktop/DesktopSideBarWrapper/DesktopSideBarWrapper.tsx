@@ -1,12 +1,13 @@
-'use client'
+"use client";
 
 import React, { useCallback, useState } from "react";
 import { SideBar } from "../../common/SideBar/SideBar";
 import cn from "classnames";
 import { sideBarWrapper, open } from "./styles";
+import { SideBarItemDataProps } from "common/SideBarBoxItem/SideBarBoxItem";
 
 interface DesktopSideBarWrapperProps {
-  data: any[];
+  data: SideBarItemDataProps[];
   title: string;
 }
 

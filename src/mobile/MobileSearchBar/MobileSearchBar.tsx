@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useCallback } from "react";
 import cn from "classnames";
@@ -22,10 +22,14 @@ import {
   searchPanelResultProducts,
 } from "./styles";
 import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
-import { CloseCross } from "../../common/CloseCross/CloseCross";
-import { Bubble } from "../../common/Bubble/Bubble";
+import {
+  CloseCross,
+  CloseCrossTypeEnum,
+} from "../../common/CloseCross/CloseCross";
+import { Bubble, BubbleModeEnum } from "../../common/Bubble/Bubble";
 import { BubbleBlock } from "../../common/BubbleBlock/BubbleBlock";
 import { GoodCardsBlock } from "../../common/GoodCardsBlock/GoodCardsBlock";
+import { MobilePopupModeEnum } from "mobile/MobilePopupModeEnum";
 
 const SEARCH_DATA = {
   categories: [
@@ -405,8 +409,8 @@ function SearchPanel({
             })}
           >
             <CloseCross
-              type="searchCross"
-              mode="searchDefault"
+              type={CloseCrossTypeEnum.searchCross}
+              mode={MobilePopupModeEnum.searchDefault}
               onClick={clearInputValueCb}
             />
           </div>
@@ -416,10 +420,10 @@ function SearchPanel({
         {/* implement no search results */}
         {SEARCH_DATA.categories.length >= 1 && !isBubblesExpanded && (
           <Bubble
-            mode="bubbleLightorange"
+            mode={BubbleModeEnum.bubbleLightorange}
             text={SEARCH_DATA.categories[0].name.rus}
-            onClick={function (val: any): void {
-              throw new Error("Function not implemented.");
+            onClick={(val) => {
+              val;
             }}
             layout="mobile"
           />
@@ -431,14 +435,14 @@ function SearchPanel({
             onClick={function (id: string): void {
               throw new Error("Function not implemented.");
             }}
-            activeBubbleMode={"bubbleOrange"}
+            activeBubbleMode={BubbleModeEnum.bubbleOrange}
             defaultSelectedBubble={""}
             layout={"mobile"}
           />
         )}
         {SEARCH_DATA.categories.length > 1 && (
           <Bubble
-            mode="bubbleLightorange"
+            mode={BubbleModeEnum.bubbleLightorange}
             isDropdown={true}
             isDropdownExpanded={isBubblesExpanded}
             text={isBubblesExpanded ? showLessText : showMoreText}
@@ -494,13 +498,3 @@ function goodsAdapter(data: any) {
 
   return arr;
 }
-
-// categories: [
-//   {
-//     path: "gingerbread-spice-mixture",
-//     name: {
-//       est: "Piparkoogimaitseaine",
-//       rus: "Приправа для пряного печенья",
-//       eng: "Gingerbread spice mixture",
-//     },
-//   },

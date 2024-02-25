@@ -20,22 +20,26 @@ import {
   bubbleMobileActive,
 } from "./styles";
 
-interface BubbleProps extends LayoutProp {
-  mode:
-    | "bubbleBlue"
-    | "bubbleGreen"
-    | "bubbleLightgreen"
-    | "bubbleLightblue"
-    | "bubbleOrange"
-    | "bubbleLightorange"
-    | "bubbleDisabled"
-    | "bubbleMobile"
-    | "bubbleMobileActive"
-    | "bubbleDesktopSort";
+export enum BubbleModeEnum {
+  bubbleBlue = "bubbleBlue",
+  bubbleGreen = "bubbleGreen",
+  bubbleLightgreen = "bubbleLightgreen",
+  bubbleLightblue = "bubbleLightblue",
+  bubbleOrange = "bubbleOrange",
+  bubbleLightorange = "bubbleLightorange",
+  bubbleDisabled = "bubbleDisabled",
+  bubbleMobile = "bubbleMobile",
+  bubbleMobileActive = "bubbleMobileActive",
+  bubbleDesktopSort = "bubbleDesktopSort",
+}
+
+export interface BubbleProps extends LayoutProp {
+  mode: BubbleModeEnum;
   text: string;
   onClick: (val: any) => void;
   isDropdown?: boolean;
   isDropdownExpanded?: boolean;
+  id?: number;
 }
 
 const modeStyle = {

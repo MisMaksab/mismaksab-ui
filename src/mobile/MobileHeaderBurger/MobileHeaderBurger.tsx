@@ -1,11 +1,9 @@
-'use client'
+"use client";
 
 import React, { useCallback, useState } from "react";
 import { LanguageDropdown } from "../../common/LanguageDropdown/LanguageDropdown";
 import { SideBar } from "../../common/SideBar/SideBar";
 import cn from "classnames";
-import VegetablesAndFruitsSvg from "../../assets/sideBarIcons/vegetablesAndFruits.svg";
-import SideBarItemArrow from "../../assets/sideBarIcons/sideBarItemArrow.svg";
 import {
   burger,
   burgerIcon,
@@ -20,63 +18,24 @@ import {
   open,
 } from "./styles";
 import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
+import { SideBarItemDataProps } from "common/SideBarBoxItem/SideBarBoxItem";
 
+// ПАШУ СПРОСИТЬ
 const LANGUAGES_ARR = [
   { text: "Estonian", id: "est", link: "/" },
   { text: "Russian", id: "rus", link: "/" },
   { text: "English", id: "eng", link: "/" },
 ];
-const sideBarData = [
-  {
-    title: "овощи",
-    svg: VegetablesAndFruitsSvg,
-    subSvg: SideBarItemArrow,
-    link: "/",
-    dropdownItems: [],
-  },
-  {
-    title: "фрукты",
-    svg: VegetablesAndFruitsSvg,
-    dropdownItems: [
-      {
-        title: "сливы",
-        link: "/",
-      },
-      {
-        title: "яблоко",
-        link: "/",
-      },
-      {
-        title: "груша",
-        link: "/",
-      },
-    ],
-  },
-  {
-    title: "мясо",
-    svg: VegetablesAndFruitsSvg,
-    dropdownItems: [
-      {
-        title: "сливы",
-        link: "/",
-      },
-      {
-        title: "яблоко",
-        link: "/",
-      },
-      {
-        title: "груша",
-        link: "/",
-      },
-    ],
-  },
-];
 
 interface MobileHeaderBurgerProps {
   title: string;
+  sideBarData: SideBarItemDataProps[];
 }
 
-export function MobileHeaderBurger({ title }: MobileHeaderBurgerProps) {
+export function MobileHeaderBurger({
+  title,
+  sideBarData,
+}: MobileHeaderBurgerProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const onShrinkClick = useCallback(() => {
     setIsMenuOpen((val) => !val);
@@ -94,6 +53,7 @@ export function MobileHeaderBurger({ title }: MobileHeaderBurgerProps) {
         title={title}
         isMenuOpen={isMenuOpen}
         onShrinkClick={onShrinkClick}
+        sideBarData={sideBarData}
       />
     </div>
   );
@@ -103,9 +63,15 @@ interface BurgerMenuProps {
   isMenuOpen: boolean;
   onShrinkClick: () => void;
   title: string;
+  sideBarData: SideBarItemDataProps[];
 }
 
-function BurgerMenu({ title, isMenuOpen, onShrinkClick }: BurgerMenuProps) {
+function BurgerMenu({
+  title,
+  isMenuOpen,
+  onShrinkClick,
+  sideBarData,
+}: BurgerMenuProps) {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const onCategoryClick = useCallback(() => {
     setIsCategoryOpen((val) => !val);

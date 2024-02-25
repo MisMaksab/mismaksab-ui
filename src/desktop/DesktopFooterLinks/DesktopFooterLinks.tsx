@@ -11,10 +11,15 @@ import {
   UsefulLinksSC,
 } from "./styles";
 
+export interface DesktopFooterLinkProps {
+  title: string;
+  link: string;
+}
+
 interface DesktopFooterLinksProps {
   instLink: string;
   fbLink: string;
-  usefulLinksArr: Array<{ title: string; link: string }>;
+  usefulLinksArr: DesktopFooterLinkProps[];
 }
 
 export function DesktopFooterLinks({

@@ -15,13 +15,14 @@ import {
 } from "./styles";
 import { MobileCN } from "../../styles";
 
-interface RetailerCardProps extends LayoutProp {
+export interface RetailerCardProps extends LayoutProp {
   retailerLink: string;
   retailerImageURL: string;
   discountText: string;
   retailer: string;
   offersText: string;
   isDisabled: boolean;
+  id?: number;
   goToRetailerLink?: string;
   goToRetailerText?: string;
 }

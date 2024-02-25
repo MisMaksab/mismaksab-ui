@@ -1,13 +1,21 @@
 import React from "react";
-import { RetailerCard } from "../RetailerCard/RetailerCard";
+import { RetailerCard, RetailerCardProps } from "../RetailerCard/RetailerCard";
+import { LayoutProp } from "common/LayoutProp";
 
-export function AllRetailersSlides({ layout, slidesData }: any) {
+interface AllRetailersSlidesProps extends LayoutProp {
+  slidesData: RetailerCardProps[];
+}
+
+export function AllRetailersSlides({
+  layout,
+  slidesData,
+}: AllRetailersSlidesProps) {
   return (
     <>
-      {slidesData.map((slide: any) => (
+      {slidesData.map((slide) => (
         <RetailerCard
           layout={layout}
-          key={slide.productId}
+          key={slide.id}
           retailerLink={slide.retailerLink}
           retailerImageURL={slide.retailerImageURL}
           discountText={slide.discountText}

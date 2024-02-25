@@ -4,15 +4,9 @@ import { MobileHeaderLogo } from "../../../mobile/MobileHeaderLogo/MobileHeaderL
 import { MobileHeaderBurger } from "../../../mobile/MobileHeaderBurger/MobileHeaderBurger";
 import { MobileSearchBar } from "../../../mobile/MobileSearchBar/MobileSearchBar";
 
-// const LANGUAGES_ARR = [
-//   { text: "Estonian", id: "est", link: "/" },
-//   { text: "Russian", id: "rus", link: "/" },
-//   { text: "English", id: "eng", link: "/" },
-// ];
-
 export const HeaderStory = () => (
   <MobileHeader
-    leftItem={<MobileHeaderBurger title={"Катего"} />}
+    leftItem={<MobileHeaderBurger title={"Катего"} sideBarData={[]} />}
     centerItem={<MobileHeaderLogo title="MisMaksab" />}
     rightItem={
       <MobileSearchBar

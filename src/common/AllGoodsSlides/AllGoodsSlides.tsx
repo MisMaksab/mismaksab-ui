@@ -1,12 +1,18 @@
 import React from "react";
 import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
+import { LayoutProp } from "common/LayoutProp";
+import { GoodCardDataProps } from "common/GoodCard/GoodCard";
 
-export function AllGoodsSlides({ layout, slidesData }: any) {
+interface AllGoodsSlidesProps extends LayoutProp {
+  slidesData: GoodCardDataProps[];
+}
+
+export function AllGoodsSlides({ layout, slidesData }: AllGoodsSlidesProps) {
   return (
     <>
-      {slidesData.map((slide: any) => (
+      {slidesData.map((slide) => (
         <GoodCard
-          key={slide.productId}
+          key={slide.id}
           header={
             <GoodCardHeader
               productImageURL={slide.productImageURL}

@@ -18,14 +18,15 @@ import {
   popupYellow,
   customCheckbox,
   hidden,
+  searchDefault,
 } from "../../mobile/MobileLinkPopup/styles";
+import { DropdownItemInterface } from "common/DropdownItemInterface";
+import { MobilePopupModeEnum } from "mobile/MobilePopupModeEnum";
 
-const stylesMap = {
-  popupGreen,
-  popupYellow,
-  popupBlue,
-  popupDefault,
-};
+export enum MobileCheckboxPopupTypeEnum {
+  single = "single",
+  multiple = "multiple",
+}
 
 interface MobileCheckboxPopupProps extends CalculateCheckboxBlockProps {
   active: boolean;
@@ -34,16 +35,24 @@ interface MobileCheckboxPopupProps extends CalculateCheckboxBlockProps {
 }
 
 interface CalculateCheckboxBlockProps {
-  type: "single" | "multiple";
+  type: MobileCheckboxPopupTypeEnum;
   handleSelectedItemsCb: (id: string) => void;
-  data: Array<{ id: string; text: string; link: string }>;
-  selectedItems: any[];
-  mode: "popupGreen" | "popupYellow" | "popupBlue" | "popupDefault";
+  data: DropdownItemInterface[];
+  selectedItems: (null | string)[];
+  mode: MobilePopupModeEnum;
   hidePopupCb: () => void;
 }
 
+const stylesMap = {
+  popupGreen,
+  popupYellow,
+  popupBlue,
+  popupDefault,
+  searchDefault,
+};
+
 export function MobileCheckboxPopup({
-  mode = "popupDefault",
+  mode = MobilePopupModeEnum.popupDefault,
   active,
   hidePopupCb,
   type,
@@ -93,9 +102,9 @@ function CalculateCheckboxBlock({
 
   return (
     <>
-      {data.map((option: any) => (
+      {data.map((option) => (
         <label
-          onClick={handleSingleOptionClick} //!!!!!
+          onClick={handleSingleOptionClick}
           htmlFor={option.id}
           key={option.id}
           className={cn(popupOption, {

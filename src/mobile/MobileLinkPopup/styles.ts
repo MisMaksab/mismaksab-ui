@@ -112,6 +112,12 @@ export const popupDefault = css`
   &.${bg} {background: ${fontColorDark};}
 `
 
+export const searchDefault = css`
+  &.${color} {color: ${fontColorDark};}
+  &.${border} {border-color: ${fontColorDark};}
+  &.${bg} {background: ${fontColorDark};}
+`
+
 export const hidden = css``
 
 export const customCheckbox = css`

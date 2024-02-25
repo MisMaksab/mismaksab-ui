@@ -1,8 +1,11 @@
-'use client'
+"use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 
-import { DesktopArrowButton } from "../DesktopArrowButton/DesktopArrowButton";
+import {
+  DesktopArrowButton,
+  DesktopArrowButtonTypeEnum,
+} from "../DesktopArrowButton/DesktopArrowButton";
 import { sliderWrapper, slider, sliderSlides, sliderBoxCN } from "./styles";
 
 interface DesktopSliderProps {
@@ -17,10 +20,8 @@ export function DesktopSlider({ children }: DesktopSliderProps) {
     sliderBox: 0,
     allSlides: 0,
   });
+  const sliderBox = useRef<HTMLDivElement | null>(null);
 
-  const sliderBox = useRef<HTMLDivElement | null>(null); //slides wrapper
-
-  // set widths function
   function setWidths() {
     setOffsetWidth({
       sliderBox: sliderBox?.current?.offsetWidth || 0,
@@ -28,7 +29,6 @@ export function DesktopSlider({ children }: DesktopSliderProps) {
     });
   }
 
-  // custom fetch hook
   useEffect(() => {
     setWidths();
     window.addEventListener("resize", setWidths);
@@ -38,26 +38,23 @@ export function DesktopSlider({ children }: DesktopSliderProps) {
     };
   }, []);
 
-  // change visibility of slider buttons
   useEffect(() => {
-    offset >= 0 ? setIsPrevBtnShown(false) : setIsPrevBtnShown(true); //show or disable prev slide button
+    offset >= 0 ? setIsPrevBtnShown(false) : setIsPrevBtnShown(true);
     offsetWidth.allSlides + offset - offsetWidth.sliderBox > 0
       ? setIsNextBtnShown(true)
-      : setIsNextBtnShown(false); //show or disable next slide button
+      : setIsNextBtnShown(false);
   }, [offsetWidth, offset]);
 
   const handleNextSlide = useCallback(() => {
     let newOffset = offset - offsetWidth.sliderBox;
-    const maxOffset = -Math.abs(offsetWidth.allSlides - offsetWidth.sliderBox); //max possible offset to right elem
-    // scroll to ending
-    if (newOffset < maxOffset) newOffset = maxOffset; //number are negative, so <
+    const maxOffset = -Math.abs(offsetWidth.allSlides - offsetWidth.sliderBox);
+    if (newOffset < maxOffset) newOffset = maxOffset;
 
     setOffset(newOffset);
   }, [offset, offsetWidth]);
 
   const handlePrevSlide = useCallback(() => {
     let newOffset = offset + offsetWidth.sliderBox;
-    // scroll to beginning
     if (newOffset > 0) newOffset = 0;
 
     setOffset(newOffset);
@@ -67,7 +64,7 @@ export function DesktopSlider({ children }: DesktopSliderProps) {
     <div className={sliderWrapper}>
       <div className={slider}>
         <DesktopArrowButton
-          type="prev"
+          type={DesktopArrowButtonTypeEnum.prev}
           isShown={isPrevBtnShown}
           onClick={handlePrevSlide}
         />
@@ -80,7 +77,7 @@ export function DesktopSlider({ children }: DesktopSliderProps) {
           </div>
         </div>
         <DesktopArrowButton
-          type="next"
+          type={DesktopArrowButtonTypeEnum.next}
           isShown={isNextBtnShown}
           onClick={handleNextSlide}
         />

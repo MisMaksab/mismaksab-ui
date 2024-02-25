@@ -1,9 +1,10 @@
 import React from "react";
 import { MobileSlider } from "../MobileSlider/MobileSlider";
 import { AllRetailersSlides } from "../../common/AllRetailersSlides/AllRetailersSlides";
+import { RetailerCardProps } from "common/RetailerCard/RetailerCard";
 
 interface MobileRetailersSliderProps {
-  slidesData: number[];
+  slidesData: RetailerCardProps[];
 }
 
 export function MobileRetailersSlider({

@@ -4,9 +4,10 @@ import { LayoutProp } from "../LayoutProp";
 import { goodCardsBlock } from "./styles";
 import cn from "classnames";
 import { MobileCN } from "../../styles";
+import { GoodCardDataProps } from "common/GoodCard/GoodCard";
 
 interface GoodCardsBlockProps extends LayoutProp {
-  data: any[];
+  data: GoodCardDataProps[];
 }
 
 export function GoodCardsBlock({ data, layout }: GoodCardsBlockProps) {
