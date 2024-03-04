@@ -20,8 +20,8 @@ import {
   hidden,
   searchDefault,
 } from "../../mobile/MobileLinkPopup/styles";
-import { DropdownItemInterface } from "common/DropdownItemInterface";
-import { MobilePopupModeEnum } from "mobile/MobilePopupModeEnum";
+import { DropdownItemInterface } from "../../common/DropdownItemInterface";
+import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
 
 export enum MobileCheckboxPopupTypeEnum {
   single = "single",

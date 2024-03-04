@@ -10,7 +10,7 @@ import {
   popup,
   searchDefault,
 } from "./styles";
-import { MobilePopupModeEnum } from "mobile/MobilePopupModeEnum";
+import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
 
 export enum CloseCrossTypeEnum {
   popup = "popup",

@@ -1,6 +1,6 @@
 import React from "react";
 import { BlockHeader } from "../../../common/BlockHeader/BlockHeader";
-import { DesktopSortDropdown } from "desktop/DesktopSortDropdown/DesktopSortDropdown";
+import { DesktopSortDropdown } from "../../../desktop/DesktopSortDropdown/DesktopSortDropdown";
 
 export const BlockHeaderStory = () => (
   <BlockHeader

@@ -1,4 +1,4 @@
-import { Banner } from "common/Banner/Banner";
+import { Banner } from "../../../common/Banner/Banner";
 import React from "react";
 
 export const BannerStory = () => (

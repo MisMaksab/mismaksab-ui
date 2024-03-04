@@ -69,7 +69,10 @@ export { MobileSortBubble } from "./mobile/MobileSortBubble/MobileSortBubble";
 // common interface
 export { BubbleProps, BubbleModeEnum } from "./common/Bubble/Bubble";
 export { CloseCrossTypeEnum } from "./common/CloseCross/CloseCross";
-export { SideBarItemDataProps } from "./common/SideBarBoxItem/SideBarBoxItem";
+export {
+  SideBarItemDataProps,
+  SideBarDropdownItemDataProps,
+} from "./common/SideBarBoxItem/SideBarBoxItem";
 export { RetailerCardProps } from "./common/RetailerCard/RetailerCard";
 export { GoodCardDataProps } from "./common/GoodCard/GoodCard"; //!!!
 // desktop interface

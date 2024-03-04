@@ -1,7 +1,7 @@
 import React from "react";
 import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
-import { LayoutProp } from "common/LayoutProp";
-import { GoodCardDataProps } from "common/GoodCard/GoodCard";
+import { LayoutProp } from "../../common/LayoutProp";
+import { GoodCardDataProps } from "../../common/GoodCard/GoodCard";
 
 interface AllGoodsSlidesProps extends LayoutProp {
   slidesData: GoodCardDataProps[];

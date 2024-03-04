@@ -18,7 +18,7 @@ import {
   open,
 } from "./styles";
 import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
-import { SideBarItemDataProps } from "common/SideBarBoxItem/SideBarBoxItem";
+import { SideBarItemDataProps } from "../../common/SideBarBoxItem/SideBarBoxItem";
 
 // ПАШУ СПРОСИТЬ
 const LANGUAGES_ARR = [

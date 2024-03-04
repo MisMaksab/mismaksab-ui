@@ -3,11 +3,11 @@
 import React, { useCallback, useState } from "react";
 import { Bubble, BubbleModeEnum, BubbleProps } from "../Bubble/Bubble";
 import { bubbleBlock, removePaddingTop } from "./styles";
-import { LayoutProp } from "common/LayoutProp";
+import { LayoutProp } from "../../common/LayoutProp";
 import cn from "classnames";
 
 interface BubbleBlockProps extends LayoutProp {
-  data: BubbleProps[];
+  data: BubbleProps[]; // ПАШУ СТПРОСИТЬ
   onClick: (id: string) => void;
   activeBubbleMode: BubbleModeEnum;
   defaultSelectedBubble: string;

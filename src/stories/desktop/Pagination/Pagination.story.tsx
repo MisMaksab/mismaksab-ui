@@ -1,4 +1,4 @@
-import { DesktopPagination } from "desktop/DesktopPagination/DesktopPagination";
+import { DesktopPagination } from "../../../desktop/DesktopPagination/DesktopPagination";
 import React from "react";
 
 export const PaginationStory = () => (

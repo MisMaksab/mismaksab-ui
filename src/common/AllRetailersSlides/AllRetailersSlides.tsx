@@ -1,6 +1,6 @@
 import React from "react";
 import { RetailerCard, RetailerCardProps } from "../RetailerCard/RetailerCard";
-import { LayoutProp } from "common/LayoutProp";
+import { LayoutProp } from "../../common/LayoutProp";
 
 interface AllRetailersSlidesProps extends LayoutProp {
   slidesData: RetailerCardProps[];

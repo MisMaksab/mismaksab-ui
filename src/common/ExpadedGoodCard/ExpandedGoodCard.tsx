@@ -25,6 +25,7 @@ import {
   discountCN,
 } from "./styles";
 
+// ПАШУ СПРОСИТЬ
 interface ExpandedGoodCardProps extends LayoutProp {
   header: React.ReactElement;
   footer: React.ReactElement;
