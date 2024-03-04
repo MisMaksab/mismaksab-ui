@@ -18,12 +18,11 @@ import {
   smallMobile,
 } from "./styles";
 
-export interface GoodCardDataProps {
+export interface GoodCardDataProps extends LayoutProp {
   id: number;
   productImageURL: string;
   retailerImageURL: string;
   discount: number;
-  layout: string;
   price: number;
   oldPrice: number;
   productTitle: string;
@@ -97,6 +96,7 @@ interface GoodCardFooterProps extends LayoutProp {
   unitPrice: number;
   unitType: string;
   expireDateStr: string;
+  id: number;
 }
 
 export function GoodCardFooter({
@@ -107,6 +107,7 @@ export function GoodCardFooter({
   unitType,
   layout,
   expireDateStr,
+  id,
 }: GoodCardFooterProps) {
   return (
     <div className={goodCardTextWrapper}>
@@ -114,7 +115,7 @@ export function GoodCardFooter({
         <span className={current}>{price}€</span>
         <span className={old}>{oldPrice}€</span>
       </div>
-      <a href="/" className={title}>
+      <a href={`/product/${id}`} className={title}>
         {productTitle}
       </a>
       {layout === "desktop" && (

@@ -14,7 +14,7 @@ export function DesktopRetailersSlider({
   return (
     <div className={retailersSlider}>
       <DesktopSlider>
-        <AllRetailersSlides layout="desktop" slidesData={slidesData} />
+        <AllRetailersSlides slidesData={slidesData} />
       </DesktopSlider>
     </div>
   );

@@ -10,7 +10,7 @@ interface MobileGoodsSliderProps {
 export function MobileGoodsSlider({ slidesData }: MobileGoodsSliderProps) {
   return (
     <MobileSlider>
-      <AllGoodsSlides layout="mobile" slidesData={slidesData} />
+      <AllGoodsSlides slidesData={slidesData} />
     </MobileSlider>
   );
 }
