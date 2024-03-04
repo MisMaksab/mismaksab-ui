@@ -19,7 +19,7 @@ import {
 } from "./styles";
 
 export interface GoodCardDataProps extends LayoutProp {
-  id: number;
+  id: string;
   productImageURL: string;
   retailerImageURL: string;
   discount: number;
@@ -63,7 +63,7 @@ export function GoodCard({
 
 interface GoodCardHeaderProps extends LayoutProp {
   productImageURL: string;
-  discount: number;
+  discount: number | undefined;
   retailerImageURL: string;
   isSmallMobile?: boolean;
 }
@@ -78,13 +78,15 @@ export function GoodCardHeader({
   return (
     <div className={goodCardImage}>
       <img className={retailerImg} src={productImageURL} />
-      <GoodCardDiscount
-        layout={layout}
-        expanded={false}
-        image={retailerImageURL}
-        discount={discount}
-        isSmallMobile={isSmallMobile}
-      />
+      {discount && (
+        <GoodCardDiscount
+          layout={layout}
+          expanded={false}
+          image={retailerImageURL}
+          discount={discount}
+          isSmallMobile={isSmallMobile}
+        />
+      )}
     </div>
   );
 }
@@ -95,8 +97,8 @@ interface GoodCardFooterProps extends LayoutProp {
   productTitle: string;
   unitPrice: number;
   unitType: string;
-  expireDateStr: string;
-  id: number;
+  expireDateStr: string | undefined;
+  id: string;
 }
 
 export function GoodCardFooter({
@@ -123,7 +125,7 @@ export function GoodCardFooter({
           {unitPrice}€/{unitType}
         </h4>
       )}
-      <h4 className={discountUntil}>{expireDateStr}</h4>
+      {expireDateStr && <h4 className={discountUntil}>{expireDateStr}</h4>}
     </div>
   );
 }
