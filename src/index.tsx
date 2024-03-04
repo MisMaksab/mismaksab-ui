@@ -81,3 +81,5 @@ export { DesktopFooterLinkProps } from "./desktop/DesktopFooterLinks/DesktopFoot
 export { DesktopPagePathItemProps } from "./desktop/DesktopPagePath/DesktopPagePath";
 // mobile interface
 export { MobileCheckboxPopupTypeEnum } from "./mobile/MobileCheckboxPopup/MobileCheckboxPopup";
+
+export { LayoutProp } from "./common/LayoutProp";

@@ -14,6 +14,9 @@ export const slider = css`
 
 export const sliderBoxCN = css`
   overflow: hidden;
+  margin: -7px 0;
+  padding: 7px 0;
+}
 `
 
 export const sliderSlides = css`

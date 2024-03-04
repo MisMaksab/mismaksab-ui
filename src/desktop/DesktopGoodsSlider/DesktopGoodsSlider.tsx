@@ -12,7 +12,7 @@ export function DesktopGoodsSlider({ slidesData }: DesktopGoodsSliderProps) {
   return (
     <div className={goodsSlider}>
       <DesktopSlider>
-        <AllGoodsSlides layout="desktop" slidesData={slidesData} />
+        <AllGoodsSlides slidesData={slidesData} />
       </DesktopSlider>
     </div>
   );

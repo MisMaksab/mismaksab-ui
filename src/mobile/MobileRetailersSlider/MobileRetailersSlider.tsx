@@ -12,7 +12,7 @@ export function MobileRetailersSlider({
 }: MobileRetailersSliderProps) {
   return (
     <MobileSlider>
-      <AllRetailersSlides layout="mobile" slidesData={slidesData} />
+      <AllRetailersSlides slidesData={slidesData} />
     </MobileSlider>
   );
 }
