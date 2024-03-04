@@ -1,5 +1,9 @@
 import React from "react";
-import { MobileCheckboxPopup } from "../../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
+import {
+  MobileCheckboxPopup,
+  MobileCheckboxPopupTypeEnum,
+} from "../../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
+import { MobilePopupModeEnum } from "../../../mobile/MobilePopupModeEnum";
 
 const LANGUAGES_ARR = [
   { text: "Estonian", id: "est", link: "/" },
@@ -11,12 +15,12 @@ export const PopupStory = () => (
   <MobileCheckboxPopup
     handleSelectedItemsCb={() => {}}
     selectedItems={["est"]}
-    mode="popupBlue"
+    mode={MobilePopupModeEnum.popupBlue}
     hidePopupCb={() => {}}
     title="Магазины"
     data={LANGUAGES_ARR}
     active={true}
-    type="multiple"
+    type={MobileCheckboxPopupTypeEnum.single}
   />
 );
 

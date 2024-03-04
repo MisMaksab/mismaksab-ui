@@ -29,7 +29,7 @@ import {
 import { Bubble, BubbleModeEnum } from "../../common/Bubble/Bubble";
 import { BubbleBlock } from "../../common/BubbleBlock/BubbleBlock";
 import { GoodCardsBlock } from "../../common/GoodCardsBlock/GoodCardsBlock";
-import { MobilePopupModeEnum } from "mobile/MobilePopupModeEnum";
+import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
 
 const SEARCH_DATA = {
   categories: [

@@ -23,7 +23,7 @@ import {
 } from "./styles";
 import { DesktopCN, MobileCN } from "../../styles";
 
-export interface SideBarDropdownItem {
+export interface SideBarDropdownItemDataProps {
   title: string;
   link: string;
 }
@@ -31,7 +31,7 @@ export interface SideBarDropdownItem {
 export interface SideBarItemDataProps {
   svg: string;
   title: string;
-  dropdownItems: SideBarDropdownItem[];
+  dropdownItems: SideBarDropdownItemDataProps[];
   subSvg?: string;
   link?: string;
 }
@@ -110,7 +110,7 @@ export function SideBarBoxItem({
 }
 
 interface SideBarBoxItemSubItemsProps {
-  data: Array<SideBarDropdownItem>;
+  data: Array<SideBarDropdownItemDataProps>;
   isExpanded: boolean;
 }
 

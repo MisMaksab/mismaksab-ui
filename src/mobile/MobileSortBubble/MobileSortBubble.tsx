@@ -7,8 +7,8 @@ import {
   MobileCheckboxPopupTypeEnum,
 } from "../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
 import { sortBubble } from "./styles";
-import { MobilePopupModeEnum } from "mobile/MobilePopupModeEnum";
-import { DropdownItemInterface } from "common/DropdownItemInterface";
+import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
+import { DropdownItemInterface } from "../../common/DropdownItemInterface";
 
 interface MobileSortBubbleProps {
   bubbleText: string;

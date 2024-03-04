@@ -8,7 +8,7 @@ import { SideBarBox } from "../SideBarBox/SideBarBox";
 import { LayoutProp } from "../LayoutProp";
 import { MobileCN } from "../../styles";
 import { sideBar, open } from "./styles";
-import { SideBarItemDataProps } from "common/SideBarBoxItem/SideBarBoxItem";
+import { SideBarItemDataProps } from "../../common/SideBarBoxItem/SideBarBoxItem";
 
 interface SideBarProps extends LayoutProp {
   title: string;

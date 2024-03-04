@@ -69,7 +69,7 @@ export function SideBarHeader({
         </h1>
         <div className={shrinkBtn}>
           <ShrinkButton
-            rotate={layout === "desktop" && isOpen}
+            rotate={layout === "desktop" && !isOpen}
             onClick={handleShrinkButtonClick}
           />
         </div>

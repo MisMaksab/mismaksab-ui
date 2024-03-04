@@ -5,9 +5,9 @@ import { MobileLinkPopup } from "../../mobile/MobileLinkPopup/MobileLinkPopup";
 import { YellowButton } from "../YellowButton/YellowButton";
 import { language } from "./styles";
 import { DesktopLanguageDropdownBox } from "../../desktop/DesktopLangurageDropdownBox/DesktopLanguageDropdownBox";
-import { LayoutProp } from "common/LayoutProp";
-import { DropdownItemInterface } from "common/DropdownItemInterface";
-import { MobilePopupModeEnum } from "mobile/MobilePopupModeEnum";
+import { LayoutProp } from "../../common/LayoutProp";
+import { DropdownItemInterface } from "../../common/DropdownItemInterface";
+import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
 
 interface LanguageDropdownProps extends LayoutProp {
   selectedLanguage: string;

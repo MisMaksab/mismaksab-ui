@@ -11,7 +11,7 @@ import {
   markCN,
   languageLink,
 } from "./styles";
-import { DropdownItemInterface } from "common/DropdownItemInterface";
+import { DropdownItemInterface } from "../../common/DropdownItemInterface";
 
 interface DesktopLanguageDropdownBoxProps {
   data: DropdownItemInterface[];

@@ -1,4 +1,4 @@
-import { NotFound } from "common/NotFound/NotFound";
+import { NotFound } from "../../../common/NotFound/NotFound";
 import React from "react";
 
 export const NotFoundStory = () => (
