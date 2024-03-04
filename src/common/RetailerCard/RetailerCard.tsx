@@ -18,7 +18,7 @@ import { MobileCN } from "../../styles";
 export interface RetailerCardProps extends LayoutProp {
   retailerLink: string;
   retailerImageURL: string;
-  discountText: string;
+  discountText: string | undefined;
   retailer: string;
   offersText: string;
   isDisabled: boolean;
@@ -53,7 +53,9 @@ export function RetailerCard({
       >
         <div className={retailerCardHeader}>
           <img className={retailerImage} src={retailerImageURL} />
-          <span className={discountTextCN}>{discountText}</span>
+          {discountText && (
+            <span className={discountTextCN}>{discountText}</span>
+          )}
         </div>
         <div className={retailerCardFooter}>
           <span className={retailerCN}>{retailer}</span>
