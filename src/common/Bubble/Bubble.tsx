@@ -36,10 +36,9 @@ export enum BubbleModeEnum {
 export interface BubbleProps extends LayoutProp {
   mode: BubbleModeEnum;
   text: string;
-  onClick: (val: any) => void;
+  onClick: () => void;
   isDropdown?: boolean;
   isDropdownExpanded?: boolean;
-  id?: number;
 }
 
 const modeStyle = {
@@ -64,7 +63,7 @@ export function Bubble({
 }: BubbleProps) {
   return (
     <span
-      onClick={() => onClick(text)}
+      onClick={onClick}
       className={cn(bubble, modeStyle[mode], applyTextMode, {
         [MobileCN]: layout === "mobile",
       })}

@@ -40,8 +40,9 @@ export const retailerCardFooter = css`
     padding: 0 33px 14px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     color: ${fontColorDark};
+    flex-grow: 2;
+    justify-content: flex-start;
 `;
 
 export const retailerCN = css`
@@ -76,6 +77,7 @@ export const retailerCardShopLink = css`
 `;
 
 export const retailerCard = css`
+    height: 100%;
     text-decoration: none;
     position: relative;
     min-height: ${desktopCardDimensions};

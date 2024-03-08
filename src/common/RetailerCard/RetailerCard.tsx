@@ -20,7 +20,7 @@ export interface RetailerCardProps extends LayoutProp {
   retailerImageURL: string;
   discountText: string | undefined;
   retailer: string;
-  offersText: string;
+  offersText: string | undefined;
   isDisabled: boolean;
   id?: number;
   goToRetailerLink?: string;
@@ -59,7 +59,7 @@ export function RetailerCard({
         </div>
         <div className={retailerCardFooter}>
           <span className={retailerCN}>{retailer}</span>
-          <span className={offers}>{offersText}</span>
+          {offersText && <span className={offers}>{offersText}</span>}
         </div>
       </a>
 

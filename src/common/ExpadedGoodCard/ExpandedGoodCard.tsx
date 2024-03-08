@@ -24,8 +24,25 @@ import {
   discountText,
   discountCN,
 } from "./styles";
+import { GoodCardDataProps } from "common/GoodCard/GoodCard";
 
-// ПАШУ СПРОСИТЬ
+export interface ProductProps extends LayoutProp {
+  productImageURL: string;
+  price: number;
+  oldPrice: number;
+  productTitle: string;
+  unitPrice: number;
+  unitType: string;
+  expireDateStr: string;
+  retailerImageURL: string;
+  goToRetailerLink: string;
+  goToRetailerText: string;
+  retailerCardImage: string;
+  discount: number;
+  discountConditionsText: string;
+  similarProducts: GoodCardDataProps[] | undefined;
+}
+
 interface ExpandedGoodCardProps extends LayoutProp {
   header: React.ReactElement;
   footer: React.ReactElement;
