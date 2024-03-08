@@ -22,13 +22,13 @@ export interface GoodCardDataProps extends LayoutProp {
   id: string;
   productImageURL: string;
   retailerImageURL: string;
-  discount: number;
+  discount: number | undefined;
   price: number;
   oldPrice: number;
   productTitle: string;
   unitPrice: number;
   unitType: string;
-  expireDateStr: string;
+  expireDateStr: string | undefined;
   isDisabled: boolean;
   isSmallMobile?: boolean;
 }

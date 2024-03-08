@@ -422,9 +422,7 @@ function SearchPanel({
           <Bubble
             mode={BubbleModeEnum.bubbleLightorange}
             text={SEARCH_DATA.categories[0].name.rus}
-            onClick={(val) => {
-              val;
-            }}
+            onClick={() => {}}
             layout="mobile"
           />
         )}
@@ -432,11 +430,10 @@ function SearchPanel({
           <BubbleBlock
             noPaddingTop={true}
             data={bubbleDataAdapter(SEARCH_DATA.categories)}
-            onClick={function (id: string): void {
+            onClick={function (): void {
               throw new Error("Function not implemented.");
             }}
             activeBubbleMode={BubbleModeEnum.bubbleOrange}
-            defaultSelectedBubble={""}
             layout={"mobile"}
           />
         )}
