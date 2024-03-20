@@ -6,16 +6,14 @@ import { bubbleBlock, removePaddingTop } from "./styles";
 import { LayoutProp } from "../../common/LayoutProp";
 import cn from "classnames";
 
-export interface BubbleDataProps extends LayoutProp {
+export interface BubbleBlockItemProps extends LayoutProp {
   mode: BubbleModeEnum;
   text: string;
   path: string;
-  isDropdown?: boolean;
-  isDropdownExpanded?: boolean;
 }
 
 interface BubbleBlockProps extends LayoutProp {
-  data: BubbleDataProps[];
+  data: BubbleBlockItemProps[];
   onClick: (val: string[]) => void;
   activeBubbleMode: BubbleModeEnum;
   noPaddingTop?: boolean;
@@ -27,9 +25,8 @@ export function BubbleBlock({
   activeBubbleMode,
   noPaddingTop = false,
 }: BubbleBlockProps) {
-  const calculateBubblesPaths: string[] = data.map((bubble) => bubble.path);
-  const [selectedBubblesPaths, setSelectedBubblesPaths] = useState(
-    calculateBubblesPaths
+  const [selectedBubblesPaths, setSelectedBubblesPaths] = useState<string[]>(
+    []
   );
   const changeActiveBubbleCb = useCallback(
     (val: string) => {
@@ -63,8 +60,6 @@ export function BubbleBlock({
           onClick={() => {
             changeActiveBubbleCb(bubbleData.path);
           }}
-          isDropdown={bubbleData.isDropdown}
-          isDropdownExpanded={bubbleData.isDropdownExpanded}
         />
       ))}
     </div>

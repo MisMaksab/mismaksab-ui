@@ -1,11 +1,11 @@
 import React from "react";
 import {
   BubbleBlock,
-  BubbleDataProps,
+  BubbleBlockItemProps,
 } from "../../../common/BubbleBlock/BubbleBlock";
 import { BubbleModeEnum } from "../../../common/Bubble/Bubble";
 
-const bubbleData: BubbleDataProps[] = [
+const bubbleData: BubbleBlockItemProps[] = [
   {
     mode: BubbleModeEnum.bubbleLightgreen,
     text: "Товары2",

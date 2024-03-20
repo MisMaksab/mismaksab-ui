@@ -24,10 +24,10 @@ export interface GoodCardDataProps extends LayoutProp {
   retailerImageURL: string;
   discount: number | undefined;
   price: number;
-  oldPrice: number;
+  oldPrice: number | undefined;
   productTitle: string;
-  unitPrice: number;
-  unitType: string;
+  unitPrice: number | undefined;
+  unitType: string | undefined;
   expireDateStr: string | undefined;
   isDisabled: boolean;
   isSmallMobile?: boolean;
@@ -78,25 +78,23 @@ export function GoodCardHeader({
   return (
     <div className={goodCardImage}>
       <img className={retailerImg} src={productImageURL} />
-      {discount && (
-        <GoodCardDiscount
-          layout={layout}
-          expanded={false}
-          image={retailerImageURL}
-          discount={discount}
-          isSmallMobile={isSmallMobile}
-        />
-      )}
+      <GoodCardDiscount
+        layout={layout}
+        expanded={false}
+        image={retailerImageURL}
+        discount={discount}
+        isSmallMobile={isSmallMobile}
+      />
     </div>
   );
 }
 
 interface GoodCardFooterProps extends LayoutProp {
   price: number;
-  oldPrice: number;
+  oldPrice: number | undefined;
   productTitle: string;
-  unitPrice: number;
-  unitType: string;
+  unitPrice: number | undefined;
+  unitType: string | undefined;
   expireDateStr: string | undefined;
   id: string;
 }
@@ -115,14 +113,14 @@ export function GoodCardFooter({
     <div className={goodCardTextWrapper}>
       <div className={cn(goodCardPrices, goodCardPrices)}>
         <span className={current}>{price}€</span>
-        <span className={old}>{oldPrice}€</span>
+        {oldPrice && <span className={old}>{oldPrice}€</span>}
       </div>
       <a href={`/product/${id}`} className={title}>
         {productTitle}
       </a>
       {layout === "desktop" && (
         <h4 className={pricePerKilo}>
-          {unitPrice}€/{unitType}
+          {unitPrice && unitType && `${unitPrice}€/${unitType}`}
         </h4>
       )}
       {expireDateStr && <h4 className={discountUntil}>{expireDateStr}</h4>}

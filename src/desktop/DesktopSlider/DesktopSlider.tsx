@@ -22,14 +22,14 @@ export function DesktopSlider({ children }: DesktopSliderProps) {
   });
   const sliderBox = useRef<HTMLDivElement | null>(null);
 
-  function setWidths() {
-    setOffsetWidth({
-      sliderBox: sliderBox?.current?.offsetWidth || 0,
-      allSlides: (sliderBox?.current?.children[0] as any)?.offsetWidth || 0,
-    });
-  }
-
   useEffect(() => {
+    function setWidths() {
+      setOffsetWidth({
+        sliderBox: sliderBox?.current?.offsetWidth || 0,
+        allSlides: (sliderBox?.current?.children[0] as any)?.offsetWidth || 0,
+      });
+    }
+
     setWidths();
     window.addEventListener("resize", setWidths);
 
