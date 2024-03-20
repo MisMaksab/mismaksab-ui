@@ -13,7 +13,7 @@ import {
 import { MobileCN } from "../../styles";
 
 interface GoodCardDiscountProps extends LayoutProp {
-  discount: number;
+  discount: number | undefined;
   image: string | null;
   expanded?: boolean;
   isSmallMobile?: boolean;
@@ -35,7 +35,7 @@ export function GoodCardDiscount({
         [smallMobile]: isSmallMobile,
       })}
     >
-      <div className={discountPercentage}>{discount}%</div>
+      {discount && <div className={discountPercentage}>{discount}%</div>}
 
       {image && (
         <div className={discountImage}>

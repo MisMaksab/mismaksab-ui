@@ -68,6 +68,7 @@ export { MobileSortBubble } from "./mobile/MobileSortBubble/MobileSortBubble";
 
 // common interface
 export { BubbleProps, BubbleModeEnum } from "./common/Bubble/Bubble";
+export { BubbleBlockItemProps } from "./common/BubbleBlock/BubbleBlock";
 export { CloseCrossTypeEnum } from "./common/CloseCross/CloseCross";
 export {
   SideBarItemDataProps,

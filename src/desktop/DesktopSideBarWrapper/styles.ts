@@ -15,4 +15,5 @@ export const sideBarWrapper = css`
 export const open = css`
   width: 100%;
   border-color: transparent;
+  box-shadow: 0px 0px 3px ${fontColorLight};
 `
