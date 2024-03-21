@@ -46,12 +46,6 @@ export const titleCN = css`
     font-weight: 400;
     line-height: 100%; /* 32px */
     margin: 0;
-
-    &.${active} {
-        transform: scale(1) translateY(-15px);
-        opacity: 1;
-        pointer-events: all;
-    }
 `;
 
 
@@ -64,19 +58,15 @@ export const sideBarHeader = css`
     &.${DesktopCN} {
         justify-content: flex-end;
     
-        .${titleCN}.${active} ~ .${shrinkBtn} {
-          padding-right: 30px;
-        }
-    
         .${titleCN} {
           left: 0;
           transition: .3s;
           pointer-events: none;
-          transform: scale(0);
+          transform: scale(0) translateY(15px);
           opacity: 0;
     
           &.${active} {
-            transform: scale(1) translateY(-15px);
+            transform: scale(1) translateY(0px);
             opacity: 1;
             pointer-events: all;
           }

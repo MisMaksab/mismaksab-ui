@@ -1,26 +1,39 @@
 import React from "react";
-import { BubbleBlock } from "../../../common/BubbleBlock/BubbleBlock";
+import {
+  BubbleBlock,
+  BubbleBlockItemProps,
+} from "../../../common/BubbleBlock/BubbleBlock";
+import { BubbleModeEnum } from "../../../common/Bubble/Bubble";
 
-const bubbleData = [
-  { id: 0, mode: "bubbleGreen", text: "Товары1" },
-  { id: 1, mode: "bubbleGreen", text: "Товары2" },
-  { id: 2, mode: "bubbleGreen", text: "Товары3" },
-  { id: 3, mode: "bubbleGreen", text: "Товары4" },
-  { id: 4, mode: "bubbleGreen", text: "Товар5ы" },
-  { id: 5, mode: "bubbleGreen", text: "Товары7" },
-  { id: 6, mode: "bubbleGreen", text: "Товары8" },
-  { id: 7, mode: "bubbleGreen", text: "Товары9" },
+const bubbleData: BubbleBlockItemProps[] = [
+  {
+    mode: BubbleModeEnum.bubbleLightgreen,
+    text: "Товары2",
+    layout: "desktop",
+    path: "/1",
+  },
+  {
+    mode: BubbleModeEnum.bubbleLightgreen,
+    text: "Товары1",
+    layout: "desktop",
+    path: "/2",
+  },
+  {
+    mode: BubbleModeEnum.bubbleLightgreen,
+    text: "Товары4",
+    layout: "desktop",
+    path: "/3",
+  },
 ];
 
 export const BubbleBlockStory = () => (
   <BubbleBlock
-    layout="mobile"
+    layout="desktop"
     data={bubbleData}
     onClick={(val) => {
       console.log(val);
     }}
-    activeBubbleMode="bubbleLightgreen"
-    defaultSelectedBubble="Товары1"
+    activeBubbleMode={BubbleModeEnum.bubbleGreen}
   />
 );
 

@@ -20,20 +20,23 @@ import {
   bubbleMobileActive,
 } from "./styles";
 
-interface BubbleProps extends LayoutProp {
-  mode:
-    | "bubbleBlue"
-    | "bubbleGreen"
-    | "bubbleLightgreen"
-    | "bubbleLightblue"
-    | "bubbleOrange"
-    | "bubbleLightorange"
-    | "bubbleDisabled"
-    | "bubbleMobile"
-    | "bubbleMobileActive"
-    | "bubbleDesktopSort";
+export enum BubbleModeEnum {
+  bubbleBlue = "bubbleBlue",
+  bubbleGreen = "bubbleGreen",
+  bubbleLightgreen = "bubbleLightgreen",
+  bubbleLightblue = "bubbleLightblue",
+  bubbleOrange = "bubbleOrange",
+  bubbleLightorange = "bubbleLightorange",
+  bubbleDisabled = "bubbleDisabled",
+  bubbleMobile = "bubbleMobile",
+  bubbleMobileActive = "bubbleMobileActive",
+  bubbleDesktopSort = "bubbleDesktopSort",
+}
+
+export interface BubbleProps extends LayoutProp {
+  mode: BubbleModeEnum;
   text: string;
-  onClick: (val: any) => void;
+  onClick: () => void;
   isDropdown?: boolean;
   isDropdownExpanded?: boolean;
 }
@@ -60,7 +63,7 @@ export function Bubble({
 }: BubbleProps) {
   return (
     <span
-      onClick={() => onClick(text)}
+      onClick={onClick}
       className={cn(bubble, modeStyle[mode], applyTextMode, {
         [MobileCN]: layout === "mobile",
       })}

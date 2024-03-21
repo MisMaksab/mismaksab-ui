@@ -15,13 +15,14 @@ import {
 } from "./styles";
 import { MobileCN } from "../../styles";
 
-interface RetailerCardProps extends LayoutProp {
+export interface RetailerCardProps extends LayoutProp {
   retailerLink: string;
   retailerImageURL: string;
-  discountText: string;
+  discountText: string | undefined;
   retailer: string;
-  offersText: string;
+  offersText: string | undefined;
   isDisabled: boolean;
+  id?: number;
   goToRetailerLink?: string;
   goToRetailerText?: string;
 }
@@ -52,11 +53,13 @@ export function RetailerCard({
       >
         <div className={retailerCardHeader}>
           <img className={retailerImage} src={retailerImageURL} />
-          <span className={discountTextCN}>{discountText}</span>
+          {discountText && (
+            <span className={discountTextCN}>{discountText}</span>
+          )}
         </div>
         <div className={retailerCardFooter}>
           <span className={retailerCN}>{retailer}</span>
-          <span className={offers}>{offersText}</span>
+          {offersText && <span className={offers}>{offersText}</span>}
         </div>
       </a>
 

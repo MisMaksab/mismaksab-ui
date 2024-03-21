@@ -1,4 +1,4 @@
-import { MobileSearchBar } from "mobile/MobileSearchBar/MobileSearchBar";
+import { MobileSearchBar } from "../../../mobile/MobileSearchBar/MobileSearchBar";
 import React from "react";
 
 export const SearchBarStory = () => (

@@ -2,9 +2,10 @@ import React from "react";
 import { DesktopSlider } from "../DesktopSlider/DesktopSlider";
 import { AllRetailersSlides } from "../../common/AllRetailersSlides/AllRetailersSlides";
 import { retailersSlider } from "./styles";
+import { RetailerCardProps } from "../../common/RetailerCard/RetailerCard";
 
 interface DesktopRetailersSliderProps {
-  slidesData: any[];
+  slidesData: RetailerCardProps[];
 }
 
 export function DesktopRetailersSlider({
@@ -13,7 +14,7 @@ export function DesktopRetailersSlider({
   return (
     <div className={retailersSlider}>
       <DesktopSlider>
-        <AllRetailersSlides layout="desktop" slidesData={slidesData} />
+        <AllRetailersSlides slidesData={slidesData} />
       </DesktopSlider>
     </div>
   );

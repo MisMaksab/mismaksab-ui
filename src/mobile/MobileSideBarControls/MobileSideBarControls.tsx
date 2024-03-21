@@ -3,6 +3,7 @@ import { LanguageDropdown } from "../../common/LanguageDropdown/LanguageDropdown
 import { sideBarMobileControls } from "./styles";
 import { MobileSearchBar } from "../../mobile/MobileSearchBar/MobileSearchBar";
 
+// СПРОСИТЬ ПАШУ
 const LANGUAGES_ARR = [
   { text: "Estonian", id: "est", link: "/" },
   { text: "Russian", id: "rus", link: "/" },

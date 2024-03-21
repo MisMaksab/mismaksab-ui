@@ -3,8 +3,13 @@ import React from "react";
 import arrowSvg from "./../../assets/icons/slider_arrow.svg";
 import { arrowButton, shown, arrowButtonArrow, next, prev } from "./styles";
 
+export enum DesktopArrowButtonTypeEnum {
+  next = "next",
+  prev = "prev",
+}
+
 interface DesktopArrowButtonProps {
-  type: "next" | "prev";
+  type: DesktopArrowButtonTypeEnum;
   isShown: boolean;
   onClick: () => void;
 }

@@ -12,15 +12,16 @@ import {
   sideBarOpenCN,
 } from "./styles";
 
-interface Props {
+interface SearchBarProps {
   sideBarOpen?: boolean;
   placeHolderText?: string;
 }
 
-export function SearchBar({ sideBarOpen = false, placeHolderText }: Props) {
+export function SearchBar({
+  sideBarOpen = false,
+  placeHolderText,
+}: SearchBarProps) {
   const [value, setValue] = React.useState("");
-
-  // animation if input is clicked
   const [shown, setShown] = React.useState(false);
 
   const onChangeCb = React.useCallback(

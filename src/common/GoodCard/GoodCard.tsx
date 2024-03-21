@@ -18,6 +18,21 @@ import {
   smallMobile,
 } from "./styles";
 
+export interface GoodCardDataProps extends LayoutProp {
+  id: string;
+  productImageURL: string;
+  retailerImageURL: string;
+  discount: number | undefined;
+  price: number;
+  oldPrice: number | undefined;
+  productTitle: string;
+  unitPrice: number | undefined;
+  unitType: string | undefined;
+  expireDateStr: string | undefined;
+  isDisabled: boolean;
+  isSmallMobile?: boolean;
+}
+
 interface GoodCardProps extends LayoutProp {
   isDisabled?: boolean;
   header: React.ReactElement;
@@ -48,7 +63,7 @@ export function GoodCard({
 
 interface GoodCardHeaderProps extends LayoutProp {
   productImageURL: string;
-  discount: number;
+  discount: number | undefined;
   retailerImageURL: string;
   isSmallMobile?: boolean;
 }
@@ -76,11 +91,12 @@ export function GoodCardHeader({
 
 interface GoodCardFooterProps extends LayoutProp {
   price: number;
-  oldPrice: number;
+  oldPrice: number | undefined;
   productTitle: string;
-  unitPrice: number;
-  unitType: string;
-  expireDateStr: string;
+  unitPrice: number | undefined;
+  unitType: string | undefined;
+  expireDateStr: string | undefined;
+  id: string;
 }
 
 export function GoodCardFooter({
@@ -91,22 +107,23 @@ export function GoodCardFooter({
   unitType,
   layout,
   expireDateStr,
+  id,
 }: GoodCardFooterProps) {
   return (
     <div className={goodCardTextWrapper}>
       <div className={cn(goodCardPrices, goodCardPrices)}>
         <span className={current}>{price}€</span>
-        <span className={old}>{oldPrice}€</span>
+        {oldPrice && <span className={old}>{oldPrice}€</span>}
       </div>
-      <a href="/" className={title}>
+      <a href={`/product/${id}`} className={title}>
         {productTitle}
       </a>
       {layout === "desktop" && (
         <h4 className={pricePerKilo}>
-          {unitPrice}€/{unitType}
+          {unitPrice && unitType && `${unitPrice}€/${unitType}`}
         </h4>
       )}
-      <h4 className={discountUntil}>{expireDateStr}</h4>
+      {expireDateStr && <h4 className={discountUntil}>{expireDateStr}</h4>}
     </div>
   );
 }

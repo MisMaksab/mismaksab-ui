@@ -1,4 +1,4 @@
-import { DesktopSortDropdown } from "desktop/DesktopSortDropdown/DesktopSortDropdown";
+import { DesktopSortDropdown } from "../../../desktop/DesktopSortDropdown/DesktopSortDropdown";
 import React from "react";
 
 export const SortStory = () => (

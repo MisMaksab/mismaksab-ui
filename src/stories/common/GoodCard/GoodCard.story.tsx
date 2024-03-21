@@ -20,6 +20,7 @@ const RETAILER_IMG_URL: Record<string, string> = {
 
 export const GoodCardStory = (props: any) => {
   const {
+    id,
     layout,
     imageURL,
     discount,
@@ -55,6 +56,7 @@ export const GoodCardStory = (props: any) => {
             unitPrice={pricePerKilo}
             unitType={unitType}
             layout={layout}
+            id={id}
             expireDateStr={expireDateStr}
           />
         }
@@ -67,6 +69,7 @@ export const GoodCardStory = (props: any) => {
 };
 
 GoodCardStory.args = {
+  id: 1,
   imageURL: "https://www.selver.ee/img/800/800/resize/4/7/4740125000108.jpg",
   discount: 21,
   retailer: "selver",

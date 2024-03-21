@@ -1,4 +1,4 @@
-import { DesktopPagePath } from "desktop/DesktopPagePath/DesktopPagePath";
+import { DesktopPagePath } from "../../../desktop/DesktopPagePath/DesktopPagePath";
 import React from "react";
 
 export const PagePathStory = () => (

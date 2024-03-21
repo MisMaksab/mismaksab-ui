@@ -59,4 +59,3 @@ export function Banner({
     </div>
   );
 }
-// styles[mode]

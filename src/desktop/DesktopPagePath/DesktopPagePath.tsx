@@ -9,6 +9,7 @@ import {
 import { DesktopSortDropdown } from "../../desktop/DesktopSortDropdown/DesktopSortDropdown";
 import PagePathSVG from "../../assets/icons/desktopPagePath.svg";
 
+// ПАШУ СПРОСИТЬ
 const SORT_DATA = [
   { id: 0, text: "descending" },
   { id: 1, text: "ascending" },
@@ -16,8 +17,13 @@ const SORT_DATA = [
   { id: 3, text: "desc" },
 ];
 
+export interface DesktopPagePathItemProps {
+  link: string;
+  text: string;
+}
+
 interface DesktopPagePathProps {
-  data: any[];
+  data: DesktopPagePathItemProps[];
   onClick: (text: string) => void;
   sortCallback: (id: number) => void;
 }
@@ -41,7 +47,7 @@ export function DesktopPagePath({
 }
 
 interface PagePathProps {
-  data: any[];
+  data: DesktopPagePathItemProps[];
   onClick: (text: string) => void;
 }
 

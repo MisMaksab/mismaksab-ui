@@ -21,6 +21,7 @@ interface SideBarHeaderProps extends LayoutProp {
   isOpen: boolean;
   onCategoryClick: () => void;
   changeExpandedIdCb: (id: number | null) => void;
+  placeHolderText: string;
 }
 
 export function SideBarHeader({
@@ -29,6 +30,7 @@ export function SideBarHeader({
   isOpen,
   onCategoryClick,
   changeExpandedIdCb,
+  placeHolderText,
 }: SideBarHeaderProps) {
   const [showSearchBar, setShowSearchBar] = useState(true);
 
@@ -67,7 +69,7 @@ export function SideBarHeader({
         </h1>
         <div className={shrinkBtn}>
           <ShrinkButton
-            rotate={layout === "desktop" && isOpen}
+            rotate={layout === "desktop" && !isOpen}
             onClick={handleShrinkButtonClick}
           />
         </div>
@@ -78,7 +80,7 @@ export function SideBarHeader({
               [active]: showSearchBar,
             })}
           >
-            <SearchBar sideBarOpen={true} placeHolderText="Найти в MisMaksab" />
+            <SearchBar sideBarOpen={true} placeHolderText={placeHolderText} />
           </div>
         )}
       </div>

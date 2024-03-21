@@ -12,7 +12,7 @@ export const smoothOverflow = css`
         top: 0;
         bottom: 0;
         width: 30px;
-        background: linear-gradient(90deg,transparent 0%, rgba(255,255,255,.8) 60% ,white 100%);
+        background: linear-gradient(90deg,transparent 0%, rgba(255,255,255,.8) 60% ,white 85%);
         pointer-events:none;
     }
 `;

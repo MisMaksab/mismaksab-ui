@@ -1,18 +1,23 @@
 import React from "react";
 import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
+import { GoodCardDataProps } from "../../common/GoodCard/GoodCard";
 
-export function AllGoodsSlides({ layout, slidesData }: any) {
+interface AllGoodsSlidesProps {
+  slidesData: GoodCardDataProps[];
+}
+
+export function AllGoodsSlides({ slidesData }: AllGoodsSlidesProps) {
   return (
     <>
-      {slidesData.map((slide: any) => (
+      {slidesData.map((slide) => (
         <GoodCard
-          key={slide.productId}
+          key={slide.id}
           header={
             <GoodCardHeader
               productImageURL={slide.productImageURL}
               retailerImageURL={slide.retailerImageURL}
               discount={slide.discount}
-              layout={layout}
+              layout={slide.layout}
             />
           }
           footer={
@@ -22,12 +27,13 @@ export function AllGoodsSlides({ layout, slidesData }: any) {
               productTitle={slide.productTitle}
               unitPrice={slide.unitPrice}
               unitType={slide.unitType}
-              layout={layout}
+              layout={slide.layout}
               expireDateStr={slide.expireDateStr}
+              id={slide.id}
             />
           }
           isDisabled={slide.isDisabled}
-          layout={layout}
+          layout={slide.layout}
         />
       ))}
     </>

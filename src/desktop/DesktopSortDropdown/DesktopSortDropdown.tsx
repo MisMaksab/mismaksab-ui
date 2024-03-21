@@ -14,8 +14,13 @@ import {
   active,
 } from "./styles";
 
+export interface DesktopDropdownItemInterface {
+  id: number;
+  text: string;
+}
+
 interface DesktopLanguageDropdownProps {
-  data: any[];
+  data: DesktopDropdownItemInterface[];
   callback: (id: number) => void;
 }
 
@@ -52,7 +57,12 @@ export function DesktopSortDropdown({
   );
 }
 
-function DropdownButton({ data, selectedItem }: any) {
+interface DropdownButtonProps {
+  data: DesktopDropdownItemInterface[];
+  selectedItem: number;
+}
+
+function DropdownButton({ data, selectedItem }: DropdownButtonProps) {
   return (
     <div className={sortBtn}>
       {data[selectedItem].text}
@@ -73,7 +83,7 @@ function DropdownButton({ data, selectedItem }: any) {
 interface DropdownBoxProps {
   activeSelection: boolean;
   selectedItem: number;
-  data: any[];
+  data: DesktopDropdownItemInterface[];
   onClick: (id: number) => void;
 }
 
