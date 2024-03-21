@@ -76,6 +76,7 @@ export {
 } from "./common/SideBarBoxItem/SideBarBoxItem";
 export { RetailerCardProps } from "./common/RetailerCard/RetailerCard";
 export { GoodCardDataProps } from "./common/GoodCard/GoodCard"; //!!!
+export { ProductProps } from "./common/ExpadedGoodCard/ExpandedGoodCard";
 // desktop interface
 export { DesktopArrowButtonTypeEnum } from "./desktop/DesktopArrowButton/DesktopArrowButton";
 export { DesktopFooterLinkProps } from "./desktop/DesktopFooterLinks/DesktopFooterLinks";
