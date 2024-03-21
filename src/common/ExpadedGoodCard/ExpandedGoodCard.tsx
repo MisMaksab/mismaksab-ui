@@ -27,20 +27,22 @@ import {
 import { GoodCardDataProps } from "common/GoodCard/GoodCard";
 
 export interface ProductProps extends LayoutProp {
-  productImageURL: string;
-  price: number;
-  oldPrice: number;
-  productTitle: string;
-  unitPrice: number;
-  unitType: string;
-  expireDateStr: string;
-  retailerImageURL: string;
-  goToRetailerLink: string;
-  goToRetailerText: string;
-  retailerCardImage: string;
-  discount: number;
-  discountConditionsText: string;
-  similarProducts: GoodCardDataProps[] | undefined;
+  offer: {
+    productImageURL: string;
+    price: number;
+    oldPrice: number | undefined;
+    productTitle: string;
+    unitPrice: number | undefined;
+    unitType: string | undefined;
+    expireDateStr: string | undefined;
+    retailerImageURL: string;
+    goToRetailerLink: string;
+    goToRetailerText: string;
+    retailerCardImage: string;
+    discount: number | undefined;
+    discountConditionsText: string;
+  };
+  similarProducts: GoodCardDataProps[];
 }
 
 interface ExpandedGoodCardProps extends LayoutProp {
@@ -77,11 +79,11 @@ export function ExpandedGoodCard({
 interface ExpandedGoodCardHeaderProps {
   productImageURL: string;
   price: number;
-  oldPrice: number;
+  oldPrice: number | undefined;
   productTitle: string;
-  unitPrice: number;
-  unitType: string;
-  expireDateStr: string;
+  unitPrice: number | undefined;
+  unitType: string | undefined;
+  expireDateStr: string | undefined;
 }
 
 export function ExpandedGoodCardHeader({
@@ -100,14 +102,16 @@ export function ExpandedGoodCardHeader({
       </div>
 
       <div className={expandedGoodCardTextWrapper}>
-        <h4 className={discountUntil}>{expireDateStr}</h4>
+        {expireDateStr && <h4 className={discountUntil}>{expireDateStr}</h4>}
         <div className={expandedGoodCardPrices}>
           <span className={current}>{price}€</span>
-          <span className={old}>{oldPrice}€</span>
+          {oldPrice && <span className={old}>{oldPrice}€</span>}
         </div>
-        <h4 className={pricePerKilo}>
-          {unitPrice}€/{unitType}
-        </h4>
+        {unitPrice && unitType && (
+          <h4 className={pricePerKilo}>
+            {unitPrice}€/{unitType}
+          </h4>
+        )}
         <a href="/" className={title}>
           {productTitle}
         </a>
@@ -117,7 +121,7 @@ export function ExpandedGoodCardHeader({
 }
 
 interface ExpandedGoodCardFooterProps extends LayoutProp {
-  discount: number;
+  discount: number | undefined;
   retailerImageURL: string;
   goToRetailerText: string;
   goToRetailerLink: string;
