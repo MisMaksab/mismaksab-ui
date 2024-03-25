@@ -15,29 +15,34 @@ import {
 } from "./styles";
 
 export interface DesktopDropdownItemInterface {
-  id: number;
+  path: string;
   text: string;
 }
 
-interface DesktopLanguageDropdownProps {
+interface DesktopSortDropdownProps {
   data: DesktopDropdownItemInterface[];
-  callback: (id: number) => void;
+  onChange: (path: string) => void;
+  defaultSelectedSortOption: string;
 }
 
 export function DesktopSortDropdown({
   data,
-  callback,
-}: DesktopLanguageDropdownProps) {
+  onChange,
+  defaultSelectedSortOption,
+}: DesktopSortDropdownProps) {
   const [activeSelection, setActiveSelection] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(0);
+  const [selectedItem, setSelectedItem] = useState(defaultSelectedSortOption);
   const handleDropdownBoxItemClickCb = useCallback(
-    (id: number) => {
-      if (selectedItem === id) return;
-      setSelectedItem(id);
-      callback(id);
+    (path: string) => {
+      if (selectedItem === path) return;
+      setSelectedItem(path);
+      onChange(path);
     },
     [selectedItem]
   );
+
+  const selectedOptionData = data.find((item) => item.path === selectedItem);
+  const selectedOptionText = selectedOptionData ? selectedOptionData.text : "";
 
   return (
     <div
@@ -46,7 +51,7 @@ export function DesktopSortDropdown({
         setActiveSelection((val) => !val);
       }}
     >
-      <DropdownButton data={data} selectedItem={selectedItem} />
+      <DropdownButton text={selectedOptionText} />
       <DropdownBox
         data={data}
         onClick={handleDropdownBoxItemClickCb}
@@ -58,14 +63,13 @@ export function DesktopSortDropdown({
 }
 
 interface DropdownButtonProps {
-  data: DesktopDropdownItemInterface[];
-  selectedItem: number;
+  text: string;
 }
 
-function DropdownButton({ data, selectedItem }: DropdownButtonProps) {
+function DropdownButton({ text }: DropdownButtonProps) {
   return (
     <div className={sortBtn}>
-      {data[selectedItem].text}
+      {text}
       <div className={sortBtnSvg}>
         <div
           dangerouslySetInnerHTML={{ __html: DesktopSortSvg }}
@@ -82,9 +86,9 @@ function DropdownButton({ data, selectedItem }: DropdownButtonProps) {
 
 interface DropdownBoxProps {
   activeSelection: boolean;
-  selectedItem: number;
+  selectedItem: string;
   data: DesktopDropdownItemInterface[];
-  onClick: (id: number) => void;
+  onClick: (path: string) => void;
 }
 
 function DropdownBox({
@@ -98,10 +102,10 @@ function DropdownBox({
       {data.map((item) => (
         <li
           onClick={() => {
-            onClick(item.id);
+            onClick(item.path);
           }}
           className={cn(sortDropdownItem, {
-            [active]: selectedItem === item.id,
+            [active]: selectedItem === item.path,
           })}
         >
           {item.text}

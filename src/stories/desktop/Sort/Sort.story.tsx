@@ -4,14 +4,15 @@ import React from "react";
 export const SortStory = () => (
   <DesktopSortDropdown
     data={[
-      { id: 0, text: "descending" },
-      { id: 1, text: "ascending" },
-      { id: 2, text: "descending3" },
-      { id: 3, text: "desc" },
+      { path: "0", text: "descending" },
+      { path: "1", text: "ascending" },
+      { path: "2", text: "descending3" },
+      { path: "3", text: "desc" },
     ]}
-    callback={(id) => {
-      console.log(id);
+    onChange={(path) => {
+      console.log(path);
     }}
+    defaultSelectedSortOption={"0"}
   />
 );
 

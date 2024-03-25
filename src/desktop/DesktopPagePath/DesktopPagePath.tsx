@@ -1,21 +1,21 @@
 import React from "react";
-import {
-  pagePath,
-  pagePathContainer,
-  pagePathItem,
-  pagePathItemSVG,
-  pagePathItemWrapper,
-} from "./styles";
-import { DesktopSortDropdown } from "../../desktop/DesktopSortDropdown/DesktopSortDropdown";
-import PagePathSVG from "../../assets/icons/desktopPagePath.svg";
+// import {
+//   pagePath,
+//   pagePathContainer,
+//   pagePathItem,
+//   pagePathItemSVG,
+//   pagePathItemWrapper,
+// } from "./styles";
+// import { DesktopSortDropdown } from "../../desktop/DesktopSortDropdown/DesktopSortDropdown";
+// import PagePathSVG from "../../assets/icons/desktopPagePath.svg";
 
 // ПАШУ СПРОСИТЬ
-const SORT_DATA = [
-  { id: 0, text: "descending" },
-  { id: 1, text: "ascending" },
-  { id: 2, text: "descending3" },
-  { id: 3, text: "desc" },
-];
+// const SORT_DATA = [
+//   { path: "0", text: "descending" },
+//   { path: "1", text: "ascending" },
+//   { path: "2", text: "descending3" },
+//   { path: "3", text: "desc" },
+// ];
 
 export interface DesktopPagePathItemProps {
   link: string;
@@ -25,7 +25,7 @@ export interface DesktopPagePathItemProps {
 interface DesktopPagePathProps {
   data: DesktopPagePathItemProps[];
   onClick: (text: string) => void;
-  sortCallback: (id: number) => void;
+  sortCallback: (path: number) => void;
 }
 
 export function DesktopPagePath({
@@ -34,44 +34,46 @@ export function DesktopPagePath({
   sortCallback,
 }: DesktopPagePathProps) {
   return (
-    <div className={pagePathContainer}>
-      <PagePath onClick={onClick} data={data} />
-      <DesktopSortDropdown
-        data={SORT_DATA}
-        callback={(id) => {
-          sortCallback(id);
-        }}
-      />
-    </div>
+    // <div className={pagePathContainer}>
+    //   <PagePath onClick={onClick} data={data} />
+    //   <DesktopSortDropdown
+    //     data={SORT_DATA}
+    //     onChange={(path) => {
+    //       sortCallback(path);
+    //     }}
+    //     defaultSelectedSortOption={"0"}
+    //   />
+    // </div>
+    <></>
   );
 }
 
-interface PagePathProps {
-  data: DesktopPagePathItemProps[];
-  onClick: (text: string) => void;
-}
+// interface PagePathProps {
+//   data: DesktopPagePathItemProps[];
+//   onClick: (text: string) => void;
+// }
 
-function PagePath({ data, onClick }: PagePathProps) {
-  return (
-    <div className={pagePath}>
-      {data.map((item, id) => (
-        <div className={pagePathItemWrapper}>
-          <span
-            onClick={() => {
-              onClick(item.link);
-            }}
-            className={pagePathItem}
-          >
-            {item.text}
-          </span>
-          {id < data.length - 1 && (
-            <div
-              className={pagePathItemSVG}
-              dangerouslySetInnerHTML={{ __html: PagePathSVG }}
-            />
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
+// function PagePath({ data, onClick }: PagePathProps) {
+//   return (
+//     <div className={pagePath}>
+//       {data.map((item, id) => (
+//         <div className={pagePathItemWrapper}>
+//           <span
+//             onClick={() => {
+//               onClick(item.link);
+//             }}
+//             className={pagePathItem}
+//           >
+//             {item.text}
+//           </span>
+//           {id < data.length - 1 && (
+//             <div
+//               className={pagePathItemSVG}
+//               dangerouslySetInnerHTML={{ __html: PagePathSVG }}
+//             />
+//           )}
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
