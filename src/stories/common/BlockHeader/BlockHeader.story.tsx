@@ -11,12 +11,13 @@ export const BlockHeaderStory = () => (
     sortComponent={
       <DesktopSortDropdown
         data={[
-          { id: 0, text: "descending" },
-          { id: 1, text: "ascending" },
-          { id: 2, text: "descending3" },
-          { id: 3, text: "desc" },
+          { path: "0", text: "descending" },
+          { path: "1", text: "ascending" },
+          { path: "2", text: "descending3" },
+          { path: "3", text: "desc" },
         ]}
-        callback={() => {}}
+        onChange={() => {}}
+        defaultSelectedSortOption={""}
       />
     }
   />
