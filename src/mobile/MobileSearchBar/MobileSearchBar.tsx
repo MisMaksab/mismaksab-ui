@@ -435,6 +435,7 @@ function SearchPanel({
             }}
             activeBubbleMode={BubbleModeEnum.bubbleOrange}
             layout={"mobile"}
+            initialySelected={[]}
           />
         )}
         {SEARCH_DATA.categories.length > 1 && (

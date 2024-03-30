@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Bubble, BubbleModeEnum } from "../Bubble/Bubble";
 import { bubbleBlock, removePaddingTop } from "./styles";
 import { LayoutProp } from "../../common/LayoutProp";
@@ -17,33 +17,30 @@ interface BubbleBlockProps extends LayoutProp {
   onClick: (val: string[]) => void;
   activeBubbleMode: BubbleModeEnum;
   noPaddingTop?: boolean;
+  initialySelected: string[];
 }
 
 export function BubbleBlock({
   data,
   onClick,
   activeBubbleMode,
+  initialySelected,
   noPaddingTop = false,
 }: BubbleBlockProps) {
-  const [selectedBubblesPaths, setSelectedBubblesPaths] = useState<string[]>(
-    []
-  );
+  const [selectedBubblesPaths, setSelectedBubblesPaths] =
+    useState<string[]>(initialySelected);
   const changeActiveBubbleCb = useCallback(
     (val: string) => {
-      if (selectedBubblesPaths.includes(val)) {
-        setSelectedBubblesPaths(
-          selectedBubblesPaths.filter((bubble) => bubble != val)
-        );
-      } else {
-        setSelectedBubblesPaths([val, ...selectedBubblesPaths]);
-      }
+      setSelectedBubblesPaths((selectedBubblesPaths) => {
+        const updatedSelectedBubbles = selectedBubblesPaths.includes(val)
+          ? selectedBubblesPaths.filter((bubble) => bubble != val)
+          : [val, ...selectedBubblesPaths];
+        onClick(updatedSelectedBubbles);
+        return updatedSelectedBubbles;
+      });
     },
     [selectedBubblesPaths]
   );
-
-  useEffect(() => {
-    onClick(selectedBubblesPaths);
-  }, [selectedBubblesPaths]);
 
   return (
     <div className={cn(bubbleBlock, { [removePaddingTop]: noPaddingTop })}>
