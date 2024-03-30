@@ -11,9 +11,6 @@ export const PagePathStory = () => (
       { text: "text2", link: "/" },
       { text: "text3", link: "/" },
     ]}
-    sortCallback={(id) => {
-      console.log("sdf" + id);
-    }}
   />
 );
 

@@ -1,12 +1,6 @@
 import {css} from "@linaria/core";
 import { fontColorDark } from "../../styles";
 
-export const pagePathContainer = css`
-  display: flex;
-  justify-content: space-between;
-  gap: 0 30px;
-`
-
 export const pagePath = css`
   display: flex;
 `;

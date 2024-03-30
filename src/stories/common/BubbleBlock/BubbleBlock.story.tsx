@@ -34,6 +34,7 @@ export const BubbleBlockStory = () => (
       console.log(val);
     }}
     activeBubbleMode={BubbleModeEnum.bubbleGreen}
+    initialySelected={[]}
   />
 );
 
