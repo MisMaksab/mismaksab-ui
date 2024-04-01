@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSXElementConstructor, ReactElement } from "react";
 import cn from "classnames";
 import { YellowButton } from "../YellowButton/YellowButton";
 import { LayoutProp } from "../LayoutProp";
@@ -24,7 +24,7 @@ interface BlockHeaderProps extends LayoutProp {
   isTitleThin?: boolean;
   subTitle?: string | null;
   shrinkBtnEnabled?: boolean;
-  sortComponent?: React.ReactElement | null;
+  sortComponent?: ReactElement<any, string | JSXElementConstructor<any>> | null;
 }
 
 export function BlockHeader({
