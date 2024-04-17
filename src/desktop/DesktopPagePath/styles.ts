@@ -11,6 +11,7 @@ export const pagePathItemWrapper = css`
 `
 
 export const pagePathItem = css`
+  text-decoration: none;
   color: ${fontColorDark};
   font-size: 20px;
   font-weight: 400;

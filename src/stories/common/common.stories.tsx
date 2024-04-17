@@ -8,6 +8,7 @@ export { NotFoundStory } from "./404/404.story";
 export { ShrinkButtonStory } from "./ShrinkButton/ShrinkButton.story";
 export { BubbleBlockStory } from "./BubbleBlock/BubbleBlock.story";
 export { BannerStory } from "./Banner/Banner.story";
+export { LoaderStory } from "./Loader/Loader.story";
 
 export default {
   title: "Common",

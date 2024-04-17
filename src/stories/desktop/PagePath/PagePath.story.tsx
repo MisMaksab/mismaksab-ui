@@ -3,9 +3,6 @@ import React from "react";
 
 export const PagePathStory = () => (
   <DesktopPagePath
-    onClick={(id) => {
-      console.log(id);
-    }}
     data={[
       { text: "text1", link: "/" },
       { text: "text2", link: "/" },
