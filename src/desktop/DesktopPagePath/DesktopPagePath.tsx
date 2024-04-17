@@ -8,37 +8,30 @@ import {
 import PagePathSVG from "../../assets/icons/desktopPagePath.svg";
 
 export interface DesktopPagePathItemProps {
-  link: string;
+  link: string | undefined;
   text: string;
 }
 
 interface DesktopPagePathProps {
   data: DesktopPagePathItemProps[];
-  onClick: (text: string) => void;
 }
 
-export function DesktopPagePath({ data, onClick }: DesktopPagePathProps) {
-  return <PagePath onClick={onClick} data={data} />;
+export function DesktopPagePath({ data }: DesktopPagePathProps) {
+  return <PagePath data={data} />;
 }
 
 interface PagePathProps {
   data: DesktopPagePathItemProps[];
-  onClick: (text: string) => void;
 }
 
-function PagePath({ data, onClick }: PagePathProps) {
+function PagePath({ data }: PagePathProps) {
   return (
     <div className={pagePath}>
       {data.map((item, id) => (
         <div className={pagePathItemWrapper}>
-          <span
-            onClick={() => {
-              onClick(item.link);
-            }}
-            className={pagePathItem}
-          >
+          <a href={item.link && item.link} className={pagePathItem}>
             {item.text}
-          </span>
+          </a>
           {id < data.length - 1 && (
             <div
               className={pagePathItemSVG}

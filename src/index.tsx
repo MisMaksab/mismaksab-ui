@@ -37,6 +37,7 @@ export { SearchSvg } from "./common/SearchSvg/SearchSvg";
 export { YellowButton } from "./common/YellowButton/YellowButton";
 export { NotFound } from "./common/NotFound/NotFound";
 export { BubbleBlock } from "./common/BubbleBlock/BubbleBlock";
+export { Loader } from "./common/Loader/Loader";
 
 // Desktop
 export { DesktopArrowButton } from "./desktop/DesktopArrowButton/DesktopArrowButton";
