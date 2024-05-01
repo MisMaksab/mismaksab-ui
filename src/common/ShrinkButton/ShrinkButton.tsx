@@ -1,4 +1,4 @@
-import React from "react";
+;
 import SideBarHideSvg from "../../assets/icons/sideBarHide.svg";
 import { hide, rotateCN, svg } from "./styles";
 import cn from "classnames";

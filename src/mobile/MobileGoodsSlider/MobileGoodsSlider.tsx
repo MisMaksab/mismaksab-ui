@@ -1,4 +1,4 @@
-import React from "react";
+;
 import { MobileSlider } from "../MobileSlider/MobileSlider";
 import { AllGoodsSlides } from "../../common/AllGoodsSlides/AllGoodsSlides";
 import { GoodCardDataProps } from "../../common/GoodCard/GoodCard";

@@ -1,4 +1,4 @@
-import React from "react";
+;
 import cn from "classnames";
 import searchSvg from "../../assets/icons/search.svg";
 import { searchSvgContainer, header, searchSvgCN } from "./styles";

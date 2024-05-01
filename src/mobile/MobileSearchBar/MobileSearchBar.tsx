@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback } from "react";
+import  { useCallback, useState } from "react";
 import cn from "classnames";
 import searchSvg from "../../assets/icons/search.svg";
 import {
@@ -278,7 +278,7 @@ export function MobileSearchBar({
   showLessText,
   showMoreText,
 }: Props) {
-  const [shown, setShown] = React.useState(false);
+  const [shown, setShown] = useState(false);
   const handleChangeSearchPanelVisibilityCb = useCallback(() => {
     setShown((val) => !val);
   }, []);
@@ -369,10 +369,10 @@ function SearchPanel({
   showLessText,
   showMoreText,
 }: SearchPanelProps) {
-  const [value, setValue] = React.useState("");
-  const [isBubblesExpanded, setIsBubblesExpanded] = React.useState(false);
+  const [value, setValue] = useState("");
+  const [isBubblesExpanded, setIsBubblesExpanded] = useState(false);
 
-  const onChangeCb = React.useCallback(
+  const onChangeCb = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setValue(e.target.value);
       onChange(e.target.value);

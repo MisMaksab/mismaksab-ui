@@ -68,21 +68,22 @@ export { MobileSearchBar } from "./mobile/MobileSearchBar/MobileSearchBar";
 export { MobileSortBubble } from "./mobile/MobileSortBubble/MobileSortBubble";
 
 // common interface
-export { BubbleProps, BubbleModeEnum } from "./common/Bubble/Bubble";
-export { BubbleBlockItemProps } from "./common/BubbleBlock/BubbleBlock";
+export { BubbleModeEnum } from "./common/Bubble/Bubble";
+export type { BubbleProps } from "./common/Bubble/Bubble";
+export type { BubbleBlockItemProps } from "./common/BubbleBlock/BubbleBlock";
 export { CloseCrossTypeEnum } from "./common/CloseCross/CloseCross";
-export {
+export type {
   SideBarItemDataProps,
   SideBarDropdownItemDataProps,
 } from "./common/SideBarBoxItem/SideBarBoxItem";
-export { RetailerCardProps } from "./common/RetailerCard/RetailerCard";
-export { GoodCardDataProps } from "./common/GoodCard/GoodCard"; //!!!
-export { ProductProps } from "./common/ExpadedGoodCard/ExpandedGoodCard";
+export type { RetailerCardProps } from "./common/RetailerCard/RetailerCard";
+export type { GoodCardDataProps } from "./common/GoodCard/GoodCard"; //!!!
+export type { ProductProps } from "./common/ExpadedGoodCard/ExpandedGoodCard";
 // desktop interface
 export { DesktopArrowButtonTypeEnum } from "./desktop/DesktopArrowButton/DesktopArrowButton";
-export { DesktopFooterLinkProps } from "./desktop/DesktopFooterLinks/DesktopFooterLinks";
-export { DesktopPagePathItemProps } from "./desktop/DesktopPagePath/DesktopPagePath";
+export type { DesktopFooterLinkProps } from "./desktop/DesktopFooterLinks/DesktopFooterLinks";
+export type { DesktopPagePathItemProps } from "./desktop/DesktopPagePath/DesktopPagePath";
 // mobile interface
 export { MobileCheckboxPopupTypeEnum } from "./mobile/MobileCheckboxPopup/MobileCheckboxPopup";
 
-export { LayoutProp } from "./common/LayoutProp";
+export type { LayoutProp } from "./common/LayoutProp";

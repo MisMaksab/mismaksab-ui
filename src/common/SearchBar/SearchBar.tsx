@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+;
 import cn from "classnames";
 import searchSvg from "../../assets/icons/search.svg";
 import {
@@ -11,6 +11,7 @@ import {
   shownCN,
   sideBarOpenCN,
 } from "./styles";
+import { useCallback, useState } from "react";
 
 interface SearchBarProps {
   sideBarOpen?: boolean;
@@ -21,10 +22,10 @@ export function SearchBar({
   sideBarOpen = false,
   placeHolderText,
 }: SearchBarProps) {
-  const [value, setValue] = React.useState("");
-  const [shown, setShown] = React.useState(false);
+  const [value, setValue] = useState("");
+  const [shown, setShown] = useState(false);
 
-  const onChangeCb = React.useCallback(
+  const onChangeCb = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setValue(e.target.value);
 

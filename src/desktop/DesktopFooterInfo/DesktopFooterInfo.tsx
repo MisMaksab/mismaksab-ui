@@ -1,4 +1,4 @@
-import React from "react";
+;
 import { footerInfo, mail } from "./styles";
 
 interface DesktopFooterInfoProps {

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
+import  { useCallback, useState } from "react";
 import { MobileLinkPopup } from "../../mobile/MobileLinkPopup/MobileLinkPopup";
 import { YellowButton } from "../YellowButton/YellowButton";
 import { language } from "./styles";

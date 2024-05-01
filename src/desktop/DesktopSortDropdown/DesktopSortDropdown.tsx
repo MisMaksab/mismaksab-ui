@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
+import  { useCallback, useState } from "react";
 import cn from "classnames";
 import { dropdown, shown } from "../../desktop/DesktopDropdownBoxStyles";
 import DesktopSortSvg from "../../assets/icons/desktopSort.svg";

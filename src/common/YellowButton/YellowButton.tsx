@@ -1,4 +1,4 @@
-import React from "react";
+;
 import cn from "classnames";
 import { MobileCN } from "../../styles";
 import arrow from "../../assets/icons/arrow.svg";

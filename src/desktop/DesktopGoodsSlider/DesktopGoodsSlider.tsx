@@ -1,4 +1,4 @@
-import React from "react";
+;
 import { DesktopSlider } from "../DesktopSlider/DesktopSlider";
 import { AllGoodsSlides } from "../../common/AllGoodsSlides/AllGoodsSlides";
 import { goodsSlider } from "./styles";

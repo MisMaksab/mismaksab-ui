@@ -1,4 +1,4 @@
-import React, { JSXElementConstructor, ReactElement } from "react";
+import  { JSXElementConstructor, ReactElement } from "react";
 import cn from "classnames";
 import { YellowButton } from "../YellowButton/YellowButton";
 import { LayoutProp } from "../LayoutProp";

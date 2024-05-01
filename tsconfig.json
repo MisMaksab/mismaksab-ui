@@ -1,32 +1,17 @@
 {
-    "compilerOptions": {
-        "baseUrl": "./src",
-        "outDir": "lib",
-        "module": "esnext",
-        "moduleResolution": "node",
-        "target": "esnext",
-        "declaration": true,
-        "strict": true,
-        "removeComments": true,
-        "strictFunctionTypes": false,
-        "sourceMap": true,
-        "allowUnreachableCode": true,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "noUnusedLocals": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "allowSyntheticDefaultImports": true,
-        "jsx": "react"
-    },
-    "compileOnSave": false,
-    "include": [
-        "src",
-        "typings/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "dist",
-        "lib"
-    ]
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es2015",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "Node",
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "skipLibCheck": true,
+  },
+  "include": ["src"],
+  "exclude": ["**/*.stories.tsx", "**/stories/**/*"]
 }

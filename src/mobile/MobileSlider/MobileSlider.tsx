@@ -1,4 +1,4 @@
-import React from "react";
+;
 import { slider, sliderBox, sliderSlides } from "./styles";
 
 interface MobileSliderProps {

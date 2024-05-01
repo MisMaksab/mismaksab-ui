@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import cn from "classnames";
 import { LayoutProp } from "../LayoutProp";
 import { SearchBar } from "../SearchBar/SearchBar";

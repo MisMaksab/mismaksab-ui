@@ -1,4 +1,4 @@
-import React from "react";
+;
 import cn from "classnames";
 import { CloseCross } from "../../common/CloseCross/CloseCross";
 import {

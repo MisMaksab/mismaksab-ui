@@ -1,4 +1,4 @@
-import React from "react";
+;
 import cn from "classnames";
 import { MobileCN } from "../../styles";
 import { DesktopHeaderLogo } from "../../desktop/DesktopHeaderLogo/DesktopHeaderLogo";
@@ -24,7 +24,7 @@ import {
   discountText,
   discountCN,
 } from "./styles";
-import { GoodCardDataProps } from "common/GoodCard/GoodCard";
+import { GoodCardDataProps } from "../GoodCard/GoodCard";
 
 export interface ProductProps extends LayoutProp {
   offer: {

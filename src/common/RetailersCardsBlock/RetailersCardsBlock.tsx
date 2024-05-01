@@ -1,4 +1,4 @@
-import React from "react";
+;
 import { MobileCN } from "../../styles";
 import cn from "classnames";
 import { RetailerCard, RetailerCardProps } from "../RetailerCard/RetailerCard";

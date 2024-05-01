@@ -1,4 +1,4 @@
-import React from "react";
+;
 import cn from "classnames";
 import mark from "../../assets/icons/languageDropdownIcon.svg";
 import { CloseCross } from "../../common/CloseCross/CloseCross";

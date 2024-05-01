@@ -1,7 +1,7 @@
 "use client";
 
 import cn from "classnames";
-import React, { useCallback, useState } from "react";
+import  { useCallback, useState } from "react";
 import {
   pagination,
   paginationPrevPageBtn,

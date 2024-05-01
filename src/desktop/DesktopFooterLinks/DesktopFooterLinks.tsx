@@ -1,15 +1,14 @@
-import React from "react";
-import instIcon from "../../assets/icons/footerInst.svg";
-import fbIcon from "../../assets/icons/footerFb.svg";
-import {
-  FooterLinksSC,
-  SocialMediaItemImgSC,
-  SocialMediaItemSC,
-  SocialMediaSC,
-  UsefulLinksItemSC,
-  UsefulLinksLinkSC,
-  UsefulLinksSC,
-} from "./styles";
+// import instIcon from "../../assets/icons/footerInst.svg";
+// import fbIcon from "../../assets/icons/footerFb.svg";
+// import {
+//   FooterLinksSC,
+//   SocialMediaItemImgSC,
+//   SocialMediaItemSC,
+//   SocialMediaSC,
+//   UsefulLinksItemSC,
+//   UsefulLinksLinkSC,
+//   UsefulLinksSC,
+// } from "./styles";
 
 export interface DesktopFooterLinkProps {
   title: string;
@@ -28,25 +27,26 @@ export function DesktopFooterLinks({
   usefulLinksArr,
 }: DesktopFooterLinksProps) {
   return (
-    <FooterLinksSC>
-      <SocialMediaSC>
-        <SocialMediaItemSC href={instLink}>
-          <SocialMediaItemImgSC
-            dangerouslySetInnerHTML={{ __html: instIcon }}
-          />
-        </SocialMediaItemSC>
-        <SocialMediaItemSC href={fbLink}>
-          <SocialMediaItemImgSC dangerouslySetInnerHTML={{ __html: fbIcon }} />
-        </SocialMediaItemSC>
-      </SocialMediaSC>
+    // <FooterLinksSC>
+    //   <SocialMediaSC>
+    //     <SocialMediaItemSC href={instLink}>
+    //       <SocialMediaItemImgSC
+    //         dangerouslySetInnerHTML={{ __html: instIcon }}
+    //       />
+    //     </SocialMediaItemSC>
+    //     <SocialMediaItemSC href={fbLink}>
+    //       <SocialMediaItemImgSC dangerouslySetInnerHTML={{ __html: fbIcon }} />
+    //     </SocialMediaItemSC>
+    //   </SocialMediaSC>
 
-      <UsefulLinksSC>
-        {usefulLinksArr.map((el) => (
-          <UsefulLinksItemSC key={el.link}>
-            <UsefulLinksLinkSC href={el.link}>{el.title}</UsefulLinksLinkSC>
-          </UsefulLinksItemSC>
-        ))}
-      </UsefulLinksSC>
-    </FooterLinksSC>
+    //   <UsefulLinksSC>
+    //     {usefulLinksArr.map((el) => (
+    //       <UsefulLinksItemSC key={el.link}>
+    //         <UsefulLinksLinkSC href={el.link}>{el.title}</UsefulLinksLinkSC>
+    //       </UsefulLinksItemSC>
+    //     ))}
+    //   </UsefulLinksSC>
+    // </FooterLinksSC>
+    <div></div>
   );
 }

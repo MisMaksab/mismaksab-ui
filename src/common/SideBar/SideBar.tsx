@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
+import  { useCallback, useState } from "react";
 import cn from "classnames";
 
 import { SideBarHeader } from "../../common/SideBarHeader/SideBarHeader";

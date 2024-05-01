@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
+import  { useCallback, useState } from "react";
 import { Bubble, BubbleModeEnum } from "../Bubble/Bubble";
 import { bubbleBlock, removePaddingTop } from "./styles";
 import { LayoutProp } from "../../common/LayoutProp";
