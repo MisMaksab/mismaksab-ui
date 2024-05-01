@@ -1,8 +1,9 @@
-import  { JSXElementConstructor, ReactElement } from "react";
 import cn from "classnames";
-import { YellowButton } from "../YellowButton/YellowButton";
+import { JSXElementConstructor, ReactElement } from "react";
+import { MobileCN } from "../../styles";
 import { LayoutProp } from "../LayoutProp";
 import { ShrinkButton } from "../ShrinkButton/ShrinkButton";
+import { YellowButton } from "../YellowButton/YellowButton";
 import {
   blockHeader,
   blockHeaderGoBackBtn,
@@ -13,7 +14,6 @@ import {
   thin,
   titleCN,
 } from "./styles";
-import { MobileCN } from "../../styles";
 
 interface BlockHeaderProps extends LayoutProp {
   title?: string | null;

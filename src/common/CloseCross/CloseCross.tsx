@@ -1,16 +1,15 @@
-;
 import cn from "classnames";
+import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
 import {
-  popupGreen,
-  popupYellow,
+  cross,
+  popup,
   popupBlue,
   popupDefault,
-  cross,
+  popupGreen,
+  popupYellow,
   searchCross,
-  popup,
   searchDefault,
 } from "./styles";
-import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
 
 export enum CloseCrossTypeEnum {
   popup = "popup",

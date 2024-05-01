@@ -1,4 +1,3 @@
-import React from "react";
 import { wrapper, innerLoader, loader } from "../Loader/styles";
 
 export function Loader() {

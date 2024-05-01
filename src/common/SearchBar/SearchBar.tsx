@@ -1,7 +1,7 @@
 "use client";
 
-;
 import cn from "classnames";
+import { useCallback, useState } from "react";
 import searchSvg from "../../assets/icons/search.svg";
 import {
   search,
@@ -11,7 +11,6 @@ import {
   shownCN,
   sideBarOpenCN,
 } from "./styles";
-import { useCallback, useState } from "react";
 
 interface SearchBarProps {
   sideBarOpen?: boolean;

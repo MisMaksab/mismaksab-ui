@@ -1,7 +1,6 @@
-;
 import cn from "classnames";
 import searchSvg from "../../assets/icons/search.svg";
-import { searchSvgContainer, header, searchSvgCN } from "./styles";
+import { header, searchSvgCN, searchSvgContainer } from "./styles";
 
 interface SearchSvgProps {
   onClick?: () => void;

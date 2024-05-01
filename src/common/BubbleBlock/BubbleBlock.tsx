@@ -1,10 +1,10 @@
 "use client";
 
-import  { useCallback, useState } from "react";
+import cn from "classnames";
+import { useCallback, useState } from "react";
+import { LayoutProp } from "../../common/LayoutProp";
 import { Bubble, BubbleModeEnum } from "../Bubble/Bubble";
 import { bubbleBlock, removePaddingTop } from "./styles";
-import { LayoutProp } from "../../common/LayoutProp";
-import cn from "classnames";
 
 export interface BubbleBlockItemProps extends LayoutProp {
   mode: BubbleModeEnum;

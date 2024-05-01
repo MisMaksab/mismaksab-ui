@@ -1,20 +1,20 @@
 "use client";
 
-import  { useEffect, useState } from "react";
 import cn from "classnames";
+import { useEffect, useState } from "react";
+import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
+import { DesktopCN, MobileCN } from "../../styles";
 import { LayoutProp } from "../LayoutProp";
 import { SearchBar } from "../SearchBar/SearchBar";
-import { DesktopCN, MobileCN } from "../../styles";
 import {
+  active,
   fixedBlock,
+  open,
+  searchBar,
+  shrinkBtn,
   sideBarHeader,
   titleCN,
-  active,
-  shrinkBtn,
-  searchBar,
-  open,
 } from "./styles";
-import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
 
 interface SideBarHeaderProps extends LayoutProp {
   title: string;

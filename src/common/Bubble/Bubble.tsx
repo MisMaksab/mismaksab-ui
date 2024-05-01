@@ -1,23 +1,22 @@
-;
 import cn from "classnames";
+import BubbleArrowSvg from "../../assets/icons/bubble_arrow.svg";
 import { MobileCN } from "../../styles";
 import { LayoutProp } from "../LayoutProp";
-import BubbleArrowSvg from "../../assets/icons/bubble_arrow.svg";
 import {
   applyTextMode,
   bubble,
   bubbleArrow,
   bubbleBlue,
+  bubbleDesktopSort,
   bubbleDisabled,
   bubbleGreen,
-  bubbleLightorange,
   bubbleLightblue,
   bubbleLightgreen,
-  bubbleOrange,
-  rotate,
-  bubbleDesktopSort,
+  bubbleLightorange,
   bubbleMobile,
   bubbleMobileActive,
+  bubbleOrange,
+  rotate,
 } from "./styles";
 
 export enum BubbleModeEnum {

@@ -1,4 +1,3 @@
-;
 import { RetailerCard, RetailerCardProps } from "../RetailerCard/RetailerCard";
 
 interface AllRetailersSlidesProps {

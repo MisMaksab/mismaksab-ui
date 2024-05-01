@@ -2,6 +2,7 @@
 import cn from "classnames";
 import { LayoutProp } from "../LayoutProp";
 import {
+  MobileCN,
   bannerCN,
   bannerImg,
   bannerText,
@@ -12,7 +13,6 @@ import {
   textCN,
   titleCN,
   yellow,
-  MobileCN,
 } from "./styles";
 
 const stylesMap = {

@@ -1,9 +1,8 @@
-;
-import { description, errorCN, link, name, svg } from "./styles";
+import cn from "classnames";
 import NotFoundIcon from "../../assets/icons/404.svg";
 import { LayoutProp } from "../../common/LayoutProp";
-import cn from "classnames";
 import { MobileCN } from "../../styles";
+import { description, errorCN, link, name, svg } from "./styles";
 
 interface NotFoundProps extends LayoutProp {
   error: string;

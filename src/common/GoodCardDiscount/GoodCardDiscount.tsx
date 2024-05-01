@@ -1,16 +1,15 @@
-;
 import cn from "classnames";
+import { MobileCN } from "../../styles";
 import { LayoutProp } from "../LayoutProp";
 import {
   discountCN,
-  small,
-  discountPercentage,
   discountImage,
-  img,
+  discountPercentage,
   expandedCN,
+  img,
+  small,
   smallMobile,
 } from "./styles";
-import { MobileCN } from "../../styles";
 
 interface GoodCardDiscountProps extends LayoutProp {
   discount: number | undefined;

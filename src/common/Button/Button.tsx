@@ -1,6 +1,4 @@
-;
 import cn from "classnames";
-
 import { button, yellow } from "./styles";
 
 interface Props {

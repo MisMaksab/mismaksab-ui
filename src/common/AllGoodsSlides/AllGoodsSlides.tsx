@@ -1,6 +1,5 @@
-;
-import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
 import { GoodCardDataProps } from "../../common/GoodCard/GoodCard";
+import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
 
 interface AllGoodsSlidesProps {
   slidesData: GoodCardDataProps[];

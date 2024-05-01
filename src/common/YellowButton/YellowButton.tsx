@@ -1,7 +1,6 @@
-;
 import cn from "classnames";
-import { MobileCN } from "../../styles";
 import arrow from "../../assets/icons/arrow.svg";
+import { MobileCN } from "../../styles";
 import { LayoutProp } from "../LayoutProp";
 import { active, rotate, svg, title, yellowButton } from "./styles";
 

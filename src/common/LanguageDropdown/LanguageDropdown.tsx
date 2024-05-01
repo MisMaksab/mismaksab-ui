@@ -1,13 +1,13 @@
 "use client";
 
-import  { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
+import { DropdownItemInterface } from "../../common/DropdownItemInterface";
+import { LayoutProp } from "../../common/LayoutProp";
+import { DesktopLanguageDropdownBox } from "../../desktop/DesktopLangurageDropdownBox/DesktopLanguageDropdownBox";
 import { MobileLinkPopup } from "../../mobile/MobileLinkPopup/MobileLinkPopup";
+import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
 import { YellowButton } from "../YellowButton/YellowButton";
 import { language } from "./styles";
-import { DesktopLanguageDropdownBox } from "../../desktop/DesktopLangurageDropdownBox/DesktopLanguageDropdownBox";
-import { LayoutProp } from "../../common/LayoutProp";
-import { DropdownItemInterface } from "../../common/DropdownItemInterface";
-import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
 
 interface LanguageDropdownProps extends LayoutProp {
   selectedLanguage: string;

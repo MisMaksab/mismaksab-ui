@@ -1,8 +1,7 @@
-;
-import { MobileCN } from "../../styles";
 import cn from "classnames";
-import { RetailerCard, RetailerCardProps } from "../RetailerCard/RetailerCard";
+import { MobileCN } from "../../styles";
 import { LayoutProp } from "../LayoutProp";
+import { RetailerCard, RetailerCardProps } from "../RetailerCard/RetailerCard";
 import { retailersCardsBlock } from "./styles";
 
 interface RetailersCardsBlockProps extends LayoutProp {

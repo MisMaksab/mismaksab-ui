@@ -1,10 +1,9 @@
-;
+import cn from "classnames";
+import { GoodCardDataProps } from "../../common/GoodCard/GoodCard";
+import { MobileCN } from "../../styles";
 import { GoodCard, GoodCardFooter, GoodCardHeader } from "../GoodCard/GoodCard";
 import { LayoutProp } from "../LayoutProp";
 import { goodCardsBlock } from "./styles";
-import cn from "classnames";
-import { MobileCN } from "../../styles";
-import { GoodCardDataProps } from "../../common/GoodCard/GoodCard";
 
 interface GoodCardsBlockProps extends LayoutProp {
   data: GoodCardDataProps[];

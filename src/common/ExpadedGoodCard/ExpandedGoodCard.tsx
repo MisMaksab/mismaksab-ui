@@ -1,30 +1,29 @@
-;
 import cn from "classnames";
-import { MobileCN } from "../../styles";
 import { DesktopHeaderLogo } from "../../desktop/DesktopHeaderLogo/DesktopHeaderLogo";
+import { MobileCN } from "../../styles";
+import { GoodCardDataProps } from "../GoodCard/GoodCard";
 import { GoodCardDiscount } from "../GoodCardDiscount/GoodCardDiscount";
 import { LayoutProp } from "../LayoutProp";
 import {
+  current,
+  discountCN,
+  discountText,
+  discountUntil,
   expandedGoodCard,
   expandedGoodCardLogo,
   expandedGoodCardMainInfo,
-  productImage,
-  img,
-  expandedGoodCardTextWrapper,
-  discountUntil,
   expandedGoodCardPrices,
-  current,
+  expandedGoodCardSecondaryInfo,
+  expandedGoodCardTextWrapper,
+  img,
   old,
   pricePerKilo,
-  title,
-  expandedGoodCardSecondaryInfo,
+  productImage,
   retailer,
   retailerImage,
   retailerText,
-  discountText,
-  discountCN,
+  title,
 } from "./styles";
-import { GoodCardDataProps } from "../GoodCard/GoodCard";
 
 export interface ProductProps extends LayoutProp {
   offer: {

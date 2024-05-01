@@ -1,13 +1,12 @@
 "use client";
 
-;
 import cn from "classnames";
 import { MobileCN } from "../../styles";
+import { LayoutProp } from "../LayoutProp";
 import {
   SideBarBoxItem,
   SideBarItemDataProps,
 } from "../SideBarBoxItem/SideBarBoxItem";
-import { LayoutProp } from "../LayoutProp";
 import { sideBarBox, smoothOverflow } from "./styles";
 
 interface SideBarBoxInterFace extends LayoutProp {

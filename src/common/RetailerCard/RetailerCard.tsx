@@ -1,19 +1,18 @@
-;
 import cn from "classnames";
+import { MobileCN } from "../../styles";
 import { LayoutProp } from "../LayoutProp";
 import {
-  retailerCardWrapper,
-  retailerCard,
   disabled,
-  retailerCardHeader,
-  retailerImage,
-  retailerCardFooter,
-  offers,
-  retailerCardShopLink,
-  retailerCN,
   discountTextCN,
+  offers,
+  retailerCN,
+  retailerCard,
+  retailerCardFooter,
+  retailerCardHeader,
+  retailerCardShopLink,
+  retailerCardWrapper,
+  retailerImage,
 } from "./styles";
-import { MobileCN } from "../../styles";
 
 export interface RetailerCardProps extends LayoutProp {
   retailerLink: string;

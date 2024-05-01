@@ -1,13 +1,12 @@
-;
 import cn from "classnames";
 import { MobileCN } from "../../styles";
 import { LayoutProp } from "../LayoutProp";
 import {
+  centeredCN,
   serviceBlock,
-  serviceBlockTitle,
   serviceBlockContent,
   serviceBlockParagraph,
-  centeredCN,
+  serviceBlockTitle,
 } from "./styles";
 
 interface ServiceBlockProps extends LayoutProp {

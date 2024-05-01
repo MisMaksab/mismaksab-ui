@@ -1,21 +1,20 @@
-;
 import cn from "classnames";
 import { MobileCN } from "../../styles";
-import { LayoutProp } from "../LayoutProp";
 import { GoodCardDiscount } from "../GoodCardDiscount/GoodCardDiscount";
+import { LayoutProp } from "../LayoutProp";
 import {
-  goodCard,
-  disabled,
-  goodCardImage,
-  retailerImg,
-  goodCardTextWrapper,
-  goodCardPrices,
   current,
-  old,
-  title,
-  pricePerKilo,
+  disabled,
   discountUntil,
+  goodCard,
+  goodCardImage,
+  goodCardPrices,
+  goodCardTextWrapper,
+  old,
+  pricePerKilo,
+  retailerImg,
   smallMobile,
+  title,
 } from "./styles";
 
 export interface GoodCardDataProps extends LayoutProp {
