@@ -1,16 +1,18 @@
-import React from 'react'
-import { MobileSlider } from '../MobileSlider/MobileSlider';
-import { AllRetailersSlides } from '../../common/AllRetailersSlides/AllRetailersSlides';
+;
+import { MobileSlider } from "../MobileSlider/MobileSlider";
+import { AllRetailersSlides } from "../../common/AllRetailersSlides/AllRetailersSlides";
+import { RetailerCardProps } from "../../common/RetailerCard/RetailerCard";
 
-// TODO here should be normal type instead number
 interface MobileRetailersSliderProps {
-  slidesData: number[];
+  slidesData: RetailerCardProps[];
 }
 
-export function MobileRetailersSlider({slidesData}: MobileRetailersSliderProps) {
+export function MobileRetailersSlider({
+  slidesData,
+}: MobileRetailersSliderProps) {
   return (
     <MobileSlider>
-      <AllRetailersSlides slidesData={slidesData}/>
+      <AllRetailersSlides slidesData={slidesData} />
     </MobileSlider>
-  )
+  );
 }

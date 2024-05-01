@@ -1,19 +1,21 @@
-import React from 'react'
-import styles from './DesktopRetailersSlider.scss';
-import { DesktopSlider } from '../DesktopSlider/DesktopSlider';
-import { AllRetailersSlides } from '../../common/AllRetailersSlides/AllRetailersSlides';
-
+;
+import { DesktopSlider } from "../DesktopSlider/DesktopSlider";
+import { AllRetailersSlides } from "../../common/AllRetailersSlides/AllRetailersSlides";
+import { retailersSlider } from "./styles";
+import { RetailerCardProps } from "../../common/RetailerCard/RetailerCard";
 
 interface DesktopRetailersSliderProps {
-  slidesData: number[];
+  slidesData: RetailerCardProps[];
 }
 
-export function DesktopRetailersSlider({slidesData}: DesktopRetailersSliderProps) {
+export function DesktopRetailersSlider({
+  slidesData,
+}: DesktopRetailersSliderProps) {
   return (
-    <div className={styles.retailersSlider}>
+    <div className={retailersSlider}>
       <DesktopSlider>
-        <AllRetailersSlides slidesData={slidesData}/>
+        <AllRetailersSlides slidesData={slidesData} />
       </DesktopSlider>
     </div>
-  )
+  );
 }

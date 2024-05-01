@@ -1,15 +1,29 @@
-import React from 'react'
-import styles from './ReatailerCard.scss'
-import cn from 'classnames';
-import { LayoutProp } from '../LayoutProp';
+import cn from "classnames";
+import { MobileCN } from "../../styles";
+import { LayoutProp } from "../LayoutProp";
+import {
+  disabled,
+  discountTextCN,
+  offers,
+  retailerCN,
+  retailerCard,
+  retailerCardFooter,
+  retailerCardHeader,
+  retailerCardShopLink,
+  retailerCardWrapper,
+  retailerImage,
+} from "./styles";
 
-interface RetailerCardProps extends LayoutProp{
+export interface RetailerCardProps extends LayoutProp {
   retailerLink: string;
   retailerImageURL: string;
-  discountText: string;
+  discountText: string | undefined;
   retailer: string;
-  offersText: string;
+  offersText: string | undefined;
   isDisabled: boolean;
+  id?: number;
+  goToRetailerLink?: string;
+  goToRetailerText?: string;
 }
 
 export function RetailerCard({
@@ -20,19 +34,39 @@ export function RetailerCard({
   offersText,
   layout,
   isDisabled,
+  goToRetailerLink,
+  goToRetailerText,
 }: RetailerCardProps) {
   return (
-    <a href={retailerLink} className={cn(styles.retailerCard, styles[layout], {
-      [styles.disabled]: isDisabled
-    })}>
-      <div className={styles.retailerCardHeader}>
-        <img className={styles.retailerImage} src={retailerImageURL} />
-        <span className={styles.discountText}>{discountText}</span>
-      </div>
-      <div className={styles.retailerCardFooter}>
-        <span className={styles.retailer}>{retailer}</span>
-        <span className={styles.offers}>{offersText}</span>
-      </div>
-    </a>
-  )
+    <div
+      className={cn(retailerCardWrapper, {
+        [MobileCN]: layout === "mobile",
+      })}
+    >
+      <a
+        href={retailerLink}
+        className={cn(retailerCard, {
+          [disabled]: isDisabled,
+          [MobileCN]: layout === "mobile",
+        })}
+      >
+        <div className={retailerCardHeader}>
+          <img className={retailerImage} src={retailerImageURL} />
+          {discountText && (
+            <span className={discountTextCN}>{discountText}</span>
+          )}
+        </div>
+        <div className={retailerCardFooter}>
+          <span className={retailerCN}>{retailer}</span>
+          {offersText && <span className={offers}>{offersText}</span>}
+        </div>
+      </a>
+
+      {goToRetailerLink && goToRetailerText && (
+        <a href={goToRetailerLink} className={retailerCardShopLink}>
+          {goToRetailerText}
+        </a>
+      )}
+    </div>
+  );
 }

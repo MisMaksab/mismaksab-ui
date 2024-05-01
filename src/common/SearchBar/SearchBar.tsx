@@ -1,24 +1,32 @@
-import React from "react";
-import cn from "classnames";
-import searchSvg from "../../assets/icons/search.svg";
-import styles from "./SearchBar.scss";
+"use client";
 
-interface Props {
+import cn from "classnames";
+import { useCallback, useState } from "react";
+import searchSvg from "../../assets/icons/search.svg";
+import {
+  search,
+  searchInput,
+  searchSvgCN,
+  searchSvgContainer,
+  shownCN,
+  sideBarOpenCN,
+} from "./styles";
+
+interface SearchBarProps {
   sideBarOpen?: boolean;
   placeHolderText?: string;
-  onChange: (value: string) => void;
 }
 
-export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props) {
-  const [value, setValue] = React.useState("");
+export function SearchBar({
+  sideBarOpen = false,
+  placeHolderText,
+}: SearchBarProps) {
+  const [value, setValue] = useState("");
+  const [shown, setShown] = useState(false);
 
-  // animation if input is clicked
-  const [shown, setShown] = React.useState(false);
-
-  const onChangeCb = React.useCallback(
+  const onChangeCb = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setValue(e.target.value);
-      onChange(e.target.value);
 
       if (e.target.value === "") {
         setShown(false);
@@ -26,14 +34,14 @@ export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props
         setShown(true);
       }
     },
-    [onChange]
+    []
   );
 
   return (
     <form
-      className={cn(styles.search, {
-        [styles.shown]: shown,
-        [styles.sideBarOpen]: sideBarOpen
+      className={cn(search, {
+        [shownCN]: shown,
+        [sideBarOpenCN]: sideBarOpen,
       })}
     >
       <input
@@ -43,14 +51,17 @@ export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props
         onFocus={() => setShown(true)}
         onBlur={() => setShown(false)}
         onChange={onChangeCb}
-        className={styles.searchInput}
+        className={searchInput}
       />
-      <div className={styles.searchSvgContainer}>
-        <img className={styles.searchSvg} src={searchSvg} />
+      <div className={searchSvgContainer}>
+        <div
+          className={searchSvgCN}
+          dangerouslySetInnerHTML={{ __html: searchSvg }}
+        />
       </div>
-      {/* <div className={styles.searchInput}>
-        <div className={styles.searchSvgContainer}>
-          <img className={styles.searchSvg} src={searchSvg} />
+      {/* <div className={searchInput}>
+        <div className={searchSvgContainer}>
+          <img className={searchSvg} src={searchSvg} />
         </div>
 
         <input
@@ -60,7 +71,7 @@ export function SearchBar({sideBarOpen=false, placeHolderText, onChange }: Props
           onFocus={() => setShown(true)}
           onBlur={() => setShown(false)}
           onChange={onChangeCb}
-          className={styles.searchInput}
+          className={searchInput}
         />
       </div> */}
     </form>

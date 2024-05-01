@@ -1,28 +1,30 @@
-import React from 'react';
-
-import styles from './MobileHeader.scss';
+;
+import {
+  navBar,
+  navBarContent,
+  navBarLeftItem,
+  navBarCenterItem,
+  navBarRightItem,
+} from "./styles";
 
 interface MobileHeaderProps {
-  logo: React.ReactElement;
-  searchBar: React.ReactElement;
-  languages: React.ReactElement;
-  burger: React.ReactElement;
+  centerItem: React.ReactElement;
+  leftItem: React.ReactElement;
+  rightItem: React.ReactElement;
 }
 
-export function MobileHeader({ logo, searchBar, languages, burger }: MobileHeaderProps) {
+export function MobileHeader({
+  centerItem,
+  leftItem,
+  rightItem,
+}: MobileHeaderProps) {
   return (
-    <nav className={styles.navBar}>
-      <div className={styles.navBarContent}>
-        <div className={styles.navBarBurger}>
-          {burger}
-        </div>
-        <div className={styles.navBarLogo}>
-          {logo}
-        </div>
-        <div className={styles.navBarLangDropdown}>
-          {languages}
-        </div>
+    <nav className={navBar}>
+      <div className={navBarContent}>
+        <div className={navBarLeftItem}>{leftItem}</div>
+        <div className={navBarCenterItem}>{centerItem}</div>
+        <div className={navBarRightItem}>{rightItem}</div>
       </div>
     </nav>
-  )
+  );
 }

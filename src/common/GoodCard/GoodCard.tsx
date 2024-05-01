@@ -1,94 +1,128 @@
-import React, { useCallback, useState } from 'react'
-import cn from 'classnames';
+import cn from "classnames";
+import { MobileCN } from "../../styles";
+import { GoodCardDiscount } from "../GoodCardDiscount/GoodCardDiscount";
+import { LayoutProp } from "../LayoutProp";
+import {
+  current,
+  disabled,
+  discountUntil,
+  goodCard,
+  goodCardImage,
+  goodCardPrices,
+  goodCardTextWrapper,
+  old,
+  pricePerKilo,
+  retailerImg,
+  smallMobile,
+  title,
+} from "./styles";
 
-import styles from './GoodCard.scss';
-import { LayoutProp } from '../LayoutProp';
-import { GoodCardDiscount } from '../GoodCardDiscount/GoodCardDiscount';
+export interface GoodCardDataProps extends LayoutProp {
+  id: string;
+  productImageURL: string;
+  retailerImageURL: string;
+  discount: number | undefined;
+  price: number;
+  oldPrice: number | undefined;
+  productTitle: string;
+  unitPrice: number | undefined;
+  unitType: string | undefined;
+  expireDateStr: string | undefined;
+  isDisabled: boolean;
+  isSmallMobile?: boolean;
+}
 
-interface GoodCardProps extends LayoutProp{
-    productId: string;
-    addedToList: boolean;
-    isDisabled?: boolean;
-    header: React.ReactElement;
-    footer: React.ReactElement;
-    addToList: (productId: string) => void;
+interface GoodCardProps extends LayoutProp {
+  isDisabled?: boolean;
+  header: React.ReactElement;
+  footer: React.ReactElement;
+  isSmallMobile?: boolean;
 }
 
 export function GoodCard({
-    layout,
-    productId,
-    addedToList,
-    isDisabled = false,
-    addToList,
-    header,
-    footer
+  layout,
+  isDisabled = false,
+  header,
+  footer,
+  isSmallMobile = false,
 }: GoodCardProps) {
-  const onAddToList = useCallback(() => {
-    addToList(productId);
-  }, []);
   return (
-    <div className={cn(
-        styles.goodCard, styles[layout], {
-            [styles.disabled]: isDisabled,
-        }
-    )}>
-        {header}
-        {footer}
+    <div
+      className={cn(goodCard, {
+        [MobileCN]: layout === "mobile",
+        [disabled]: isDisabled,
+        [smallMobile]: isSmallMobile,
+      })}
+    >
+      {header}
+      {footer}
     </div>
-  )
+  );
 }
 
-
-interface GoodCardHeaderProps extends LayoutProp{
-    productImageURL: string;
-    discount: number;
-    retailerImageURL: string;
+interface GoodCardHeaderProps extends LayoutProp {
+  productImageURL: string;
+  discount: number | undefined;
+  retailerImageURL: string;
+  isSmallMobile?: boolean;
 }
 
 export function GoodCardHeader({
-    productImageURL,
-    retailerImageURL,
-    discount,
-    layout
+  productImageURL,
+  retailerImageURL,
+  discount,
+  layout,
+  isSmallMobile,
 }: GoodCardHeaderProps) {
-    return (
-        <div className={styles.goodCardImage}>
-            <img className={styles.retailerImg} src={productImageURL}/>
-            <GoodCardDiscount layout={layout} expanded={false} image={retailerImageURL} discount={discount}/>
-        </div>
-    )
+  return (
+    <div className={goodCardImage}>
+      <img className={retailerImg} src={productImageURL} />
+      <GoodCardDiscount
+        layout={layout}
+        expanded={false}
+        image={retailerImageURL}
+        discount={discount}
+        isSmallMobile={isSmallMobile}
+      />
+    </div>
+  );
 }
 
-
-interface GoodCardFooterProps extends LayoutProp{
-    price: number;
-    oldPrice: number;
-    productTitle: string;
-    unitPrice: number;
-    unitType: string;
-    expireDateStr: string;
+interface GoodCardFooterProps extends LayoutProp {
+  price: number;
+  oldPrice: number | undefined;
+  productTitle: string;
+  unitPrice: number | undefined;
+  unitType: string | undefined;
+  expireDateStr: string | undefined;
+  id: string;
 }
 
 export function GoodCardFooter({
-    price,
-    oldPrice,
-    productTitle,
-    unitPrice,
-    unitType,
-    layout,
-    expireDateStr
+  price,
+  oldPrice,
+  productTitle,
+  unitPrice,
+  unitType,
+  layout,
+  expireDateStr,
+  id,
 }: GoodCardFooterProps) {
-    return (
-        <div className={styles.goodCardTextWrapper}>
-            <div className={cn(styles.goodCardPrices, styles.goodCardPrices)}>
-                <span className={styles.current}>{price}€</span>
-                <span className={styles.old}>{oldPrice}€</span>
-            </div>
-            <a href='/' className={styles.title}>{productTitle}</a>
-            {layout === 'desktop' &&
-                <h4 className={styles.pricePerKilo}>{unitPrice}€/{unitType}</h4>
-            }
-            <h4 className={styles.discountUntil}>{expireDateStr}</h4>
-        </div>
-    )
+  return (
+    <div className={goodCardTextWrapper}>
+      <div className={cn(goodCardPrices, goodCardPrices)}>
+        <span className={current}>{price}€</span>
+        {oldPrice && <span className={old}>{oldPrice}€</span>}
+      </div>
+      <a href={`/product/${id}`} className={title}>
+        {productTitle}
+      </a>
+      {layout === "desktop" && (
+        <h4 className={pricePerKilo}>
+          {unitPrice && unitType && `${unitPrice}€/${unitType}`}
+        </h4>
+      )}
+      {expireDateStr && <h4 className={discountUntil}>{expireDateStr}</h4>}
+    </div>
+  );
 }

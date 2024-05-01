@@ -1,6 +1,12 @@
-import React from 'react';
-
-import styles from './DesktopHeader.scss';
+;
+import {
+  navBar,
+  navBarContent,
+  navBarControls,
+  navBarLangDropdown,
+  navBarLogo,
+  navBarSearchBar,
+} from "./styles";
 
 interface DesktopHeaderProps {
   logo: React.ReactElement;
@@ -8,22 +14,20 @@ interface DesktopHeaderProps {
   languages: React.ReactElement;
 }
 
-export function DesktopHeader({ logo, searchBar, languages }: DesktopHeaderProps) {
+export function DesktopHeader({
+  logo,
+  searchBar,
+  languages,
+}: DesktopHeaderProps) {
   return (
-    <nav className={styles.navBar}>
-      <div className={styles.navBarContent}>
-        <div className={styles.navBarLogo}>
-          {logo}
-        </div>
-        <div className={styles.navBarControls}>
-          <div className={styles.navBarSearchBar}>
-            {searchBar}
-          </div>
-          <div className={styles.navBarLangDropdown}>
-            {languages}
-          </div>
+    <nav className={navBar}>
+      <div className={navBarContent}>
+        <div className={navBarLogo}>{logo}</div>
+        <div className={navBarControls}>
+          <div className={navBarSearchBar}>{searchBar}</div>
+          <div className={navBarLangDropdown}>{languages}</div>
         </div>
       </div>
     </nav>
-  )
+  );
 }

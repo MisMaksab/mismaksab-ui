@@ -1,48 +1,64 @@
-import React, { useCallback, useState } from 'react';
-import styles from './SideBar.scss';
-import cn from 'classnames';
+"use client";
 
+import cn from "classnames";
+import { useCallback, useState } from "react";
+
+import { SideBarItemDataProps } from "../../common/SideBarBoxItem/SideBarBoxItem";
 import { SideBarHeader } from "../../common/SideBarHeader/SideBarHeader";
-import { SideBarBox } from '../SideBarBox/SideBarBox';
-import { MobileSideBarControls } from '../../mobile/MobileSideBarControls/MobileSideBarControls';
-import { LayoutProp } from '../LayoutProp';
+import { MobileCN } from "../../styles";
+import { LayoutProp } from "../LayoutProp";
+import { SideBarBox } from "../SideBarBox/SideBarBox";
+import { open, sideBar } from "./styles";
 
-interface SideBarProps extends LayoutProp{
+interface SideBarProps extends LayoutProp {
   title: string;
-  data: DropdownItem[];
+  data: SideBarItemDataProps[];
+  isOpen: boolean;
+  onCategoryClick: () => void;
 }
 
-export type DropdownItem = {
-  title: string,
-  svg?: string,
-  subSvg?: string,
-  link?: string,
-  dropdownItems: dropdownItem[]
-}
-
-type dropdownItem = {
-  title: string;
-  link: string;
-}
-
-export function SideBar({title, layout, data}: SideBarProps) {
-  const [expandedIdArr, setExpadedIdArr] = useState<number[]>([]);
-  const changeExpandedIdArrCb = useCallback((id: number) => {
-    if (expandedIdArr.includes(id)) {
-      setExpadedIdArr(expandedIdArr.filter(oldId => oldId != id));
-    } else {
-      setExpadedIdArr([...expandedIdArr, id]);
-    }
-  }, [expandedIdArr]);
-  const clearExpandedIdArrCb = useCallback(() => {
-    setExpadedIdArr([]);
-  }, [])
+export function SideBar({
+  title,
+  layout,
+  data,
+  isOpen,
+  onCategoryClick,
+}: SideBarProps) {
+  const [expandedId, setExpadedId] = useState<number | null>(null);
+  const changeExpandedIdCb = useCallback(
+    (id: number | null) => {
+      if (id === expandedId) {
+        setExpadedId(null);
+      } else {
+        setExpadedId(id);
+      }
+    },
+    [expandedId]
+  );
 
   return (
-    <div className={cn(styles.sideBar, styles[layout])}>
-      {layout === 'mobile' && <MobileSideBarControls/>}
-      <SideBarHeader layout={layout} title={title} onHide={clearExpandedIdArrCb}/>
-      <SideBarBox layout={layout} data={data} expandedIdArr={expandedIdArr} onChange={changeExpandedIdArrCb}/>
+    <div
+      className={cn(sideBar, {
+        [MobileCN]: layout === "mobile",
+        [open]: isOpen,
+      })}
+    >
+      <SideBarHeader
+        layout={layout}
+        title={title}
+        onCategoryClick={onCategoryClick}
+        isOpen={isOpen}
+        changeExpandedIdCb={changeExpandedIdCb}
+        placeHolderText={"Найти в mismaksab"}
+      />
+      <SideBarBox
+        layout={layout}
+        data={data}
+        expandedId={expandedId}
+        onClick={changeExpandedIdCb}
+        isOpen={isOpen}
+        onCategoryClick={onCategoryClick}
+      />
     </div>
-  )
+  );
 }

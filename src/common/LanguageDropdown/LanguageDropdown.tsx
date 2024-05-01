@@ -1,45 +1,59 @@
-import React, { useState } from "react";
-import cn from "classnames";
-import arrow from "../../assets/icons/arrow.svg";
-import mark from "../../assets/icons/languageDropdownIcon.svg";
-import styles from "./LanguageDropdown.scss";
+"use client";
 
-interface LanguageDropdownProps {
+import { useCallback, useState } from "react";
+import { DropdownItemInterface } from "../../common/DropdownItemInterface";
+import { LayoutProp } from "../../common/LayoutProp";
+import { DesktopLanguageDropdownBox } from "../../desktop/DesktopLangurageDropdownBox/DesktopLanguageDropdownBox";
+import { MobileLinkPopup } from "../../mobile/MobileLinkPopup/MobileLinkPopup";
+import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
+import { YellowButton } from "../YellowButton/YellowButton";
+import { language } from "./styles";
+
+interface LanguageDropdownProps extends LayoutProp {
   selectedLanguage: string;
-  languages: Array<{short: string, long: string}>;
-  layout: 'mobile'|'desktop';
+  data: DropdownItemInterface[];
 }
 
-export function LanguageDropdown({ selectedLanguage, languages, layout}: LanguageDropdownProps) {
+export function LanguageDropdown({
+  selectedLanguage,
+  layout,
+  data,
+}: LanguageDropdownProps) {
   const [activeSelection, setActiveSelection] = useState(false);
+  const hidePopupCb = useCallback(() => setActiveSelection(false), []);
+  const changePopupVisibilityCb = useCallback(
+    () => setActiveSelection((val) => !val),
+    []
+  );
 
   return (
-    <div className={cn(styles.language, styles[layout])}>
-      <div className={styles.languageCurrent} onClick={() => setActiveSelection(!activeSelection)}>
-        <span className={styles.languageCurrentLang}>{selectedLanguage}</span>
-        <div
-          className={cn(styles.svg, {
-            [styles.rotate]: activeSelection,
-          })}
-        >
-          <img className={styles.svgImg} src={arrow} alt="language svg" />
-        </div>
-      </div>
-      <ul className={cn(styles.languageAll, activeSelection && styles.shown)}>
-        {languages.map(lang => 
-          <a href="/" className={styles.languageLink}>
-            <li className={cn(styles.languageLang, {
-              [styles.active]: selectedLanguage === lang.short
-            })}>
-              <span className={styles.shortText}>{lang.short}</span>
-              <span className={styles.longText}>{lang.long}</span>
-              {selectedLanguage === lang.short &&
-                <img className={styles.mark} src={mark}/>
-              }
-            </li>
-          </a>
+    <>
+      <div className={language}>
+        <YellowButton
+          layout={layout}
+          text="RUS"
+          onClick={changePopupVisibilityCb}
+          isActive={activeSelection}
+        />
+        {layout === "desktop" && (
+          <DesktopLanguageDropdownBox
+            data={data}
+            activeSelection={activeSelection}
+            selectedLanguage={selectedLanguage}
+          />
         )}
-      </ul>
-    </div>
+      </div>
+
+      {layout === "mobile" && (
+        <MobileLinkPopup
+          mode={MobilePopupModeEnum.popupDefault}
+          title="Язык"
+          data={data}
+          active={activeSelection}
+          hidePopupCb={hidePopupCb}
+          selectedItem={selectedLanguage}
+        />
+      )}
+    </>
   );
 }

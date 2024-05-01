@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from './DesktopFooterInfo.scss';
+;
+import { footerInfo, mail } from "./styles";
 
 interface DesktopFooterInfoProps {
   mailLink: string;
@@ -7,13 +7,19 @@ interface DesktopFooterInfoProps {
   copyright: string;
 }
 
-export function DesktopFooterInfo({mailLink, mailText, copyright}: DesktopFooterInfoProps) {
+export function DesktopFooterInfo({
+  mailLink,
+  mailText,
+  copyright,
+}: DesktopFooterInfoProps) {
   const link = `mailto:${mailLink}`;
 
   return (
-    <div className={styles.footerInfo}>
-      <a className={styles.mail} href={link}>{mailText}</a>
-      <span className={styles.copyright}>{copyright}</span>
+    <div className={footerInfo}>
+      <a className={mail} href={link}>
+        {mailText}
+      </a>
+      <span className={copyright}>{copyright}</span>
     </div>
-  )
+  );
 }
