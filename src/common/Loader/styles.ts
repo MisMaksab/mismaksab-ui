@@ -59,7 +59,18 @@ export const loader = css`
   overflow: hidden;
 `;
 
-export const wrapper = css`
+export const expanded = css`
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  background: white;
+  `;
+  
+  export const wrapper = css`
+  align-items:center;
   display: flex;
   justify-content: center;
-`
+  z-index:1;
+`;
