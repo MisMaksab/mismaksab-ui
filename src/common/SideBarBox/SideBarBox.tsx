@@ -1,24 +1,49 @@
-import React from 'react'
-import styles from './SideBarBox.scss';
-import { SideBarBoxItem } from '../SideBarBoxItem/SideBarBoxItem';
-import cn from 'classnames';
-import { LayoutProp } from '../LayoutProp';
-import { DropdownItem } from '../SideBar/SideBar';
+"use client";
 
-interface SideBarBoxInterFace extends LayoutProp{
-  data: DropdownItem[];
-  expandedIdArr: number[];
-  onChange: (id: number) => void;
+import cn from "classnames";
+import { MobileCN } from "../../styles";
+import { LayoutProp } from "../LayoutProp";
+import {
+  SideBarBoxItem,
+  SideBarItemDataProps,
+} from "../SideBarBoxItem/SideBarBoxItem";
+import { sideBarBox, smoothOverflow } from "./styles";
+
+interface SideBarBoxInterFace extends LayoutProp {
+  data: SideBarItemDataProps[];
+  expandedId: number | null;
+  onClick: (id: number) => void;
+  isOpen?: boolean;
+  onCategoryClick?: () => void;
 }
 
-export function SideBarBox({layout, data, expandedIdArr, onChange}: SideBarBoxInterFace) {
+export function SideBarBox({
+  layout,
+  data,
+  expandedId,
+  onClick,
+  isOpen,
+  onCategoryClick,
+}: SideBarBoxInterFace) {
   return (
-    <div className={cn(styles.sideBarBox, styles[layout])}>
-        {data.map((item, i) =>
-          {
-            return <SideBarBoxItem layout={layout} key={i} id={i} expandedIdArr={expandedIdArr} data={item} onChange={onChange} />;
-          }
-        )}
-      </div>
-  )
+    <div
+      className={cn(sideBarBox, {
+        [MobileCN]: layout === "mobile",
+        [smoothOverflow]: layout === "desktop",
+      })}
+    >
+      {data.map((item, i: number) => (
+        <SideBarBoxItem
+          layout={layout}
+          key={i}
+          id={i}
+          expandedId={expandedId}
+          data={item}
+          onClick={onClick}
+          isOpen={isOpen}
+          onCategoryClick={onCategoryClick}
+        />
+      ))}
+    </div>
+  );
 }

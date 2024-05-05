@@ -1,44 +1,138 @@
-import React from "react";
-import cn from 'classnames';
-import styles from './SideBarBoxItem.scss';
-import {LayoutProp}  from "../LayoutProp";
-import { DropdownItem } from "../SideBar/SideBar";
+"use client";
 
-interface SideBarBoxItemProps extends LayoutProp{
-  data: DropdownItem;
-  id: number;
-  expandedIdArr: number[];
-  onChange: (id: number) => void;
+import cn from "classnames";
+import { useRef } from "react";
+import { LayoutProp } from "../LayoutProp";
+
+import mobileSideBarArrow from "../../assets/icons/mobileSidebarArrow.svg";
+import { DesktopCN, MobileCN } from "../../styles";
+import {
+  activeCN,
+  arrowSvg,
+  expanded,
+  link,
+  logoSvg,
+  mobileSideBarArrowCN,
+  rotate,
+  shown,
+  sideBarBoxItem,
+  sideBarBoxItemBtn,
+  sideBarBoxItemBtnText,
+  sideBarBoxItemDropdown,
+  sideBarBoxItemDropdownContainer,
+  sideBarBoxItemDropdownItem,
+} from "./styles";
+
+export interface SideBarDropdownItemDataProps {
+  title: string;
+  link: string;
 }
 
-export function SideBarBoxItem({layout, data, id, expandedIdArr, onChange}: SideBarBoxItemProps) {
-  const isExpanded = expandedIdArr.includes(id);
+export interface SideBarItemDataProps {
+  svg: string;
+  title: string;
+  dropdownItems: SideBarDropdownItemDataProps[];
+  subSvg?: string;
+  link?: string;
+}
+
+interface SideBarBoxItemProps extends LayoutProp {
+  data: SideBarItemDataProps;
+  id: number;
+  expandedId: number | null;
+  onClick: (id: number) => void;
+  isOpen?: boolean;
+  onCategoryClick?: () => void;
+}
+
+export function SideBarBoxItem({
+  layout,
+  data,
+  id,
+  expandedId,
+  onClick,
+  isOpen,
+  onCategoryClick,
+}: SideBarBoxItemProps) {
+  const isExpanded = expandedId === id;
+  const linkRef = useRef<HTMLAnchorElement | null>(null);
+
+  function handleCategoryClick() {
+    if (linkRef.current?.href) return false;
+
+    if (!isOpen) {
+      if (typeof onCategoryClick !== "undefined") {
+        onCategoryClick();
+      }
+    }
+    onClick(id);
+  }
+
+  function handleCategoryItemClick() {
+    onClick(id);
+  }
 
   return (
-    <div className={cn(styles.sideBarBoxItem, styles[layout])}>
-      <div className={styles.sideBarBoxItemBtn}>
-        <img className={styles.logoSvg} src={data.svg}/>
-        <a href={data.link} onClick={() => {onChange(id)}} className={cn(styles.title, {
-          [styles.active]: isExpanded
-        })}>
+    <div
+      className={cn(sideBarBoxItem, {
+        [MobileCN]: layout === "mobile",
+        [DesktopCN]: layout === "desktop",
+      })}
+    >
+      <a href={data.link} className={sideBarBoxItemBtn} ref={linkRef}>
+        <img className={logoSvg} src={data.svg} onClick={handleCategoryClick} />
+        <span
+          className={cn(sideBarBoxItemBtnText, {
+            [shown]: isOpen && layout === "desktop",
+            [activeCN]: isExpanded,
+          })}
+          onClick={handleCategoryItemClick}
+        >
           {data.title}
-          {data.subSvg && 
-            <img className={styles.arrowSvg} src={data.subSvg} />
-          }
-        </a>
-      </div>
-
-      <div className={cn(styles.sideBarBoxItemDropdown, {
-        [styles.expanded]: isExpanded
-      })}>
-        <div className={styles.sideBarBoxItemDropdownContainer}>
-          {data.dropdownItems.map(item =>
-            <div className={styles.sideBarBoxItemDropdownItem}>
-              <a className={styles.link} href={item.link}>{item.title}</a>
-            </div>
+          {data.subSvg && <img className={arrowSvg} src={data.subSvg} />}
+          {layout === "mobile" && !data.subSvg && (
+            <div
+              className={cn(mobileSideBarArrowCN, { [rotate]: isExpanded })}
+              dangerouslySetInnerHTML={{ __html: mobileSideBarArrow }}
+            />
           )}
-        </div>
+        </span>
+      </a>
+
+      {!data.subSvg && (
+        <SideBarBoxItemSubItems
+          data={data.dropdownItems}
+          isExpanded={isExpanded}
+        />
+      )}
+    </div>
+  );
+}
+
+interface SideBarBoxItemSubItemsProps {
+  data: Array<SideBarDropdownItemDataProps>;
+  isExpanded: boolean;
+}
+
+function SideBarBoxItemSubItems({
+  data,
+  isExpanded,
+}: SideBarBoxItemSubItemsProps) {
+  return (
+    <div
+      className={cn(sideBarBoxItemDropdown, {
+        [expanded]: isExpanded,
+      })}
+    >
+      <div className={sideBarBoxItemDropdownContainer}>
+        {data.map((item) => (
+          <div key={item.title} className={sideBarBoxItemDropdownItem}>
+            <a className={link} href={`/category/${item.link}`}>
+              {item.title}
+            </a>
+          </div>
+        ))}
       </div>
     </div>
-  )
+  );
 }

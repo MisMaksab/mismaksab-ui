@@ -1,18 +1,16 @@
-import React from 'react'
-import styles from './MobileSlider.scss';
+;
+import { slider, sliderBox, sliderSlides } from "./styles";
 
 interface MobileSliderProps {
   children: React.ReactElement;
 }
 
-export function MobileSlider({children}: MobileSliderProps) {
+export function MobileSlider({ children }: MobileSliderProps) {
   return (
-    <div className={styles.slider}>
-      <div className={styles.sliderBox}>
-        <div className={styles.sliderSlides}>
-          {children}
-        </div>
+    <div className={slider}>
+      <div className={sliderBox}>
+        <div className={sliderSlides}>{children}</div>
       </div>
     </div>
-  )
+  );
 }

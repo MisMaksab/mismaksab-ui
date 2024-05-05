@@ -1,10 +1,28 @@
-import React from 'react';
-import styles from './Banner.scss';
-import cn from 'classnames';
-import { LayoutProp } from '../LayoutProp';
+;
+import cn from "classnames";
+import { LayoutProp } from "../LayoutProp";
+import {
+  MobileCN,
+  bannerCN,
+  bannerImg,
+  bannerText,
+  blue,
+  green,
+  imgCN,
+  linkCN,
+  textCN,
+  titleCN,
+  yellow,
+} from "./styles";
 
-interface BannerProps extends LayoutProp{
-  mode: 'blue'|'yellow'|'green';
+const stylesMap = {
+  blue,
+  yellow,
+  green,
+};
+
+interface BannerProps extends LayoutProp {
+  mode: "blue" | "yellow" | "green";
   title: string;
   text: string;
   searchText: string;
@@ -12,24 +30,32 @@ interface BannerProps extends LayoutProp{
   img: string;
 }
 
-export function Banner({layout, mode, title, text, searchText, searchLink, img}: BannerProps) {
+export function Banner({
+  layout,
+  mode,
+  title,
+  text,
+  searchText,
+  searchLink,
+  img,
+}: BannerProps) {
   return (
-    <div className={cn(styles.banner, styles[mode], styles[layout])}>
-      <div className={styles.bannerText}>
-        <span className={styles.title}>
-          {title}
-        </span>
-        <span className={styles.text}>
-          {text}
-        </span>
-        <a href={searchLink} className={styles.link}>
+    <div
+      className={cn(bannerCN, stylesMap[mode], {
+        [MobileCN]: layout === "mobile",
+      })}
+    >
+      <div className={bannerText}>
+        <span className={titleCN}>{title}</span>
+        <span className={textCN}>{text}</span>
+        <a href={searchLink} className={linkCN}>
           {searchText}
         </a>
       </div>
 
-      <div className={styles.bannerImg}>
-        <img className={styles.img} src={img} />
+      <div className={bannerImg}>
+        <img className={imgCN} src={img} />
       </div>
     </div>
-  )
+  );
 }

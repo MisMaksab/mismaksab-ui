@@ -1,34 +1,52 @@
-import React from 'react'
-import styles from './DesktopFooterLinks.scss';
+// import instIcon from "../../assets/icons/footerInst.svg";
+// import fbIcon from "../../assets/icons/footerFb.svg";
+// import {
+//   FooterLinksSC,
+//   SocialMediaItemImgSC,
+//   SocialMediaItemSC,
+//   SocialMediaSC,
+//   UsefulLinksItemSC,
+//   UsefulLinksLinkSC,
+//   UsefulLinksSC,
+// } from "./styles";
 
-import instIcon from '../../assets/icons/footerInst.svg';
-import fbIcon from '../../assets/icons/footerFb.svg';
+export interface DesktopFooterLinkProps {
+  title: string;
+  link: string;
+}
 
 interface DesktopFooterLinksProps {
   instLink: string;
   fbLink: string;
-  usefulLinksArr: Array<{title:string, link:string}>;
+  usefulLinksArr: DesktopFooterLinkProps[];
 }
 
-export function DesktopFooterLinks({instLink, fbLink, usefulLinksArr}: DesktopFooterLinksProps) {
+export function DesktopFooterLinks({
+  instLink,
+  fbLink,
+  usefulLinksArr,
+}: DesktopFooterLinksProps) {
   return (
-    <div className={styles.footerLinks}>
-      <div className={styles.socialMedia}>
-        <a href={instLink} className={styles.socialMediaItem}>
-          <img className={styles.socialMediaItemImg} src={instIcon}/>
-        </a>
-        <a href={fbLink} className={styles.socialMediaItem}>
-          <img className={styles.socialMediaItemImg} src={fbIcon}/>
-        </a>
-      </div>
+    // <FooterLinksSC>
+    //   <SocialMediaSC>
+    //     <SocialMediaItemSC href={instLink}>
+    //       <SocialMediaItemImgSC
+    //         dangerouslySetInnerHTML={{ __html: instIcon }}
+    //       />
+    //     </SocialMediaItemSC>
+    //     <SocialMediaItemSC href={fbLink}>
+    //       <SocialMediaItemImgSC dangerouslySetInnerHTML={{ __html: fbIcon }} />
+    //     </SocialMediaItemSC>
+    //   </SocialMediaSC>
 
-      <div className={styles.usefulLinks}>
-        {usefulLinksArr.map(el =>
-          <div className={styles.usefulLinksItem}>
-            <a className={styles.usefulLinksLink} href={el.link}>{el.title}</a>
-          </div>
-        )}
-      </div>
-    </div>
-  )
+    //   <UsefulLinksSC>
+    //     {usefulLinksArr.map((el) => (
+    //       <UsefulLinksItemSC key={el.link}>
+    //         <UsefulLinksLinkSC href={el.link}>{el.title}</UsefulLinksLinkSC>
+    //       </UsefulLinksItemSC>
+    //     ))}
+    //   </UsefulLinksSC>
+    // </FooterLinksSC>
+    <div></div>
+  );
 }

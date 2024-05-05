@@ -1,25 +1,37 @@
-import cn from 'classnames'
-import React from 'react'
-import styles from './DesktopArrowButton.scss';
+import cn from "classnames";
+;
+import arrowSvg from "./../../assets/icons/slider_arrow.svg";
+import { arrowButton, shown, arrowButtonArrow, next, prev } from "./styles";
 
-// arrow svg
-import arrowSvg from './../../assets/icons/slider_arrow.svg';
+export enum DesktopArrowButtonTypeEnum {
+  next = "next",
+  prev = "prev",
+}
 
 interface DesktopArrowButtonProps {
-  type: 'next'|'prev';
+  type: DesktopArrowButtonTypeEnum;
   isShown: boolean;
   onClick: () => void;
 }
 
-export function DesktopArrowButton({type, isShown, onClick}: DesktopArrowButtonProps) {
+export function DesktopArrowButton({
+  type,
+  isShown,
+  onClick,
+}: DesktopArrowButtonProps) {
   return (
-    <div className={cn(
-      styles.arrowButton, styles[type], {
-        [styles.shown]: isShown,
-      })} 
-    onClick={onClick}
+    <div
+      className={cn(arrowButton, {
+        [shown]: isShown,
+        [prev]: type === "prev",
+        [next]: type === "next",
+      })}
+      onClick={onClick}
     >
-      <img className={styles.arrowButtonArrow} src={arrowSvg} alt="" />
+      <div
+        className={arrowButtonArrow}
+        dangerouslySetInnerHTML={{ __html: arrowSvg }}
+      />
     </div>
-  )
+  );
 }

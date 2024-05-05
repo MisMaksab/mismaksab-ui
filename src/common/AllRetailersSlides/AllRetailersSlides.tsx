@@ -1,21 +1,25 @@
-import React from "react"
-import { RetailerCard } from "../RetailerCard/RetailerCard"
-// TODO use normal slides instead any
-export function AllRetailersSlides({slidesData}: any) {
+import { RetailerCard, RetailerCardProps } from "../RetailerCard/RetailerCard";
+
+interface AllRetailersSlidesProps {
+  slidesData: RetailerCardProps[];
+}
+
+export function AllRetailersSlides({ slidesData }: AllRetailersSlidesProps) {
   return (
     <>
-      {slidesData.map((slide: any) =>
+      {slidesData.map((slide) => (
         <RetailerCard
-          key={slide.productId}
+          id={slide.id}
+          layout={slide.layout}
+          key={slide.id}
           retailerLink={slide.retailerLink}
           retailerImageURL={slide.retailerImageURL}
           discountText={slide.discountText}
           retailer={slide.retailer}
           offersText={slide.offersText}
-          layout={slide.layout}
           isDisabled={slide.isDisabled}
         />
-      )}
+      ))}
     </>
-  )
+  );
 }
