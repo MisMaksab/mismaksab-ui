@@ -13,6 +13,7 @@
         "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib",
         "copy-assets": "copyfiles -u 1 \"src/assets/**/*\" lib",
         "build:package": "rm -rf lib && tsc --outDir lib && babel src --out-dir lib --extensions .tsx,.ts && linaria -o lib --source-root src --insert-css-requires lib \"src/**/*.ts\" --modules=es2015 && npm run copy-assets",
+        "build:package-windows": "rd /s /q lib && tsc --outDir lib && babel src --out-dir lib --extensions .tsx,.ts && linaria -o lib --source-root src --insert-css-requires lib \"src/**/*.ts\" --modules=es2015 && npm run copy-assets",
         "build-ts:dts-only": "tsc --declaration --emitDeclarationOnly --project tsconfig-no-spec.json",
         "build:css": "npm run build:css:generate && npm run build:css:clean",
         "build:css:generate": "",
