@@ -7,12 +7,12 @@ import { Bubble, BubbleModeEnum } from "../Bubble/Bubble";
 import { bubbleBlock, removePaddingTop } from "./styles";
 
 export interface BubbleBlockItemProps extends LayoutProp {
-  mode: BubbleModeEnum;
   text: string;
   path: string;
 }
 
 interface BubbleBlockProps extends LayoutProp {
+  mode: BubbleModeEnum;
   data: BubbleBlockItemProps[];
   onClick: (val: string[]) => void;
   activeBubbleMode: BubbleModeEnum;
@@ -21,6 +21,7 @@ interface BubbleBlockProps extends LayoutProp {
 }
 
 export function BubbleBlock({
+  mode,
   data,
   onClick,
   activeBubbleMode,
@@ -50,7 +51,7 @@ export function BubbleBlock({
           mode={
             selectedBubblesPaths.includes(bubbleData.path)
               ? activeBubbleMode
-              : bubbleData.mode
+              : mode
           }
           text={bubbleData.text}
           layout={bubbleData.layout}

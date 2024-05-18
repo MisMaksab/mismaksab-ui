@@ -1,13 +1,13 @@
-import { styled } from "@linaria/react";
+import { css } from "@linaria/core";
 
 import { fontColorMain, tertiaryColorMain } from "../../styles";
 
-export const FooterLinksSC = styled.div`
+export const footerLinks = css`
   display: flex;
   flex-wrap: wrap;
 `;
 
-export const SocialMediaSC = styled.div`
+export const socialMedia = css`
   max-width: 370px;
   width: 100%;
   display: flex;
@@ -15,7 +15,7 @@ export const SocialMediaSC = styled.div`
   padding-bottom: 20px;
 `;
 
-export const SocialMediaItemSC = styled.a`
+export const socialMediaItem = css`
   width: 47px;
   height: 47px;
   transition: .3s;
@@ -26,24 +26,24 @@ export const SocialMediaItemSC = styled.a`
   }
 `;
 
-export const SocialMediaItemImgSC = styled.div`
+export const socialMediaItemImg = css`
   width: 100%;
   height: 100%;
 `;
 
-export const UsefulLinksSC = styled.div`
+export const usefulLinks = css`
   display: flex;
   flex-grow: 2;
   flex-wrap: wrap;
 `;
 
-export const UsefulLinksItemSC = styled.div`
+export const usefulLinksItem = css`
   width: 50%;
   padding: 12px 0px;
   box-sizing: border-box;
 `;
 
-export const UsefulLinksLinkSC = styled.a`
+export const usefulLinksLink = css`
   font-size: 20px;
   line-height: 100%; /* 20px */
   color: ${fontColorMain};

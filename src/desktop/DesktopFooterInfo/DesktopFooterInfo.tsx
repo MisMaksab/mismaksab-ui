@@ -1,4 +1,4 @@
-;
+"use client";
 import { footerInfo, mail } from "./styles";
 
 interface DesktopFooterInfoProps {

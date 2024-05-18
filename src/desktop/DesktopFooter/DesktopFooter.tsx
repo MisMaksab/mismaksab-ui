@@ -1,11 +1,11 @@
-// import {FooterContent, FooterSC, FooterInfo, FooterLinks} from './styles';
+import { footer, footerContent, footerLinksCN, footerInfoCN } from "./styles";
 
-interface FooterDesktopProps{
+interface FooterDesktopProps {
   footerLinks: React.ReactElement;
   footerInfo: React.ReactElement;
 }
 
-export function DesktopFooter({footerLinks, footerInfo}: FooterDesktopProps) {
+export function DesktopFooter({ footerLinks, footerInfo }: FooterDesktopProps) {
   return (
     // <FooterSC>
     //   <FooterContent>
@@ -17,6 +17,11 @@ export function DesktopFooter({footerLinks, footerInfo}: FooterDesktopProps) {
     //     </FooterInfo>
     //   </FooterContent>
     // </FooterSC>
-    <div></div>
-  )
+    <div className={footer}>
+      <div className={footerContent}>
+        <div className={footerLinksCN}>{footerLinks}</div>
+        <div className={footerInfoCN}>{footerInfo}</div>
+      </div>
+    </div>
+  );
 }

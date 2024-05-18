@@ -1,19 +1,19 @@
-import { styled } from "@linaria/react";
+import { css } from "@linaria/core";
 
 import { primaryColorLight } from "../../styles";
 
-export const FooterSC = styled.footer`
+export const footer = css`
   padding: 48px 67px 24px;
   background: ${primaryColorLight};
 `;
 
-export const FooterContent = styled.div`
+export const footerContent = css`
   margin: 0 auto;
   width: 100%;
 `;
 
-export const FooterLinks = styled.div``;
+export const footerLinksCN = css``;
 
-export const FooterInfo = styled.div`
+export const footerInfoCN = css`
   padding-top: 24px;
 `;

@@ -1,6 +1,6 @@
 "use client";
 
-import  { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import cn from "classnames";
 import searchSvg from "../../assets/icons/search.svg";
 import {
@@ -436,6 +436,7 @@ function SearchPanel({
             activeBubbleMode={BubbleModeEnum.bubbleOrange}
             layout={"mobile"}
             initialySelected={[]}
+            mode={BubbleModeEnum.bubbleBlue}
           />
         )}
         {SEARCH_DATA.categories.length > 1 && (
