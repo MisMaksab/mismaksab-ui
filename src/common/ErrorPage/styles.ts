@@ -10,12 +10,26 @@ export const description = css`
   padding-bottom: 24px;
 `
 
+export const optionalDescription = css`
+  position: relative;
+  display: block;
+  width: 100%;
+`
+
+export const optionalDescriptionText = css`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: ${fontColorDark};
+  padding-top: 10px;
+  font-size: 20px;
+`
+
 export const name = css`
   color: ${fontColorDark};
   font-size: 70px;
   font-weight: 400;
   line-height: 100%; /* 70px */
-  padding-bottom: 69px;
     margin: 0;
 `
 
@@ -28,6 +42,7 @@ export const link = css`
   line-height: 100%; /* 20px */
   text-decoration-line: underline;
   padding-bottom: 80px;
+  padding-top: 69px;
 `
 
 export const svg = css`
@@ -47,15 +62,19 @@ export const errorCN = css`
       padding-bottom: 17px;
     }
 
+    .${optionalDescriptionText} {
+      font-size: 18px;
+    }
+
     .${name} {
       font-size: 24px;
       font-weight: 400;
-      padding-bottom: 100px;
     }
 
-    .${link} {display: none}
+    .${link} {display: none;}
 
     .${svg} {
+      padding-top: 100px;
       width: 180px;
     }
   }

@@ -1,22 +1,32 @@
 import cn from "classnames";
 import NotFoundIcon from "../../assets/icons/404.svg";
-import { LayoutProp } from "../../common/LayoutProp";
+import { LayoutProp } from "../LayoutProp";
 import { MobileCN } from "../../styles";
-import { description, errorCN, link, name, svg } from "./styles";
+import {
+  description,
+  errorCN,
+  link,
+  name,
+  optionalDescription,
+  optionalDescriptionText,
+  svg,
+} from "./styles";
 
 interface NotFoundProps extends LayoutProp {
   error: string;
   errorDescription: string;
-  goBackText?: string;
-  goBackLink?: string;
+  goBackText: string;
+  goBackLink: string;
+  optionalErrorDescription?: string;
 }
 
-export function NotFound({
+export function ErrorPage({
   error,
   errorDescription,
-  goBackText = "Go back",
-  goBackLink = "/",
+  goBackText,
+  goBackLink,
   layout,
+  optionalErrorDescription,
 }: NotFoundProps) {
   return (
     <div
@@ -26,6 +36,13 @@ export function NotFound({
     >
       <h2 className={description}>{errorDescription}</h2>
       <h1 className={name}>{error}</h1>
+      {optionalErrorDescription && (
+        <div className={optionalDescription}>
+          <span className={optionalDescriptionText}>
+            {optionalErrorDescription}
+          </span>
+        </div>
+      )}
       <a className={link} href={goBackLink}>
         {goBackText}
       </a>

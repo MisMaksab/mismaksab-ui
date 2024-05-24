@@ -1,8 +1,8 @@
-import { NotFound } from "../../../common/NotFound/NotFound";
+import { ErrorPage } from "../../../common/ErrorPage/ErrorPage";
 import React from "react";
 
-export const NotFoundStory = () => (
-  <NotFound
+export const ErrorPageStory = () => (
+  <ErrorPage
     error={"Ошибка 404"}
     errorDescription={"Страница не найдена"}
     goBackText={"Вернуться на главную страницу"}
@@ -11,4 +11,4 @@ export const NotFoundStory = () => (
   />
 );
 
-NotFoundStory.storyName = "not found";
+ErrorPageStory.storyName = "error page";

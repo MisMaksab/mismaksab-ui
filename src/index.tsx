@@ -35,7 +35,7 @@ export { GoodCardsBlock } from "./common/GoodCardsBlock/GoodCardsBlock";
 export { BlockHeader } from "./common/BlockHeader/BlockHeader";
 export { SearchSvg } from "./common/SearchSvg/SearchSvg";
 export { YellowButton } from "./common/YellowButton/YellowButton";
-export { NotFound } from "./common/NotFound/NotFound";
+export { ErrorPage } from "./common/ErrorPage/ErrorPage";
 export { BubbleBlock } from "./common/BubbleBlock/BubbleBlock";
 export { Loader } from "./common/Loader/Loader";
 

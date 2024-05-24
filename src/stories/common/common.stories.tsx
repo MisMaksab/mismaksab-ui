@@ -4,7 +4,7 @@ export { ButtonStory } from "./Button/Button.story";
 export { CloseCrossStory } from "./CloseCross/CloseCross.story";
 export { ExpadnedGoodCardStory } from "./ExpadedGoodCard/ExpadedGoodCard.story";
 export { GoodCardStory } from "./GoodCard/GoodCard.story";
-export { NotFoundStory } from "./404/404.story";
+export { ErrorPageStory } from "./ErrorPage/ErrorPage.story";
 export { ShrinkButtonStory } from "./ShrinkButton/ShrinkButton.story";
 export { BubbleBlockStory } from "./BubbleBlock/BubbleBlock.story";
 export { BannerStory } from "./Banner/Banner.story";
