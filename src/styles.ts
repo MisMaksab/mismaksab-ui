@@ -29,3 +29,7 @@ export const retailerCardHeader = "106px";
 export const mobileSideBarHorizontalPadding = "16px";
 export const mobileSideBarVerticalPadding = "9px";
 export const backgoundLayer = "rgba(0, 0, 0, 0.2)";
+
+export const minWidthDesktop = "760px";
+export const maxWidthDesktop = "1512px";
+export const headerHeightDesktop = "144px";

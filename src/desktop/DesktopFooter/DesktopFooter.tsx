@@ -7,21 +7,11 @@ interface FooterDesktopProps {
 
 export function DesktopFooter({ footerLinks, footerInfo }: FooterDesktopProps) {
   return (
-    // <FooterSC>
-    //   <FooterContent>
-    //     <FooterLinks>
-    //       {footerLinks}
-    //     </FooterLinks>
-    //     <FooterInfo>
-    //       {footerInfo}
-    //     </FooterInfo>
-    //   </FooterContent>
-    // </FooterSC>
-    <div className={footer}>
+    <footer className={footer}>
       <div className={footerContent}>
         <div className={footerLinksCN}>{footerLinks}</div>
         <div className={footerInfoCN}>{footerInfo}</div>
       </div>
-    </div>
+    </footer>
   );
 }

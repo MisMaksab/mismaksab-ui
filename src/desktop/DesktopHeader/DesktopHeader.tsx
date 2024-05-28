@@ -1,5 +1,5 @@
-;
 import {
+  header,
   navBar,
   navBarContent,
   navBarControls,
@@ -20,14 +20,16 @@ export function DesktopHeader({
   languages,
 }: DesktopHeaderProps) {
   return (
-    <nav className={navBar}>
-      <div className={navBarContent}>
-        <div className={navBarLogo}>{logo}</div>
-        <div className={navBarControls}>
-          <div className={navBarSearchBar}>{searchBar}</div>
-          <div className={navBarLangDropdown}>{languages}</div>
+    <header className={header}>
+      <nav className={navBar}>
+        <div className={navBarContent}>
+          <div className={navBarLogo}>{logo}</div>
+          <div className={navBarControls}>
+            <div className={navBarSearchBar}>{searchBar}</div>
+            <div className={navBarLangDropdown}>{languages}</div>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }

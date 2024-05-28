@@ -1,4 +1,13 @@
 import { css } from '@linaria/core';
+import { headerHeightDesktop, maxWidthDesktop, minWidthDesktop } from '../../styles';
+
+export const header = css`
+  height: ${headerHeightDesktop};
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,.03);
+  display: flex;
+  justify-content: center;
+`
 
 export const navBar = css`
   padding: 0 65px 0 31px;
@@ -6,12 +15,14 @@ export const navBar = css`
   justify-content: center;
   align-items: center;
   height: 100%;
-  box-shadow: 0px 4px 4px 0px rgba(0,0,0,.03);
+  min-width: ${minWidthDesktop};
+  max-width: ${maxWidthDesktop};
+  width: 100%
 `;
 
 export const navBarContent = css`
   width: 100%;
-  max-width: 1500px;
+  max-width: ${maxWidthDesktop};
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
