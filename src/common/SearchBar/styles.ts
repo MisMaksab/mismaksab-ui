@@ -46,9 +46,15 @@ export const sideBarOpenCN = css`
 
 export const searchSvgCN = css`
   height: 50%;
+  min-width: 20px;
 `
 
 export const searchSvgContainer = css`
+  outline: none;
+  border: none;
+  margin: 0;
+  background: transparent;
+  line-height: 1.5;
   display: flex;
   align-items: center;
   height: 100%;

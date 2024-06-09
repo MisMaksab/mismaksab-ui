@@ -24,21 +24,25 @@ export function SearchBar({
   const [value, setValue] = useState("");
   const [shown, setShown] = useState(false);
 
-  const onChangeCb = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
+  const onChangeCb = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
 
-      if (e.target.value === "") {
-        setShown(false);
-      } else {
-        setShown(true);
-      }
-    },
-    []
-  );
+    if (e.target.value === "") {
+      setShown(false);
+    } else {
+      setShown(true);
+    }
+  }, []);
+
+  function handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (value.trim() === "") return false;
+    window.location.href = `/ru/search?query=${value}`;
+  }
 
   return (
     <form
+      onSubmit={handleSubmit}
       className={cn(search, {
         [shownCN]: shown,
         [sideBarOpenCN]: sideBarOpen,
@@ -53,12 +57,12 @@ export function SearchBar({
         onChange={onChangeCb}
         className={searchInput}
       />
-      <div className={searchSvgContainer}>
+      <button type="submit" className={searchSvgContainer}>
         <div
           className={searchSvgCN}
           dangerouslySetInnerHTML={{ __html: searchSvg }}
         />
-      </div>
+      </button>
       {/* <div className={searchInput}>
         <div className={searchSvgContainer}>
           <img className={searchSvg} src={searchSvg} />

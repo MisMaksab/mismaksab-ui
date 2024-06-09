@@ -35,7 +35,7 @@ export interface ProductProps extends LayoutProp {
     unitType: string | undefined;
     expireDateStr: string | undefined;
     retailerImageURL: string;
-    goToRetailerLink: string;
+    goToRetailerLink: string | undefined;
     goToRetailerText: string;
     retailerCardImage: string;
     discount: number | undefined;
@@ -143,9 +143,11 @@ export function ExpandedGoodCardFooter({
         <div className={retailerImage}>
           <img src={retailerImageURL} className={img} />
         </div>
-        <a href={goToRetailerLink} className={retailerText}>
-          {goToRetailerText}
-        </a>
+        {goToRetailerLink && (
+          <a href={goToRetailerLink} className={retailerText}>
+            {goToRetailerText}
+          </a>
+        )}
       </div>
 
       <div className={discountCN}>
