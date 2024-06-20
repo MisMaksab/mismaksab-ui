@@ -7,13 +7,10 @@ export const sideBarWrapper = css`
   width: 116px;
   transition: .3s;
   overflow: hidden;
-  position: absolute;
-  left: 0;
-  top: 192px;
 `
 
 export const open = css`
-  width: 100%;
+  width: 356px;
   border-color: transparent;
   box-shadow: 0px 0px 3px ${fontColorLight};
 `
