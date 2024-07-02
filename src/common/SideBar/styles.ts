@@ -5,15 +5,15 @@ export const open = css``;
 
 export const sideBar = css`
     z-index: 100;
-    background: white;
     max-width: 100%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     transition: .3s;
     padding: 18px 14px 34px 38px;
-
+    
     &.${MobileCN} {
+        background: white;
         position: absolute;
         left: -100%;
         width: 100vw;

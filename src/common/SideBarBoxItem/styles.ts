@@ -30,6 +30,7 @@ export const sideBarBoxItemBtn = css`
     transition: color .3s;
     position: relative;
     margin: 0;
+    width: 100%;
     
     .${sideBarBoxItemBtnText} {
         padding-left: 12px;
@@ -162,6 +163,8 @@ export const sideBarBoxItem = css`
           pointer-events: none;
           transform: translateX(-10px);
           transition: .3s;
+          overflow: hidden;
+          text-overflow: ellipsis;
     
           &.${shown} {
             cursor: pointer;

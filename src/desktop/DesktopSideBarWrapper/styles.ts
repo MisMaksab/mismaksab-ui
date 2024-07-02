@@ -7,6 +7,8 @@ export const sideBarWrapper = css`
   width: 116px;
   transition: .3s;
   overflow: hidden;
+  background: rgba(255,255,255,.8);
+  backdrop-filter: blur(8px);
 `
 
 export const open = css`
