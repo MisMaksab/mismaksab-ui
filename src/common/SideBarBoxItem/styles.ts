@@ -48,17 +48,6 @@ export const sideBarBoxItemDropdown = css`
     position: relative;
     grid-template-rows: 0fr;
     display: grid;
-
-    &:after {
-        display: block;
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 15px;
-        background: linear-gradient(to top, white, transparent);
-    }
 `;
 
 export const expanded = css`
