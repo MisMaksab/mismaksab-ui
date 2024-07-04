@@ -17,6 +17,7 @@ import {
 } from "./styles";
 
 interface SideBarHeaderProps extends LayoutProp {
+  mobileSearchPathWithoutValue: string;
   title: string;
   isOpen: boolean;
   onCategoryClick: () => void;
@@ -25,6 +26,7 @@ interface SideBarHeaderProps extends LayoutProp {
 }
 
 export function SideBarHeader({
+  mobileSearchPathWithoutValue,
   layout,
   title,
   isOpen,
@@ -80,7 +82,11 @@ export function SideBarHeader({
               [active]: showSearchBar,
             })}
           >
-            <SearchBar sideBarOpen={true} placeHolderText={placeHolderText} />
+            <SearchBar
+              sideBarOpen={true}
+              placeHolderText={placeHolderText}
+              searchPathWithoutValue={mobileSearchPathWithoutValue}
+            />
           </div>
         )}
       </div>

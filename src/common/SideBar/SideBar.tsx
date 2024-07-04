@@ -11,6 +11,7 @@ import { SideBarBox } from "../SideBarBox/SideBarBox";
 import { open, sideBar } from "./styles";
 
 interface SideBarProps extends LayoutProp {
+  mobileSearchPathWithoutValue: string;
   title: string;
   data: SideBarItemDataProps[];
   isOpen: boolean;
@@ -18,6 +19,7 @@ interface SideBarProps extends LayoutProp {
 }
 
 export function SideBar({
+  mobileSearchPathWithoutValue,
   title,
   layout,
   data,
@@ -50,6 +52,7 @@ export function SideBar({
         isOpen={isOpen}
         changeExpandedIdCb={changeExpandedIdCb}
         placeHolderText={"Найти в mismaksab"}
+        mobileSearchPathWithoutValue={mobileSearchPathWithoutValue}
       />
       <SideBarBox
         layout={layout}

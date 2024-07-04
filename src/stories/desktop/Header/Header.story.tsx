@@ -18,7 +18,12 @@ export const HeaderStory = () => (
         subtitle="Скидки в магазинах эстонии"
       />
     }
-    searchBar={<SearchBar placeHolderText="Найти товар" />}
+    searchBar={
+      <SearchBar
+        placeHolderText="Найти товар"
+        searchPathWithoutValue={"/ru/search?query="}
+      />
+    }
     languages={
       <LanguageDropdown
         selectedLanguage="est"

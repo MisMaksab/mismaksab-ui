@@ -13,13 +13,15 @@ import {
 } from "./styles";
 
 interface SearchBarProps {
+  searchPathWithoutValue: string;
   sideBarOpen?: boolean;
   placeHolderText?: string;
 }
 
 export function SearchBar({
+  searchPathWithoutValue,
   sideBarOpen = false,
-  placeHolderText,
+  placeHolderText = "",
 }: SearchBarProps) {
   const [value, setValue] = useState("");
   const [shown, setShown] = useState(false);
@@ -37,7 +39,7 @@ export function SearchBar({
   function handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
     if (value.trim() === "") return false;
-    window.location.href = `/ru/search?query=${value}`;
+    window.location.href = `${searchPathWithoutValue}${value}`;
   }
 
   return (
@@ -63,21 +65,6 @@ export function SearchBar({
           dangerouslySetInnerHTML={{ __html: searchSvg }}
         />
       </button>
-      {/* <div className={searchInput}>
-        <div className={searchSvgContainer}>
-          <img className={searchSvg} src={searchSvg} />
-        </div>
-
-        <input
-          type="text"
-          placeholder={placeHolderText}
-          value={value}
-          onFocus={() => setShown(true)}
-          onBlur={() => setShown(false)}
-          onChange={onChangeCb}
-          className={searchInput}
-        />
-      </div> */}
     </form>
   );
 }

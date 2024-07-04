@@ -1,6 +1,6 @@
 "use client";
 
-import  { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { SideBar } from "../../common/SideBar/SideBar";
 import cn from "classnames";
 import { sideBarWrapper, open } from "./styles";
@@ -32,6 +32,7 @@ export function DesktopSideBarWrapper({
         isOpen={isCategoryOpen}
         onCategoryClick={onCategoryClick}
         layout="desktop"
+        mobileSearchPathWithoutValue={""}
       />
     </div>
   );
