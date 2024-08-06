@@ -11,7 +11,7 @@ export function AllRetailersSlides({ slidesData }: AllRetailersSlidesProps) {
         <RetailerCard
           id={slide.id}
           layout={slide.layout}
-          key={slide.id}
+          key={slide.retailerImageURL}
           retailerLink={slide.retailerLink}
           retailerImageURL={slide.retailerImageURL}
           discountText={slide.discountText}
