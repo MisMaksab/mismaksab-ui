@@ -37,9 +37,8 @@ export function ServiceBlock({
         </h2>
       )}
       <div className={cn(serviceBlockContent, { [centeredCN]: centered })}>
-        {paragraphs.map((text) => (
-          <p key={text} className={serviceBlockParagraph}>
-            {text}
+        {paragraphs.map((content) => (
+          <p key={content} className={serviceBlockParagraph} dangerouslySetInnerHTML={{__html: content}}>
           </p>
         ))}
       </div>
