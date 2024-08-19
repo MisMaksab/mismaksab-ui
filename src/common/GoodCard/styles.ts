@@ -134,6 +134,7 @@ export const goodCard = css`
 
         .${title} {
             color: ${tertiaryColorMain};
+            text-decoration: underline;
         }
     }
 

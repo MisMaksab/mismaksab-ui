@@ -1,4 +1,3 @@
-;
 import cn from "classnames";
 import mark from "../../assets/icons/languageDropdownIcon.svg";
 import { CloseCross } from "../../common/CloseCross/CloseCross";
@@ -19,7 +18,7 @@ import {
   searchDefault,
 } from "../../mobile/MobileLinkPopup/styles";
 import { DropdownItemInterface } from "../../common/DropdownItemInterface";
-import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
+import { MobilePopupModeType } from "../MobilePopupModeType";
 
 const stylesMap = {
   popupGreen,
@@ -35,7 +34,7 @@ interface CalculateRadioBlockProps {
 }
 
 interface MobileLinkPopupProps extends CalculateRadioBlockProps {
-  mode: MobilePopupModeEnum;
+  mode: MobilePopupModeType;
   active: boolean;
   title: string;
   hidePopupCb: () => void;

@@ -5,7 +5,6 @@ import { DropdownItemInterface } from "../../common/DropdownItemInterface";
 import { LayoutProp } from "../../common/LayoutProp";
 import { DesktopLanguageDropdownBox } from "../../desktop/DesktopLangurageDropdownBox/DesktopLanguageDropdownBox";
 import { MobileLinkPopup } from "../../mobile/MobileLinkPopup/MobileLinkPopup";
-import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
 import { YellowButton } from "../YellowButton/YellowButton";
 import { language } from "./styles";
 
@@ -46,7 +45,7 @@ export function LanguageDropdown({
 
       {layout === "mobile" && (
         <MobileLinkPopup
-          mode={MobilePopupModeEnum.popupDefault}
+          mode="popupDefault"
           title="Язык"
           data={data}
           active={activeSelection}

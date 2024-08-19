@@ -1,9 +1,9 @@
 import React from "react";
 import { CloseCross } from "../../../common/CloseCross/CloseCross";
-import { MobilePopupModeEnum } from "../../../mobile/MobilePopupModeEnum";
+import { MobilePopupModeType } from "../../../mobile/MobilePopupModeType";
 
 export const CloseCrossStory = () => (
-  <CloseCross mode={MobilePopupModeEnum.popupBlue} onClick={() => null} />
+  <CloseCross mode="popupBlue" onClick={() => null} />
 );
 
 CloseCrossStory.storyName = "CloseCross";

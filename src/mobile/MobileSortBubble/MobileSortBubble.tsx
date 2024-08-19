@@ -1,21 +1,21 @@
 "use client";
 
-import  { useCallback, useState } from "react";
-import { Bubble, BubbleModeEnum } from "../../common/Bubble/Bubble";
+import { useCallback, useState } from "react";
+import { Bubble, BubbleModeType } from "../../common/Bubble/Bubble";
 import {
   MobileCheckboxPopup,
-  MobileCheckboxPopupTypeEnum,
+  MobileCheckboxPopupType,
 } from "../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
 import { sortBubble } from "./styles";
-import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
 import { DropdownItemInterface } from "../../common/DropdownItemInterface";
+import { MobilePopupModeType } from "../MobilePopupModeType";
 
 interface MobileSortBubbleProps {
   bubbleText: string;
-  bubbleMode: BubbleModeEnum;
+  bubbleMode: BubbleModeType;
   popupData: DropdownItemInterface[];
-  popupType: MobileCheckboxPopupTypeEnum;
-  popupMode: MobilePopupModeEnum;
+  popupType: MobileCheckboxPopupType;
+  popupMode: MobilePopupModeType;
   onPopupChange: (val: (null | string)[]) => void;
   popupDefaultOption?: string | null;
 }

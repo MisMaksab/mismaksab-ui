@@ -68,10 +68,10 @@ export { MobileSearchBar } from "./mobile/MobileSearchBar/MobileSearchBar";
 export { MobileSortBubble } from "./mobile/MobileSortBubble/MobileSortBubble";
 
 // common interface
-export { BubbleModeEnum } from "./common/Bubble/Bubble";
+export type { BubbleModeType } from "./common/Bubble/Bubble";
 export type { BubbleProps } from "./common/Bubble/Bubble";
 export type { BubbleBlockItemProps } from "./common/BubbleBlock/BubbleBlock";
-export { CloseCrossTypeEnum } from "./common/CloseCross/CloseCross";
+export type { CloseCrossType } from "./common/CloseCross/CloseCross";
 export type {
   SideBarItemDataProps,
   SideBarDropdownItemDataProps,
@@ -84,6 +84,6 @@ export { DesktopArrowButtonTypeEnum } from "./desktop/DesktopArrowButton/Desktop
 export type { DesktopFooterLinkProps } from "./desktop/DesktopFooterLinks/DesktopFooterLinks";
 export type { DesktopPagePathItemProps } from "./desktop/DesktopPagePath/DesktopPagePath";
 // mobile interface
-export { MobileCheckboxPopupTypeEnum } from "./mobile/MobileCheckboxPopup/MobileCheckboxPopup";
+export type { MobileCheckboxPopupType } from "./mobile/MobileCheckboxPopup/MobileCheckboxPopup";
 
 export type { LayoutProp } from "./common/LayoutProp";

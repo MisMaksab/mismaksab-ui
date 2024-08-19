@@ -1,4 +1,3 @@
-;
 import cn from "classnames";
 import { CloseCross } from "../../common/CloseCross/CloseCross";
 import {
@@ -21,12 +20,9 @@ import {
   searchDefault,
 } from "../../mobile/MobileLinkPopup/styles";
 import { DropdownItemInterface } from "../../common/DropdownItemInterface";
-import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
+import { MobilePopupModeType } from "../MobilePopupModeType";
 
-export enum MobileCheckboxPopupTypeEnum {
-  single = "single",
-  multiple = "multiple",
-}
+export type MobileCheckboxPopupType = "single" | "multiple";
 
 interface MobileCheckboxPopupProps extends CalculateCheckboxBlockProps {
   active: boolean;
@@ -35,11 +31,11 @@ interface MobileCheckboxPopupProps extends CalculateCheckboxBlockProps {
 }
 
 interface CalculateCheckboxBlockProps {
-  type: MobileCheckboxPopupTypeEnum;
+  type: MobileCheckboxPopupType;
   handleSelectedItemsCb: (id: string) => void;
   data: DropdownItemInterface[];
   selectedItems: (null | string)[];
-  mode: MobilePopupModeEnum;
+  mode: MobilePopupModeType;
   hidePopupCb: () => void;
 }
 
@@ -52,7 +48,7 @@ const stylesMap = {
 };
 
 export function MobileCheckboxPopup({
-  mode = MobilePopupModeEnum.popupDefault,
+  mode,
   active,
   hidePopupCb,
   type,

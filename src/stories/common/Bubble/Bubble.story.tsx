@@ -1,9 +1,9 @@
 import React from "react";
-import { Bubble, BubbleModeEnum } from "../../../common/Bubble/Bubble";
+import { Bubble, BubbleModeType } from "../../../common/Bubble/Bubble";
 
 export const BubbleStory = () => (
   <Bubble
-    mode={BubbleModeEnum.bubbleBlue}
+    mode="bubbleBlue"
     text="товары"
     layout="desktop"
     isDropdown={true}

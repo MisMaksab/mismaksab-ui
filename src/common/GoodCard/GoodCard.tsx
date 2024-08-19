@@ -109,6 +109,9 @@ export function GoodCardFooter({
   layout,
   expireDateStr,
 }: GoodCardFooterProps) {
+  let modifiedTitle: string = title;
+  layout === "mobile" && (modifiedTitle = title.substring(0, 30));
+
   return (
     <div className={goodCardTextWrapper}>
       <div className={cn(goodCardPrices, goodCardPrices)}>

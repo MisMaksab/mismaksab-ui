@@ -1,6 +1,4 @@
-import { BubbleModeEnum } from "../../../common/Bubble/Bubble";
-import { MobileCheckboxPopupTypeEnum } from "../../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
-import { MobilePopupModeEnum } from "../../../mobile/MobilePopupModeEnum";
+import { MobileCheckboxPopupType } from "../../../mobile/MobileCheckboxPopup/MobileCheckboxPopup";
 import { MobileSortBubble } from "../../../mobile/MobileSortBubble/MobileSortBubble";
 import React from "react";
 
@@ -14,10 +12,10 @@ export const SortBubbleStory = () => (
   <>
     <MobileSortBubble
       bubbleText="sortirovka"
-      bubbleMode={BubbleModeEnum.bubbleBlue}
+      bubbleMode="bubbleBlue"
       popupData={POPUP_DATA}
-      popupType={MobileCheckboxPopupTypeEnum.multiple}
-      popupMode={MobilePopupModeEnum.popupBlue}
+      popupType="multiple"
+      popupMode="popupBlue"
       onPopupChange={(val) => console.log(val)}
       popupDefaultOption="est"
     />

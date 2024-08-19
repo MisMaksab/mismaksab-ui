@@ -22,14 +22,11 @@ import {
   searchPanelResultProducts,
 } from "./styles";
 import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
-import {
-  CloseCross,
-  CloseCrossTypeEnum,
-} from "../../common/CloseCross/CloseCross";
-import { Bubble, BubbleModeEnum } from "../../common/Bubble/Bubble";
+import { CloseCross, CloseCrossType } from "../../common/CloseCross/CloseCross";
+import { Bubble } from "../../common/Bubble/Bubble";
 import { BubbleBlock } from "../../common/BubbleBlock/BubbleBlock";
 import { GoodCardsBlock } from "../../common/GoodCardsBlock/GoodCardsBlock";
-import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
+import { SearchBar } from "../../common/SearchBar/SearchBar";
 
 const SEARCH_DATA = {
   categories: [
@@ -284,22 +281,21 @@ export function MobileSearchBar({
   }, []);
 
   return (
-    <div>
-      <form
-        className={cn(search, sideBarOpenCN, {
-          [shownCN]: shown,
-        })}
-      >
-        <SearchTrigger
-          handleChangeSearchPanelVisibilityCb={
-            handleChangeSearchPanelVisibilityCb
-          }
-          expandedByDefault={expandedByDefault}
-          shown={shown}
-          placeHolderText={placeHolderText}
-        />
+    <div
+      className={cn(search, sideBarOpenCN, {
+        [shownCN]: shown,
+      })}
+    >
+      <SearchTrigger
+        handleChangeSearchPanelVisibilityCb={
+          handleChangeSearchPanelVisibilityCb
+        }
+        expandedByDefault={expandedByDefault}
+        shown={shown}
+        placeHolderText={placeHolderText}
+      />
 
-        {/* <SearchPanel
+      {/* <SearchPanel
           onChange={onChange}
           handleChangeSearchPanelVisibilityCb={
             handleChangeSearchPanelVisibilityCb
@@ -309,7 +305,6 @@ export function MobileSearchBar({
           showMoreText={showMoreText}
           showLessText={showLessText}
         /> */}
-      </form>
     </div>
   );
 }
@@ -336,18 +331,19 @@ function SearchTrigger({
       })}
     >
       {expandedByDefault && (
-        <input
-          type="text"
-          placeholder={placeHolderText}
-          className={searchInput}
+        <SearchBar
+          placeHolderText={placeHolderText}
+          searchPathWithoutValue={""}
         />
       )}
-      <div className={searchSvgContainer}>
-        <div
-          className={searchSvgCN}
-          dangerouslySetInnerHTML={{ __html: searchSvg }}
-        />
-      </div>
+      {!expandedByDefault && (
+        <div className={searchSvgContainer}>
+          <div
+            className={searchSvgCN}
+            dangerouslySetInnerHTML={{ __html: searchSvg }}
+          />
+        </div>
+      )}
     </div>
   );
 }
@@ -409,8 +405,8 @@ function SearchPanel({
             })}
           >
             <CloseCross
-              type={CloseCrossTypeEnum.searchCross}
-              mode={MobilePopupModeEnum.searchDefault}
+              type="searchCross"
+              mode="searchDefault"
               onClick={clearInputValueCb}
             />
           </div>
@@ -420,7 +416,7 @@ function SearchPanel({
         {/* implement no search results */}
         {SEARCH_DATA.categories.length >= 1 && !isBubblesExpanded && (
           <Bubble
-            mode={BubbleModeEnum.bubbleLightorange}
+            mode="bubbleLightorange"
             text={SEARCH_DATA.categories[0].name.rus}
             onClick={() => {}}
             layout="mobile"
@@ -433,15 +429,15 @@ function SearchPanel({
             onClick={function (): void {
               throw new Error("Function not implemented.");
             }}
-            activeBubbleMode={BubbleModeEnum.bubbleOrange}
+            activeBubbleMode="bubbleOrange"
             layout={"mobile"}
             initialySelected={[]}
-            mode={BubbleModeEnum.bubbleBlue}
+            mode="bubbleBlue"
           />
         )}
         {SEARCH_DATA.categories.length > 1 && (
           <Bubble
-            mode={BubbleModeEnum.bubbleLightorange}
+            mode="bubbleLightorange"
             isDropdown={true}
             isDropdownExpanded={isBubblesExpanded}
             text={isBubblesExpanded ? showLessText : showMoreText}

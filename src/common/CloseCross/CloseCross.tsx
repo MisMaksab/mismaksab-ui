@@ -1,5 +1,4 @@
 import cn from "classnames";
-import { MobilePopupModeEnum } from "../../mobile/MobilePopupModeEnum";
 import {
   cross,
   popup,
@@ -10,16 +9,14 @@ import {
   searchCross,
   searchDefault,
 } from "./styles";
+import { MobilePopupModeType } from "../../mobile/MobilePopupModeType";
 
-export enum CloseCrossTypeEnum {
-  popup = "popup",
-  searchCross = "searchCross",
-}
+export type CloseCrossType = "popup" | "searchCross";
 
 interface CloseCrossProps {
-  mode: MobilePopupModeEnum;
+  mode: MobilePopupModeType;
   onClick: () => void;
-  type?: CloseCrossTypeEnum;
+  type?: CloseCrossType;
 }
 
 const stylesMap = {
@@ -35,11 +32,7 @@ const stylesTypeMap = {
   searchCross,
 };
 
-export function CloseCross({
-  mode,
-  onClick,
-  type = CloseCrossTypeEnum.popup,
-}: CloseCrossProps) {
+export function CloseCross({ mode, onClick, type = "popup" }: CloseCrossProps) {
   return (
     <div
       onClick={onClick}
