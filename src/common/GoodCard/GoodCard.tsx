@@ -22,8 +22,8 @@ export interface GoodCardDataProps extends LayoutProp {
   productImageURL: string;
   retailerImageURL: string;
   discount: number | undefined;
-  price: number;
-  oldPrice: number | undefined;
+  price: string;
+  oldPrice: string | undefined;
   productTitle: string;
   unitPrice: number | undefined;
   unitType: string | undefined;
@@ -92,8 +92,8 @@ export function GoodCardHeader({
 }
 
 interface GoodCardFooterProps extends LayoutProp {
-  price: number;
-  oldPrice: number | undefined;
+  price: string;
+  oldPrice: string | undefined;
   productTitle: string;
   unitPrice: number | undefined;
   unitType: string | undefined;
@@ -109,8 +109,10 @@ export function GoodCardFooter({
   layout,
   expireDateStr,
 }: GoodCardFooterProps) {
-  let modifiedTitle: string = title;
-  layout === "mobile" && (modifiedTitle = title.substring(0, 30));
+  let modifiedTitle: string = productTitle;
+  if (layout === "mobile" && productTitle.length > 30) {
+    modifiedTitle = productTitle.substring(0, 30) + "...";
+  }
 
   return (
     <div className={goodCardTextWrapper}>
@@ -118,7 +120,7 @@ export function GoodCardFooter({
         <span className={current}>{price}€</span>
         {oldPrice && <span className={old}>{oldPrice}€</span>}
       </div>
-      <span className={title}>{productTitle}</span>
+      <span className={title}>{modifiedTitle}</span>
       {layout === "desktop" && (
         <h4 className={pricePerKilo}>
           {unitPrice && unitType && `${unitPrice}€/${unitType}`}

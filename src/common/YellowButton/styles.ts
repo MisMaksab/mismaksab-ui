@@ -13,6 +13,8 @@ export const svg = css`
     margin-left: 6px;
     transform-origin: center;
     width: 12px;
+    height: 12px;
+    display: flex;
 `;
 
 export const yellowButton = css`
