@@ -1,5 +1,5 @@
 import {css} from "@linaria/core";
-import { MobileCN, primaryColorDark, primaryColorMain, quaternaryColorMain, secondaryColorDark, secondaryColorMain, tertiaryColorMain } from "../../styles";
+import { fontColorDark, fontColorLight, MobileCN, primaryColorDark, primaryColorMain, quaternaryColorMain, secondaryColorDark, secondaryColorMain, tertiaryColorMain } from "../../styles";
 
 export const bannerText = css``;
 export const textCN = css``;
@@ -15,13 +15,13 @@ export const bannerCN = css`
     display: flex;
     justify-content: space-between;
     border-radius: 16px;
-    color: $fontColorDark;
+    color: ${fontColorDark};
     max-width: 910px;
     box-sizing: border-box;
   
     &.${MobileCN} {
+      margin: auto;
       border-radius: 10px;
-      max-width: 340px;
       padding: 8px 8px 8px 16px;
       .${bannerText} {
         width: calc(50% - 20px);
@@ -59,7 +59,7 @@ export const bannerCN = css`
       }
   
       .${linkCN} {
-        color: $fontColorLight;
+        color: ${fontColorLight};
         text-decoration: none;
         border-radius: 30px;
         padding: 12px;

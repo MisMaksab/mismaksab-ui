@@ -28,11 +28,11 @@ export function AllGoodsSlides({ slidesData }: AllGoodsSlidesProps) {
               unitType={slide.unitType}
               layout={slide.layout}
               expireDateStr={slide.expireDateStr}
-              id={slide.id}
             />
           }
           isDisabled={slide.isDisabled}
           layout={slide.layout}
+          id={slide.id}
         />
       ))}
     </>

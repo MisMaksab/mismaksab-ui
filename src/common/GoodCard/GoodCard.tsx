@@ -37,6 +37,7 @@ interface GoodCardProps extends LayoutProp {
   header: React.ReactElement;
   footer: React.ReactElement;
   isSmallMobile?: boolean;
+  id: string;
 }
 
 export function GoodCard({
@@ -45,9 +46,11 @@ export function GoodCard({
   header,
   footer,
   isSmallMobile = false,
+  id,
 }: GoodCardProps) {
   return (
-    <div
+    <a
+      href={`/product/${id}`}
       className={cn(goodCard, {
         [MobileCN]: layout === "mobile",
         [disabled]: isDisabled,
@@ -56,7 +59,7 @@ export function GoodCard({
     >
       {header}
       {footer}
-    </div>
+    </a>
   );
 }
 
@@ -95,7 +98,6 @@ interface GoodCardFooterProps extends LayoutProp {
   unitPrice: number | undefined;
   unitType: string | undefined;
   expireDateStr: string | undefined;
-  id: string;
 }
 
 export function GoodCardFooter({
@@ -106,7 +108,6 @@ export function GoodCardFooter({
   unitType,
   layout,
   expireDateStr,
-  id,
 }: GoodCardFooterProps) {
   return (
     <div className={goodCardTextWrapper}>
@@ -114,9 +115,7 @@ export function GoodCardFooter({
         <span className={current}>{price}€</span>
         {oldPrice && <span className={old}>{oldPrice}€</span>}
       </div>
-      <a href={`/product/${id}`} className={title}>
-        {productTitle}
-      </a>
+      <span className={title}>{productTitle}</span>
       {layout === "desktop" && (
         <h4 className={pricePerKilo}>
           {unitPrice && unitType && `${unitPrice}€/${unitType}`}

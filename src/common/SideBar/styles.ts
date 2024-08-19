@@ -18,7 +18,6 @@ export const sideBar = css`
         left: -100%;
         width: 100vw;
         top: 0;
-        bottom: 0;
         right: 0;
         max-width: 100%;
         padding: ${mobileSideBarVerticalPadding} ${mobileSideBarHorizontalPadding};

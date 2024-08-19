@@ -38,11 +38,11 @@ export function GoodCardsBlock({ data, layout }: GoodCardsBlockProps) {
               unitType={card.unitType}
               layout={layout}
               expireDateStr={card.expireDateStr}
-              id={card.id}
             />
           }
           isDisabled={card.isDisabled}
           layout={layout}
+          id={card.id}
         />
       ))}
     </div>

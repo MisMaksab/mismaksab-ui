@@ -6,7 +6,7 @@ export const SearchBarStory = () => (
     onChange={function (value: string): void {
       throw new Error("Function not implemented.");
     }}
-    expandedByDefault={false}
+    expandedByDefault={true}
     placeHolderText="Search"
     showMoreText={"More"}
     showLessText={"Hide"}

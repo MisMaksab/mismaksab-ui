@@ -1,10 +1,9 @@
 import { css } from "@linaria/core";
 
 export const navBar = css`
-    padding: 5px 16px;
+    padding: 15px 19px;
     display: flex;
     justify-content: center;
-    box-shadow: 0px 0px 4px 0px grey;
 `
 
 export const navBarContent = css`

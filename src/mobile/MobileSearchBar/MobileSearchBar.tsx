@@ -299,7 +299,7 @@ export function MobileSearchBar({
           placeHolderText={placeHolderText}
         />
 
-        <SearchPanel
+        {/* <SearchPanel
           onChange={onChange}
           handleChangeSearchPanelVisibilityCb={
             handleChangeSearchPanelVisibilityCb
@@ -308,7 +308,7 @@ export function MobileSearchBar({
           placeHolderText={placeHolderText}
           showMoreText={showMoreText}
           showLessText={showLessText}
-        />
+        /> */}
       </form>
     </div>
   );

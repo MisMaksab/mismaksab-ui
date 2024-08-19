@@ -56,12 +56,12 @@ export const GoodCardStory = (props: any) => {
             unitPrice={pricePerKilo}
             unitType={unitType}
             layout={layout}
-            id={id}
             expireDateStr={expireDateStr}
           />
         }
         isDisabled={disabled}
         layout={layout}
+        id={id}
       />
       <br />
     </>

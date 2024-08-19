@@ -126,9 +126,15 @@ export const goodCard = css`
     transition: .3s;
     min-height: 340px;
     width: 170px;
+    text-decoration: none;
+    color: ${fontColorMain};
 
     &:hover {
         box-shadow: 0px 0px 7px 0px rgba(90, 194, 233, 0.80);
+
+        .${title} {
+            color: ${tertiaryColorMain};
+        }
     }
 
     &.${MobileCN} {
