@@ -21,6 +21,7 @@ import {
   sideBarBoxItemDropdown,
   sideBarBoxItemDropdownContainer,
   sideBarBoxItemDropdownItem,
+  justifyStart,
 } from "./styles";
 
 export interface SideBarDropdownItemDataProps {
@@ -85,6 +86,7 @@ export function SideBarBoxItem({
           className={cn(sideBarBoxItemBtnText, {
             [shown]: isOpen && layout === "desktop",
             [activeCN]: isExpanded,
+            [justifyStart]: data.subSvg,
           })}
           onClick={handleCategoryItemClick}
         >

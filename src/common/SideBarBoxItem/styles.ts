@@ -79,16 +79,12 @@ export const link = css`
 export const mobileSideBarArrowCN = css``;
 export const rotate = css``;
 export const shown = css``;
+export const justifyStart = css``;
+
 
 export const sideBarBoxItem = css`
     &.${MobileCN} {
         border-bottom: 1px solid ${secondaryColorLight};
-  
-        &:first-child {
-            .${sideBarBoxItemBtn} .${sideBarBoxItemBtnText}{
-            justify-content: start;
-            }
-        }
 
         .${sideBarBoxItemBtn} {
             display: flex;
@@ -99,10 +95,15 @@ export const sideBarBoxItem = css`
                 justify-content: space-between;
                 width: 100%;
                 align-items: center;
+
+                &.${justifyStart} {
+                    justify-content: start;
+                }
             }
         }
 
         .${mobileSideBarArrowCN} {
+            display: flex;
             height: 7px;
             width: 13px;
             transition: transform .3s;

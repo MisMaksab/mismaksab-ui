@@ -16,6 +16,7 @@ interface SideBarProps extends LayoutProp {
   data: SideBarItemDataProps[];
   isOpen: boolean;
   onCategoryClick: () => void;
+  mobilePlaceHolderText?: string;
 }
 
 export function SideBar({
@@ -25,6 +26,7 @@ export function SideBar({
   data,
   isOpen,
   onCategoryClick,
+  mobilePlaceHolderText = "Find in MisMaksab",
 }: SideBarProps) {
   const [expandedId, setExpadedId] = useState<number | null>(null);
   const changeExpandedIdCb = useCallback(
@@ -51,7 +53,7 @@ export function SideBar({
         onCategoryClick={onCategoryClick}
         isOpen={isOpen}
         changeExpandedIdCb={changeExpandedIdCb}
-        placeHolderText={"Найти в mismaksab"}
+        mobilePlaceHolderText={mobilePlaceHolderText}
         mobileSearchPathWithoutValue={mobileSearchPathWithoutValue}
       />
       <SideBarBox

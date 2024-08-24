@@ -11,12 +11,14 @@ import { language } from "./styles";
 interface LanguageDropdownProps extends LayoutProp {
   selectedLanguage: string;
   data: DropdownItemInterface[];
+  mobilePopupTitle?: string;
 }
 
 export function LanguageDropdown({
   selectedLanguage,
   layout,
   data,
+  mobilePopupTitle = "Language",
 }: LanguageDropdownProps) {
   const [activeSelection, setActiveSelection] = useState(false);
   const hidePopupCb = useCallback(() => setActiveSelection(false), []);
@@ -30,7 +32,7 @@ export function LanguageDropdown({
       <div className={language}>
         <YellowButton
           layout={layout}
-          text="RUS"
+          text={selectedLanguage.toUpperCase()}
           onClick={changePopupVisibilityCb}
           isActive={activeSelection}
         />
@@ -46,7 +48,7 @@ export function LanguageDropdown({
       {layout === "mobile" && (
         <MobileLinkPopup
           mode="popupDefault"
-          title="Язык"
+          title={mobilePopupTitle}
           data={data}
           active={activeSelection}
           hidePopupCb={hidePopupCb}

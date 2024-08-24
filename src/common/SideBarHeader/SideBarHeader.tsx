@@ -18,21 +18,21 @@ import {
 
 interface SideBarHeaderProps extends LayoutProp {
   mobileSearchPathWithoutValue: string;
+  mobilePlaceHolderText: string;
   title: string;
   isOpen: boolean;
   onCategoryClick: () => void;
   changeExpandedIdCb: (id: number | null) => void;
-  placeHolderText: string;
 }
 
 export function SideBarHeader({
   mobileSearchPathWithoutValue,
+  mobilePlaceHolderText,
   layout,
   title,
   isOpen,
   onCategoryClick,
   changeExpandedIdCb,
-  placeHolderText,
 }: SideBarHeaderProps) {
   const [showSearchBar, setShowSearchBar] = useState(true);
 
@@ -84,7 +84,7 @@ export function SideBarHeader({
           >
             <SearchBar
               sideBarOpen={true}
-              placeHolderText={placeHolderText}
+              placeHolderText={mobilePlaceHolderText}
               searchPathWithoutValue={mobileSearchPathWithoutValue}
             />
           </div>
