@@ -20,21 +20,18 @@ import {
 import { ShrinkButton } from "../../common/ShrinkButton/ShrinkButton";
 import { SideBarItemDataProps } from "../../common/SideBarBoxItem/SideBarBoxItem";
 
-// ПАШУ СПРОСИТЬ
-const LANGUAGES_ARR = [
-  { text: "Estonian", id: "est", link: "/" },
-  { text: "Russian", id: "rus", link: "/" },
-  { text: "English", id: "eng", link: "/" },
-];
-
 interface MobileHeaderBurgerProps {
   title: string;
   sideBarData: SideBarItemDataProps[];
+  selectedLanguage: string;
+  languagesData: { text: string; id: string; link: string }[];
 }
 
 export function MobileHeaderBurger({
   title,
   sideBarData,
+  languagesData,
+  selectedLanguage,
 }: MobileHeaderBurgerProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const onShrinkClick = useCallback(() => {
@@ -54,6 +51,8 @@ export function MobileHeaderBurger({
         isMenuOpen={isMenuOpen}
         onShrinkClick={onShrinkClick}
         sideBarData={sideBarData}
+        selectedLanguage={selectedLanguage}
+        languagesData={languagesData}
       />
     </div>
   );
@@ -64,6 +63,8 @@ interface BurgerMenuProps {
   onShrinkClick: () => void;
   title: string;
   sideBarData: SideBarItemDataProps[];
+  selectedLanguage: string;
+  languagesData: { text: string; id: string; link: string }[];
 }
 
 function BurgerMenu({
@@ -71,6 +72,8 @@ function BurgerMenu({
   isMenuOpen,
   onShrinkClick,
   sideBarData,
+  selectedLanguage,
+  languagesData,
 }: BurgerMenuProps) {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const onCategoryClick = useCallback(() => {
@@ -92,8 +95,8 @@ function BurgerMenu({
         <div className={burgerMenuControls}>
           <LanguageDropdown
             layout="mobile"
-            selectedLanguage="est"
-            data={LANGUAGES_ARR}
+            selectedLanguage={selectedLanguage}
+            data={languagesData}
           />
           <ShrinkButton onClick={onShrinkClick} />
         </div>
