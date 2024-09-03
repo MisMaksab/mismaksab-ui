@@ -101,10 +101,10 @@ function CalculateCheckboxBlock({
       {data.map((option) => (
         <label
           onClick={handleSingleOptionClick}
-          htmlFor={option.id}
-          key={option.id}
+          htmlFor={option.text}
+          key={option.text}
           className={cn(popupOption, {
-            [activeCN]: selectedItems.includes(option.id),
+            [activeCN]: selectedItems.includes(option.text),
           })}
         >
           {option.text}
@@ -120,10 +120,10 @@ function CalculateCheckboxBlock({
               }
             )}
             type="checkbox"
-            id={option.id}
-            name={option.id}
-            checked={selectedItems.includes(option.id)}
-            onChange={() => handleSelectedItemsCb(option.id)}
+            id={option.text}
+            name={option.text}
+            checked={selectedItems.includes(option.text)}
+            onChange={() => handleSelectedItemsCb(option.text)}
           />
         </label>
       ))}

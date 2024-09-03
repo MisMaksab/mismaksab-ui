@@ -25,6 +25,7 @@ interface MobileHeaderBurgerProps {
   sideBarData: SideBarItemDataProps[];
   selectedLanguage: string;
   languagesData: { text: string; id: string; link: string }[];
+  menuData: { text: string; link?: string }[];
 }
 
 export function MobileHeaderBurger({
@@ -32,6 +33,7 @@ export function MobileHeaderBurger({
   sideBarData,
   languagesData,
   selectedLanguage,
+  menuData,
 }: MobileHeaderBurgerProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const onShrinkClick = useCallback(() => {
@@ -53,6 +55,7 @@ export function MobileHeaderBurger({
         sideBarData={sideBarData}
         selectedLanguage={selectedLanguage}
         languagesData={languagesData}
+        menuData={menuData}
       />
     </div>
   );
@@ -65,6 +68,7 @@ interface BurgerMenuProps {
   sideBarData: SideBarItemDataProps[];
   selectedLanguage: string;
   languagesData: { text: string; id: string; link: string }[];
+  menuData: { text: string; link?: string }[];
 }
 
 function BurgerMenu({
@@ -74,6 +78,7 @@ function BurgerMenu({
   sideBarData,
   selectedLanguage,
   languagesData,
+  menuData,
 }: BurgerMenuProps) {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const onCategoryClick = useCallback(() => {
@@ -102,34 +107,32 @@ function BurgerMenu({
         </div>
         <ul className={burgerMenuContent}>
           <li className={burgerMenuItem}>
-            <a className={burgerMenuLink} href="/">
-              лучшие предложения
+            <a className={burgerMenuLink} href={menuData[0].link}>
+              {menuData[0].text}
             </a>
           </li>
           <li className={burgerMenuItem}>
-            <a className={burgerMenuLink} href="/">
-              магазины
+            <a className={burgerMenuLink} href={menuData[1].link}>
+              {menuData[1].text}
             </a>
           </li>
           <li className={burgerMenuItem} onClick={onCategoryClick}>
-            категории
+            {menuData[2].text}
           </li>
           <div className={burgerMenuBar}></div>
           <li className={burgerMenuItem}>
-            <a className={burgerMenuLink} href="/">
-              контакты
+            <a className={burgerMenuLink} href={menuData[3].link}>
+              {menuData[3].text}
             </a>
           </li>
           <li className={burgerMenuItem}>
-            <a className={burgerMenuLink} href="/">
-              о нас
+            <a className={burgerMenuLink} href={menuData[4].link}>
+              {menuData[4].text}
             </a>
           </li>
           <li className={burgerMenuItem}>
-            <a className={burgerMenuLink} href="/">
-              политика
-              <br />
-              конфиденциальности
+            <a className={burgerMenuLink} href={menuData[5].link}>
+              {menuData[5].text}
             </a>
           </li>
         </ul>
@@ -141,7 +144,7 @@ function BurgerMenu({
         data={sideBarData}
         isOpen={isCategoryOpen}
         onCategoryClick={onCategoryClick}
-        mobileSearchPathWithoutValue={"/ru/search?query="}
+        mobileSearchPathWithoutValue={`/${selectedLanguage}/search?query=`}
       />
     </>
   );
