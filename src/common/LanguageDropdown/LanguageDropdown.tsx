@@ -49,7 +49,7 @@ export function LanguageDropdown({
       <div className={language}>
         <YellowButton
           layout={layout}
-          text={selectedData?.text}
+          text={selectedData?.path.toUpperCase()}
           onClick={changePopupVisibilityCb}
           isActive={activeSelection}
         />
