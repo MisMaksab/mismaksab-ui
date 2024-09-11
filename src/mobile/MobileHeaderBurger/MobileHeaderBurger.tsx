@@ -24,8 +24,10 @@ interface MobileHeaderBurgerProps {
   title: string;
   sideBarData: SideBarItemDataProps[];
   selectedLanguage: string;
-  languagesData: { text: string; id: string; link: string }[];
+  languagesData: { text: string; id: string; path: string }[];
   menuData: { text: string; link?: string }[];
+  mobilePopupTitle: string;
+  mobilePlaceHolderText: string;
 }
 
 export function MobileHeaderBurger({
@@ -34,6 +36,8 @@ export function MobileHeaderBurger({
   languagesData,
   selectedLanguage,
   menuData,
+  mobilePopupTitle,
+  mobilePlaceHolderText,
 }: MobileHeaderBurgerProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const onShrinkClick = useCallback(() => {
@@ -56,6 +60,8 @@ export function MobileHeaderBurger({
         selectedLanguage={selectedLanguage}
         languagesData={languagesData}
         menuData={menuData}
+        mobilePopupTitle={mobilePopupTitle}
+        mobilePlaceHolderText={mobilePlaceHolderText}
       />
     </div>
   );
@@ -67,8 +73,10 @@ interface BurgerMenuProps {
   title: string;
   sideBarData: SideBarItemDataProps[];
   selectedLanguage: string;
-  languagesData: { text: string; id: string; link: string }[];
+  languagesData: { text: string; id: string; path: string }[];
   menuData: { text: string; link?: string }[];
+  mobilePopupTitle: string;
+  mobilePlaceHolderText: string;
 }
 
 function BurgerMenu({
@@ -79,6 +87,8 @@ function BurgerMenu({
   selectedLanguage,
   languagesData,
   menuData,
+  mobilePopupTitle,
+  mobilePlaceHolderText,
 }: BurgerMenuProps) {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const onCategoryClick = useCallback(() => {
@@ -102,6 +112,7 @@ function BurgerMenu({
             layout="mobile"
             selectedLanguage={selectedLanguage}
             data={languagesData}
+            mobilePopupTitle={mobilePopupTitle}
           />
           <ShrinkButton onClick={onShrinkClick} />
         </div>
@@ -145,6 +156,7 @@ function BurgerMenu({
         isOpen={isCategoryOpen}
         onCategoryClick={onCategoryClick}
         mobileSearchPathWithoutValue={`/${selectedLanguage}/search?query=`}
+        mobilePlaceHolderText={mobilePlaceHolderText}
       />
     </>
   );

@@ -1,5 +1,5 @@
 export interface DropdownItemInterface {
   text: string;
-  link: string;
+  path: string;
   id?: string;
 }

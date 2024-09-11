@@ -74,13 +74,13 @@ function CalculateRadioBlock({ selectedItem, data }: CalculateRadioBlockProps) {
       {data.map((option) => (
         <a
           key={option.text}
-          href={option.link}
+          href={option.path}
           className={cn(popupOption, {
-            [activeCN]: selectedItem === option.text,
+            [activeCN]: selectedItem === option.path,
           })}
         >
           {option.text}
-          {selectedItem === option.text && (
+          {selectedItem === option.path && (
             <div
               className={markCN}
               dangerouslySetInnerHTML={{ __html: mark }}

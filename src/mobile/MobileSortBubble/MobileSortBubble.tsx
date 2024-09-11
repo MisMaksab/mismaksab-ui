@@ -16,8 +16,8 @@ interface MobileSortBubbleProps {
   popupData: DropdownItemInterface[];
   popupType: MobileCheckboxPopupType;
   popupMode: MobilePopupModeType;
-  onPopupChange: (val: (null | string)[]) => void;
-  popupDefaultOption?: string | null;
+  onPopupChange: (val: string[]) => void;
+  popupDefaultOption?: string;
 }
 
 export function MobileSortBubble({
@@ -27,11 +27,11 @@ export function MobileSortBubble({
   popupType,
   popupMode,
   onPopupChange,
-  popupDefaultOption = null,
+  popupDefaultOption,
 }: MobileSortBubbleProps) {
   const [isDropdownExpanded, setIsDropdownExpanded] = useState(false);
-  const [selectedItems, setSelectedItems] = useState([popupDefaultOption]);
-
+  const [selectedItems, setSelectedItems] = useState<string[]>([]);
+  if (popupDefaultOption !== undefined) setSelectedItems([popupDefaultOption]);
   const handleSelectedItemsCb = useCallback(
     (id: string) => {
       let newSelectedItems = [];

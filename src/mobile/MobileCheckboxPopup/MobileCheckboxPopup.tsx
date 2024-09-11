@@ -104,7 +104,7 @@ function CalculateCheckboxBlock({
           htmlFor={option.text}
           key={option.text}
           className={cn(popupOption, {
-            [activeCN]: selectedItems.includes(option.text),
+            [activeCN]: selectedItems.includes(option.path),
           })}
         >
           {option.text}
@@ -122,8 +122,8 @@ function CalculateCheckboxBlock({
             type="checkbox"
             id={option.text}
             name={option.text}
-            checked={selectedItems.includes(option.text)}
-            onChange={() => handleSelectedItemsCb(option.text)}
+            checked={selectedItems.includes(option.path)}
+            onChange={() => handleSelectedItemsCb(option.path)}
           />
         </label>
       ))}
