@@ -9,7 +9,7 @@
     "typings": "lib/index.d.ts",
     "types": "lib/index.d.ts",
     "scripts": {
-        "build": "npm run copy-dts && npm run copy-assets && tsc --build tsconfig-no-spec.json && npm run build:css && babel lib -d lib",
+        "build": "",
         "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib",
         "copy-assets": "copyfiles -u 1 \"src/assets/**/*\" lib",
         "build:package": "rm -rf lib && tsc --outDir lib && babel src --out-dir lib --extensions .tsx,.ts && linaria -o lib --source-root src --insert-css-requires lib \"src/**/*.ts\" --modules=es2015 && npm run copy-assets",

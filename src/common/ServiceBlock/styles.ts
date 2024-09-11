@@ -21,13 +21,13 @@ export const serviceBlockContent = css`
     display: flex;
     flex-direction: column;
     gap: 27px;
+    padding: 35px;
+    background: ${secondaryColorLight};
 `;
 
 export const serviceBlockParagraph = css`
     margin: 0;
-    padding: 35px 44px 31px;
     border-radius: 10px;
-    background: ${secondaryColorLight};
     color: black;
     font-size: 16px;
     font-weight: 400;
