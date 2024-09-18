@@ -92,15 +92,10 @@ function CalculateCheckboxBlock({
   type,
   hidePopupCb,
 }: CalculateCheckboxBlockProps) {
-  function handleSingleOptionClick() {
-    type === "single" && hidePopupCb();
-  }
-
   return (
     <>
       {data.map((option) => (
         <label
-          onClick={handleSingleOptionClick}
           htmlFor={option.text}
           key={option.text}
           className={cn(popupOption, {

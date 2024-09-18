@@ -34,13 +34,17 @@ export function MobileSortBubble({
     useState<string[]>(popupDefaultOptions);
   const handleSelectedItemsCb = useCallback(
     (id: string) => {
-      let newSelectedItems = [];
-      if (selectedItems.includes(id)) {
-        newSelectedItems = selectedItems.filter((oldId) => oldId != id);
-      } else {
-        newSelectedItems = [...selectedItems, id];
+      let newSelectedItems: string[] = [];
+      if (popupType === "single") {
+        newSelectedItems = [id];
+        handleBubbleClick();
+      } else if (popupType === "multiple") {
+        if (selectedItems.includes(id)) {
+          newSelectedItems = selectedItems.filter((oldId) => oldId != id);
+        } else {
+          newSelectedItems = [...selectedItems, id];
+        }
       }
-
       setSelectedItems(newSelectedItems);
       onPopupChange(newSelectedItems);
     },
