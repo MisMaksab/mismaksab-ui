@@ -17,9 +17,9 @@ import {
 
 interface BlockHeaderProps extends LayoutProp {
   title?: string | null;
-  yellowButtonText?: string;
+  highlitedButtonText?: string;
   moreBtnEnabled?: boolean;
-  yellowButtonLink?: string;
+  highlitedButtonLink?: string;
   noPaddingTop?: boolean;
   isTitleThin?: boolean;
   subTitle?: string | null;
@@ -30,8 +30,8 @@ interface BlockHeaderProps extends LayoutProp {
 export function BlockHeader({
   title = null,
   layout,
-  yellowButtonText,
-  yellowButtonLink,
+  highlitedButtonText,
+  highlitedButtonLink,
   moreBtnEnabled = false,
   isTitleThin = false,
   subTitle = null,
@@ -64,8 +64,8 @@ export function BlockHeader({
       {moreBtnEnabled && (
         <YellowButton
           layout={layout}
-          text={yellowButtonText}
-          link={yellowButtonLink}
+          text={highlitedButtonText}
+          link={highlitedButtonLink}
           isArrowRotated={true}
         />
       )}

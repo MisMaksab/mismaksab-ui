@@ -1,6 +1,6 @@
 "use client";
 
-import  { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import cn from "classnames";
 import { dropdown, shown } from "../../desktop/DesktopDropdownBoxStyles";
 import DesktopSortSvg from "../../assets/icons/desktopSort.svg";
@@ -101,6 +101,7 @@ function DropdownBox({
     <ul className={cn(dropdown, sortDropdown, activeSelection && shown)}>
       {data.map((item) => (
         <li
+          key={item.path}
           onClick={() => {
             onClick(item.path);
           }}

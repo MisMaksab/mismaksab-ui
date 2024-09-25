@@ -24,6 +24,7 @@ import {
   retailerText,
   title,
 } from "./styles";
+import { subTitle } from "../../desktop/DesktopHeaderLogo/styles";
 
 export interface ProductProps extends LayoutProp {
   offer: {
@@ -47,12 +48,14 @@ export interface ProductProps extends LayoutProp {
 interface ExpandedGoodCardProps extends LayoutProp {
   header: React.ReactElement;
   footer: React.ReactElement;
+  subTitle: string;
 }
 
 export function ExpandedGoodCard({
   layout,
   header,
   footer,
+  subTitle,
 }: ExpandedGoodCardProps) {
   return (
     <div
@@ -64,11 +67,7 @@ export function ExpandedGoodCard({
       {footer}
       {layout === "desktop" && (
         <div className={expandedGoodCardLogo}>
-          <DesktopHeaderLogo
-            title="MisMaksab"
-            subtitle="скидки в магазинах Эстонии"
-            href="/"
-          />
+          <DesktopHeaderLogo title="MisMaksab" subtitle={subTitle} href="/" />
         </div>
       )}
     </div>

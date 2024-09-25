@@ -7,7 +7,7 @@ export const goodCardsBlock = css`
     display: flex;
     flex-wrap: wrap;
     gap: 24px 0px;
-    padding-top: 50px;
+    padding-top: 38px;
 
     &.${MobileCN} {
         padding-top: 13px;

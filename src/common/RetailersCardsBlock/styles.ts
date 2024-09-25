@@ -5,7 +5,7 @@ export const retailersCardsBlock = css`
     margin-left: -7px;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 50px;
+    padding-top: 38px;
 
     &.${MobileCN} {
         justify-content: center;

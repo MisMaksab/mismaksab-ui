@@ -20,8 +20,7 @@ export function RetailersCardsBlock({
     >
       {data.map((card) => (
         <RetailerCard
-          id={card.id}
-          key={card.id}
+          key={card.retailer}
           retailerLink={card.retailerLink}
           retailerImageURL={card.retailerImageURL}
           discountText={card.discountText}

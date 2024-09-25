@@ -2,7 +2,7 @@ import { css } from "@linaria/core";
 
 export const sliderWrapper = css`
   width: 100%;
-  padding-top: 50px;
+  padding-top: 38px;
   margin-left: -7px;
 `
 
