@@ -29,7 +29,7 @@ export function LanguageDropdown({
   );
   const langOptions = useMemo(() => data.map((lang) => lang.path), [data]);
   const selectedData = useMemo(
-    () => data.find((lng) => lng.id === selectedLanguage),
+    () => data.find((lng) => lng.path === selectedLanguage),
     [data, selectedLanguage]
   );
   const preparedData = useMemo(() => {
@@ -78,6 +78,6 @@ export function LanguageDropdown({
 
 function chageUrlLang(url: string, langs: string[], newLang: string): string {
   const pattern = new RegExp(`\/(${langs.join("|")})`);
-  const newUrl = url.replace(pattern, `/${newLang}/`);
+  const newUrl = url.replace(pattern, `/${newLang}`);
   return newUrl;
 }

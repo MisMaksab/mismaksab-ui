@@ -26,7 +26,7 @@ export function DesktopLanguageDropdownBox({
   return (
     <ul className={cn(dropdown, language, activeSelection && shown)}>
       {data.map((lang) => (
-        <a key={lang.id} href={lang.path} className={languageLink}>
+        <a key={lang.id} href={lang.link} className={languageLink}>
           <li
             className={cn(languageLang, {
               [active]: selectedLanguage === lang.id,
