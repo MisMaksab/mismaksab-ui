@@ -52,9 +52,11 @@ export const serviceBlock = css`
 
         .${serviceBlockContent} {
             gap: 8px;
+            padding: 5px 15px;
+            border-radius: 8px;
 
             .${serviceBlockParagraph} {
-                padding: 30px 19px 28px 25px;
+                padding: 10px 0;
             }
         }
     }
