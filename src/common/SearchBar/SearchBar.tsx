@@ -4,27 +4,39 @@ import cn from "classnames";
 import { useCallback, useState } from "react";
 import searchSvg from "../../assets/icons/search.svg";
 import {
-  search,
+  defaultStyles,
+  desktopExpanedCN,
+  hideInputCN,
+  highlightCN,
+  mobileBurgerMenuCN,
+  mobileExpandedCN,
+  mobileShrinkedCN,
   searchInput,
   searchSvgCN,
   searchSvgContainer,
-  shownCN,
-  sideBarOpenCN,
 } from "./styles";
+import { hide } from "../ShrinkButton/styles";
+
+type SearchBarStateType =
+  | "desktopExpanded"
+  | "mobileBurgerMenu"
+  | "mobileExpanded"
+  | "mobileShrinked";
 
 interface SearchBarProps {
   searchPathWithoutValue: string;
-  sideBarOpen?: boolean;
+  state: SearchBarStateType;
   placeHolderText?: string;
 }
 
 export function SearchBar({
   searchPathWithoutValue,
-  sideBarOpen = false,
   placeHolderText = "",
+  state,
 }: SearchBarProps) {
   const [value, setValue] = useState("");
   const [shown, setShown] = useState(false);
+  const [hideInput, setHideInput] = useState(state === "mobileShrinked");
 
   const onChangeCb = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -36,18 +48,30 @@ export function SearchBar({
     }
   }, []);
 
-  function handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (value.trim() === "") return false;
-    window.location.href = `${searchPathWithoutValue}${value}`;
-  }
+  const handleSubmit = useCallback(
+    (e: React.ChangeEvent<HTMLFormElement>) => {
+      console.log(3);
+      e.preventDefault();
+      if (value.trim() === "") return false;
+      window.location.href = `${searchPathWithoutValue}${value}`;
+    },
+    [value]
+  );
+
+  const handleMobileShrinkedClick = useCallback(() => {
+    setHideInput((val) => !val);
+  }, []);
 
   return (
     <form
       onSubmit={handleSubmit}
-      className={cn(search, {
-        [shownCN]: shown,
-        [sideBarOpenCN]: sideBarOpen,
+      className={cn(defaultStyles, {
+        [highlightCN]: shown,
+        [desktopExpanedCN]: state === "desktopExpanded",
+        [mobileBurgerMenuCN]: state === "mobileBurgerMenu",
+        [mobileExpandedCN]: state === "mobileExpanded",
+        [mobileShrinkedCN]: state === "mobileShrinked",
+        [hideInputCN]: hideInput,
       })}
     >
       <input
@@ -59,7 +83,11 @@ export function SearchBar({
         onChange={onChangeCb}
         className={searchInput}
       />
-      <button type="submit" className={searchSvgContainer}>
+      <button
+        type={value.length > 0 ? "submit" : "button"}
+        className={searchSvgContainer}
+        onClick={handleMobileShrinkedClick}
+      >
         <div
           className={searchSvgCN}
           dangerouslySetInnerHTML={{ __html: searchSvg }}

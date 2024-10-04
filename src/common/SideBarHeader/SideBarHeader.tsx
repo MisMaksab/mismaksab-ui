@@ -83,7 +83,7 @@ export function SideBarHeader({
             })}
           >
             <SearchBar
-              sideBarOpen={true}
+              state="mobileBurgerMenu"
               placeHolderText={mobilePlaceHolderText}
               searchPathWithoutValue={mobileSearchPathWithoutValue}
             />

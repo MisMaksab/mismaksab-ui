@@ -4,6 +4,8 @@ export const navBar = css`
     padding: 15px 19px;
     display: flex;
     justify-content: center;
+    height: 42px;
+    box-sizing: content-box;
 `
 
 export const navBarContent = css`
@@ -34,4 +36,7 @@ export const navBarRightItem = css`
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 42px;
 `

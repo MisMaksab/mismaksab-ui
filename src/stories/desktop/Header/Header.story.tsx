@@ -22,6 +22,7 @@ export const HeaderStory = () => (
       <SearchBar
         placeHolderText="Найти товар"
         searchPathWithoutValue={"/ru/search?query="}
+        state={"desktopExpanded"}
       />
     }
     languages={
