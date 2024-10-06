@@ -1,7 +1,7 @@
 "use client";
 
 import cn from "classnames";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import searchSvg from "../../assets/icons/search.svg";
 import {
   defaultStyles,
@@ -16,6 +16,7 @@ import {
   searchSvgContainer,
 } from "./styles";
 import { hide } from "../ShrinkButton/styles";
+import { CloseCross } from "../CloseCross/CloseCross";
 
 type SearchBarStateType =
   | "desktopExpanded"
@@ -34,9 +35,13 @@ export function SearchBar({
   placeHolderText = "",
   state,
 }: SearchBarProps) {
-  const [value, setValue] = useState("");
-  const [shown, setShown] = useState(false);
-  const [hideInput, setHideInput] = useState(state === "mobileShrinked");
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const [enableSearch, setEnableSearch] = useState<boolean>(false);
+  const [value, setValue] = useState<string>("");
+  const [shown, setShown] = useState<boolean>(false);
+  const [hideInput, setHideInput] = useState<boolean>(
+    state === "mobileShrinked"
+  );
 
   const onChangeCb = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -50,10 +55,9 @@ export function SearchBar({
 
   const handleSubmit = useCallback(
     (e: React.ChangeEvent<HTMLFormElement>) => {
-      console.log(3);
       e.preventDefault();
-      if (value.trim() === "") return false;
-      window.location.href = `${searchPathWithoutValue}${value}`;
+      if (enableSearch)
+        window.location.href = `${searchPathWithoutValue}${value}`;
     },
     [value]
   );
@@ -61,6 +65,23 @@ export function SearchBar({
   const handleMobileShrinkedClick = useCallback(() => {
     setHideInput((val) => !val);
   }, []);
+
+  useEffect(() => {
+    state === "mobileShrinked" && !hideInput && inputRef.current?.focus();
+  }, [hideInput]);
+
+  useEffect(() => {
+    if (value.trim() !== "" || (state === "mobileShrinked" && !hideInput)) {
+      setEnableSearch(true);
+    } else {
+      setEnableSearch(false);
+    }
+  }, [value, hideInput, state]);
+
+  function closeCrossClickCb() {
+    setValue("");
+    setEnableSearch(false);
+  }
 
   return (
     <form
@@ -71,10 +92,11 @@ export function SearchBar({
         [mobileBurgerMenuCN]: state === "mobileBurgerMenu",
         [mobileExpandedCN]: state === "mobileExpanded",
         [mobileShrinkedCN]: state === "mobileShrinked",
-        [hideInputCN]: hideInput,
+        [hideInputCN]: state === "mobileShrinked" && hideInput,
       })}
     >
       <input
+        ref={inputRef}
         type="text"
         placeholder={placeHolderText}
         value={value}
@@ -84,14 +106,22 @@ export function SearchBar({
         className={searchInput}
       />
       <button
-        type={value.length > 0 ? "submit" : "button"}
+        type="submit"
         className={searchSvgContainer}
         onClick={handleMobileShrinkedClick}
       >
-        <div
-          className={searchSvgCN}
-          dangerouslySetInnerHTML={{ __html: searchSvg }}
-        />
+        {enableSearch ? (
+          <CloseCross
+            type="searchCross"
+            mode={"searchDefault"}
+            onClick={closeCrossClickCb}
+          />
+        ) : (
+          <div
+            className={searchSvgCN}
+            dangerouslySetInnerHTML={{ __html: searchSvg }}
+          />
+        )}
       </button>
     </form>
   );

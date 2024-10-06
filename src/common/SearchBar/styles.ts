@@ -34,6 +34,8 @@ export const searchInput = css`
 `
 
 export const hideInputCN = css`
+  width: 42px;
+
   .${searchInput} {
     display: none;
   }
@@ -43,19 +45,6 @@ export const mobileExpandedCN = css`
   border-radius: 50px;
   height: 42px;
 `;
-
-export const mobileShrinkedCN = css`
-  position: absolute;
-  right: -4px;
-  border-radius: 50px;
-  height: 42px;
-
-  width: calc(100vw - 30px);
-`;
-
-export const highlightCN = css`
-  box-shadow: 0px 0px 4px 5px rgba(0,0,0,.04);
-`
 
 export const searchSvgContainer = css`
   outline: none;
@@ -70,9 +59,29 @@ export const searchSvgContainer = css`
   padding: 0 17px;
 `
 
+export const mobileShrinkedCN = css`
+  position: absolute;
+  right: -4px;
+  border-radius: 50px;
+  height: 42px;
+
+  &:not(.${hideInputCN}) {
+    width: calc(100vw - 30px);
+  }
+
+  .${searchSvgContainer} {
+    padding: 0 12px;
+  }
+`;
+
+export const highlightCN = css`
+  box-shadow: 0px 0px 4px 5px rgba(0,0,0,.04);
+`
+
 export const mobileBurgerMenuCN = css`
   margin: 0;
   height: 30px;
+  border-radius: 25px;
 
   &.${searchInput} {
     padding: 0 0 0 12px;

@@ -31,7 +31,7 @@ export const cross = css`
     }
 
     &.${searchCross} {
-        left: 50%;
+        left: 0%;
         width: 13px;
         height: 13px;
 
