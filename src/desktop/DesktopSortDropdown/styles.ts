@@ -14,6 +14,7 @@ export const sortDropdownItem = css`
   line-height: 100%; /* 20px */
   transition: color .3s;
   padding: 8px 12px;
+  text-wrap: nowrap;
 
   &:first-child {padding-top: 16px;}
   &:last-child {padding-bottom: 16px;}
