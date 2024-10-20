@@ -16,28 +16,30 @@ import {
 } from "./styles";
 
 interface BlockHeaderProps extends LayoutProp {
-  title?: string | null;
+  handleShrinkBtnClick?: () => void;
   highlitedButtonText?: string;
   moreBtnEnabled?: boolean;
   highlitedButtonLink?: string;
   noPaddingTop?: boolean;
   isTitleThin?: boolean;
+  title?: string | null;
   subTitle?: string | null;
   shrinkBtnEnabled?: boolean;
   sortComponent?: ReactElement<any, string | JSXElementConstructor<any>> | null;
 }
 
 export function BlockHeader({
-  title = null,
   layout,
   highlitedButtonText,
   highlitedButtonLink,
   moreBtnEnabled = false,
   isTitleThin = false,
+  title = null,
   subTitle = null,
   noPaddingTop = false,
   shrinkBtnEnabled = false,
   sortComponent = null,
+  handleShrinkBtnClick = () => {},
 }: BlockHeaderProps) {
   return (
     <div
@@ -72,7 +74,7 @@ export function BlockHeader({
 
       {shrinkBtnEnabled && (
         <a className={blockHeaderGoBackBtn}>
-          <ShrinkButton onClick={() => {}} />
+          <ShrinkButton onClick={handleShrinkBtnClick} />
         </a>
       )}
     </div>

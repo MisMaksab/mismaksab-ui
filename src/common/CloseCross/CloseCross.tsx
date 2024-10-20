@@ -15,7 +15,7 @@ export type CloseCrossType = "popup" | "searchCross";
 
 interface CloseCrossProps {
   mode: MobilePopupModeType;
-  onClick: () => void;
+  onClick?: () => void;
   type?: CloseCrossType;
 }
 
@@ -32,7 +32,11 @@ const stylesTypeMap = {
   searchCross,
 };
 
-export function CloseCross({ mode, onClick, type = "popup" }: CloseCrossProps) {
+export function CloseCross({
+  mode,
+  onClick = () => {},
+  type = "popup",
+}: CloseCrossProps) {
   return (
     <div
       onClick={onClick}

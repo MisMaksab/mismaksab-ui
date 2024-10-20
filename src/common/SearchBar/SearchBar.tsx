@@ -62,8 +62,14 @@ export function SearchBar({
     [value]
   );
 
+  const closeCrossClickCb = useCallback(() => {
+    setValue("");
+    setEnableSearch(false);
+  }, []);
+
   const handleMobileShrinkedClick = useCallback(() => {
     setHideInput((val) => !val);
+    closeCrossClickCb();
   }, []);
 
   useEffect(() => {
@@ -77,11 +83,6 @@ export function SearchBar({
       setEnableSearch(false);
     }
   }, [value, hideInput, state]);
-
-  function closeCrossClickCb() {
-    setValue("");
-    setEnableSearch(false);
-  }
 
   return (
     <form
@@ -106,16 +107,12 @@ export function SearchBar({
         className={searchInput}
       />
       <button
-        type="submit"
+        type="button"
         className={searchSvgContainer}
         onClick={handleMobileShrinkedClick}
       >
         {enableSearch ? (
-          <CloseCross
-            type="searchCross"
-            mode={"searchDefault"}
-            onClick={closeCrossClickCb}
-          />
+          <CloseCross type="searchCross" mode={"searchDefault"} />
         ) : (
           <div
             className={searchSvgCN}
