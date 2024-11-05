@@ -1,5 +1,6 @@
 import cn from "classnames";
 import { MobileCN } from "../../styles";
+import { useFallbackImageInSSR } from "../FallbackImage/FallbackImage";
 import { GoodCardDiscount } from "../GoodCardDiscount/GoodCardDiscount";
 import { LayoutProp } from "../LayoutProp";
 import {
@@ -77,9 +78,15 @@ export function GoodCardHeader({
   layout,
   isSmallMobile,
 }: GoodCardHeaderProps) {
+  const fallbackImageProps = useFallbackImageInSSR()
+
   return (
     <div className={goodCardImage}>
-      <img className={retailerImg} src={productImageURL} />
+      <img
+        className={retailerImg}
+        src={productImageURL}
+        {...fallbackImageProps}
+      />
       <GoodCardDiscount
         layout={layout}
         expanded={false}
