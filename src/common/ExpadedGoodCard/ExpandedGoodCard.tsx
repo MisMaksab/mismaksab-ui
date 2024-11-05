@@ -149,7 +149,7 @@ export function ExpandedGoodCardFooter({
         )}
       </div>
 
-      <div className={discountCN}>
+      {/* <div className={discountCN}>
         <GoodCardDiscount
           layout={layout}
           expanded={true}
@@ -157,7 +157,7 @@ export function ExpandedGoodCardFooter({
           discount={discount}
         />
         <span className={discountText}>{discountConditionsText}</span>
-      </div>
+      </div> */}
     </div>
   );
 }
