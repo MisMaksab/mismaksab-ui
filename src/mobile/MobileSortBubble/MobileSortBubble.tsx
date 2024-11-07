@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Bubble, BubbleModeType } from "../../common/Bubble/Bubble";
 import {
   MobileCheckboxPopup,
@@ -18,6 +18,7 @@ interface MobileSortBubbleProps {
   popupMode: MobilePopupModeType;
   onPopupChange: (val: string[]) => void;
   popupDefaultOptions?: string[];
+  onExpandStateChange?: (isExpanded: boolean) => void;
 }
 
 export function MobileSortBubble({
@@ -28,6 +29,7 @@ export function MobileSortBubble({
   popupMode,
   onPopupChange,
   popupDefaultOptions = [],
+  onExpandStateChange
 }: MobileSortBubbleProps) {
   const [isDropdownExpanded, setIsDropdownExpanded] = useState(false);
   const [selectedItems, setSelectedItems] =
@@ -50,6 +52,12 @@ export function MobileSortBubble({
     },
     [selectedItems]
   );
+
+  useEffect(() => {
+    if (onExpandStateChange) {
+      onExpandStateChange(isDropdownExpanded);
+    }
+  }, [isDropdownExpanded]);
 
   function handleBubbleClick() {
     setIsDropdownExpanded((val) => !val);
