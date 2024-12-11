@@ -18,6 +18,7 @@ interface BubbleBlockProps extends LayoutProp {
   activeBubbleMode: BubbleModeType;
   noPaddingTop?: boolean;
   initialySelected: string[];
+  t?: (key: string) => string;
 }
 
 export function BubbleBlock({
@@ -26,6 +27,7 @@ export function BubbleBlock({
   onClick,
   activeBubbleMode,
   initialySelected,
+  t,
   noPaddingTop = false,
 }: BubbleBlockProps) {
   const [selectedBubblesPaths, setSelectedBubblesPaths] =
@@ -53,7 +55,7 @@ export function BubbleBlock({
               ? activeBubbleMode
               : mode
           }
-          text={bubbleData.text}
+          text={t ? t(bubbleData.text) : (bubbleData.text)}
           layout={bubbleData.layout}
           onClick={() => {
             changeActiveBubbleCb(bubbleData.path);

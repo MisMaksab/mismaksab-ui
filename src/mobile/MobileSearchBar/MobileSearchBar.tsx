@@ -356,6 +356,7 @@ interface SearchPanelProps {
   placeHolderText: string;
   showMoreText: string;
   showLessText: string;
+  t: (key: string) => string;
 }
 
 function SearchPanel({
