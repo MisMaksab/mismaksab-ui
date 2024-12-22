@@ -4,6 +4,7 @@
 // export * as variables from "./scss/variables.scss";
 
 //Common
+export { BetaSearchMessage } from "./common/BetaSearchMessage/BetaSearchMessage";
 export { AllGoodsSlides } from "./common/AllGoodsSlides/AllGoodsSlides";
 export { AllRetailersSlides } from "./common/AllRetailersSlides/AllRetailersSlides";
 export { Banner } from "./common/Banner/Banner";

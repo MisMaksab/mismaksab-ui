@@ -72,5 +72,5 @@ export const expanded = css`
   align-items:center;
   display: flex;
   justify-content: center;
-  z-index:1;
+  z-index:9999;
 `;
