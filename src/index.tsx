@@ -21,6 +21,7 @@ export {
   GoodCardFooter,
   GoodCardHeader,
 } from "./common/GoodCard/GoodCard";
+export { OfferGoUpButton } from "./common/OfferGoUpButton/OfferGoUpButton";
 export { GoodCardDiscount } from "./common/GoodCardDiscount/GoodCardDiscount";
 export { LanguageDropdown } from "./common/LanguageDropdown/LanguageDropdown";
 export { RetailerCard } from "./common/RetailerCard/RetailerCard";

@@ -1,11 +1,11 @@
 import cn from "classnames";
-;
 import arrowSvg from "./../../assets/icons/slider_arrow.svg";
-import { arrowButton, shown, arrowButtonArrow, next, prev } from "./styles";
+import { arrowButton, shown, arrowButtonArrow, next, prev, up } from "./styles";
 
 export enum DesktopArrowButtonTypeEnum {
   next = "next",
   prev = "prev",
+  up = "up",
 }
 
 interface DesktopArrowButtonProps {
@@ -25,6 +25,7 @@ export function DesktopArrowButton({
         [shown]: isShown,
         [prev]: type === "prev",
         [next]: type === "next",
+        [up]: type === "up",
       })}
       onClick={onClick}
     >

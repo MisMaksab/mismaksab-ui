@@ -6,10 +6,10 @@ export const arrowButton = css`
     width: 0;
     cursor: pointer;
     z-index: 100;
+    transform: scale(0);
     pointer-events: none;
     opacity: 0;
     transition: .3s;
-    transform: scale(0);
     position: relative;
 
     &:hover {
@@ -39,4 +39,15 @@ export const shown = css`
     pointer-events: auto;
     opacity: 1;
     transform: scale(1);
+`
+
+export const up = css`
+        position: fixed;
+        right: 15px;
+        bottom: 15px;
+        width: 60px;
+        height: 60px;
+    .${arrowButtonArrow} {
+        transform: rotate(-90deg) translateX(0px);
+    }
 `
