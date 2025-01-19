@@ -43,6 +43,7 @@ export interface ProductProps extends LayoutProp {
     discountConditionsText: string;
   };
   similarProducts: GoodCardDataProps[];
+  offerCategory: { text: string; link: string }[];
 }
 
 interface ExpandedGoodCardProps extends LayoutProp {

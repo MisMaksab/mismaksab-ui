@@ -4,6 +4,7 @@
 // export * as variables from "./scss/variables.scss";
 
 //Common
+export { BetaSearchMessage } from "./common/BetaSearchMessage/BetaSearchMessage";
 export { AllGoodsSlides } from "./common/AllGoodsSlides/AllGoodsSlides";
 export { AllRetailersSlides } from "./common/AllRetailersSlides/AllRetailersSlides";
 export { Banner } from "./common/Banner/Banner";
@@ -20,6 +21,7 @@ export {
   GoodCardFooter,
   GoodCardHeader,
 } from "./common/GoodCard/GoodCard";
+export { OfferGoUpButton } from "./common/OfferGoUpButton/OfferGoUpButton";
 export { GoodCardDiscount } from "./common/GoodCardDiscount/GoodCardDiscount";
 export { LanguageDropdown } from "./common/LanguageDropdown/LanguageDropdown";
 export { RetailerCard } from "./common/RetailerCard/RetailerCard";
